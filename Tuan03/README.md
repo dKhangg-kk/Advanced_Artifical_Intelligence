@@ -15,6 +15,7 @@
 |---|---|---|---|
 | [`n_queens.ipynb`](n_queens.ipynb) | Notebook | Hill Climbing, SA, so sánh theo n; Advanced (toán tử mở rộng) | Đủ task; chạy lại thành công |
 | [`traveling_salesman_problem.ipynb`](traveling_salesman_problem.ipynb) | Notebook | 5 thuật toán HC+SA cho TSP; scalability n=10,15,20,30; bonus Genetic Algorithm | Đủ task; chạy lại thành công |
+| [`lab03.docx`](lab03.docx) | Báo cáo | Báo cáo thực hành lab 03 | Đã có |
 
 
 ## 3. Cách chạy

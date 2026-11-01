@@ -19,7 +19,7 @@
 | [`gridhunt_mini_assignment_completed.ipynb`](gridhunt_mini_assignment_completed.ipynb) | Notebook | GridHunt đơn agent — model-based, random, teleport |
 | [`gridhunt_multiagent_mini_assignment.ipynb`](gridhunt_multiagent_mini_assignment.ipynb) | Notebook | GridHunt đa agent — greedy hunter vs random |
 | [`lunar_lander-2.ipynb`](lunar_lander-2.ipynb) | Notebook | Reflex agent điều khiển Lunar Lander (Gymnasium) |
-| [`lab01.docx`](baocao.docx) | Báo cáo | Báo cáo thực hành lab 01 |
+| [`lab01.docx`](lab01.docx) | Báo cáo | Báo cáo thực hành lab 01 |
 
 
 ## 3. Cách chạy
