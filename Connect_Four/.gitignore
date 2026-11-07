@@ -1,0 +1,26 @@
+# Trong so mo hinh: khong commit file nang, chi commit mo ta cach tai/tao lai
+checkpoints/**/*.pt
+checkpoints/**/*.pth
+checkpoints/**/*.pkl
+*.pt
+*.pth
+
+# Du lieu sinh tu dong (lon) - giu lai file mo ta va bo vi tri test
+data/generated/
+# Giu .gitkeep de clone may moi van co cau truc thu muc
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+*.npz
+
+# Ket qua phu / tam (log CSV/JSONL la san pham can nop, khong ignore)
+results/**/*.tmp
+
+# Ghi de *.log o .gitignore goc: log thi dau/huan luyen phai duoc commit
+!results/**/*.log
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/

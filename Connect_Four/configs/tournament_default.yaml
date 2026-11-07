@@ -1,0 +1,21 @@
+# Che do "cau hinh mac dinh": moi tac tu dung tham so rieng da cong bo.
+# Muc tieu 200 van/cap -> 6 tac tu = 15 cap = 3000 van.
+
+mode: default
+games_per_pair: 200
+openings: 100          # moi khai cuoc choi 2 van, doi ben -> 200 van/cap
+seed: 20261102
+max_moves: 42
+time_per_move_s: null
+
+agents:
+  - random
+  - heuristic
+  - alphabeta
+  - mcts
+  - nn
+  - dqn
+
+output_dir: results/logs
+figures_dir: results/figures
+tables_dir: results/tables

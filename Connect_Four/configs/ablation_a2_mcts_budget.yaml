@@ -1,0 +1,10 @@
+# Ablation A2 - ngan sach MCTS.
+# Co dinh doi thu (alphabeta depth 4) va chinh sach rollout, chi doi so mo phong.
+
+name: ablation_a2_mcts_budget
+agent: mcts
+opponent: alphabeta_depth4
+simulations: [100, 500, 1000, 2000, 5000]
+games_per_budget: 100
+seed: 20261104
+output: results/tables/ablation_a2_results.csv

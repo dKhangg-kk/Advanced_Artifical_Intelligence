@@ -1,0 +1,15 @@
+# Ablation A1 - bat/tat cat tia Alpha-Beta.
+# Giu nguyen trang thai, do sau, ham luong gia; chi doi co cat tia / sap xep.
+# Do: cung nuoc di tra ve, so nut da duyet, thoi gian.
+
+name: ablation_a1_pruning
+agent: alphabeta
+depths: [4, 5, 6]
+configs:
+  - {pruning: true,  ordering: true}
+  - {pruning: true,  ordering: false}
+  - {pruning: false, ordering: true}
+  - {pruning: false, ordering: false}
+positions: tests/data/positions.csv
+repeat: 5
+output: results/tables/ablation_a1_results.csv
