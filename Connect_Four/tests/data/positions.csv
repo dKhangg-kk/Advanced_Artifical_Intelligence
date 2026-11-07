@@ -1,0 +1,10 @@
+id,moves,side_to_move,winning_moves,blocking_moves,note
+empty-board,,1,-,-,Ban co trong: chua ai thang
+vertical-three,1 2 1 2 1,2,-,1,"Nguoi 1 co 3 quan chong o cot 1: nguoi 2 phai chan cot 1"
+# Them >= 30 vi tri da dang. Moi dong:
+#   id            : ten ngan gon, khong dau cach
+#   moves         : chuoi cot 0..6, cach nhau bang dau cach
+#   side_to_move  : 1 hoac 2
+#   winning_moves : cac cot thang ngay, ngan cach bang dau cach ("-": khong co)
+#   blocking_moves: cac cot phai chan, "-" neu khong co
+#   note          : giai thich ngan
