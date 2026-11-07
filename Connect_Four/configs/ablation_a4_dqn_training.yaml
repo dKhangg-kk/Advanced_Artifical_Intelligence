@@ -1,0 +1,17 @@
+# Ablation A4 - Anh huong cua qua trinh huan luyen DQN va Epsilon Decay.
+# Danh gia DQN tai nhieu moc episode (1k, 2.5k, 5k, 10k) va cac he so decay khac nhau.
+# Do: Average Reward, Win Rate truoc Random va Heuristic, Loss Bellman, do on dinh giua cac seed.
+
+name: ablation_a4_dqn_training
+agent: dqn
+milestones: [1000, 2500, 5000, 10000]
+epsilon_decay_configs:
+  - {name: "fast_decay", decay: 0.9990, eps_min: 0.05}
+  - {name: "default_decay", decay: 0.9995, eps_min: 0.05}
+  - {name: "slow_decay", decay: 0.9998, eps_min: 0.05}
+opponents:
+  - random
+  - heuristic
+eval_games_per_milestone: 100
+seeds: [0, 42, 2026]
+output: results/tables/ablation_a4_results.csv

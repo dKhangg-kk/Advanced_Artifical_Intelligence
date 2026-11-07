@@ -1,0 +1,26 @@
+# Che do "cung tran thoi gian moi nuoc": moi tac tu co dung ngan sach thoi gian.
+# Dung de tra loi cau hoi nghien cuu 1 (Alpha-Beta vs MCTS trong cung thoi gian).
+
+mode: timed
+games_per_pair: 200
+openings: 100
+seed: 20261103
+max_moves: 42
+time_per_move_s: 1.0    # neu chay cham, ha xuong 0.1 hoac 0.3 cho pilot
+
+agents:
+  - random
+  - heuristic
+  - alphabeta
+  - mcts
+  - nn
+  - dqn
+
+notes: |
+  Ghi ro phan cung (CPU/GPU) va cach xu ly khi tac tu vuot thoi gian.
+  Quy uoc de xuat: neu vuot qua 3 lan ngan sach, ghi nhan nuoc di nhung danh
+  dau van la "over_budget" va bao cao rieng ty le nay.
+
+output_dir: results/logs
+figures_dir: results/figures
+tables_dir: results/tables

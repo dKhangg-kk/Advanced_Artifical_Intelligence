@@ -1,0 +1,15 @@
+# Ablation A3 - Anh huong cua kich thuoc du lieu huan luyen CNN Policy.
+# Giu nguyen kien truc mang va sieu tham so; thay doi so luong van du lieu chuyen gia.
+# Do: Training Loss, Validation Loss, Top-1 Accuracy, Win Rate truoc Alpha-Beta.
+
+name: ablation_a3_cnn_data
+agent: nn
+dataset_sizes_games: [250, 500, 1000, 2000, 5000]
+epochs: 20
+batch_size: 64
+lr: 0.001
+split_ratio: [0.70, 0.15, 0.15]
+test_opponent: alphabeta_depth4
+eval_games: 100
+seed: 20261105
+output: results/tables/ablation_a3_results.csv

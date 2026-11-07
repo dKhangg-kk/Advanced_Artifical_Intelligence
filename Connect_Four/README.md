@@ -57,7 +57,7 @@ Phạm vi dự án bao gồm đầy đủ sáu cấp dưới đây.
 | 3 | Minimax / Alpha-Beta | Tìm kiếm giới hạn độ sâu, dùng hàm lượng giá; đối chiếu số nút và thời gian khi bật/tắt cắt tỉa. |
 | 4 | MCTS với UCT | Chọn nút, mở rộng, mô phỏng và cập nhật kết quả; khảo sát ngân sách mô phỏng. |
 | 5 | Neural Network | Học có giám sát để dự đoán nước đi từ nhãn Alpha-Beta. |
-| 6 | Reinforcement Learning | Dùng policy gradient REINFORCE để học từ tương tác và phần thưởng cuối ván. |
+| 6 | Deep Q-Network (DQN) | Học giá trị hành động Q(s, a) qua tương tác (Replay Buffer, Target Network, Epsilon-Greedy). |
 
 **Cấp 1–6 thuộc phạm vi chính.** Kết hợp mạng với MCTS hoặc thực hiện các cấp cảm hứng AlphaGo/AlphaZero là hướng mở rộng sau khi hoàn thành phần chính. Cấp phương pháp cao hơn không mặc nhiên bảo đảm tác tử chơi mạnh hơn.
 
@@ -67,20 +67,23 @@ Phạm vi dự án bao gồm đầy đủ sáu cấp dưới đây.
 
 - Sinh các ván hợp lệ, dùng Alpha-Beta có cấu hình công bố rõ để tạo nhãn nước đi.
 - Mạng policy nhận trạng thái và người đến lượt, dự đoán hành động trên 7 cột.
-- Chia train/validation/test **theo ván** với tỷ lệ khởi đầu `80/10/10`; kiểm soát trạng thái trùng giữa các tập và ghi lại tỷ lệ thực tế sau lọc.
+- Chia train/validation/test **theo ván** với tỷ lệ khởi đầu `70/15/15`; kiểm soát trạng thái trùng giữa các tập và ghi lại tỷ lệ thực tế sau lọc.
 - Chỉ tăng cường đối xứng trong train; khi lật gương bàn phải đổi nhãn cột tương ứng.
 - Chọn checkpoint bằng validation; báo cáo loss, kết quả test và sức mạnh đối đầu.
 
 Nhãn từ Alpha-Beta giới hạn độ sâu phản ánh tác tử tạo nhãn, không được mặc định là nước tối ưu toán học.
 
-### Cấp 6 — Học tăng cường
+### Cấp 6 — Học tăng cường (DQN)
 
-- Khởi tạo mạng policy riêng và huấn luyện bằng **REINFORCE**.
+- Khởi tạo mạng Q-Network riêng và huấn luyện bằng **Deep Q-Network (DQN)**.
 - Mỗi episode là một ván. Thưởng cuối ván theo góc nhìn tác tử đang học: **thắng `+1`, hòa `0`, thua `−1`**.
-- Trong huấn luyện, lấy mẫu hành động từ policy trên các cột hợp lệ để khám phá.
-- Bắt đầu đối đầu với Random/Heuristic cố định; sau đó thử đối đầu với checkpoint đóng băng của chính tác tử để hỗ trợ self-play. Chỉ cập nhật tác tử đang học.
-- Chọn checkpoint bằng đánh giá định kỳ trên tập đối thủ và seed phát triển cố định.
-- Lưu số episode, phần thưởng, cách khám phá, siêu tham số, đối thủ, thời gian huấn luyện và đường cong reward/điểm đối kháng.
+- Sử dụng **Replay Buffer** (tối đa 100.000 transition) lưu `(s, a, r, s', done)` để phá vỡ tương quan giữa các mẫu liên tiếp.
+- Sử dụng **Target Network** đồng bộ định kỳ sau mỗi `C` bước để ổn định quá trình tối ưu hàm mục tiêu Bellman:
+  $$y = r + \gamma \max_{a' \in \text{legal}} Q_{\text{target}}(s', a')$$
+- Lịch trình khám phá **$\epsilon$-Greedy** suy giảm dần từ `1.0` về `0.05`. Khi thi đấu hoặc đánh giá, $\epsilon = 0.0$ (hoàn toàn tham lam trên các cột hợp lệ).
+- Bắt đầu đối đầu với Random/Heuristic cố định; sau đó mở rộng sang self-play. Chỉ cập nhật tác tử đang học.
+- Đánh giá độc lập các checkpoint tại các mốc `1.000`, `2.500`, `5.000` và `10.000` episodes với seed cố định.
+- Lưu số episode, loss Bellman, phần thưởng trung bình, tỷ lệ thắng trước baseline và đường cong hội tụ.
 
 Hai cấp có thể dùng chung kiến trúc nhưng phải có **trọng số, checkpoint và log huấn luyện riêng**. Khi chọn nước, cả hai phải loại cột đầy. Không dùng mạng chưa huấn luyện để minh chứng hoàn thành cấp 5 hoặc 6; không dùng bộ đánh giá cuối để chọn mô hình hoặc siêu tham số.
 
@@ -114,35 +117,83 @@ Phiên bản Python và thư viện phải được ghi trong cấu hình môi t
 
 ## Cấu trúc dự án
 
-Đồ án nằm trong thư mục `Connect_Four/` của repo môn học. Cấu trúc dưới đây quy định cách tổ chức mã, dữ liệu và kết quả; các thư mục và tệp được bổ sung khi triển khai từng phần.
+Đồ án nằm trong thư mục `Connect_Four/` của repo môn học. Khung dưới đây đã được tạo sẵn; các tệp thuật toán sẽ được điền dần theo [lộ trình](docs/ROADMAP.md).
 
 ```text
 Connect_Four/
 ├── README.md
+├── CONTRIBUTING.md           # Quy ước nhánh, commit, PR và code
 ├── requirements.txt          # Thư viện và phiên bản
-├── configs/                  # Cấu hình tác tử, train và giải đấu
+├── pyproject.toml            # Khai báo gói, entry point, cấu hình pytest
+├── configs/                  # Cấu hình tác tử, giải đấu và ablation
+│   ├── agents.yaml
+│   ├── tournament_default.yaml
+│   ├── tournament_timed.yaml
+│   ├── ablation_a1_pruning.yaml
+│   ├── ablation_a2_mcts_budget.yaml
+│   ├── ablation_a3_cnn_data.yaml
+│   ├── ablation_a4_dqn_training.yaml
+│   └── ablation_a5_depth.yaml
 ├── src/
 │   └── connect_four/
-│       ├── game/             # Luật, trạng thái và API engine
-│       ├── agents/           # Sáu tác tử cùng giao diện chọn nước
+│       ├── game/             # constants, base (hợp đồng API), engine, reference
+│       ├── agents/           # base, networks (PyTorch), và sáu tác tử (cấp 1–6)
+│       │   ├── base.py
+│       │   ├── networks.py   # Kiến trúc CNN Policy và DQN Net
+│       │   ├── random_agent.py
+│       │   ├── heuristic.py
+│       │   ├── alphabeta.py
+│       │   ├── mcts.py
+│       │   ├── nn_agent.py
+│       │   └── dqn.py
 │       ├── ui/               # Demo Pygame
-│       ├── training/         # Sinh nhãn, huấn luyện NN và RL
-│       └── evaluation/       # Runner giải đấu và các độ đo
-├── tests/                    # Kiểm thử engine và tác tử
+│       ├── training/         # Sinh nhãn, huấn luyện CNN (cấp 5) và DQN (cấp 6)
+│       │   ├── gen_data.py
+│       │   ├── train_supervised.py
+│       │   └── train_dqn.py
+│       ├── evaluation/       # Runner giải đấu, độ đo, runlog và CLI
+│       └── play.py           # Chơi trong terminal
+├── tests/                    # Test khung, kế hoạch test và bộ vị trí kiểm thử
 ├── notebooks/                # Phân tích, biểu đồ và notebook huấn luyện
-├── data/                     # Dữ liệu tự sinh, mô tả và cách chia tập
-├── checkpoints/              # Trọng số NN và RL được chọn
-├── results/                  # Log thô, bảng và hình thực nghiệm
-└── docs/                     # Proposal, báo cáo, slide và poster
+├── data/                     # raw/ (dữ liệu chuyên gia thô) và processed/ (train/val/test)
+├── checkpoints/              # level5_cnn/ và level6_dqn/ (trọng số không commit)
+├── results/                  # logs/ (manifest, games, moves, train), tables/, figures/
+└── docs/                     # proposal/, ROADMAP, THIRD_PARTY, LOGGING, EXPERIMENT_LOG, report/, slides/, poster/
 ```
 
 Dữ liệu và checkpoint lớn cần có hướng dẫn tải hoặc tái tạo nếu không lưu trực tiếp trong Git. Mô tả dữ liệu, cấu hình, seed và cách chạy lại vẫn phải được cung cấp. Tệp `.gitignore` dùng chung nằm ở thư mục gốc repo; cần kiểm tra để không bỏ qua nhầm các log hoặc kết quả cần nộp.
 
 ## Hướng dẫn chạy
 
-Thư mục đồ án hiện có README mô tả phạm vi và thiết kế; chưa có mã nguồn, tệp cài đặt thư viện hoặc chương trình chạy demo, huấn luyện và đánh giá.
+**Trạng thái:** đã có khung gói Python, hợp đồng API engine, giao diện sáu tác tử, cấu hình giải đấu/ablation và bộ test khung. **Thuật toán chưa được cài đặt** — các phương thức đang `raise NotImplementedError` và được điền theo thứ tự trong [lộ trình](docs/ROADMAP.md).
 
-**Chưa có lệnh chạy ứng dụng được kiểm chứng để công bố.** Phần này sẽ được cập nhật cùng mã nguồn, chỉ bao gồm các bước cài đặt, kiểm thử, demo, train và evaluate đã được chạy kiểm tra trên môi trường được ghi rõ.
+### Cài đặt
+
+```bash
+cd Connect_Four
+python -m venv .venv
+source .venv/bin/activate        # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+pip install -e .                 # tùy chọn: tạo lệnh c4-play, c4-tournament
+```
+
+### Kiểm thử
+
+```bash
+pytest -q                        # các test khung phải xanh
+```
+
+### Các lệnh dự kiến
+
+Các lệnh dưới đây đã có sẵn giao diện dòng lệnh nhưng **chưa chạy được** cho tới khi thuật toán tương ứng được cài đặt:
+
+| Lệnh | Mục đích | Trạng thái |
+| --- | --- | --- |
+| `python -m connect_four.play --opponent heuristic` | Chơi người–máy trong terminal | Chưa cài đặt |
+| `python -m connect_four.evaluation.cli --a random --b heuristic --out results/logs/r_vs_h.csv` | Chạy một cặp đấu, ghi log CSV | Chưa cài đặt |
+| `python -m connect_four.ui.gui` | Demo Pygame | Chưa cài đặt |
+
+Chỉ các lệnh đã chạy kiểm tra thực tế mới được chuyển sang trạng thái "đã kiểm chứng".
 
 ## Thiết kế thực nghiệm
 
@@ -173,7 +224,7 @@ Phân tích thêm ảnh hưởng seed, độ sâu, lượt đi trước và nh�
 
 ### Lưu trữ để tái lập
 
-Mỗi đợt chạy cần lưu phiên bản mã/commit, luật, cấu hình, seed, phần cứng và checkpoint sử dụng. Log ván gồm đối thủ, bên đi trước, chuỗi nước và kết quả; log từng nước có thời gian cùng số nút hoặc mô phỏng khi áp dụng. Notebook phải tạo lại được bảng/hình từ log thô.
+Mỗi đợt chạy cần lưu phiên bản mã/commit, luật, cấu hình, seed, phần cứng và checkpoint sử dụng. Log ván gồm đối thủ, bên đi trước, chuỗi nước và kết quả; log từng nước có thời gian cùng số nút hoặc mô phỏng khi áp dụng. Notebook phải tạo lại được bảng/hình từ log thô. Quy ước log và cách truy vết từng con số nằm trong [`docs/LOGGING.md`](docs/LOGGING.md); nhật ký từng lần chạy nằm trong [`docs/EXPERIMENT_LOG.md`](docs/EXPERIMENT_LOG.md).
 
 **Chưa có kết quả thực nghiệm của đồ án trong repo.** Các bảng xếp hạng và kết luận sẽ chỉ được bổ sung sau khi chạy và kiểm tra thực tế.
 
@@ -198,6 +249,7 @@ Commit của đồ án theo quy ước chung `TuanXX/DuAn/Noi dung cong viec`, v
 - Mã nguồn Python, cấu hình, yêu cầu thư viện, test tự động và hướng dẫn cài đặt/train/evaluate/demo.
 - Thông tin dữ liệu NN; checkpoint riêng của cấp 5 và 6; log và đường cong huấn luyện.
 - Log thi đấu thô, notebook tạo bảng/hình, ma trận đối đầu và phân tích.
+- Nhật ký thực nghiệm `docs/EXPERIMENT_LOG.md`, quy ước log `docs/LOGGING.md` và bảng truy vết số liệu `results/tables/report_numbers.csv`.
 - Báo cáo, slide, poster; liên kết GitHub, lịch sử commit, phân công và tỷ lệ đóng góp.
 - Tệp ZIP đặt tên theo quy định: `NhomXX_TenGame_TTNTNC_HoTen_MaSV.zip`.
 

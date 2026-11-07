@@ -1,0 +1,21 @@
+# Moi truong chinh: Python 3.10+ (nhom kiem tra voi 3.12)
+# Chay: pip install -r requirements.txt
+#
+# Ghi chu: torch rat nang (~2 GB). Neu chi lam engine + agent co dien,
+# co the cai truoc phan "co ban" va bo qua torch cho toi khi huan luyen.
+
+# --- Co ban (engine, agent, test) ---
+numpy>=1.26,<3
+pytest>=8.0,<9
+
+# --- Giai dau, doc cau hinh, ve bieu do ---
+PyYAML>=6.0,<7
+pandas>=2.1,<3
+matplotlib>=3.8,<4
+psutil>=5.9
+
+# --- Giao dien ---
+pygame>=2.5,<3
+
+# --- Hoc sau (cap 5 - NN, cap 6 - DQN) ---
+torch>=2.2,<3

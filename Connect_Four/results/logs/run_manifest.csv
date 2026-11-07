@@ -1,0 +1,1 @@
+run_id,started_at,finished_at,git_commit,config_file,config_hash,command,seed,python_version,numpy_version,torch_version,cpu,gpu,ram_gb,os,status,notes
