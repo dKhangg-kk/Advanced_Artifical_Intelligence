@@ -24,3 +24,17 @@ results/**/*.tmp
 __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# IDE / local environment
+.venv/
+venv/
+.vscode/settings.json
+
+# Checkpoint nang: dong goi trong ZIP cuoi ky, khong commit vao Git.
+# Dung git add -f khi nhom chu dong muon luu checkpoint vao repository.

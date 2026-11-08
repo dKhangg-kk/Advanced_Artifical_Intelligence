@@ -232,7 +232,7 @@ class GuiApp:
     def __init__(
         self,
         agent_a: str = HUMAN,
-        agent_b: str = "heuristic",
+        agent_b: str = "random",
         agent_factory: Callable[..., Agent] | None = None,
         seed: int = 0,
     ) -> None:
@@ -419,7 +419,7 @@ class GuiApp:
         self.pg.quit()
 
 
-def run_gui(agent_a: str = HUMAN, agent_b: str = "heuristic", start: bool = False) -> None:
+def run_gui(agent_a: str = HUMAN, agent_b: str = "random", start: bool = False) -> None:
     """Mo cua so pygame. Goi tu `python -m connect_four.ui.gui`."""
     try:
         import pygame  # noqa: F401
@@ -434,7 +434,7 @@ def run_gui(agent_a: str = HUMAN, agent_b: str = "heuristic", start: bool = Fals
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(description="Giao dien pygame Connect Four")
     p.add_argument("--a", default=HUMAN, help=f"Ben X (di truoc): {HUMAN} hoac {sorted(AGENTS)}")
-    p.add_argument("--b", default="heuristic", help="Ben O (di sau)")
+    p.add_argument("--b", default="random", help="Ben O (di sau)")
     p.add_argument("--start", action="store_true", help="Vao thang van, bo qua man hinh chon")
     args = p.parse_args(argv)
     run_gui(args.a, args.b, args.start)

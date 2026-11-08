@@ -23,4 +23,11 @@ class RandomAgent(Agent):
         self._rng = random.Random(seed)
 
     def choose(self, game: ConnectFourGame) -> int:
-        raise NotImplementedError("TODO: chon ngau nhien trong game.legal_actions()")
+        legal = game.legal_actions()
+        if not legal:
+            raise ValueError("Khong con nuoc di hop le.")
+        action = self._rng.choice(legal)
+        self.last_stats.nodes = 0
+        self.last_stats.simulations = 0
+        self.last_stats.depth_reached = 0
+        return action
