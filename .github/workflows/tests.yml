@@ -1,0 +1,32 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Connect_Four
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: Connect_Four/requirements.txt
+
+      # Chi cai phan nhe: CI khong can torch/pygame.
+      # Test duoc viet de khong import cac thu vien nay o cap module.
+      - name: Cai thu vien toi thieu
+        run: |
+          python -m pip install --upgrade pip
+          pip install "numpy>=1.26,<3" "pytest>=8.0,<9"
+
+      - name: Chay test
+        run: pytest -q
