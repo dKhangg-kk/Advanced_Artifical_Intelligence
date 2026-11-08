@@ -95,7 +95,6 @@ pip install gymnasium-display-recorder
 
 | Thành viên | Phần việc thực tế |
 
-
 | Bùi Kiệt | Cài đặt model-based agent GridHunt đơn agent, thí nghiệm, kết luận |
 
 | Phan Lê Ngọc Như Ý | Cài đặt greedy hunter, thí nghiệm đa agent |

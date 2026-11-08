@@ -1,0 +1,8 @@
+# Add local LLM examples to the core CS7320-AI environment with:
+# conda env update -n CS7320-AI -f environments/llm.yml
+name: CS7320-AI
+channels:
+  - conda-forge
+dependencies:
+  - transformers>=4.45,<6
+  - pytorch>=2.4,<3

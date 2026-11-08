@@ -1,0 +1,12 @@
+# Add Gymnasium examples to the core CS7320-AI environment with:
+# conda env update -n CS7320-AI -f environments/gymnasium.yml
+name: CS7320-AI
+channels:
+  - conda-forge
+dependencies:
+  - ffmpeg>=6,<9
+  - swig>=4,<5
+  - pip>=24,<27
+  - pip:
+    - "gymnasium[box2d,classic-control,other]>=1.0,<2"
+    - pyvirtualdisplay>=3,<4
