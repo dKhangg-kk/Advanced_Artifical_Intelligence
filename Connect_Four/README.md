@@ -156,12 +156,12 @@ Connect_Four/
 ├── tests/                    # Test khung, kế hoạch test và bộ vị trí kiểm thử
 ├── notebooks/                # Phân tích, biểu đồ và notebook huấn luyện
 ├── data/                     # raw/ (dữ liệu chuyên gia thô) và processed/ (train/val/test)
-├── checkpoints/              # level5_cnn/ và level6_dqn/ (trọng số không commit)
+├── checkpoints/              # Chỉ commit level5_cnn/final.pt và level6_dqn/final.pt
 ├── results/                  # logs/ (manifest, games, moves, train), tables/, figures/
 └── docs/                     # proposal/, ROADMAP, THIRD_PARTY, LOGGING, EXPERIMENT_LOG, report/, slides/, poster/
 ```
 
-Dữ liệu và checkpoint lớn cần có hướng dẫn tải hoặc tái tạo nếu không lưu trực tiếp trong Git. Mô tả dữ liệu, cấu hình, seed và cách chạy lại vẫn phải được cung cấp. Tệp `.gitignore` dùng chung nằm ở thư mục gốc repo; cần kiểm tra để không bỏ qua nhầm các log hoặc kết quả cần nộp.
+Dữ liệu và checkpoint lớn cần có hướng dẫn tải hoặc tái tạo nếu không lưu trực tiếp trong Git. Hai checkpoint cuối được phép commit theo [quy ước checkpoint](checkpoints/README.md); trọng số trung gian vẫn bị bỏ qua. Mô tả dữ liệu, cấu hình, seed và cách chạy lại vẫn phải được cung cấp. Quy tắc bỏ qua tệp nằm ở `.gitignore` gốc repo và `Connect_Four/.gitignore`; cần kiểm tra để không bỏ qua nhầm các log hoặc kết quả cần nộp.
 
 ## Hướng dẫn chạy
 

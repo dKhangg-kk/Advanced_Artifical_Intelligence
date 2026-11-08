@@ -58,13 +58,29 @@ Commit theo quy ước của học phần: `TuanXX/DuAn/Noi dung cong viec`.
 - [ ] **[L]** `ui/gui.py` — pygame, chọn tác tử, hiện thời gian mỗi nước
 - [ ] **[L]** `notebooks/01_tournament_analysis.ipynb` — dựng bảng/hình từ log thô
 - [ ] **[D]** Hoàn thiện `docs/EXPERIMENT_LOG.md` và `results/tables/report_numbers.csv`
-- [ ] **[D]** Báo cáo bám cấu trúc 7 mục của proposal (Tóm tắt + mục 1–7) trong `docs/report/`
+- [ ] **[D]** Báo cáo đủ 5 chương theo cấu trúc bên dưới trong `docs/report/`
 - [ ] **[D]** Slide `docs/slides/`, poster `docs/poster/`
 - [ ] **[D]** Đóng gói ZIP đúng quy định, kiểm tra chạy lại trên máy sạch
 
-## Việc nên làm ngay (tuần này)
+## Cấu trúc báo cáo 5 chương
 
-1. Commit khung này.
-2. Tạo 3 issue: Engine (M1), Heuristic + Alpha-Beta (M2), Giải đấu (M3).
-3. Mỗi thành viên nhận một issue, tạo nhánh `feat/engine-bitboard`, `feat/alphabeta`, ...
-4. Chốt lịch: ai làm engine xong trước thì người khác viết test song song.
+Theo phân công báo cáo trong các issue #30, #31, #35, #36, #40, #41, #45 và #46.
+Các tên tệp dưới đây tính từ `docs/report/`; tệp chưa có sẽ được bổ sung theo issue tương ứng.
+
+| Chương | Nội dung | Tệp theo phân công |
+| --- | --- | --- |
+| 1. Giới thiệu | Bối cảnh, luật Connect Four, mục tiêu, câu hỏi nghiên cứu, phạm vi và sản phẩm | `01_gioi_thieu.md` |
+| 2. Cơ sở lý thuyết | Tác tử trò chơi; Minimax, Alpha-Beta, MCTS/UCT; policy/value network, học có giám sát; RL, DQN và self-play | `02a_tim_kiem.md`, `02b_hoc_giam_sat.md`, `02c_hoc_tang_cuong.md` |
+| 3. Thiết kế và cài đặt | Biểu diễn game, state/action/reward; kiến trúc engine–agent–UI; thuật toán cấp 1–4; CNN cấp 5; DQN cấp 6 và thiết kế giải đấu | `03a_kien_truc.md`, `03b_thuat_toan.md`, `03c_cnn.md`, `03d_dqn_giai_dau.md` |
+| 4. Thực nghiệm và thảo luận | Môi trường, kết quả đối đầu, độ trễ và chi phí; đường cong học CNN/DQN; ablation A1–A5; ván minh họa, thất bại và hạn chế | `04a_ket_qua.md` đến `04h_thao_luan.md` |
+| 5. Kết luận và hướng phát triển | Trả lời câu hỏi nghiên cứu; thành tựu, hạn chế, khả năng tái lập và hướng mở rộng | `05_ket_luan.md` |
+
+Bìa và mục lục nằm trong `00_bia_muc_luc.md`. Tài liệu tham khảo, nguồn kế thừa và tỷ lệ đóng góp nằm trong `06_tai_lieu_dong_gop.md`; đây là phần cuối báo cáo, không phải Chương 6.
+
+Bản giữa kỳ gồm Chương 1–3; bản cuối kỳ đủ 5 chương. Số liệu phải dẫn về `results/tables/report_numbers.csv` và `run_id`; không ghi kết quả chưa chạy.
+
+## Phối hợp thực hiện
+
+1. Mỗi thành viên theo dõi issue đã được giao và làm trên nhánh riêng.
+2. Mở PR liên kết issue, cập nhật nhật ký đóng góp và kết quả kiểm tra.
+3. Có ít nhất một approve từ người review trước khi merge; thay đổi mã nguồn phải có test phù hợp và `pytest -q` xanh.
