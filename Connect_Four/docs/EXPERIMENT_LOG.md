@@ -56,7 +56,8 @@ Mỗi mục dùng mẫu sau:
 
 | run_id | Ngày | Loại | Mục tiêu | Trạng thái | Log thô |
 |---|---|---|---|---|---|
-| _(chưa có)_ | | | | | |
+| k1-heuristic-random-20261109T060914Z-s0 | 2026-11-09 | tournament | K1 Heuristic vs Random (pilot) | completed | `results/logs/games_k1-heuristic-random-20261109T060914Z-s0.csv` |
+| k1-heuristic-random-20261109T061032Z-s0 | 2026-11-09 | tournament | K1 Heuristic vs Random (bản đã commit) | completed | `results/logs/games_k1-heuristic-random-20261109T061032Z-s0.csv` |
 
 ## Mục chi tiết
 
@@ -99,3 +100,41 @@ Mỗi mục dùng mẫu sau:
 - **Nhận xét:** ví dụ minh hoạ cách ghi, không dùng làm kết quả báo cáo.
 - **Việc tiếp theo:** chạy thêm seed 42 và 2026 để kiểm tra độ ổn định.
 ```
+
+## k1-heuristic-random-20261109T060914Z-s0 — K1 Heuristic vs Random (pilot)
+
+- **Ngày:** 09/11/2026 (giờ Việt Nam).
+- **Thực hiện:** Codex chạy trên máy của Phạm Thái Duy Khang / 3124720033.
+- **Loại/mục tiêu:** tournament; kiểm tra điều kiện Issue #12, thắng Random ít nhất 190/200 ván.
+- **Config:** `configs/k1_random_heuristic.json` (hash `b702f737ddf17e96`).
+- **Commit:** `431ca16` + thay đổi chưa commit lúc chạy; chỉ là pilot, không tái tạo được từ commit nền. Dùng lần chạy kế tiếp để kiểm chứng.
+- **Lệnh chạy:** `PYTHONPATH=src python scripts/evaluate_k1.py` từ `Connect_Four/`; dùng Python trong môi trường riêng có NumPy/pytest.
+- **Seed:** khai cuộc = 0, Heuristic = 0, Random = 1; không đổi seed để chọn kết quả tốt.
+- **Thiết kế:** 100 khai cuộc ngẫu nhiên khác nhau, mỗi khai cuộc 4 nước; đấu hai lần đổi bên, tổng 200 ván và 100 ván mỗi bên đi trước. Agent giữ chuỗi RNG qua các ván, không reseed sau mỗi ván.
+- **Môi trường:** Python 3.13.7, NumPy 2.5.4, CPU `arm`, Darwin 25.6.0; không dùng GPU; RAM không được thu thập vì môi trường tối thiểu không cài psutil.
+- **Thời gian (UTC):** 2026-11-09T06:09:14+00:00 → 2026-11-09T06:09:15+00:00.
+- **Trạng thái:** completed.
+- **Log thô:** `results/logs/games_k1-heuristic-random-20261109T060914Z-s0.csv`, `results/logs/moves_k1-heuristic-random-20261109T060914Z-s0.csv`; thông tin lần chạy trong `results/logs/run_manifest.csv`.
+- **Bảng:** `results/tables/k1-heuristic-random-20261109T060914Z-s0.csv`.
+- **Kết quả:** thắng 198, hòa 0, thua 2; tỷ lệ thắng 99% (chỉ tính thắng, không cộng ván hòa).
+- **Kiểm chứng:** phát lại toàn bộ chuỗi nước, kiểm tra ván kết thúc và người thắng trước khi lưu log.
+- **Giới hạn:** một bộ seed cố định; không khẳng định đạt 99% ở mọi khai cuộc/seed hoặc trước các tác tử mạnh hơn. Chưa đánh giá Alpha-Beta/MCTS.
+
+## k1-heuristic-random-20261109T061032Z-s0 — K1 Heuristic vs Random
+
+- **Ngày:** 09/11/2026 (giờ Việt Nam).
+- **Thực hiện:** Codex chạy trên máy của Phạm Thái Duy Khang / 3124720033.
+- **Loại/mục tiêu:** tournament; kiểm tra điều kiện Issue #12, thắng Random ít nhất 190/200 ván.
+- **Config:** `configs/k1_random_heuristic.json` (hash `b702f737ddf17e96`).
+- **Commit:** `1c22a73` (mã và test đã commit trước khi chạy).
+- **Lệnh chạy:** `PYTHONPATH=src python scripts/evaluate_k1.py` từ `Connect_Four/`; dùng Python trong môi trường riêng có NumPy/pytest.
+- **Seed:** khai cuộc = 0, Heuristic = 0, Random = 1; không đổi seed để chọn kết quả tốt.
+- **Thiết kế:** 100 khai cuộc ngẫu nhiên khác nhau, mỗi khai cuộc 4 nước; đấu hai lần đổi bên, tổng 200 ván và 100 ván mỗi bên đi trước. Agent giữ chuỗi RNG qua các ván, không reseed sau mỗi ván.
+- **Môi trường:** Python 3.13.7, NumPy 2.5.4, CPU `arm`, Darwin 25.6.0; không dùng GPU; RAM không được thu thập vì môi trường tối thiểu không cài psutil.
+- **Thời gian (UTC):** 2026-11-09T06:10:32+00:00 → 2026-11-09T06:10:32+00:00.
+- **Trạng thái:** completed.
+- **Log thô:** `results/logs/games_k1-heuristic-random-20261109T061032Z-s0.csv`, `results/logs/moves_k1-heuristic-random-20261109T061032Z-s0.csv`; thông tin lần chạy trong `results/logs/run_manifest.csv`.
+- **Bảng:** `results/tables/k1-heuristic-random-20261109T061032Z-s0.csv`.
+- **Kết quả:** thắng 198, hòa 0, thua 2; tỷ lệ thắng 99% (chỉ tính thắng, không cộng ván hòa).
+- **Kiểm chứng:** phát lại toàn bộ chuỗi nước, kiểm tra ván kết thúc và người thắng trước khi lưu log.
+- **Giới hạn:** một bộ seed cố định; không khẳng định đạt 99% ở mọi khai cuộc/seed hoặc trước các tác tử mạnh hơn. Chưa đánh giá Alpha-Beta/MCTS.
