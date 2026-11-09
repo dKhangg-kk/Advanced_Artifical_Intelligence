@@ -1,0 +1,21 @@
+{
+  "match": {
+    "games_per_pair": 200,
+    "openings": 100,
+    "opening_plies": 4,
+    "seed": 0
+  },
+  "heuristic": {
+    "seed": 0,
+    "weights": {
+      "win": 10000.0,
+      "block": 9000.0,
+      "avoid_opponent_win": 5000.0,
+      "own_three": 100.0,
+      "own_two": 10.0,
+      "opponent_three": 80.0,
+      "center_bonus": 6.0
+    }
+  },
+  "random": {"seed": 1}
+}
