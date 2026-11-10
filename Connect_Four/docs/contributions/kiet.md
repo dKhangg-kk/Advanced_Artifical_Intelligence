@@ -15,7 +15,7 @@ Issue #44 giao nhật ký đóng góp này. Chưa có tệp mã nguồn M5 nào 
 | 08/11/2026 | Xác minh lịch sử tài khoản: commit đầu tiên trong ngày là `e7cdfa0`, nhưng thay đổi thuộc Tuan01/Lab00, không thuộc dự án Connect Four nên không tính là đóng góp cho đồ án. | [Commit `e7cdfa0`](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/commit/e7cdfa0) | Chưa ghi nhận; không tính giờ đồ án từ commit ngoài phạm vi |
 | 09/11/2026 | Chưa xác minh được hoạt động Connect Four của tôi trong lịch sử Git/PR đã kiểm tra. | Chưa có dẫn chứng | Chưa ghi nhận |
 | 10/11/2026 | Chưa xác minh được hoạt động Connect Four của tôi trong lịch sử Git/PR đã kiểm tra. | Chưa có dẫn chứng | Chưa ghi nhận |
-| 11/11/2026 | Đối chiếu Issue #44, thông tin thành viên và lộ trình; lập nhật ký này. Cập nhật lần sau bằng công việc thực tế, dẫn chứng và thời lượng do tôi xác nhận. | Issue #44; bổ sung commit/PR khi có | Chưa ghi nhận; cần tác giả xác nhận |
+| 11/11/2026 | Đối chiếu Issue #44, thông tin thành viên và lộ trình; lập nhật ký này. Cập nhật lần sau bằng công việc thực tế, dẫn chứng và thời lượng do tôi xác nhận. | Issue #44; commit `49d129f` (nhánh local, chưa có PR) | Chưa ghi nhận; cần tác giả xác nhận |
 
 Không thể dùng commit ngày 08/11 nói trên làm căn cứ cho một commit Connect Four trong ngày đó. Không hồi tố ngày commit, không suy ra số giờ từ timestamp hoặc thời gian chạy công cụ. Tiếp tục bổ sung từng ngày đến 21/11/2026; ngày không làm việc cần ghi rõ, và giờ cần dựa trên thời gian thực tế.
 
