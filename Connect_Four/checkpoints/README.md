@@ -1,7 +1,10 @@
 # Checkpoints
 
-File trọng số (`.pt`, `.pth`, `.pkl`) **không** được commit (xem `.gitignore`).
-Chỉ commit file mô tả này và log huấn luyện dạng text/CSV.
+Chỉ commit hai checkpoint cuối đã chọn: `level5_cnn/final.pt` và
+`level6_dqn/final.pt`, kèm metadata `.json` cùng tên và log huấn luyện.
+Các trọng số trung gian (`.pt`, `.pth`, `.pkl`) vẫn bị bỏ qua (xem `.gitignore`).
+Sao chép checkpoint được chọn sang tên `final.pt` sau khi đánh giá;
+không đổi tên các checkpoint trung gian đang dùng cho thực nghiệm.
 
 ## Cấu trúc thư mục
 
