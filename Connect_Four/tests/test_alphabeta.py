@@ -1,5 +1,8 @@
 """Negamax, cat tia va hop dong khong sua ban co."""
 
+from itertools import count
+from time import perf_counter
+
 import pytest
 
 from connect_four.agents.alphabeta import AlphaBetaAgent
@@ -71,6 +74,21 @@ def test_depth_one_takes_immediate_win(game):
     assert AlphaBetaAgent(depth=1).choose(game) == 0
 
 
+@pytest.mark.parametrize("ordering, expected", [(False, 0), (True, 3)])
+def test_ordering_changes_tie_break_only(game, ordering, expected):
+    agent = AlphaBetaAgent(depth=1, use_ordering=ordering)
+    agent._heuristic.weights = dict.fromkeys(agent._heuristic.weights, 0.0)
+    assert agent.choose(game) == expected
+    assert agent.last_stats.extra["eval_score"] == 0
+
+
+def test_budget_depth_overrides_default_and_counts_all_nodes(game):
+    agent = AlphaBetaAgent(budget=Budget(depth=2), depth=1, use_pruning=False)
+    agent.choose(game)
+    assert agent.last_stats.depth_reached == 2
+    assert agent.last_stats.nodes == 1 + 7 + 7 * 7
+
+
 def test_full_column_budget_and_stats_reset(game):
     for move in [3] * 6:
         game.step(move)
@@ -112,7 +130,74 @@ def test_draw(game):
         agent.choose(game)
 
 
-@pytest.mark.parametrize("depth", [0, -1])
+@pytest.mark.parametrize("depth", [0, -1, 1.5, True])
 def test_rejects_nonpositive_search_depth(depth):
     with pytest.raises(ValueError):
         AlphaBetaAgent(depth=depth)
+
+
+@pytest.mark.parametrize("budget", [Budget(depth=0), Budget(depth=1.5),
+                                   Budget(simulations=10), Budget(time_s=-1),
+                                   Budget(time_s=float("nan")), Budget(time_s=float("inf"))])
+def test_rejects_invalid_budgets(budget):
+    with pytest.raises(ValueError):
+        AlphaBetaAgent(budget=budget)
+
+
+def test_zero_time_returns_fallback_and_resets_stats(game):
+    agent = AlphaBetaAgent(budget=Budget(time_s=0))
+    agent.last_stats.nodes = 100
+    agent.last_stats.extra["eval_score"] = 123
+    before = snapshot(game)
+    assert agent.choose(game) in game.legal_actions()
+    assert snapshot(game) == before
+    assert agent.last_stats.nodes == agent.last_stats.depth_reached == 0
+    assert agent.last_stats.extra == {}
+    assert agent._deadline is None
+    assert agent.negamax(game, 0, -float("inf"), float("inf")) == 0
+
+
+@pytest.mark.parametrize("pruning", [False, True])
+@pytest.mark.parametrize("ordering", [False, True])
+def test_timeout_keeps_completed_iteration(game, monkeypatch, pruning, ordering):
+    ticks = count()
+    monkeypatch.setattr("connect_four.agents.alphabeta.perf_counter",
+                        lambda: next(ticks) * 0.001)
+    agent = AlphaBetaAgent(budget=Budget(time_s=0.04),
+                          use_pruning=pruning, use_ordering=ordering)
+    before = snapshot(game)
+    action = agent.choose(game)
+    assert agent.last_stats.depth_reached == 1
+    reference = AlphaBetaAgent(depth=1, use_pruning=pruning, use_ordering=ordering)
+    assert action == reference.choose(game)
+    assert agent.last_stats.extra == reference.last_stats.extra
+    assert agent.last_stats.nodes > reference.last_stats.nodes
+    assert snapshot(game) == before
+    assert agent._deadline is None
+    agent.reset()
+    assert agent.last_stats.nodes == agent.last_stats.depth_reached == 0
+    assert agent.last_stats.extra == {}
+
+
+def test_timed_search_is_not_capped_by_default_depth(game, monkeypatch):
+    moves = [4, 3, 2, 1, 2, 2, 3, 3, 5, 6, 3, 1, 1, 3, 4, 2, 1, 1, 6, 1, 6,
+             0, 3, 4, 2, 2, 0, 0, 0, 0, 4, 6, 6, 4, 0, 5, 6, 4, 5, 5]
+    for move in moves:
+        game.step(move)
+    monkeypatch.setattr("connect_four.agents.alphabeta.perf_counter", lambda: 0.0)
+    agent = AlphaBetaAgent(budget=Budget(time_s=1), depth=1)
+    before = snapshot(game)
+    assert agent.choose(game) in game.legal_actions()
+    assert agent.last_stats.depth_reached == 2
+    assert agent.last_stats.extra["eval_score"] == 0
+    assert snapshot(game) == before
+
+
+def test_real_time_budget_returns_promptly(game):
+    agent = AlphaBetaAgent(budget=Budget(time_s=0.01))
+    before = snapshot(game)
+    start = perf_counter()
+    assert agent.choose(game) in game.legal_actions()
+    assert perf_counter() - start < 1.0
+    assert snapshot(game) == before
+    assert agent.last_stats.time_ms >= 0
