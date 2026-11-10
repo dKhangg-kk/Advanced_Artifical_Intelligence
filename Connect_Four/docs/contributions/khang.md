@@ -32,7 +32,7 @@
 
 | Ngày | Việc | Dẫn chứng | Giờ |
 | --- | --- | --- | --- |
-| 11/11/2026 | Hoàn thiện MCTS-UCT từ khung, thêm hai loại ngân sách, kiểm thử và đánh giá 200 ván | [Issue #14](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/issues/14), commit `4dbe441`, [log kiểm thử](../../results/logs/k3_pytest_20261111.txt), run `k3-mcts-random-20261110T181313Z-s0` | Chưa ghi nhận |
+| 11/11/2026 | Hoàn thiện MCTS-UCT từ khung, thêm hai loại ngân sách, kiểm thử và đánh giá 200 ván | [Issue #14](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/issues/14), [PR #63](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/pull/63), commit `4dbe441`, [log kiểm thử](../../results/logs/k3_pytest_20261111.txt), run `k3-mcts-random-20261110T181313Z-s0` | Chưa ghi nhận |
 
 - **Mã đã thay đổi:** `src/connect_four/agents/mcts.py`: thay `NotImplementedError`
   bằng selection UCT, expansion một con, rollout random và backpropagation đổi
