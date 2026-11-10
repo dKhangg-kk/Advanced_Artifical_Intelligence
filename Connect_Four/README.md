@@ -6,6 +6,8 @@
 
 **Trạng thái: Đang phát triển.**
 
+Alpha-Beta K2: xem [cách hoạt động, ngân sách và kiểm thử](docs/ALPHABETA.md).
+
 ## Mục lục
 
 - [Mục tiêu](#mục-tiêu)
