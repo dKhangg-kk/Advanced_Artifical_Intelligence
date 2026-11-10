@@ -21,7 +21,7 @@ Commit theo quy ước của học phần: `TuanXX/DuAn/Noi dung cong viec`.
 - [x] **[L]** `agents/random_agent.py` — cấp 1, có test hành động hợp lệ và seed
 - [x] **[L]** `agents/heuristic.py` — cấp 2, thắng > chặn > an toàn > điểm; có test trên hai engine
 - [x] **[L]** `agents/alphabeta.py` — cấp 3, negamax + cắt tỉa/sắp xếp bật tắt, đếm nút, ngân sách độ sâu/thời gian; có test trên hai engine (K2, chờ review PR)
-- [ ] **[L]** `agents/mcts.py` — cấp 4, UCT + ngân sách mô phỏng
+- [x] **[L]** `agents/mcts.py` — cấp 4, đủ bốn bước UCT, Budget(simulations/time_s), test hai engine; K3 chờ review PR
 - [ ] **[L]** `evaluation/metrics.py` — Wilson, bootstrap, p95
 - [ ] **[L]** `evaluation/runlog.py` + `evaluation/match.py` + `evaluation/cli.py` — `run_id`, manifest, chạy trận, ghi CSV ván/nước
 - [ ] **[L]** `play.py` — chơi terminal
@@ -32,7 +32,8 @@ K1: Heuristic thắng Random 198/200 ván (99%), seed khai cuộc/Heuristic = 0,
 Random = 1; 100 khai cuộc, đổi bên theo cặp. Xem lần chạy
 `k1-heuristic-random-20261109T061032Z-s0` trong [nhật ký thực nghiệm](EXPERIMENT_LOG.md).
 K2: đã có code/test Alpha-Beta, chờ review PR; xem [hướng dẫn K2](ALPHABETA.md).
-Mốc M2 còn MCTS và đánh giá tương ứng, cùng bước review/bàn giao K2.
+K3: MCTS thắng Random 199/200 ván (99,5%) ở 500 mô phỏng/nước; xem
+[hướng dẫn K3](MCTS.md) và nhật ký thực nghiệm. Chờ review/approve trước khi merge.
 
 ## Mốc M3 — Giải đấu và ablation
 

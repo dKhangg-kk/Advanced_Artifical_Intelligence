@@ -138,3 +138,30 @@ Mỗi mục dùng mẫu sau:
 - **Kết quả:** thắng 198, hòa 0, thua 2; tỷ lệ thắng 99% (chỉ tính thắng, không cộng ván hòa).
 - **Kiểm chứng:** phát lại toàn bộ chuỗi nước, kiểm tra ván kết thúc và người thắng trước khi lưu log.
 - **Giới hạn:** một bộ seed cố định; không khẳng định đạt 99% ở mọi khai cuộc/seed hoặc trước các tác tử mạnh hơn. Chưa đánh giá Alpha-Beta/MCTS.
+
+## K3 — MCTS-UCT, issue #14 (11/11/2026, giờ Việt Nam)
+
+- **Mục tiêu:** MCTS thắng Random ít nhất 95% ở 500 mô phỏng/nước.
+- **Mã nguồn:** commit `4dbe441`, nhánh `feat/issue-14-mcts-uct`.
+- **Lệnh:** `PYTHONPATH=src python scripts/evaluate_k3.py` trong `Connect_Four`.
+- **Cấu hình:** [`configs/k3_random_mcts.json`](../configs/k3_random_mcts.json);
+  200 ván, 100 khai cuộc khác nhau dài 4 nước, đổi bên từng cặp;
+  seed khai cuộc/MCTS = 0, Random = 1, `c=1.414`, rollout random.
+- **Run chính thức:** `k3-mcts-random-20261110T181313Z-s0`, thực hiện sau khi commit mã nguồn.
+- **Kết quả:** **199 thắng, 0 hòa, 1 thua — 99,5%**, vượt ngưỡng 190/200.
+- **Log thô:** [ván](../results/logs/games_k3-mcts-random-20261110T181313Z-s0.csv),
+  [nước](../results/logs/moves_k3-mcts-random-20261110T181313Z-s0.csv),
+  [bảng tổng hợp](../results/tables/k3-mcts-random-20261110T181313Z-s0.csv),
+  [manifest và môi trường](../results/logs/run_manifest.csv).
+- **Kiểm tra:** script phát lại toàn bộ 200 ván, đối chiếu bên thắng và số ván
+  đi trước/đi sau; log MCTS ghi đúng 500 mô phỏng cho mỗi nước.
+  Toàn bộ kiểm thử: **218 passed in 22.80s**, gồm 38 test K3;
+  [log kiểm thử](../results/logs/k3_pytest_20261111.txt).
+- **Lần thử trước commit:** `k3-mcts-random-20261110T181053Z-s0` cũng đạt
+  199/200; giữ nguyên log và ghi rõ trong manifest rằng `9e03821` chưa chứa
+  thay đổi lúc chạy. Dùng run chính thức ở trên để tái lập.
+- **Giới hạn:** một bộ seed và cấu hình cố định, không bảo đảm tỷ lệ này với
+  mọi khai cuộc/seed hoặc đối thủ mạnh hơn. Chưa chạy ablation A2/giải đấu M3.
+  `run_id` và manifest dùng UTC; 18:13 ngày 10/11 UTC là 01:13 ngày 11/11 tại Việt Nam.
+- **Giải thích thuật toán/công cụ:** [hướng dẫn MCTS](MCTS.md),
+  [nhật ký đóng góp](contributions/khang.md). Chờ review trước khi merge.

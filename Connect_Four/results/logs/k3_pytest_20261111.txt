@@ -1,0 +1,8 @@
+K3 / issue #14 — local verification
+Working directory: Connect_Four
+Implementation commit: 4dbe441
+Python: 3.13.7
+Command: python -m pytest -o addopts= -q
+Result captured from completed test process:
+218 passed in 22.80s
+38 tests in tests/test_mcts.py; 180 pre-existing tests.

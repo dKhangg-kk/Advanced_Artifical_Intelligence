@@ -27,3 +27,38 @@
 - Giới hạn: thời gian là hạn kiểm tra giữa các thao tác; độ sâu 1 không bảo đảm chặn đối thủ ở lượt sau. Chưa chạy giải đấu/ablation M3 và không đưa ra kết luận tỷ lệ thắng hoặc tốc độ.
 - Công cụ: Codex/Ponytail hỗ trợ hoàn thiện. Thời gian cá nhân và khả năng tự giải thích do tác giả xác nhận, chưa ghi nhận thay.
 - Trạng thái: đã có code/test và bằng chứng, chờ Đức review/approve trước khi merge. Chưa đánh dấu issue đã hoàn tất bàn giao.
+
+## Nhật ký K3
+
+| Ngày | Việc | Dẫn chứng | Giờ |
+| --- | --- | --- | --- |
+| 11/11/2026 | Hoàn thiện MCTS-UCT từ khung, thêm hai loại ngân sách, kiểm thử và đánh giá 200 ván | [Issue #14](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/issues/14), commit `4dbe441`, [log kiểm thử](../../results/logs/k3_pytest_20261111.txt), run `k3-mcts-random-20261110T181313Z-s0` | Chưa ghi nhận |
+
+- **Mã đã thay đổi:** `src/connect_four/agents/mcts.py`: thay `NotImplementedError`
+  bằng selection UCT, expansion một con, rollout random và backpropagation đổi
+  góc nhìn; chọn con được thăm nhiều nhất; kiểm tra ngân sách và hệ số UCT;
+  xử lý 0 mô phỏng/0 giây, hết giờ và ván kết thúc; cập nhật `last_stats`.
+- **Kiểm thử mới:** `tests/test_mcts.py`, 38 test cho hai engine, cây bẫy đối
+  thủ, seed, giữ bàn gốc/lịch sử undo, thống kê, ngân sách sai và timeout.
+- **Thực nghiệm mới:** `scripts/evaluate_k3.py`, `configs/k3_random_mcts.json`,
+  CSV ván/nước, bảng tổng hợp và manifest. Tái sử dụng mẫu K1 và hệ thống
+  `play_match`/`save_run`; không sửa engine hoặc các tác tử khác.
+- **Tài liệu:** thêm [hướng dẫn MCTS](../MCTS.md); cập nhật README, kế hoạch
+  kiểm thử, ROADMAP và [nhật ký thực nghiệm](../EXPERIMENT_LOG.md).
+- **Kết quả:** toàn bộ 218 test đạt; MCTS thắng 199, hòa 0, thua 1 trên 200 ván,
+  500 mô phỏng/nước. Một cấu hình/seed cố định, chưa khẳng định cho mọi trường hợp.
+
+### Công cụ và nguồn đã dùng trong K3
+
+- **Codex hỗ trợ hoàn thiện:** đọc issue và mã hiện tại; viết vòng lặp MCTS-UCT
+  từ khung có sẵn; bổ sung kiểm tra đầu vào/ngân sách và thống kê; viết test,
+  script/cấu hình đánh giá; chạy kiểm thử và 200 ván, đọc và đối chiếu log;
+  soạn hướng dẫn, cập nhật nhật ký, chuẩn bị commit và PR.
+- **Phần kế thừa của nhóm:** `MCTSNode`, hợp đồng `Agent/Budget/SearchStats`,
+  API clone/step/result của hai engine, registry MCTS, Random, mô hình script
+  K1, `play_match`, `save_run`, manifest và quy ước CSV. Không thêm thư viện.
+- **Phần tác giả cần tự xác nhận:** đọc hiểu, chạy lại và giải thích góc nhìn
+  điểm, UCT ở tầng đối thủ, chọn theo visits, ngắt rollout, thiết kế đổi bên.
+  Chưa ghi nhận thời gian cá nhân hoặc khẳng định tác giả tự viết thủ công
+  những phần Codex đã tạo. Không suy thời gian đóng góp từ thời gian máy chạy.
+- **Bàn giao:** chờ Đức review/approve trước khi merge; chưa tự merge hoặc đóng issue.
