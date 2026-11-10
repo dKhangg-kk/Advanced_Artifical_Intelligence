@@ -42,7 +42,7 @@ Các chủ đề của các lab đã thực hiện:
 | Lab 04 | Constraint Satisfaction Problems | Tô màu đồ thị và bài toán thỏa mãn ràng buộc. |
 | Lab 05 | Adversarial Search and Games | Tic-Tac-Toe (AND-OR, Alpha-Beta, heuristic, Monte Carlo, MCTS), Connect 4, "Mean" Connect 4 và Dots and Boxes. |
 
-Bài làm, phạm vi đã thực hiện và kết quả của từng lab được ghi trong README của tuần tương ứng. Riêng Lab 05 nằm trong thư mục [`lab05 - game/`](<lab05 - game/README.md>), kèm [hướng dẫn chạy và tái lập kết quả](<lab05 - game/HUONG_DAN_CHAY.md>).
+Bài làm, phạm vi đã thực hiện và kết quả của từng lab được ghi trong README của tuần tương ứng. Riêng Lab 05 nằm trong thư mục [`Tuan05/`](<Tuan05/README.md>), kèm [hướng dẫn chạy và tái lập kết quả](<Tuan05/HUONG_DAN_CHAY.md>).
 
 ## Cấu trúc repo
 
@@ -58,7 +58,7 @@ Quy ước tổ chức dùng chung cho cả nhóm; các thư mục tuần đư�
 ├── Tuan02/
 ├── Tuan03/
 ├── Tuan04/
-├── lab05 - game/                   # Lab 05: Tìm kiếm đối kháng và trò chơi
+├── Tuan05/                   # Lab 05: Tìm kiếm đối kháng và trò chơi
 │   ├── README.md                   # Danh mục notebook của giảng viên
 │   ├── HUONG_DAN_CHAY.md           # Hướng dẫn chạy và tái lập kết quả
 │   └── ...                         # Notebook bài tập và kết quả đã chạy

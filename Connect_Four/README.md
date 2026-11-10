@@ -6,6 +6,8 @@
 
 **Trạng thái: Đang phát triển.**
 
+Alpha-Beta K2: xem [cách hoạt động, ngân sách và kiểm thử](docs/ALPHABETA.md).
+
 ## Mục lục
 
 - [Mục tiêu](#mục-tiêu)
@@ -156,16 +158,21 @@ Connect_Four/
 ├── tests/                    # Test khung, kế hoạch test và bộ vị trí kiểm thử
 ├── notebooks/                # Phân tích, biểu đồ và notebook huấn luyện
 ├── data/                     # raw/ (dữ liệu chuyên gia thô) và processed/ (train/val/test)
-├── checkpoints/              # level5_cnn/ và level6_dqn/ (trọng số không commit)
+├── checkpoints/              # Chỉ commit level5_cnn/final.pt và level6_dqn/final.pt
 ├── results/                  # logs/ (manifest, games, moves, train), tables/, figures/
 └── docs/                     # proposal/, ROADMAP, THIRD_PARTY, LOGGING, EXPERIMENT_LOG, report/, slides/, poster/
 ```
 
-Dữ liệu và checkpoint lớn cần có hướng dẫn tải hoặc tái tạo nếu không lưu trực tiếp trong Git. Mô tả dữ liệu, cấu hình, seed và cách chạy lại vẫn phải được cung cấp. Tệp `.gitignore` dùng chung nằm ở thư mục gốc repo; cần kiểm tra để không bỏ qua nhầm các log hoặc kết quả cần nộp.
+Dữ liệu và checkpoint lớn cần có hướng dẫn tải hoặc tái tạo nếu không lưu trực tiếp trong Git. Hai checkpoint cuối được phép commit theo [quy ước checkpoint](checkpoints/README.md); trọng số trung gian vẫn bị bỏ qua. Mô tả dữ liệu, cấu hình, seed và cách chạy lại vẫn phải được cung cấp. Quy tắc bỏ qua tệp nằm ở `.gitignore` gốc repo và `Connect_Four/.gitignore`; cần kiểm tra để không bỏ qua nhầm các log hoặc kết quả cần nộp.
 
 ## Hướng dẫn chạy
 
-**Trạng thái:** đã có khung gói Python, hợp đồng API engine, giao diện sáu tác tử, cấu hình giải đấu/ablation và bộ test khung. **Thuật toán chưa được cài đặt** — các phương thức đang `raise NotImplementedError` và được điền theo thứ tự trong [lộ trình](docs/ROADMAP.md).
+**Trạng thái:** đã có engine bitboard và bản tham chiếu, Random (cấp 1), Heuristic (cấp 2), bộ chạy trận và kiểm thử. Các tác tử cấp 3–6 còn phần chưa cài đặt; xem [lộ trình](docs/ROADMAP.md).
+
+Đánh giá K1 không cần CLI giải đấu: chạy `PYTHONPATH=src python scripts/evaluate_k1.py`
+từ thư mục `Connect_Four/`. Cấu hình cố định trong `configs/k1_random_heuristic.json`;
+200 ván dùng 100 khai cuộc và đổi bên theo cặp. Heuristic thắng 198/200 ván (99%)
+ở seed khai cuộc/Heuristic = 0, Random = 1; xem [log và điều kiện chạy](docs/EXPERIMENT_LOG.md).
 
 ### Cài đặt
 

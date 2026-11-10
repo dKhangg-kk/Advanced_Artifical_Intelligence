@@ -1,101 +1,108 @@
-"""Cap 6 - Huan luyen bang Deep Q-Network (DQN).
+"""Thanh phan co ban cho huan luyen Deep Q-Network (DQN), cap 6.
 
-Thiet ke chi tiet theo Proposal:
-    - Moi episode = mot van dau tuong tac giua DQN va doi thu (Self-play hoac
-      doi thu Random, Heuristic, Alpha-Beta).
-    - Phan thuong (Reward): xac dinh cuoi van theo goc nhin cua DQN:
-      thang +1.0, hoa 0.0, thua -1.0 (co the dinh hinh phan thuong buoc di hop le nhe neu can).
-    - Replay Buffer: luu tru transition (s, a, r, s', done), kich thuoc toi da 100.000.
-    - Target Network: duoc dong bang va dong bo dinh ky voi Policy Network moi C buoc
-      (vi du: moi 500 buoc hoac moi 50 episodes).
-    - Kham pha: Epsilon-Greedy bat dau tu 1.0, giam dan theo he so decay ve 0.05.
-    - Danh gia va luu checkpoint: tai cac moc dinh ky (1.000, 2.500, 5.000, 10.000 episodes)
-      tren tap cac van dau doc lap voi seed co dinh.
-
-Trang thai cai dat:
-    - [Y1] ReplayBuffer va lich epsilon (`epsilon_at`, `episodes_to_floor`): DA XONG.
-    - [Y3] Vong lap huan luyen `train_dqn`: CHUA LAM (con la khung).
-
-LUU Y: file nay chi dung numpy o muc module; torch (neu can) phai import ben trong
-ham de `import connect_four` va `pytest` van chay duoc khi may chua cai torch.
+Y1 cung cap ReplayBuffer va EpsilonSchedule khong phu thuoc PyTorch. Vong lap
+huan luyen day du (tuong tac game, Bellman update, Target Network, checkpoint)
+se duoc trien khai o buoc Y3.
 """
 
 from __future__ import annotations
 
+from collections import deque
+from dataclasses import dataclass
 import math
-import operator
 from pathlib import Path
-from typing import NamedTuple
+import random
+from typing import Deque
 
 import numpy as np
 
 from connect_four.game.constants import COLS, ROWS
 
-# Gia tri mac dinh theo Proposal (train_dqn ben duoi dung cung cac so nay).
-BUFFER_SIZE = 100_000   # suc chua toi da cua Replay Buffer
-EPSILON_START = 1.0     # epsilon ban dau: kham pha hoan toan
-EPSILON_MIN = 0.05      # san epsilon: luon giu lai 5% kham pha
-EPSILON_DECAY = 0.9995  # he so nhan epsilon sau MOI EPISODE
 
-STATE_SHAPE = (2, ROWS, COLS)  # (quan nguoi dang di, quan doi thu) x hang x cot
+@dataclass(frozen=True)
+class DQNTransition:
+    """Mot mau trai nghiem va mat na hanh dong hop le cua trang thai ke tiep."""
+
+    state: np.ndarray
+    action: int
+    reward: float
+    next_state: np.ndarray
+    done: bool
+    next_legal_mask: np.ndarray
 
 
-# ---------------------------------------------------------------------------
-# Replay Buffer
-# ---------------------------------------------------------------------------
-class Batch(NamedTuple):
-    """Mot lo transition lay mau tu buffer (B = batch_size).
+def _copy_state(value: np.ndarray, field_name: str) -> np.ndarray:
+    """Kiem tra va sao chep state theo quy uoc (2, 6, 7)."""
+    state = np.asarray(value, dtype=np.float32)
+    expected_shape = (2, ROWS, COLS)
+    if state.shape != expected_shape:
+        raise ValueError(f"{field_name} phai co shape {expected_shape}, nhan duoc {state.shape}.")
+    if not np.isfinite(state).all():
+        raise ValueError(f"{field_name} chi duoc chua gia tri huu han.")
+    return state.copy()
 
-    Cac mang deu la numpy, torch chi duoc dung sau khi train_dqn doi sang tensor.
-    """
 
-    states: np.ndarray       # (B, 2, 6, 7) float32 - trang thai s
-    actions: np.ndarray      # (B,) int64 - cot da tha, 0..6
-    rewards: np.ndarray      # (B,) float32 - phan thuong r
-    next_states: np.ndarray  # (B, 2, 6, 7) float32 - trang thai s' (sau luot doi thu)
-    dones: np.ndarray        # (B,) float32 - 1.0 neu van ket thuc, nguoc lai 0.0
-    next_masks: np.ndarray   # (B, 7) bool - cot hop le cua ban co s' (True = duoc di)
+def _copy_legal_mask(value: np.ndarray, done: bool) -> np.ndarray:
+    """Kiem tra mask 7 cot; trang thai terminal co the khong con cot hop le."""
+    mask = np.asarray(value, dtype=np.bool_)
+    if mask.shape != (COLS,):
+        raise ValueError(f"next_legal_mask phai co shape ({COLS},), nhan duoc {mask.shape}.")
+    if not done and not bool(mask.any()):
+        raise ValueError("Transition chua ket thuc phai co it nhat mot cot hop le o next_state.")
+    return mask.copy()
 
 
 class ReplayBuffer:
-    """Bo nho trai nghiem dang vong (ring buffer) cho DQN.
+    """Bo nho kinh nghiem DQN theo FIFO, mac dinh toi da 100.000 transition.
 
-    - Chua toi da `capacity` transition (mac dinh 100.000). Khi day, transition
-      moi se GHI DE transition CU NHAT.
-    - Moi transition luu them mat na cot hop le cua ban co ke tiep (`next_mask`)
-      de tinh max_{a' hop le} Q_target(s', a') trong muc tieu Bellman ma khong
-      phai dung lai engine luc huan luyen.
-    - `sample(n)` tra ve DUNG n transition khac nhau, chon deu ngau nhien.
-
-    Bo nho: moi transition khoang 700 byte -> 100.000 transition khoang 70 MB.
+    Khi day, transition moi se ghi de phan tu cu nhat. ``sample(batch_size)``
+    lay ngau nhien khong hoan lai va tra ve dung so mau duoc yeu cau.
     """
 
-    def __init__(self, capacity: int = BUFFER_SIZE, seed: int | None = None) -> None:
-        capacity = operator.index(capacity)
-        if capacity <= 0:
-            raise ValueError(f"capacity phai > 0, nhan duoc {capacity}.")
+    def __init__(self, capacity: int = 100_000, seed: int | None = None) -> None:
+        if isinstance(capacity, bool) or not isinstance(capacity, int) or capacity <= 0:
+            raise ValueError("capacity phai la so nguyen duong.")
         self.capacity = capacity
-        self._rng = np.random.default_rng(seed)
-
-        self._states = np.zeros((capacity, *STATE_SHAPE), dtype=np.float32)
-        self._actions = np.zeros(capacity, dtype=np.int64)
-        self._rewards = np.zeros(capacity, dtype=np.float32)
-        self._next_states = np.zeros((capacity, *STATE_SHAPE), dtype=np.float32)
-        self._dones = np.zeros(capacity, dtype=np.float32)
-        self._next_masks = np.zeros((capacity, COLS), dtype=bool)
-
-        self._write = 0  # o se duoc ghi o lan push tiep theo
-        self._size = 0   # so transition dang luu (<= capacity)
+        self._memory: Deque[DQNTransition] = deque(maxlen=capacity)
+        self._rng = random.Random(seed)
 
     def __len__(self) -> int:
-        return self._size
+        return len(self._memory)
 
-    def __repr__(self) -> str:
-        return f"ReplayBuffer(size={self._size}, capacity={self.capacity})"
+    def add(
+        self,
+        state: np.ndarray,
+        action: int,
+        reward: float,
+        next_state: np.ndarray,
+        done: bool,
+        next_legal_mask: np.ndarray,
+    ) -> None:
+        """Them mot transition; tu dong sao chep cac mang dau vao.
 
-    def can_sample(self, batch_size: int) -> bool:
-        """True neu da du transition de lay mau mot batch."""
-        return self._size >= batch_size
+        ``next_legal_mask`` la bool mask cua BAN KE TIEP, khong phai ban hien tai.
+        O trang thai ket thuc, mask co the gom toan False.
+        """
+        if isinstance(action, bool) or not isinstance(action, (int, np.integer)):
+            raise ValueError("action phai la so nguyen trong khoang 0..6.")
+        action = int(action)
+        if not 0 <= action < COLS:
+            raise ValueError("action phai nam trong khoang 0..6.")
+        if not isinstance(done, (bool, np.bool_)):
+            raise ValueError("done phai la gia tri bool.")
+        reward = float(reward)
+        if not math.isfinite(reward):
+            raise ValueError("reward phai la so huu han.")
+
+        transition = DQNTransition(
+            state=_copy_state(state, "state"),
+            action=action,
+            reward=reward,
+            next_state=_copy_state(next_state, "next_state"),
+            done=bool(done),
+            next_legal_mask=_copy_legal_mask(next_legal_mask, bool(done)),
+        )
+        self._memory.append(transition)
 
     def push(
         self,
@@ -104,153 +111,78 @@ class ReplayBuffer:
         reward: float,
         next_state: np.ndarray,
         done: bool,
-        next_mask: np.ndarray,
+        next_legal_mask: np.ndarray,
     ) -> None:
-        """Them mot transition (s, a, r, s', done, mat na cot hop le cua s').
+        """Alias thong dung cua ``add()``."""
+        self.add(state, action, reward, next_state, done, next_legal_mask)
 
-        Args:
-            state: mang (2, 6, 7), thuong la `game.to_array()` truoc khi di.
-            action: cot da tha (0..6).
-            reward: phan thuong nhan duoc (+1 thang, 0 hoa/chua xong, -1 thua).
-            next_state: mang (2, 6, 7) cua ban co khi DQN den luot di tiep
-                (tuc sau khi doi thu da dap tra). Khi done=True gia tri nay
-                khong duoc dung de tinh muc tieu.
-            done: True neu van ket thuc.
-            next_mask: mang bool do dai 7, True o cac cot con cho duoc cua
-                `next_state`. Tao bang `connect_four.agents.dqn.legal_mask`.
-
-        Raises:
-            ValueError: sai shape cua state/next_state/next_mask hoac action ngoai 0..6.
-        """
-        s = _as_state(state, "state")
-        s_next = _as_state(next_state, "next_state")
-        col = operator.index(action)
-        if not 0 <= col < COLS:
-            raise ValueError(f"action phai thuoc 0..{COLS - 1}, nhan duoc {col}.")
-        mask = _as_mask(next_mask)
-
-        i = self._write
-        self._states[i] = s
-        self._actions[i] = col
-        self._rewards[i] = reward
-        self._next_states[i] = s_next
-        self._dones[i] = 1.0 if done else 0.0
-        self._next_masks[i] = mask
-
-        self._write = (i + 1) % self.capacity  # het mang thi quay ve 0 -> ghi de cu nhat
-        self._size = min(self._size + 1, self.capacity)
-
-    def sample(self, batch_size: int) -> Batch:
-        """Lay DUNG `batch_size` transition khac nhau, chon deu ngau nhien.
-
-        Raises:
-            ValueError: batch_size <= 0, hoac buffer chua du transition
-                (kiem tra truoc bang `can_sample`).
-        """
-        batch_size = operator.index(batch_size)
-        if batch_size <= 0:
-            raise ValueError(f"batch_size phai > 0, nhan duoc {batch_size}.")
-        if batch_size > self._size:
+    def sample(self, batch_size: int) -> list[DQNTransition]:
+        """Lay ngau nhien batch khong lap; loi neu buffer chua du mau."""
+        if isinstance(batch_size, bool) or not isinstance(batch_size, int) or batch_size <= 0:
+            raise ValueError("batch_size phai la so nguyen duong.")
+        if batch_size > len(self._memory):
             raise ValueError(
-                f"Buffer moi co {self._size} transition, chua du de lay mau {batch_size}."
+                f"Khong du transition de lay batch: can {batch_size}, hien co {len(self._memory)}."
             )
-        # Chi so 0.._size-1 luon la o da ghi (ca khi buffer chua day lan khi da quay vong).
-        idx = self._rng.choice(self._size, size=batch_size, replace=False)
-        return Batch(
-            states=self._states[idx],
-            actions=self._actions[idx],
-            rewards=self._rewards[idx],
-            next_states=self._next_states[idx],
-            dones=self._dones[idx],
-            next_masks=self._next_masks[idx],
-        )
+        return self._rng.sample(list(self._memory), batch_size)
+
+    def clear(self) -> None:
+        """Xoa toan bo transition dang luu."""
+        self._memory.clear()
 
 
-def _as_state(value: np.ndarray, name: str) -> np.ndarray:
-    arr = np.asarray(value, dtype=np.float32)
-    if arr.shape != STATE_SHAPE:
-        raise ValueError(f"{name} phai co shape {STATE_SHAPE}, nhan duoc {arr.shape}.")
-    return arr
+@dataclass
+class EpsilonSchedule:
+    """Lich epsilon giam theo episode, co san toi thieu 0.05.
+
+    ``value`` ban dau bang ``start``; moi lan goi ``step()`` tuong ung ket thuc
+    mot episode va nhan epsilon voi ``decay`` truoc khi ap san ``minimum``.
+    """
+
+    start: float = 1.0
+    minimum: float = 0.05
+    decay: float = 0.9995
+    episode: int = 0
+
+    def __post_init__(self) -> None:
+        self.start = float(self.start)
+        self.minimum = float(self.minimum)
+        self.decay = float(self.decay)
+        if not (0.0 <= self.minimum <= self.start <= 1.0):
+            raise ValueError("Can thoa 0 <= minimum <= start <= 1.")
+        if not (0.0 < self.decay <= 1.0):
+            raise ValueError("decay phai nam trong khoang (0, 1].")
+        if isinstance(self.episode, bool) or not isinstance(self.episode, int) or self.episode < 0:
+            raise ValueError("episode phai la so nguyen khong am.")
+
+    @property
+    def value(self) -> float:
+        """Epsilon hien tai sau ``episode`` lan cap nhat."""
+        return max(self.minimum, self.start * (self.decay ** self.episode))
+
+    def step(self) -> float:
+        """Tien them mot episode va tra ve epsilon moi."""
+        self.episode += 1
+        return self.value
+
+    def reset(self) -> None:
+        """Dat lich ve episode 0 va epsilon ban dau."""
+        self.episode = 0
 
 
-def _as_mask(value: np.ndarray) -> np.ndarray:
-    arr = np.asarray(value)
-    if arr.shape != (COLS,):
-        raise ValueError(f"next_mask phai co shape ({COLS},), nhan duoc {arr.shape}.")
-    if arr.dtype != np.bool_:
-        # Chap nhan mang 0/1, nhung chan danh sach chi so cot nhu [0, 2, 3, ...].
-        if not np.isin(arr, (0, 1)).all():
-            raise ValueError(
-                "next_mask phai la mang bool (True = cot hop le); dung legal_mask(...)."
-            )
-        arr = arr.astype(bool)
-    return arr
-
-
-# ---------------------------------------------------------------------------
-# Lich epsilon (kham pha)
-# ---------------------------------------------------------------------------
-def epsilon_at(
+def epsilon_for_episode(
     episode: int,
-    start: float = EPSILON_START,
-    decay: float = EPSILON_DECAY,
-    floor: float = EPSILON_MIN,
+    start: float = 1.0,
+    minimum: float = 0.05,
+    decay: float = 0.9995,
 ) -> float:
-    """Epsilon cua episode thu `episode` (dem tu 0): max(floor, start * decay ** episode).
-
-    Giam theo TUNG EPISODE (khong phai tung buoc), bat dau tu `start` va khong
-    bao gio nho hon `floor`.
-
-    Raises:
-        ValueError: episode < 0, decay ngoai (0, 1], hoac khong thoa 0 <= floor <= start <= 1.
-    """
-    _check_schedule(start, decay, floor)
-    episode = operator.index(episode)
-    if episode < 0:
-        raise ValueError(f"episode phai >= 0, nhan duoc {episode}.")
-    return float(max(floor, start * decay**episode))
+    """Tinh epsilon truc tiep tai episode (episode 0 la gia tri start)."""
+    schedule = EpsilonSchedule(start=start, minimum=minimum, decay=decay)
+    if isinstance(episode, bool) or not isinstance(episode, int) or episode < 0:
+        raise ValueError("episode phai la so nguyen khong am.")
+    return max(schedule.minimum, schedule.start * (schedule.decay ** episode))
 
 
-def episodes_to_floor(
-    start: float = EPSILON_START,
-    decay: float = EPSILON_DECAY,
-    floor: float = EPSILON_MIN,
-) -> int | None:
-    """So episode nho nhat n de epsilon cham san, tuc epsilon_at(n) == floor.
-
-    Dung de chon decay: neu n lon hon so episode huan luyen thi epsilon chua ve
-    toi san (vi du decay=0.9998 chua cham san sau 10.000 episode).
-
-    Returns:
-        0 neu start == floor; None neu epsilon khong bao gio cham san
-        (decay == 1 hoac floor == 0); nguoc lai la so nguyen duong.
-    """
-    _check_schedule(start, decay, floor)
-    if start <= floor:
-        return 0
-    if decay >= 1.0 or floor <= 0.0:
-        return None
-    n = max(0, math.ceil(math.log(floor / start) / math.log(decay)))
-    # Log co the lech 1 do lam tron so thuc -> dieu chinh theo dung dinh nghia.
-    while start * decay**n > floor:
-        n += 1
-    while n > 0 and start * decay ** (n - 1) <= floor:
-        n -= 1
-    return n
-
-
-def _check_schedule(start: float, decay: float, floor: float) -> None:
-    if not 0.0 < decay <= 1.0:
-        raise ValueError(f"decay phai thuoc (0, 1], nhan duoc {decay!r}.")
-    if not 0.0 <= floor <= start <= 1.0:
-        raise ValueError(
-            f"Can 0 <= floor <= start <= 1, nhan duoc floor={floor!r}, start={start!r}."
-        )
-
-
-# ---------------------------------------------------------------------------
-# Vong lap huan luyen (Y3 - chua lam)
-# ---------------------------------------------------------------------------
 def train_dqn(
     episodes: int = 10_000,
     opponent: str = "heuristic",
@@ -266,23 +198,7 @@ def train_dqn(
     out_dir: str | Path = "checkpoints/level6_dqn",
     seed: int = 0,
 ) -> Path:
-    """Huan luyen tac tu DQN cap 6, tra ve duong dan checkpoint tot nhat.
-
-    Args:
-        episodes: Tong so episode huan luyen (1.000 pilot -> 10.000 toi da).
-        opponent: Loai doi thu tap luyen ('random', 'heuristic', 'alphabeta', 'self_play').
-        lr: Toc do hoc cua optimizer (Adam / RMSprop).
-        gamma: He so chiet khau phan thuong tuong lai.
-        epsilon_start: Gia tri epsilon ban dau cho kham pha.
-        epsilon_min: Gia tri epsilon toi thieu.
-        epsilon_decay: Ty le giam epsilon sau moi episode / buoc.
-        buffer_size: Suc chua toi da cua Replay Buffer.
-        batch_size: Kich thuoc batch lay mau tu buffer de update gradient.
-        target_update_freq: Tan suat cap nhat trong so sang Target Network.
-        checkpoint_milestones: Cac moc episode can luu checkpoint va danh gia.
-        out_dir: Thu muc luu checkpoint mo hinh.
-        seed: Random seed dam bao kha nang tai lap ket qua.
-    """
+    """Vong lap huan luyen day du se duoc bo sung o nhiem vu Y3."""
     raise NotImplementedError(
-        "TODO: Cai dat vong lap tuong tac DQN, Replay Buffer, Bellman update va danh gia checkpoint."
+        "Y3: can cai dat vong tuong tac game, Bellman update, Target Network va checkpoint."
     )

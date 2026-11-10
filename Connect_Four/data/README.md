@@ -7,7 +7,7 @@ Thư mục này chứa **mô tả** dữ liệu và cách tái tạo. Dữ liệ
 | `data/raw/` | Dữ liệu ván đấu thô JSONL/CSV sinh từ Alpha-Beta để huấn luyện cấp 5 | Không (đã ignore) |
 | `data/processed/` | Dữ liệu sau khi lọc trùng, lật đối xứng dạng .npz/.pt (train/val/test) | Không (đã ignore) |
 | `tests/data/` | Bộ vị trí kiểm thử viết tay | Có |
-| `checkpoints/` | Trọng số mô hình (level5_cnn/ và level6_dqn/) | Không (đã ignore) |
+| `checkpoints/` | Trọng số mô hình (level5_cnn/ và level6_dqn/) | Chỉ hai checkpoint cuối `level5_cnn/final.pt`, `level6_dqn/final.pt` và metadata; trọng số trung gian bị ignore |
 
 ## Tái tạo dữ liệu huấn luyện
 

@@ -1,9 +1,11 @@
-# Trong so mo hinh: khong commit file nang, chi commit mo ta cach tai/tao lai
+# Trong so trung gian khong commit; chi cho phep hai checkpoint cuoi co ten co dinh
 checkpoints/**/*.pt
 checkpoints/**/*.pth
 checkpoints/**/*.pkl
 *.pt
 *.pth
+!checkpoints/level5_cnn/final.pt
+!checkpoints/level6_dqn/final.pt
 
 # Du lieu sinh tu dong (lon) - giu lai file mo ta va bo vi tri test
 data/generated/
@@ -35,6 +37,3 @@ dist/
 .venv/
 venv/
 .vscode/settings.json
-
-# Checkpoint nang: dong goi trong ZIP cuoi ky, khong commit vao Git.
-# Dung git add -f khi nhom chu dong muon luu checkpoint vao repository.
