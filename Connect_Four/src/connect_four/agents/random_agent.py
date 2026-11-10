@@ -11,8 +11,7 @@ from connect_four.game.base import ConnectFourGame
 class RandomAgent(Agent):
     """Baseline: chon ngau nhien mot cot con trong.
 
-    Xong khi: khong bao gio tra ve cot day; thang duoc 0% truoc Heuristic
-    o 200 van (chi de xac nhan moi thu noi dung).
+    Khong tra ve cot day; seed giup lap lai cung chuoi lua chon.
     """
 
     name = "random"

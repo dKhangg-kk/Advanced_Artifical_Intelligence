@@ -165,7 +165,12 @@ Dữ liệu và checkpoint lớn cần có hướng dẫn tải hoặc tái tạ
 
 ## Hướng dẫn chạy
 
-**Trạng thái:** đã có khung gói Python, hợp đồng API engine, giao diện sáu tác tử, cấu hình giải đấu/ablation và bộ test khung. **Thuật toán chưa được cài đặt** — các phương thức đang `raise NotImplementedError` và được điền theo thứ tự trong [lộ trình](docs/ROADMAP.md).
+**Trạng thái:** đã có engine bitboard và bản tham chiếu, Random (cấp 1), Heuristic (cấp 2), bộ chạy trận và kiểm thử. Các tác tử cấp 3–6 còn phần chưa cài đặt; xem [lộ trình](docs/ROADMAP.md).
+
+Đánh giá K1 không cần CLI giải đấu: chạy `PYTHONPATH=src python scripts/evaluate_k1.py`
+từ thư mục `Connect_Four/`. Cấu hình cố định trong `configs/k1_random_heuristic.json`;
+200 ván dùng 100 khai cuộc và đổi bên theo cặp. Heuristic thắng 198/200 ván (99%)
+ở seed khai cuộc/Heuristic = 0, Random = 1; xem [log và điều kiện chạy](docs/EXPERIMENT_LOG.md).
 
 ### Cài đặt
 
