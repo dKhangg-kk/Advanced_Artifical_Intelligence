@@ -22,7 +22,7 @@ Commit theo quy ước của học phần: `TuanXX/DuAn/Noi dung cong viec`.
 - [x] **[L]** `agents/heuristic.py` — cấp 2, thắng > chặn > an toàn > điểm; có test trên hai engine
 - [x] **[L]** `agents/alphabeta.py` — cấp 3, negamax + cắt tỉa/sắp xếp bật tắt, đếm nút, ngân sách độ sâu/thời gian; có test trên hai engine (K2, chờ review PR)
 - [ ] **[L]** `agents/mcts.py` — cấp 4, UCT + ngân sách mô phỏng
-- [ ] **[L]** `evaluation/metrics.py` — Wilson, bootstrap, p95
+- [x] **[L]** `evaluation/metrics.py` — Wilson, bootstrap có seed, p95
 - [ ] **[L]** `evaluation/runlog.py` + `evaluation/match.py` + `evaluation/cli.py` — `run_id`, manifest, chạy trận, ghi CSV ván/nước
 - [ ] **[L]** `play.py` — chơi terminal
 

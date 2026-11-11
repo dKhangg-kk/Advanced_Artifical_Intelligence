@@ -6,6 +6,7 @@ Tat ca ham o day la ham thuan (khong phu thuoc numpy/engine) de test de dang.
 from __future__ import annotations
 
 import math
+import random
 from collections.abc import Sequence
 
 
@@ -29,13 +30,52 @@ def wilson_interval(wins: float, total: int, z: float = 1.96) -> tuple[float, fl
     Dung Wilson thay vi xap xi chuan vi no dung duoc khi ty le gan 0 hoac 1
     (truong hop pho bien: mot tac tu thang 200/200 van).
     """
-    raise NotImplementedError("TODO: cai dat cong thuc Wilson")
+    if total <= 0:
+        raise ValueError("total phai > 0")
+    if not math.isfinite(wins) or not 0 <= wins <= total:
+        raise ValueError("wins phai nam trong [0, total]")
+    if not math.isfinite(z) or z < 0:
+        raise ValueError("z phai la so huu han >= 0")
+
+    proportion = wins / total
+    z_squared = z * z
+    denominator = 1 + z_squared / total
+    center = (proportion + z_squared / (2 * total)) / denominator
+    margin = (
+        z
+        * math.sqrt(
+            proportion * (1 - proportion) / total
+            + z_squared / (4 * total * total)
+        )
+        / denominator
+    )
+    return center - margin, center + margin
 
 
 def bootstrap_ci(samples: Sequence[float], n_resamples: int = 10_000, alpha: float = 0.05,
                  seed: int | None = None) -> tuple[float, float]:
     """Khoang tin cay bootstrap percentile cho trung binh."""
-    raise NotImplementedError("TODO: cai dat bootstrap")
+    if not samples:
+        raise ValueError("samples rong")
+    if n_resamples <= 0:
+        raise ValueError("n_resamples phai > 0")
+    if not 0 < alpha < 1:
+        raise ValueError("alpha phai trong (0, 1)")
+
+    values = tuple(float(value) for value in samples)
+    if not all(math.isfinite(value) for value in values):
+        raise ValueError("samples phai la cac so huu han")
+
+    rng = random.Random(seed)
+    sample_size = len(values)
+    bootstrap_means = [
+        math.fsum(rng.choices(values, k=sample_size)) / sample_size
+        for _ in range(n_resamples)
+    ]
+    return (
+        percentile(bootstrap_means, alpha * 50),
+        percentile(bootstrap_means, (1 - alpha / 2) * 100),
+    )
 
 
 def percentile(values: Sequence[float], q: float) -> float:
