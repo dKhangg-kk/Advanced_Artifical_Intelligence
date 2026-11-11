@@ -216,6 +216,7 @@ def train_supervised(
         writer = csv.DictWriter(
             file,
             fieldnames=("epoch", "train_loss", "val_loss", "train_accuracy", "val_accuracy", "best"),
+            lineterminator="\n",
         )
         writer.writeheader()
         for epoch in range(1, epochs + 1):
