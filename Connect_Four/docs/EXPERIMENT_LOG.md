@@ -164,4 +164,4 @@ Mỗi mục dùng mẫu sau:
   mọi khai cuộc/seed hoặc đối thủ mạnh hơn. Chưa chạy ablation A2/giải đấu M3.
   `run_id` và manifest dùng UTC; 18:13 ngày 10/11 UTC là 01:13 ngày 11/11 tại Việt Nam.
 - **Giải thích thuật toán/công cụ:** [hướng dẫn MCTS](MCTS.md),
-  [nhật ký đóng góp](contributions/khang.md). Chờ review trước khi merge.
+  [nhật ký đóng góp](contributions/pham-thai-duy-khang.md). Chờ review trước khi merge.
