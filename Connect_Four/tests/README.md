@@ -14,6 +14,7 @@ pytest -q
 | `test_engine.py` | Luat: tha quan, cot day, thang/hoa, undo, clone | Can viet khi lam Task 1 |
 | `test_crosscheck.py` | Engine bitboard vs `ReferenceGame` tren 1000 chuoi nuoc ngau nhien | Can viet sau khi co ban tham chieu |
 | `test_positions.py` | Doc `data/positions.csv`, kiem tra `winning_moves` | Can viet |
+| `test_data_split.py` | Sinh nhãn Alpha-Beta, chia theo ván, lọc trùng và lật gương chỉ ở train | Đã có |
 | `test_agents.py` | Random/Heuristic: nuoc hop le, seed, khong doi game, van ket thuc | Da co, chay tren ca hai engine |
 | `test_heuristic.py` | Thang > chan > an toan > diem; hoa diem, ham diem, van hoa, thong ke | Da co, chay tren ca hai engine |
 | `test_alphabeta.py` | Minimax do sau 1–4, bon to hop cat tia/sap xep, thong ke, Budget(depth/time_s), timeout va khong doi game | Da co, chay tren ca hai engine |
