@@ -18,15 +18,17 @@ PYTHONPATH=src python -c "from connect_four.training import generate_dataset; ge
 Mỗi dong `games.jsonl` la mot van, gom khai cuoc ngau nhien, toan bo chuoi nuoc
 va nhan policy tai moi trang thai ma Alpha-Beta chon nuoc. Nhan duoc sinh boi
 `AlphaBetaAgent` o do sau co dinh (mac dinh 4), khong phai nuoc toi uu toan hoc.
-3000 van dau danh dau `main_model`; 2000 van con lai danh dau `a3`.
+Mac dinh, khai cuoc ngau nhien dai 6-8 nuoc de tao du so van khac nhau.
+Generator sinh bu den khi co du 5000 van duy nhat: 3000 van dau danh dau
+`main_model`; 2000 van con lai danh dau `a3`.
 
 Lenh tu dong tao `splits/train.jsonl`, `val.jsonl`, `test.jsonl` va
 `splits/manifest.json`. Manifest ghi do sau, seed, so van tung cohort, so vi tri
-duy nhat sau loc, ty le game/vi tri thuc te va so ban lat guong; tung van trong
-`games.jsonl` luu khai cuoc da chon va chuoi nuoc. De tranh ro ri, game duoc
-chia truoc theo ty le 70/15/15; vi tri trung hoac tuong duong doi xung duoc giu
-o split dau tien va loai khoi split sau. Chi train duoc lat guong, nhan cot `c`
-doi thanh `6-c`.
+duy nhat sau loc, ty le game/vi tri thuc te, so lan thu sinh va so ban lat
+guong; tung van trong `games.jsonl` luu khai cuoc da chon va chuoi nuoc. De
+tranh ro ri, game duoc chia truoc theo ty le 70/15/15; vi tri trung hoac tuong
+duong doi xung duoc giu o split dau tien va loai khoi split sau. Chi train duoc
+lat guong, nhan cot `c` doi thanh `6-c`.
 
 ## Quy ước chia tập
 

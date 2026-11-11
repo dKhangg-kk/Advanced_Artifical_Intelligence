@@ -15,7 +15,8 @@ from connect_four.game.constants import COLS, ROWS
 
 DEFAULT_GAMES = 5000
 DEFAULT_DEPTH = 4
-DEFAULT_RANDOM_OPENING_PLIES = 4
+DEFAULT_MIN_RANDOM_OPENING_PLIES = 6
+DEFAULT_RANDOM_OPENING_PLIES = 8
 DEFAULT_MAIN_MODEL_GAMES = 3000
 DEFAULT_SPLIT_RATIOS = (0.70, 0.15, 0.15)
 _SPLITS = ("train", "val", "test")
@@ -150,6 +151,7 @@ def generate_dataset(
     out_dir: str | Path = "data/generated",
     seed: int = 0,
     main_model_games: int | None = None,
+    min_plies_random: int = DEFAULT_MIN_RANDOM_OPENING_PLIES,
 ) -> Path:
     """Sinh ván Alpha-Beta sau khai cuộc ngẫu nhiên va tao cac tap du lieu.
 
@@ -163,6 +165,12 @@ def generate_dataset(
         raise ValueError("depth must be an integer >= 1.")
     if type(max_plies_random) is not int or max_plies_random < 0:
         raise ValueError("max_plies_random must be an integer >= 0.")
+    if (
+        type(min_plies_random) is not int
+        or min_plies_random < 0
+        or min_plies_random > max_plies_random
+    ):
+        raise ValueError("min_plies_random must be between 0 and max_plies_random.")
     if type(seed) is not int:
         raise ValueError("seed must be an integer.")
     if main_model_games is None:
@@ -175,12 +183,24 @@ def generate_dataset(
     rng = random.Random(seed)
     agent = AlphaBetaAgent(depth=depth)
     games_path = output_dir / "games.jsonl"
+    seen_games: set[tuple[int, ...]] = set()
+    generation_attempts = 0
+    duplicate_games_rejected = 0
+    terminal_openings_rejected = 0
+    max_attempts = n_games * 20
 
     with games_path.open("w", encoding="utf-8", newline="\n") as games_file:
-        for game_id in range(n_games):
+        while len(seen_games) < n_games:
+            if generation_attempts >= max_attempts:
+                raise RuntimeError(
+                    f"Generated only {len(seen_games)} unique games after "
+                    f"{generation_attempts} attempts."
+                )
+            generation_attempts += 1
+            game_id = len(seen_games)
             game = ConnectFour()
             opening: list[int] = []
-            opening_length = rng.randint(0, max_plies_random)
+            opening_length = rng.randint(min_plies_random, max_plies_random)
             for _ in range(opening_length):
                 legal = game.legal_actions()
                 if not legal or game.is_terminal():
@@ -188,6 +208,9 @@ def generate_dataset(
                 action = rng.choice(legal)
                 opening.append(action)
                 game.step(action)
+            if game.is_terminal():
+                terminal_openings_rejected += 1
+                continue
 
             examples: list[dict[str, Any]] = []
             while not game.is_terminal():
@@ -201,6 +224,11 @@ def generate_dataset(
                 )
                 game.step(action)
 
+            game_sequence = tuple(game.moves_played())
+            if game_sequence in seen_games:
+                duplicate_games_rejected += 1
+                continue
+            seen_games.add(game_sequence)
             game_record = {
                 "game_id": game_id,
                 "depth": depth,
@@ -215,7 +243,17 @@ def generate_dataset(
             )
             games_file.write("\n")
 
-    split_by_game(output_dir, seed=seed)
+    split_by_game(
+        output_dir,
+        seed=seed,
+        generation_metadata={
+            "attempts": generation_attempts,
+            "duplicate_games_rejected": duplicate_games_rejected,
+            "terminal_openings_rejected": terminal_openings_rejected,
+            "min_random_opening_plies": min_plies_random,
+            "max_random_opening_plies": max_plies_random,
+        },
+    )
     return output_dir
 
 
@@ -223,6 +261,7 @@ def split_by_game(
     dataset_dir: str | Path,
     ratios: tuple[float, float, float] = DEFAULT_SPLIT_RATIOS,
     seed: int = 0,
+    generation_metadata: dict[str, int] | None = None,
 ) -> tuple[list[int], list[int], list[int]]:
     """Chia games.jsonl theo ván, lọc trạng thái trùng và ghi ba split.
 
@@ -345,7 +384,11 @@ def split_by_game(
         "target_ratios": dict(zip(_SPLITS, ratios, strict=True)),
         "generated_games": generated_count,
         "unique_games": len(unique_games),
-        "duplicate_games_removed": duplicate_games_removed,
+        "generation": generation_metadata or {},
+        "duplicate_games_removed": (
+            duplicate_games_removed
+            + (generation_metadata or {}).get("duplicate_games_rejected", 0)
+        ),
         "planned_use_games": planned_use_counts,
         "game_counts": game_counts,
         "split_planned_use_game_counts": split_planned_use_counts,

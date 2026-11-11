@@ -11,6 +11,8 @@ from connect_four.training.gen_data import (
     DEFAULT_DEPTH,
     DEFAULT_GAMES,
     DEFAULT_MAIN_MODEL_GAMES,
+    DEFAULT_MIN_RANDOM_OPENING_PLIES,
+    DEFAULT_RANDOM_OPENING_PLIES,
     generate_dataset,
     split_by_game,
 )
@@ -20,6 +22,8 @@ def test_default_generation_plan_matches_issue_scope():
     assert DEFAULT_GAMES == 5000
     assert DEFAULT_MAIN_MODEL_GAMES == 3000
     assert DEFAULT_DEPTH == 4
+    assert DEFAULT_MIN_RANDOM_OPENING_PLIES == 6
+    assert DEFAULT_RANDOM_OPENING_PLIES == 8
 
 
 def _state(index: int) -> list[list[list[int]]]:
@@ -174,6 +178,7 @@ def test_generate_dataset_records_fixed_depth_and_ab_labels(tmp_path):
         n_games=8,
         depth=1,
         max_plies_random=3,
+        min_plies_random=1,
         out_dir=tmp_path / "dataset",
         seed=17,
     )
@@ -181,6 +186,7 @@ def test_generate_dataset_records_fixed_depth_and_ab_labels(tmp_path):
     assert len(games) == 8
     assert {game["depth"] for game in games} == {1}
     assert len({tuple(game["opening_moves"]) for game in games}) > 1
+    assert all(1 <= len(game["opening_moves"]) <= 3 for game in games)
 
     agent = AlphaBetaAgent(depth=1)
     for record in games:
@@ -203,6 +209,9 @@ def test_generate_dataset_records_fixed_depth_and_ab_labels(tmp_path):
     assert manifest["depth"] == [1]
     assert manifest["generated_games"] == 8
     assert manifest["planned_use_games"] == {"main_model": 8, "a3": 0}
+    assert manifest["generation"]["attempts"] >= 8
+    assert manifest["generation"]["min_random_opening_plies"] == 1
+    assert manifest["generation"]["max_random_opening_plies"] == 3
 
 
 def test_generate_dataset_rejects_invalid_parameters(tmp_path):
