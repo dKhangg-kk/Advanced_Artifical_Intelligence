@@ -193,3 +193,62 @@ def test_dqn_net_outputs_seven_action_values() -> None:
     with torch.no_grad():
         output = model(torch.zeros((2, 2, 6, 7), dtype=torch.float32))
     assert tuple(output.shape) == (2, 7)
+
+
+def test_train_dqn_runs_two_episodes_logs_and_saves_loadable_checkpoint(tmp_path) -> None:
+    pytest.importorskip("torch")
+    import csv
+
+    from connect_four.game import ConnectFour
+    from connect_four.training.train_dqn import train_dqn
+
+    checkpoint = train_dqn(
+        episodes=2,
+        opponent="heuristic",
+        lr=1e-3,
+        gamma=0.99,
+        epsilon_start=1.0,
+        epsilon_min=0.05,
+        epsilon_decay=0.9995,
+        buffer_size=256,
+        batch_size=4,
+        target_update_freq=5,
+        checkpoint_milestones=(),
+        out_dir=tmp_path / "checkpoints",
+        log_dir=tmp_path / "logs",
+        seed=23,
+        device="cpu",
+        run_id="unit_test_dqn",
+    )
+
+    assert checkpoint.is_file()
+    assert checkpoint.with_suffix(".json").is_file()
+    log_file = tmp_path / "logs" / "train_dqn_unit_test_dqn.csv"
+    assert log_file.is_file()
+    with log_file.open(newline="", encoding="utf-8") as stream:
+        rows = list(csv.DictReader(stream))
+
+    assert len(rows) == 2
+    assert [int(row["agent_player"]) for row in rows] == [1, 2]
+    assert all(row["opponent"] == "heuristic" for row in rows)
+    assert all(row["result"] in {"win", "draw", "loss"} for row in rows)
+    assert all(float(row["reward"]) in {-1.0, 0.0, 1.0} for row in rows)
+    assert any(int(row["optimizer_updates"]) > 0 for row in rows)
+
+    agent = DQNAgent(checkpoint=checkpoint, epsilon=0.0, seed=9)
+    game = ConnectFour()
+    before = tuple(game.moves_played())
+    assert agent.choose(game) in game.legal_actions()
+    assert tuple(game.moves_played()) == before
+    assert agent.last_stats.time_ms >= 0.0
+
+
+def test_train_dqn_rejects_invalid_training_settings() -> None:
+    from connect_four.training.train_dqn import train_dqn
+
+    with pytest.raises(ValueError, match="episodes"):
+        train_dqn(episodes=0)
+    with pytest.raises(ValueError, match="opponent"):
+        train_dqn(episodes=1, opponent="alphabeta")
+    with pytest.raises(ValueError, match="batch_size"):
+        train_dqn(episodes=1, buffer_size=4, batch_size=8)
