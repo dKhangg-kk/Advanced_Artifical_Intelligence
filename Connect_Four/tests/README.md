@@ -18,7 +18,7 @@ pytest -q
 | `test_heuristic.py` | Thang > chan > an toan > diem; hoa diem, ham diem, van hoa, thong ke | Da co, chay tren ca hai engine |
 | `test_alphabeta.py` | Minimax do sau 1–4, bon to hop cat tia/sap xep, thong ke, Budget(depth/time_s), timeout va khong doi game | Da co, chay tren ca hai engine |
 | `test_mcts.py` | MCTS thang Random >= 95% o 500 mo phong | Can viet |
-| `test_metrics.py` | Wilson, bootstrap, p95 | Can viet |
+| `test_metrics.py` | Wilson, bootstrap co seed, p95 | Da co |
 
 Nguyen tac:
 - Test phai chay duoc khi **chua cai torch** (tren CI).
