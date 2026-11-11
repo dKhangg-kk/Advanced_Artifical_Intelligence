@@ -8,6 +8,8 @@
 
 Alpha-Beta K2: xem [cách hoạt động, ngân sách và kiểm thử](docs/ALPHABETA.md).
 
+MCTS-UCT K3: xem [bốn bước, ngân sách và cách kiểm tra](docs/MCTS.md).
+
 ## Mục lục
 
 - [Mục tiêu](#mục-tiêu)
