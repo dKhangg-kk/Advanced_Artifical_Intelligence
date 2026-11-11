@@ -297,6 +297,7 @@ def split_by_game(
     seen_states: set[bytes] = set()
     retained_counts = {split: 0 for split in _SPLITS}
     written_counts = {split: 0 for split in _SPLITS}
+    retained_games: dict[str, set[int]] = {split: set() for split in _SPLITS}
     duplicates_removed = 0
     mirror_count = 0
     split_dir = games_path.parent / "splits"
@@ -341,6 +342,7 @@ def split_by_game(
                     _write_example(outputs[split], row)
                     retained_counts[split] += 1
                     written_counts[split] += 1
+                    retained_games[split].add(game_id)
 
                     if split == "train":
                         mirrored_state = _mirror_state(state)
@@ -391,6 +393,11 @@ def split_by_game(
         ),
         "planned_use_games": planned_use_counts,
         "game_counts": game_counts,
+        "split_game_ids": assignments,
+        "games_without_unique_examples": {
+            split: game_counts[split] - len(retained_games[split])
+            for split in _SPLITS
+        },
         "split_planned_use_game_counts": split_planned_use_counts,
         "actual_game_ratios": {
             split: game_counts[split] / len(unique_games) for split in _SPLITS

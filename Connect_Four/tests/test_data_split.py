@@ -99,6 +99,11 @@ def test_split_is_by_game_and_preserves_no_duplicate_states(tmp_path):
     assert manifest["duplicate_examples_removed"] == 1
     assert sum(manifest["actual_game_ratios"].values()) == pytest.approx(1.0)
     assert sum(manifest["actual_example_ratios"].values()) == pytest.approx(1.0)
+    split_games = [set(manifest["split_game_ids"][split]) for split in ("train", "val", "test")]
+    assert not (split_games[0] & split_games[1])
+    assert not (split_games[0] & split_games[2])
+    assert not (split_games[1] & split_games[2])
+    assert set.union(*split_games) == set(range(20))
 
 
 def test_mirror_augmentation_is_only_in_train_and_flips_action(tmp_path):

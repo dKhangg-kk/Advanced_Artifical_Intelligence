@@ -25,7 +25,8 @@ Generator sinh bu den khi co du 5000 van duy nhat: 3000 van dau danh dau
 Lenh tu dong tao `splits/train.jsonl`, `val.jsonl`, `test.jsonl` va
 `splits/manifest.json`. Manifest ghi do sau, seed, so van tung cohort, so vi tri
 duy nhat sau loc, ty le game/vi tri thuc te, so lan thu sinh va so ban lat
-guong; tung van trong `games.jsonl` luu khai cuoc da chon va chuoi nuoc. De
+guong; manifest cung luu ID game tung split va so game khong con mau duy nhat
+sau loc. Tung van trong `games.jsonl` luu khai cuoc da chon va chuoi nuoc. De
 tranh ro ri, game duoc chia truoc theo ty le 70/15/15; vi tri trung hoac tuong
 duong doi xung duoc giu o split dau tien va loai khoi split sau. Chi train duoc
 lat guong, nhan cot `c` doi thanh `6-c`.
