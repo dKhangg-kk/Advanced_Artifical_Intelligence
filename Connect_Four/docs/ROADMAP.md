@@ -7,9 +7,9 @@ Commit theo quy ước của học phần: `TuanXX/DuAn/Noi dung cong viec`.
 
 ## Mốc M1 — Engine đúng luật (ưu tiên số 1)
 
-- [ ] **[L]** `game/constants.py` — đã có hằng số, không cần sửa
-- [ ] **[L]** `game/reference.py` — bản chậm bằng list 2 chiều
-- [ ] **[L]** `game/engine.py` — bitboard 49-bit
+- [x] **[L]** `game/constants.py` — đã có hằng số, không cần sửa
+- [x] **[L]** `game/reference.py` — bản chậm bằng list 2 chiều
+- [x] **[L]** `game/engine.py` — bitboard 49-bit
 - [ ] **[L]** `tests/test_engine.py` — luật: thả quân, cột đầy, 4 hướng thắng, hòa, undo, clone
 - [ ] **[L]** `tests/test_crosscheck.py` — 1000 chuỗi nước ngẫu nhiên, bitboard == reference
 - [ ] **[D]** `tests/data/positions.csv` — nâng lên ≥ 30 vị trí
