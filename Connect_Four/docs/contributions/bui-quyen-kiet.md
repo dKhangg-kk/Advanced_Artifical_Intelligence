@@ -8,7 +8,7 @@ Bộ vị trí kiểm thử luật cho Connect Four trong milestone M1.
 
 | Ngày | Việc đã làm | PR/commit và log |
 | --- | --- | --- |
-| 11/11/2026 | Bổ sung 31 vị trí kiểm tra thắng dọc/ngang/hai chéo, chặn, đòn kép, hòa và cột đầy; thêm kiểm thử đối chiếu hai engine. | Commit `ca70abf`; `cd Connect_Four && pytest -q` xanh (3 skipped). PR chưa được tạo trong phiên này. |
+| 11/11/2026 | Bổ sung 31 vị trí kiểm tra thắng dọc/ngang/hai chéo, chặn, đòn kép, hòa và cột đầy; thêm kiểm thử đối chiếu hai engine. | [PR #67](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/pull/67); commit `ca70abf`; `cd Connect_Four && .venv/bin/pytest -q` xanh (3 skipped). |
 
 ## Phần tôi giải thích được
 
