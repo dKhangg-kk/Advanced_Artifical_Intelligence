@@ -16,6 +16,7 @@ import uuid
 
 import numpy as np
 
+from connect_four.evaluation.situations import situation_metrics
 from connect_four.game.constants import COLS, ROWS
 
 
@@ -33,16 +34,29 @@ def _require_torch() -> Any:
     return torch
 
 
-def _load_split(
+def _load_split_metadata(
     data_dir: Path,
     split: str,
     cohort: str | None = None,
-) -> tuple[np.ndarray, np.ndarray]:
+    game_limit: int | None = None,
+) -> tuple[np.ndarray, np.ndarray, tuple[int, ...]]:
+    """Doc mot split, co the gioi han theo so van cua cohort.
+
+    ``game_limit`` chon ``N`` van dau tien theo thu tu trong file split (thu tu
+    da duoc xao tron co seed trong manifest), va giu toan bo mau cua cac van do.
+    Nho vay cac tap con 250 < 500 < 1000 < ... long nhau va van validation/test
+    khong doi giua cac muc cua ablation.
+    """
     if cohort is not None and (not isinstance(cohort, str) or cohort not in _DATA_COHORTS):
         raise ValueError(f"cohort phai la mot trong {sorted(_DATA_COHORTS)}.")
+    if game_limit is not None:
+        if isinstance(game_limit, bool) or not isinstance(game_limit, int) or game_limit <= 0:
+            raise ValueError("game_limit phai la so nguyen duong.")
     path = data_dir / f"{split}.jsonl"
     states: list[np.ndarray] = []
     actions: list[int] = []
+    selected_games: set[int] = set()
+    game_order: list[int] = []
 
     with path.open(encoding="utf-8") as file:
         for line_number, line in enumerate(file, start=1):
@@ -60,6 +74,17 @@ def _load_split(
                     raise ValueError(f"{path}:{line_number}: planned_use khong hop le.")
                 if row_cohort != cohort:
                     continue
+            game_id = row.get("game_id")
+            if isinstance(game_id, bool) or not isinstance(game_id, int):
+                if game_limit is not None:
+                    raise ValueError(
+                        f"{path}:{line_number}: can co game_id so nguyen khi dung game_limit."
+                    )
+            elif game_id not in selected_games:
+                if game_limit is not None and len(selected_games) >= game_limit:
+                    continue
+                selected_games.add(game_id)
+                game_order.append(game_id)
 
             state = np.asarray(row["state"], dtype=np.float32)
             if state.shape != (2, ROWS, COLS):
@@ -81,9 +106,53 @@ def _load_split(
             states.append(state)
             actions.append(action)
 
+    if game_limit is not None and len(selected_games) < game_limit:
+        raise ValueError(
+            f"game_limit={game_limit} vuot qua so van {cohort or split} thuc co "
+            f"({len(selected_games)}) trong {path}."
+        )
     if not states:
         raise ValueError(f"Tep split {path} khong co mau.")
-    return np.stack(states), np.asarray(actions, dtype=np.int64)
+    return np.stack(states), np.asarray(actions, dtype=np.int64), tuple(game_order)
+
+
+def _load_split(
+    data_dir: Path,
+    split: str,
+    cohort: str | None = None,
+    game_limit: int | None = None,
+) -> tuple[np.ndarray, np.ndarray]:
+    states, actions, _ = _load_split_metadata(
+        data_dir, split, cohort=cohort, game_limit=game_limit
+    )
+    return states, actions
+
+
+def count_cohort_games(
+    data_dir: str | Path,
+    split: str = "train",
+    cohort: str = "a3",
+) -> int:
+    """Dem so van cua mot cohort trong split ma khong nap trang thai vao RAM."""
+    if not isinstance(cohort, str) or cohort not in _DATA_COHORTS:
+        raise ValueError(f"cohort phai la mot trong {sorted(_DATA_COHORTS)}.")
+    path = Path(data_dir) / f"{split}.jsonl"
+    games: set[int] = set()
+    with path.open(encoding="utf-8") as file:
+        for line_number, line in enumerate(file, start=1):
+            if not line.strip():
+                continue
+            try:
+                row = json.loads(line)
+            except json.JSONDecodeError as err:
+                raise ValueError(f"{path}:{line_number}: JSON khong hop le.") from err
+            if not isinstance(row, dict) or row.get("planned_use") != cohort:
+                continue
+            game_id = row.get("game_id")
+            if isinstance(game_id, bool) or not isinstance(game_id, int):
+                raise ValueError(f"{path}:{line_number}: game_id khong hop le.")
+            games.add(game_id)
+    return len(games)
 
 
 def _make_loader(
@@ -153,12 +222,21 @@ def train_supervised(
     lr: float = 1e-3,
     seed: int = 0,
     cohort: str = "main_model",
+    game_limit: int | None = None,
+    checkpoint_stem: str = "final",
+    log_dir: str | Path | None = None,
 ) -> Path:
     """Train on train/val only and save the lowest-validation-loss checkpoint.
 
     Test examples are never opened here. Call :func:`evaluate_checkpoint` once
     after model selection to evaluate the held-out test split. By default only
     the 3,000-game ``main_model`` cohort is used; pass ``cohort="a3"`` for A3.
+
+    ``game_limit`` trains on the first ``N`` games of the cohort in split-file
+    order (used by ablation A3); validation stays fixed. ``checkpoint_stem``
+    avoids overwriting the main ``final.pt`` during ablation runs, and
+    ``log_dir`` lets training logs go to ``results/logs`` instead of the
+    checkpoint folder.
     """
     for name, value in (("epochs", epochs), ("batch_size", batch_size), ("seed", seed)):
         if isinstance(value, bool) or not isinstance(value, int):
@@ -174,10 +252,23 @@ def train_supervised(
         raise ValueError("lr phai la so huu han duong.")
     if not isinstance(cohort, str) or cohort not in _DATA_COHORTS:
         raise ValueError(f"cohort phai la mot trong {sorted(_DATA_COHORTS)}.")
+    allowed_stem_characters = set(
+        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-."
+    )
+    if (
+        not isinstance(checkpoint_stem, str)
+        or not checkpoint_stem
+        or any(character not in allowed_stem_characters for character in checkpoint_stem)
+    ):
+        raise ValueError("checkpoint_stem chi duoc chua chu, so, dau gach va dau cham.")
 
     data_path = Path(data_dir)
-    train_states, train_actions = _load_split(data_path, "train", cohort=cohort)
-    val_states, val_actions = _load_split(data_path, "val", cohort=cohort)
+    train_states, train_actions, train_game_ids = _load_split_metadata(
+        data_path, "train", cohort=cohort, game_limit=game_limit
+    )
+    val_states, val_actions, val_game_ids = _load_split_metadata(
+        data_path, "val", cohort=cohort
+    )
 
     torch = _require_torch()
     from connect_four.agents.networks import CNNPolicyNet
@@ -201,12 +292,12 @@ def train_supervised(
     run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ") + "_" + uuid.uuid4().hex[:8]
     output_path = Path(out_dir)
     checkpoint_dir = output_path / "level5_cnn"
-    log_dir = output_path / "logs"
+    output_log_dir = Path(log_dir) if log_dir is not None else output_path / "logs"
     checkpoint_dir.mkdir(parents=True, exist_ok=True)
-    log_dir.mkdir(parents=True, exist_ok=True)
-    checkpoint_path = checkpoint_dir / "final.pt"
-    metadata_path = checkpoint_dir / "final.json"
-    log_path = log_dir / f"train_cnn_{run_id}.csv"
+    output_log_dir.mkdir(parents=True, exist_ok=True)
+    checkpoint_path = checkpoint_dir / f"{checkpoint_stem}.pt"
+    metadata_path = checkpoint_dir / f"{checkpoint_stem}.json"
+    log_path = output_log_dir / f"train_cnn_{run_id}.csv"
     started_at = datetime.now(timezone.utc)
     started = time.perf_counter()
     best_val_loss = math.inf
@@ -271,6 +362,9 @@ def train_supervised(
         "data": {
             "directory": str(data_path),
             "cohort": cohort,
+            "game_limit": game_limit,
+            "train_games": len(train_game_ids),
+            "val_games": len(val_game_ids),
             "train_examples": int(len(train_actions)),
             "val_examples": int(len(val_actions)),
             "test_used_during_training": False,
@@ -366,6 +460,7 @@ def evaluate_checkpoint(checkpoint: str | Path, data_dir: str | Path) -> dict[st
     correct = 0
     legal_predictions = 0
     examples = 0
+    masked_predictions: list[np.ndarray] = []
     with torch.no_grad():
         for states, actions in loader:
             logits = model(states)
@@ -376,7 +471,9 @@ def evaluate_checkpoint(checkpoint: str | Path, data_dir: str | Path) -> dict[st
             predictions = logits.argmax(dim=1)
             legal_predictions += int(legal_mask.gather(1, predictions.unsqueeze(1)).sum())
             masked_logits = logits.masked_fill(~legal_mask, -torch.inf)
-            correct += int((masked_logits.argmax(dim=1) == actions).sum())
+            batch_predictions = masked_logits.argmax(dim=1)
+            correct += int((batch_predictions == actions).sum())
+            masked_predictions.append(batch_predictions.cpu().numpy())
             total_loss += float(loss)
             examples += int(actions.size(0))
 
@@ -388,6 +485,13 @@ def evaluate_checkpoint(checkpoint: str | Path, data_dir: str | Path) -> dict[st
         "legal_action_rate": legal_predictions / examples,
         "test_examples": float(examples),
     }
+    metrics.update(
+        situation_metrics(
+            test_states,
+            test_actions,
+            np.concatenate(masked_predictions),
+        )
+    )
     with usage_path.open("w", encoding="utf-8") as file:
         json.dump(
             {
