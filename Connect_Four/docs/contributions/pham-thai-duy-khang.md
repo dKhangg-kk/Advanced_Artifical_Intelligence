@@ -43,33 +43,14 @@ Codex và Ponytail hỗ trợ rà soát, chỉnh sửa tài liệu, kiểm tra q
 
 | Ngày | Việc | Dẫn chứng | Giờ |
 | --- | --- | --- | --- |
-| 11/11/2026 | Hoàn thiện MCTS-UCT từ khung, thêm hai loại ngân sách, kiểm thử và đánh giá 200 ván | [Issue #14](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/issues/14), [PR #63](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/pull/63), commit `4dbe441`, [log kiểm thử](../../results/logs/k3_pytest_20261111.txt), run `k3-mcts-random-20261110T181313Z-s0` | Chưa ghi nhận |
+| 11/11/2026 | Hoàn thiện MCTS-UCT, hỗ trợ ngân sách mô phỏng/thời gian, bổ sung kiểm thử và đánh giá 200 ván với Random | [Issue #14](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/issues/14), [PR #63](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/pull/63), commit `4dbe441`, [log kiểm thử](../../results/logs/k3_pytest_20261111.txt) | Chưa ghi nhận |
 
-- **Mã đã thay đổi:** `src/connect_four/agents/mcts.py`: thay `NotImplementedError`
-  bằng selection UCT, expansion một con, rollout random và backpropagation đổi
-  góc nhìn; chọn con được thăm nhiều nhất; kiểm tra ngân sách và hệ số UCT;
-  xử lý 0 mô phỏng/0 giây, hết giờ và ván kết thúc; cập nhật `last_stats`.
-- **Kiểm thử mới:** `tests/test_mcts.py`, 38 test cho hai engine, cây bẫy đối
-  thủ, seed, giữ bàn gốc/lịch sử undo, thống kê, ngân sách sai và timeout.
-- **Thực nghiệm mới:** `scripts/evaluate_k3.py`, `configs/k3_random_mcts.json`,
-  CSV ván/nước, bảng tổng hợp và manifest. Tái sử dụng mẫu K1 và hệ thống
-  `play_match`/`save_run`; không sửa engine hoặc các tác tử khác.
-- **Tài liệu:** thêm [hướng dẫn MCTS](../MCTS.md); cập nhật README, kế hoạch
-  kiểm thử, ROADMAP và [nhật ký thực nghiệm](../EXPERIMENT_LOG.md).
-- **Kết quả:** toàn bộ 218 test đạt; MCTS thắng 199, hòa 0, thua 1 trên 200 ván,
-  500 mô phỏng/nước. Một cấu hình/seed cố định, chưa khẳng định cho mọi trường hợp.
-
-### Công cụ và nguồn đã dùng trong K3
-
-- **Codex hỗ trợ hoàn thiện:** đọc issue và mã hiện tại; viết vòng lặp MCTS-UCT
-  từ khung có sẵn; bổ sung kiểm tra đầu vào/ngân sách và thống kê; viết test,
-  script/cấu hình đánh giá; chạy kiểm thử và 200 ván, đọc và đối chiếu log;
-  soạn hướng dẫn, cập nhật nhật ký, chuẩn bị commit và PR.
-- **Phần kế thừa của nhóm:** `MCTSNode`, hợp đồng `Agent/Budget/SearchStats`,
-  API clone/step/result của hai engine, registry MCTS, Random, mô hình script
-  K1, `play_match`, `save_run`, manifest và quy ước CSV. Không thêm thư viện.
-- **Phần tác giả cần tự xác nhận:** đọc hiểu, chạy lại và giải thích góc nhìn
-  điểm, UCT ở tầng đối thủ, chọn theo visits, ngắt rollout, thiết kế đổi bên.
-  Chưa ghi nhận thời gian cá nhân hoặc khẳng định tác giả tự viết thủ công
-  những phần Codex đã tạo. Không suy thời gian đóng góp từ thời gian máy chạy.
-- **Bàn giao:** chờ Đức review/approve trước khi merge; chưa tự merge hoặc đóng issue.
+- Nhánh: `feat/issue-14-mcts-uct`, phát triển từ `main`.
+- Tệp chính: `src/connect_four/agents/mcts.py`, `tests/test_mcts.py`. Cài đặt đủ selection, expansion, simulation và backpropagation; hỗ trợ `Budget(simulations)`/`Budget(time_s)`, seed, thống kê và giữ nguyên game gốc.
+- Kiểm tra: `python -m pytest -o addopts= -q` trong `Connect_Four` — **218 passed in 22.80s**, gồm 38 test MCTS mới. Kiểm tra trên hai engine, góc nhìn đối thủ, nước hợp lệ, ván kết thúc/hòa, ngân sách, timeout và bảo toàn bàn gốc. [CI đạt trên commit `8ba2040`](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/actions/runs/42873638181).
+- Thực nghiệm: `scripts/evaluate_k3.py`, cấu hình `configs/k3_random_mcts.json`; **199 thắng, 0 hòa, 1 thua / 200 ván = 99,5%** ở **500 mô phỏng/nước**. 100 khai cuộc khác nhau dài 4 nước, đấu hai lần đổi bên; seed khai cuộc/MCTS = 0, Random = 1.
+- Dẫn chứng: run chính `k3-mcts-random-20261110T181313Z-s0`, mã nguồn commit `4dbe441`; [log ván](../../results/logs/games_k3-mcts-random-20261110T181313Z-s0.csv), [log nước](../../results/logs/moves_k3-mcts-random-20261110T181313Z-s0.csv), [bảng tổng hợp](../../results/tables/k3-mcts-random-20261110T181313Z-s0.csv). Cấu hình, môi trường và log pilot được ghi trong [nhật ký thực nghiệm](../EXPERIMENT_LOG.md).
+- Tài liệu: cập nhật README, ROADMAP, kế hoạch kiểm thử và hướng dẫn MCTS.
+- Giới hạn: kết quả áp dụng cho bộ seed/khai cuộc đã công bố; hạn giờ được kiểm tra giữa các thao tác nên có thể vượt nhẹ. Chưa đánh giá trước Alpha-Beta hoặc chạy giải đấu/ablation M3.
+- Công cụ: Codex hỗ trợ hoàn thiện. Tái sử dụng API engine, `Agent/Budget/SearchStats`, cấu trúc `MCTSNode`, mẫu đánh giá K1 và hệ thống `play_match`/`save_run`/manifest của dự án.
+- Trạng thái: đã có code, test và log; PR #63 đang mở, chờ Đức review/approve trước khi merge. Giờ đóng góp chờ tác giả ghi theo thực tế.
