@@ -6,6 +6,19 @@
 
 **Trạng thái: Đang phát triển.**
 
+### Trạng thái đã kiểm chứng (13/11/2026)
+
+- Engine bitboard và `ReferenceGame` đã có kiểm thử chéo.
+- Random, Heuristic, Alpha-Beta và MCTS có test tự động.
+- Heuristic đã xử lý đúng vị trí có hai đe dọa thắng: đây là thế thua bắt buộc,
+  không được mô tả là chặn thành công.
+- Đã bổ sung `connect_four.solver.ExactSolver` để đo vị trí nhỏ/tàn cuộc; solver
+  dùng negamax, alpha-beta và bảng chuyển vị, không tham gia giải đấu.
+- Pilot thật hiện có: 200 ván, 198 thắng, 0 hòa, 2 thua, score 0,99. Nguồn:
+  `k1-heuristic-random-20261109T061032Z-s0` trong `results/logs/`.
+- MCTS tournament, NN/DQN training, checkpoint và giải đấu toàn bộ tác tử vẫn
+  chưa được xác nhận hoàn thành; không dùng chúng làm kết quả trong báo cáo.
+
 Alpha-Beta K2: xem [cách hoạt động, ngân sách và kiểm thử](docs/ALPHABETA.md).
 
 ## Mục lục
@@ -167,7 +180,9 @@ Dữ liệu và checkpoint lớn cần có hướng dẫn tải hoặc tái tạ
 
 ## Hướng dẫn chạy
 
-**Trạng thái:** đã có engine bitboard và bản tham chiếu, Random (cấp 1), Heuristic (cấp 2), bộ chạy trận và kiểm thử. Các tác tử cấp 3–6 còn phần chưa cài đặt; xem [lộ trình](docs/ROADMAP.md).
+**Trạng thái:** đã có engine bitboard và bản tham chiếu, Random, Heuristic,
+Alpha-Beta, MCTS, solver đo và bộ kiểm thử. NN/DQN training, checkpoint và giải
+đấu đầy đủ vẫn chưa hoàn thành; xem [lộ trình](docs/ROADMAP.md).
 
 Đánh giá K1 không cần CLI giải đấu: chạy `PYTHONPATH=src python scripts/evaluate_k1.py`
 từ thư mục `Connect_Four/`. Cấu hình cố định trong `configs/k1_random_heuristic.json`;
@@ -184,6 +199,38 @@ pip install -r requirements.txt
 pip install -e .                 # tùy chọn: tạo lệnh c4-play, c4-tournament
 ```
 
+### Cài đặt sạch trên Windows PowerShell
+
+```powershell
+py -3.11 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+python -m pip install -e .
+python -m pytest -q
+```
+
+Nếu chỉ cần engine và test lõi, `requirements.txt` là đủ. PyTorch, Pygame và
+các gói phân tích là phần tùy chọn; cài thêm theo mục
+`[project.optional-dependencies]` trong `pyproject.toml` khi chạy NN/DQN, GUI
+hoặc tổng hợp biểu đồ.
+
+### Solver đo chất lượng nước đi
+
+```python
+from connect_four.game import ConnectFour
+from connect_four.solver import ExactSolver
+
+game = ConnectFour()
+solver = ExactSolver()
+value = solver.solve(game)       # 1, 0 hoặc -1 theo bên sắp đi
+best = solver.best_moves(game)    # tất cả nước đi tối ưu
+```
+
+Solver có chi phí tăng rất nhanh ở khai cuộc. Chỉ dùng nó cho vị trí đã giới
+hạn/tàn cuộc hoặc tập mẫu có ngân sách; không tuyên bố toàn bộ bàn cờ đã được
+giải nếu chưa có log chứng minh.
+
 ### Kiểm thử
 
 ```bash
@@ -192,13 +239,14 @@ pytest -q                        # các test khung phải xanh
 
 ### Các lệnh dự kiến
 
-Các lệnh dưới đây đã có sẵn giao diện dòng lệnh nhưng **chưa chạy được** cho tới khi thuật toán tương ứng được cài đặt:
+Các lệnh lõi dưới đây đã có implementation. NN/DQN chỉ chạy được khi có
+checkpoint hợp lệ; GUI cần cài thêm Pygame.
 
 | Lệnh | Mục đích | Trạng thái |
 | --- | --- | --- |
-| `python -m connect_four.play --opponent heuristic` | Chơi người–máy trong terminal | Chưa cài đặt |
-| `python -m connect_four.evaluation.cli --a random --b heuristic --out results/logs/r_vs_h.csv` | Chạy một cặp đấu, ghi log CSV | Chưa cài đặt |
-| `python -m connect_four.ui.gui` | Demo Pygame | Chưa cài đặt |
+| `python -m connect_four.play --opponent heuristic` | Chơi người–máy trong terminal | Đã có; cần chạy tương tác |
+| `python -m connect_four.evaluation.cli --a random --b heuristic --out results/logs/r_vs_h.csv` | Chạy một cặp đấu, ghi log CSV | Đã có; nên smoke-test trước |
+| `python -m connect_four.ui.gui` | Demo Pygame | Đã có; cần Pygame/display |
 
 Chỉ các lệnh đã chạy kiểm tra thực tế mới được chuyển sang trạng thái "đã kiểm chứng".
 
@@ -233,7 +281,9 @@ Phân tích thêm ảnh hưởng seed, độ sâu, lượt đi trước và nh�
 
 Mỗi đợt chạy cần lưu phiên bản mã/commit, luật, cấu hình, seed, phần cứng và checkpoint sử dụng. Log ván gồm đối thủ, bên đi trước, chuỗi nước và kết quả; log từng nước có thời gian cùng số nút hoặc mô phỏng khi áp dụng. Notebook phải tạo lại được bảng/hình từ log thô. Quy ước log và cách truy vết từng con số nằm trong [`docs/LOGGING.md`](docs/LOGGING.md); nhật ký từng lần chạy nằm trong [`docs/EXPERIMENT_LOG.md`](docs/EXPERIMENT_LOG.md).
 
-**Chưa có kết quả thực nghiệm của đồ án trong repo.** Các bảng xếp hạng và kết luận sẽ chỉ được bổ sung sau khi chạy và kiểm tra thực tế.
+**Kết quả thực nghiệm hiện có:** chỉ pilot Heuristic–Random 200 ván; xem
+[`docs/report/04a_ket_qua.md`](docs/report/04a_ket_qua.md). Các bảng xếp hạng
+toàn bộ tác tử và kết luận về NN/DQN chỉ được bổ sung sau khi chạy thực tế.
 
 ## Thành viên và phối hợp
 

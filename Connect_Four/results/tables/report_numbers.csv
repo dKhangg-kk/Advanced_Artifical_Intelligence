@@ -1,1 +1,8 @@
 report_section,metric,value,unit,type,source_type,source_path,source_filter,formula,run_id
+4.1,games,200,games,measured,log,results/logs/games_k1-heuristic-random-20261109T061032Z-s0.csv,pair=heuristic_vs_random,count(*),k1-heuristic-random-20261109T061032Z-s0
+4.1,heuristic_wins,198,games,measured,log,results/logs/games_k1-heuristic-random-20261109T061032Z-s0.csv,winner=a,count(winner=a),k1-heuristic-random-20261109T061032Z-s0
+4.1,draws,0,games,measured,log,results/logs/games_k1-heuristic-random-20261109T061032Z-s0.csv,winner=draw,count(winner=draw),k1-heuristic-random-20261109T061032Z-s0
+4.1,heuristic_losses,2,games,measured,log,results/logs/games_k1-heuristic-random-20261109T061032Z-s0.csv,winner=b,count(winner=b),k1-heuristic-random-20261109T061032Z-s0
+4.1,score,0.99,ratio,derived,log,results/logs/games_k1-heuristic-random-20261109T061032Z-s0.csv,pair=heuristic_vs_random,(wins+0.5*draws)/games,k1-heuristic-random-20261109T061032Z-s0
+4.1,heuristic_mean_move_time,0.2253645557,ms,measured,log,results/logs/moves_k1-heuristic-random-20261109T061032Z-s0.csv,agent=heuristic,mean(time_ms),k1-heuristic-random-20261109T061032Z-s0
+4.1,heuristic_p95_move_time,0.3323329147,ms,measured,log,results/logs/moves_k1-heuristic-random-20261109T061032Z-s0.csv,agent=heuristic,percentile(time_ms,95),k1-heuristic-random-20261109T061032Z-s0
