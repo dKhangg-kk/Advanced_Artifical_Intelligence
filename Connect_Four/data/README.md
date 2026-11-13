@@ -37,3 +37,23 @@ lat guong, nhan cot `c` doi thanh `6-c`.
 - Tỷ lệ khởi đầu 70/15/15.
 - Lọc trạng thái trùng và tương đương đối xứng giữa các tập; ghi tỷ lệ thực tế sau lọc.
 - Chỉ tăng cường đối xứng (lật gương) trong tập train, và **đổi nhãn cột** tương ứng.
+
+## Huấn luyện CNN cấp 5
+
+Sau khi có ba file `train.jsonl`, `val.jsonl`, `test.jsonl` trong
+`data/generated/splits/`, huấn luyện và chọn checkpoint theo validation loss:
+
+Mặc định chỉ dùng cohort `main_model` (3.000 ván); có thể truyền
+`cohort="a3"` để huấn luyện riêng cohort A3 (2.000 ván).
+
+```bash
+cd Connect_Four
+python -c "from connect_four.training.train_supervised import train_supervised; train_supervised('data/generated/splits', epochs=20, batch_size=256, lr=1e-3, seed=0, cohort='main_model')"
+```
+
+Mỗi lần chạy ghi log `checkpoints/logs/train_cnn_<run_id>.csv`; checkpoint có
+validation loss thấp nhất được lưu tại `checkpoints/level5_cnn/final.pt`, kèm
+`final.json` chứa commit, siêu tham số, seed, phần cứng và thời gian chạy.
+Training chỉ đọc train/validation. Sau khi chốt checkpoint, gọi
+`evaluate_checkpoint(checkpoint, data_dir)` đúng một lần để đọc tập test;
+run ID được ghi dấu để ngăn đánh giá lại cùng checkpoint.
