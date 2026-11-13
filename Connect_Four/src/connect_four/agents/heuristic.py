@@ -63,11 +63,24 @@ class HeuristicAgent(Agent):
             return self._rng.choice(wins)
 
         blocks = game.winning_moves(other(player))
-        candidates = blocks or legal
+        # A single immediate threat has exactly one meaningful response.
+        # With two or more threats, blocking one column cannot prevent the
+        # opponent from winning on the next move; do not pretend that one of
+        # the blocks is a successful defence.  Evaluate all legal moves and
+        # record the position as an unavoidable double threat.
+        if len(blocks) == 1:
+            candidates = blocks
+        else:
+            candidates = legal
+            if len(blocks) > 1:
+                self.last_stats.extra["unavoidable_double_threat"] = 1.0
+
         children = {action: game.clone_after(action) for action in candidates}
         safe = [action for action, child in children.items()
                 if not child.winning_moves(other(player))]
-        candidates = safe or candidates
+        if safe:
+            candidates = safe
+            children = {action: children[action] for action in candidates}
         scores = {action: self.score(children[action], player) for action in candidates}
         best = max(scores.values())
         self.last_stats.nodes = len(children)

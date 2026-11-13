@@ -22,6 +22,7 @@ Commit theo quy ước của học phần: `TuanXX/DuAn/Noi dung cong viec`.
 - [x] **[L]** `agents/heuristic.py` — cấp 2, thắng > chặn > an toàn > điểm; có test trên hai engine
 - [x] **[L]** `agents/alphabeta.py` — cấp 3, negamax + cắt tỉa/sắp xếp bật tắt, đếm nút, ngân sách độ sâu/thời gian; có test trên hai engine (K2, chờ review PR)
 - [x] **[L]** `agents/mcts.py` — cấp 4, đủ bốn bước UCT, Budget(simulations/time_s), test hai engine; K3 chờ review PR
+- [x] **[L]** `solver.py` — solver exact dùng làm thước đo, có test trên hai engine
 - [ ] **[L]** `evaluation/metrics.py` — Wilson, bootstrap, p95
 - [ ] **[L]** `evaluation/runlog.py` + `evaluation/match.py` + `evaluation/cli.py` — `run_id`, manifest, chạy trận, ghi CSV ván/nước
 - [ ] **[L]** `play.py` — chơi terminal
@@ -37,7 +38,7 @@ K3: MCTS thắng Random 199/200 ván (99,5%) ở 500 mô phỏng/nước; xem
 
 ## Mốc M3 — Giải đấu và ablation
 
-- [ ] **[D]** Pilot: 20–50 ván/cặp để chốt ngân sách thời gian
+- [x] **[D]** Pilot: Heuristic–Random, 200 ván, run `k1-heuristic-random-20261109T061032Z-s0`
 - [ ] **[D]** Giải đấu chế độ mặc định: 200 ván × 6 cặp (4 tác tử) = 1.200 ván
 - [ ] **[D]** Giải đấu chế độ cùng thời gian mỗi nước
 - [ ] **[D]** Ghi `results/logs/run_manifest.csv`, `games_<run_id>.csv`, `moves_<run_id>.csv`
