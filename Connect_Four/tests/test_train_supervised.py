@@ -11,6 +11,8 @@ import pytest
 from connect_four.agents.nn_agent import NNAgent
 from connect_four.training.train_supervised import (
     _load_split,
+    _load_split_metadata,
+    count_cohort_games,
     evaluate_checkpoint,
     train_supervised,
 )
@@ -45,6 +47,54 @@ def test_load_split_uses_only_the_requested_game_cohort(tmp_path) -> None:
     assert actions.tolist() == [0]
 
 
+def test_load_split_game_limit_keeps_whole_games_and_is_nested(tmp_path) -> None:
+    with (tmp_path / "train.jsonl").open("w", encoding="utf-8") as file:
+        for game_id in (10, 20, 30):
+            for action in (0, 1):
+                file.write(
+                    json.dumps(
+                        {
+                            "game_id": game_id,
+                            "state": np.zeros((2, 6, 7), dtype=np.float32).tolist(),
+                            "action": action,
+                            "planned_use": "a3",
+                        }
+                    )
+                    + "\n"
+                )
+
+    states_250, actions_250 = _load_split(tmp_path, "train", cohort="a3", game_limit=2)
+    states_500, actions_500 = _load_split(tmp_path, "train", cohort="a3", game_limit=3)
+
+    assert states_250.shape == (4, 2, 6, 7)
+    assert actions_250.tolist() == [0, 1, 0, 1]
+    assert states_500.shape == (6, 2, 6, 7)
+    assert actions_500[:4].tolist() == actions_250.tolist()
+    assert count_cohort_games(tmp_path, "train", cohort="a3") == 3
+    with pytest.raises(ValueError, match="vuot qua so van"):
+        _load_split(tmp_path, "train", cohort="a3", game_limit=4)
+
+
+def test_load_split_metadata_tracks_games_without_a_limit(tmp_path) -> None:
+    with (tmp_path / "val.jsonl").open("w", encoding="utf-8") as file:
+        for game_id in (10, 20):
+            file.write(
+                json.dumps(
+                    {
+                        "game_id": game_id,
+                        "state": np.zeros((2, 6, 7), dtype=np.float32).tolist(),
+                        "action": 0,
+                        "planned_use": "a3",
+                    }
+                )
+                + "\n"
+            )
+
+    _, _, games = _load_split_metadata(tmp_path, "val", cohort="a3")
+
+    assert games == (10, 20)
+
+
 def test_load_split_rejects_a_label_in_a_full_column(tmp_path) -> None:
     state = np.zeros((2, 6, 7), dtype=np.float32)
     state[:, :, 0] = 1
@@ -74,23 +124,30 @@ def test_training_selects_by_validation_and_test_is_consumed_once(tmp_path) -> N
             batch_size=4,
             lr=1e-3,
             seed=19,
+            game_limit=1,
+            checkpoint_stem="a3_g1",
+            log_dir=tmp_path / "logs",
         )
     finally:
         torch.set_num_threads(previous_threads)
 
     assert checkpoint.is_file()
+    assert checkpoint.name == "a3_g1.pt"
     metadata_path = checkpoint.with_suffix(".json")
     metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
     assert metadata["commit"]
     assert metadata["seed"] == 19
     assert metadata["data"]["cohort"] == "main_model"
+    assert metadata["data"]["game_limit"] == 1
+    assert metadata["data"]["train_games"] == 1
+    assert metadata["data"]["val_games"] == 1
     assert metadata["hyperparameters"]["epochs"] == 2
     assert metadata["hardware"]["device"] in {"cpu", "cuda"}
     assert metadata["duration_seconds"] >= 0
     assert metadata["data"]["test_used_during_training"] is False
     assert not (data_dir / "test.jsonl").exists()
 
-    logs = list((tmp_path / "output" / "logs").glob("train_cnn_*.csv"))
+    logs = list((tmp_path / "logs").glob("train_cnn_*.csv"))
     assert len(logs) == 1
     with logs[0].open(newline="", encoding="utf-8") as file:
         rows = list(csv.DictReader(file))
@@ -105,9 +162,19 @@ def test_training_selects_by_validation_and_test_is_consumed_once(tmp_path) -> N
 
     _write_split(data_dir / "test.jsonl", [0, 3])
     metrics = evaluate_checkpoint(checkpoint, data_dir)
-    assert set(metrics) == {"test_loss", "top1_accuracy", "legal_action_rate", "test_examples"}
+    assert {
+        "test_loss",
+        "top1_accuracy",
+        "legal_action_rate",
+        "test_examples",
+    } <= set(metrics)
     assert metrics["test_examples"] == 2
     assert 0.0 <= metrics["legal_action_rate"] <= 1.0
+    situation_count = sum(
+        metrics[f"{name}_n"]
+        for name in ("win_now", "block", "center_control", "other")
+    )
+    assert situation_count == metrics["test_examples"]
     (data_dir / "test.jsonl").unlink()
     with pytest.raises(RuntimeError, match="khong duoc danh gia lai"):
         evaluate_checkpoint(checkpoint, data_dir)
