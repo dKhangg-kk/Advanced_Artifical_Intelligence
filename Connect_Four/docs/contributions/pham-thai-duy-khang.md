@@ -59,11 +59,11 @@ Codex và Ponytail hỗ trợ rà soát, chỉnh sửa tài liệu, kiểm tra q
 
 | Ngày | Việc | Dẫn chứng | Giờ |
 | --- | --- | --- | --- |
-| 13/11/2026 | Hoàn thiện mục 2.1–2.2 về tác tử, Minimax, Alpha-Beta, MCTS/UCT và mục 3.3 về thuật toán cấp 1–4; đối chiếu proposal, tài liệu lý thuyết và mã nguồn | [Issue #35](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/issues/35), [mục 2.1–2.2](../report/02a_tim_kiem.md), [mục 3.3](../report/03b_thuat_toan.md) | Chưa ghi nhận |
+| 13/11/2026 | Hoàn thiện mục 2.1–2.2 về tác tử, Minimax, Alpha-Beta, MCTS/UCT và mục 3.3 về thuật toán cấp 1–4; đối chiếu proposal, tài liệu lý thuyết và mã nguồn | [Issue #35](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/issues/35), [PR #74](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/pull/74), [mục 2.1–2.2](../report/02a_tim_kiem.md), [mục 3.3](../report/03b_thuat_toan.md) | Chưa ghi nhận |
 
-- Nhánh chuẩn bị tại máy: `docs/issue-35-search-report`. Chưa push hoặc mở PR.
+- Nhánh: `docs/issue-35-search-report`; đã push và mở PR #74.
 - Chỉ bổ sung tài liệu; không thay đổi thuật toán hoặc ghi thêm kết quả giải đấu.
 - Kiểm tra tại máy: `python -m pytest -o addopts= -q` đạt **283 passed in 35.82s**; đối chiếu ví dụ trên hai engine và kiểm tra 27 liên kết tương đối trong hai mục báo cáo và nhật ký đóng góp. `git diff --check` đạt.
 - Công cụ: Codex hỗ trợ hoàn thiện.
 - Thời gian đóng góp và khả năng tự giải thích cần được tác giả xác nhận theo thực tế.
-- Bàn giao GitHub và review của Đức còn chờ thực hiện; không ghi nhận approve thay người review.
+- Trạng thái: PR #74 đã mở, chờ Đức review/approve trước khi merge.
