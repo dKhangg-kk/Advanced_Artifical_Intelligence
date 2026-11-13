@@ -1,1 +1,104 @@
 report_section,metric,value,unit,type,source_type,source_path,source_filter,formula,run_id
+3.4.1,unique_games,5000,games,measured,table,data/generated/splits/manifest.json,seed=0,unique_games,dataset-seed0
+3.4.1,duplicate_games_removed,16,games,measured,table,data/generated/splits/manifest.json,seed=0,duplicate_games_removed,dataset-seed0
+3.4.1,raw_examples,110083,examples,measured,table,data/generated/splits/manifest.json,seed=0,raw_examples,dataset-seed0
+3.4.1,duplicate_examples_removed,18025,examples,measured,table,data/generated/splits/manifest.json,seed=0,duplicate_examples_removed,dataset-seed0
+3.4.1,retained_train_examples,66619,examples,measured,table,data/generated/splits/manifest.json,seed=0,retained_examples.train,dataset-seed0
+3.4.1,retained_val_examples,13028,examples,measured,table,data/generated/splits/manifest.json,seed=0,retained_examples.val,dataset-seed0
+3.4.1,retained_test_examples,12411,examples,measured,table,data/generated/splits/manifest.json,seed=0,retained_examples.test,dataset-seed0
+3.4.1,mirror_examples_added_to_train,66589,examples,measured,table,data/generated/splits/manifest.json,seed=0,mirror_examples_added_to_train,dataset-seed0
+3.4.1,written_train_examples,133208,examples,measured,table,data/generated/splits/manifest.json,seed=0,written_examples.train,dataset-seed0
+3.4.1,retained_train_example_ratio,72.3663,percent,derived,table,data/generated/splits/manifest.json,seed=0,retained_examples.train/sum(retained_examples)*100,dataset-seed0
+3.4.1,retained_val_example_ratio,14.1519,percent,derived,table,data/generated/splits/manifest.json,seed=0,retained_examples.val/sum(retained_examples)*100,dataset-seed0
+3.4.1,retained_test_example_ratio,13.4817,percent,derived,table,data/generated/splits/manifest.json,seed=0,retained_examples.test/sum(retained_examples)*100,dataset-seed0
+3.4.1,written_train_example_ratio,83.9650,percent,derived,table,data/generated/splits/manifest.json,seed=0,written_examples.train/sum(written_examples)*100,dataset-seed0
+3.4.1,written_val_example_ratio,8.2119,percent,derived,table,data/generated/splits/manifest.json,seed=0,written_examples.val/sum(written_examples)*100,dataset-seed0
+3.4.1,written_test_example_ratio,7.8230,percent,derived,table,data/generated/splits/manifest.json,seed=0,written_examples.test/sum(written_examples)*100,dataset-seed0
+3.4.1,games_without_unique_examples_train,186,games,measured,table,data/generated/splits/manifest.json,seed=0;split=train,games_without_unique_examples.train,dataset-seed0
+3.4.1,games_without_unique_examples_val,85,games,measured,table,data/generated/splits/manifest.json,seed=0;split=val,games_without_unique_examples.val,dataset-seed0
+3.4.1,games_without_unique_examples_test,101,games,measured,table,data/generated/splits/manifest.json,seed=0;split=test,games_without_unique_examples.test,dataset-seed0
+3.4.1,main_model_train_games,1982,games,measured,log,data/generated/splits/train.jsonl,planned_use=main_model,count(unique game_id),dataset-seed0
+3.4.1,main_model_train_examples,79924,examples,measured,log,data/generated/splits/train.jsonl,planned_use=main_model,count(rows),dataset-seed0
+3.4.1,a3_train_games,1332,games,measured,log,data/generated/splits/train.jsonl,planned_use=a3,count(unique game_id),dataset-seed0
+3.4.1,a3_train_examples,53284,examples,measured,log,data/generated/splits/train.jsonl,planned_use=a3,count(rows),dataset-seed0
+3.4.1,main_model_val_games,411,games,measured,log,data/generated/splits/val.jsonl,planned_use=main_model,count(unique game_id),dataset-seed0
+3.4.1,main_model_val_examples,7958,examples,measured,log,data/generated/splits/val.jsonl,planned_use=main_model,count(rows),dataset-seed0
+3.4.1,a3_val_games,254,games,measured,log,data/generated/splits/val.jsonl,planned_use=a3,count(unique game_id),dataset-seed0
+3.4.1,a3_val_examples,5070,examples,measured,log,data/generated/splits/val.jsonl,planned_use=a3,count(rows),dataset-seed0
+3.4.1,main_model_test_games,385,games,measured,log,data/generated/splits/test.jsonl,planned_use=main_model,count(unique game_id),dataset-seed0
+3.4.1,main_model_test_examples,7399,examples,measured,log,data/generated/splits/test.jsonl,planned_use=main_model,count(rows),dataset-seed0
+3.4.1,a3_test_games,264,games,measured,log,data/generated/splits/test.jsonl,planned_use=a3,count(unique game_id),dataset-seed0
+3.4.1,a3_test_examples,5012,examples,measured,log,data/generated/splits/test.jsonl,planned_use=a3,count(rows),dataset-seed0
+3.4.2,cnn_parameters,420551,parameters,derived,formula,src/connect_four/agents/networks.py,in_channels=2;hidden_channels=64,sum of layer parameters,architecture-cnn-v1
+3.4.3,epochs_main,20,epochs,planned,config,checkpoints/level5_cnn/final.json,cohort=main_model,hyperparameters.epochs,20261111T140304Z_87e7371b
+3.4.3,batch_size_main,256,examples,planned,config,checkpoints/level5_cnn/final.json,cohort=main_model,hyperparameters.batch_size,20261111T140304Z_87e7371b
+3.4.3,learning_rate_main,0.001,ratio,planned,config,checkpoints/level5_cnn/final.json,cohort=main_model,hyperparameters.learning_rate,20261111T140304Z_87e7371b
+3.4.3,seed_main,0,seed,planned,config,checkpoints/level5_cnn/final.json,cohort=main_model,seed,20261111T140304Z_87e7371b
+3.4.3,epochs_a3,20,epochs,planned,config,checkpoints/level5_cnn/a3_g1332.json,cohort=a3,hyperparameters.epochs,20261111T150709Z_a9cc707c
+3.4.3,batch_size_a3,64,examples,planned,config,checkpoints/level5_cnn/a3_g1332.json,cohort=a3,hyperparameters.batch_size,20261111T150709Z_a9cc707c
+3.4.3,learning_rate_a3,0.001,ratio,planned,config,checkpoints/level5_cnn/a3_g1332.json,cohort=a3,hyperparameters.learning_rate,20261111T150709Z_a9cc707c
+3.4.3,seed_a3,20261105,seed,planned,config,checkpoints/level5_cnn/a3_g1332.json,cohort=a3,seed,20261111T150709Z_a9cc707c
+3.4.4,main_train_examples,79924,examples,measured,log,checkpoints/level5_cnn/final.json,cohort=main_model,data.train_examples,20261111T140304Z_87e7371b
+3.4.4,main_val_examples,7958,examples,measured,log,checkpoints/level5_cnn/final.json,cohort=main_model,data.val_examples,20261111T140304Z_87e7371b
+3.4.4,main_best_epoch,5,epoch,measured,log,checkpoints/level5_cnn/final.json,cohort=main_model,selection.best_epoch,20261111T140304Z_87e7371b
+3.4.4,main_best_val_loss,1.083485890547814,loss,measured,log,checkpoints/level5_cnn/final.json,cohort=main_model,selection.best_val_loss,20261111T140304Z_87e7371b
+3.4.4,main_duration_seconds,134.26713242000187,seconds,measured,log,checkpoints/level5_cnn/final.json,cohort=main_model,duration_seconds,20261111T140304Z_87e7371b
+3.4.4,main_test_examples,7399,examples,measured,log,checkpoints/level5_cnn/test_evaluation_20261111T140304Z_87e7371b.json,cohort=main_model,metrics.test_examples,20261111T140304Z_87e7371b
+3.4.4,main_test_loss,1.112209249435365,loss,measured,log,checkpoints/level5_cnn/test_evaluation_20261111T140304Z_87e7371b.json,cohort=main_model,metrics.test_loss,20261111T140304Z_87e7371b
+3.4.4,main_top1_accuracy,56.7644,percent,measured,log,checkpoints/level5_cnn/test_evaluation_20261111T140304Z_87e7371b.json,cohort=main_model,metrics.top1_accuracy*100,20261111T140304Z_87e7371b
+3.4.4,main_legal_action_rate,1.0,ratio,measured,log,checkpoints/level5_cnn/test_evaluation_20261111T140304Z_87e7371b.json,cohort=main_model,metrics.legal_action_rate,20261111T140304Z_87e7371b
+2.3.4,train_accuracy_epoch20_main,88.6817,percent,measured,log,checkpoints/logs/train_cnn_20261111T140304Z_87e7371b.csv,epoch=20,train_accuracy*100,20261111T140304Z_87e7371b
+2.3.4,max_val_accuracy_main,59.7889,percent,derived,log,checkpoints/logs/train_cnn_20261111T140304Z_87e7371b.csv,all epochs,max(val_accuracy)*100,20261111T140304Z_87e7371b
+2.3.4,val_loss_epoch20_main,1.74198761,loss,measured,log,checkpoints/logs/train_cnn_20261111T140304Z_87e7371b.csv,epoch=20,val_loss,20261111T140304Z_87e7371b
+3.4.4,a3_val_examples,5070,examples,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105,val_examples,ablation-a3-20261111T150514Z-s20261105
+3.4.4,a3_test_examples,5012,examples,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105,test_examples,ablation-a3-20261111T150514Z-s20261105
+3.4.4,a3_test_win_now_n,321,examples,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105,win_now_n,ablation-a3-20261111T150514Z-s20261105
+3.4.4,a3_test_block_n,568,examples,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105,block_n,ablation-a3-20261111T150514Z-s20261105
+3.4.4,a3_test_center_control_n,3090,examples,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105,center_control_n,ablation-a3-20261111T150514Z-s20261105
+3.4.4,a3_test_other_n,1033,examples,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105,other_n,ablation-a3-20261111T150514Z-s20261105
+3.4.4,a3_win_now_label_not_win,98,examples,measured,log,data/generated/splits/test.jsonl,planned_use=a3;win_now,count(win_now labels not in winning_moves),ablation-a3-20261111T150514Z-s20261105
+3.4.4,a3_win_now_label_not_win_ratio,30.5296,percent,derived,log,data/generated/splits/test.jsonl,planned_use=a3;win_now,98/321*100,ablation-a3-20261111T150514Z-s20261105
+3.4.4,a3_train_games_250,250,games,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=250,games,20261111T150516Z_4ead9059
+3.4.4,a3_train_examples_250,10857,examples,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=250,train_examples,20261111T150516Z_4ead9059
+3.4.4,a3_best_epoch_250,3,epoch,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=250,best_epoch,20261111T150516Z_4ead9059
+3.4.4,a3_best_val_loss_250,1.3832228865143816,loss,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=250,best_val_loss,20261111T150516Z_4ead9059
+3.4.4,a3_test_loss_250,1.3959109100073885,loss,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=250,test_loss,20261111T150516Z_4ead9059
+3.4.4,a3_top1_250,47.1868,percent,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=250,top1_accuracy*100,20261111T150516Z_4ead9059
+3.4.4,a3_win_now_tactical_250,42.3676,percent,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=250,win_now_situation_accuracy*100,20261111T150516Z_4ead9059
+3.4.4,a3_block_tactical_250,52.993,percent,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=250,block_situation_accuracy*100,20261111T150516Z_4ead9059
+3.4.4,a3_center_top1_250,41.5534,percent,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=250,center_control_top1_accuracy*100,20261111T150516Z_4ead9059
+3.4.4,a3_center_column_250,38.5113,percent,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=250,center_control_situation_accuracy*100,20261111T150516Z_4ead9059
+3.4.4,a3_train_games_500,500,games,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=500,games,20261111T150537Z_cde1dfc3
+3.4.4,a3_train_examples_500,21098,examples,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=500,train_examples,20261111T150537Z_cde1dfc3
+3.4.4,a3_best_epoch_500,7,epoch,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=500,best_epoch,20261111T150537Z_cde1dfc3
+3.4.4,a3_best_val_loss_500,1.2830184130979008,loss,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=500,best_val_loss,20261111T150537Z_cde1dfc3
+3.4.4,a3_test_loss_500,1.3088387308935119,loss,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=500,test_loss,20261111T150537Z_cde1dfc3
+3.4.4,a3_top1_500,51.7358,percent,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=500,top1_accuracy*100,20261111T150537Z_cde1dfc3
+3.4.4,a3_win_now_tactical_500,60.4361,percent,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=500,win_now_situation_accuracy*100,20261111T150537Z_cde1dfc3
+3.4.4,a3_block_tactical_500,71.3028,percent,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=500,block_situation_accuracy*100,20261111T150537Z_cde1dfc3
+3.4.4,a3_center_top1_500,46.4401,percent,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=500,center_control_top1_accuracy*100,20261111T150537Z_cde1dfc3
+3.4.4,a3_center_column_500,28.835,percent,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=500,center_control_situation_accuracy*100,20261111T150537Z_cde1dfc3
+3.4.4,a3_train_games_1000,1000,games,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=1000,games,20261111T150613Z_8a36348a
+3.4.4,a3_train_examples_1000,40561,examples,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=1000,train_examples,20261111T150613Z_8a36348a
+3.4.4,a3_best_epoch_1000,5,epoch,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=1000,best_epoch,20261111T150613Z_8a36348a
+3.4.4,a3_best_val_loss_1000,1.1636721977820763,loss,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=1000,best_val_loss,20261111T150613Z_8a36348a
+3.4.4,a3_test_loss_1000,1.1589165434110478,loss,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=1000,test_loss,20261111T150613Z_8a36348a
+3.4.4,a3_top1_1000,55.3472,percent,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=1000,top1_accuracy*100,20261111T150613Z_8a36348a
+3.4.4,a3_win_now_tactical_1000,58.567,percent,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=1000,win_now_situation_accuracy*100,20261111T150613Z_8a36348a
+3.4.4,a3_block_tactical_1000,73.5915,percent,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=1000,block_situation_accuracy*100,20261111T150613Z_8a36348a
+3.4.4,a3_center_top1_1000,50.8738,percent,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=1000,center_control_top1_accuracy*100,20261111T150613Z_8a36348a
+3.4.4,a3_center_column_1000,21.6181,percent,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=1000,center_control_situation_accuracy*100,20261111T150613Z_8a36348a
+3.4.4,a3_train_games_1332,1332,games,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=1332,games,20261111T150709Z_a9cc707c
+3.4.4,a3_train_examples_1332,53284,examples,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=1332,train_examples,20261111T150709Z_a9cc707c
+3.4.4,a3_best_epoch_1332,5,epoch,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=1332,best_epoch,20261111T150709Z_a9cc707c
+3.4.4,a3_best_val_loss_1332,1.1150194517018996,loss,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=1332,best_val_loss,20261111T150709Z_a9cc707c
+3.4.4,a3_test_loss_1332,1.1105823866957583,loss,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=1332,test_loss,20261111T150709Z_a9cc707c
+3.4.4,a3_top1_1332,57.083,percent,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=1332,top1_accuracy*100,20261111T150709Z_a9cc707c
+3.4.4,a3_win_now_tactical_1332,59.8131,percent,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=1332,win_now_situation_accuracy*100,20261111T150709Z_a9cc707c
+3.4.4,a3_block_tactical_1332,77.6408,percent,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=1332,block_situation_accuracy*100,20261111T150709Z_a9cc707c
+3.4.4,a3_center_top1_1332,52.6537,percent,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=1332,center_control_top1_accuracy*100,20261111T150709Z_a9cc707c
+3.4.4,a3_center_column_1332,27.5728,percent,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105;games=1332,center_control_situation_accuracy*100,20261111T150709Z_a9cc707c
+3.4.4,top1_gain_250_to_1332,9.8962,percentage_points,derived,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105,57.0830-47.1868,ablation-a3-20261111T150514Z-s20261105
+3.4.4,win_now_tactical_gain_250_to_1332,17.4455,percentage_points,derived,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105,59.8131-42.3676,ablation-a3-20261111T150514Z-s20261105
+3.4.4,block_tactical_gain_250_to_1332,24.6478,percentage_points,derived,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105,77.6408-52.9930,ablation-a3-20261111T150514Z-s20261105
+3.4.4,center_top1_gain_250_to_1332,11.1003,percentage_points,derived,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105,52.6537-41.5534,ablation-a3-20261111T150514Z-s20261105
