@@ -41,7 +41,7 @@ Mỗi mục dùng mẫu sau:
 
 - **Nhận xét:** điều quan sát được, khác biệt so với lần trước, vấn đề cần điều tra.
 - **Việc tiếp theo:** ...
-```
+```md
 
 ## Quy tắc
 
