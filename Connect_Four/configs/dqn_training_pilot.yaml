@@ -1,0 +1,17 @@
+# Cau hinh pilot Y3: xac nhan vong DQN chay 200 episode va ghi log.
+# Neu chay lai, de run_id trong YAML trong de tu tao ten log moi.
+episodes: 200
+opponent: heuristic
+lr: 0.001
+gamma: 0.99
+epsilon_start: 1.0
+epsilon_min: 0.05
+epsilon_decay: 0.9995
+buffer_size: 100000
+batch_size: 64
+target_update_freq: 500
+checkpoint_milestones: [1000, 2500, 5000, 10000]
+out_dir: checkpoints/level6_dqn/pilot
+log_dir: results/logs
+seed: 42
+device: auto

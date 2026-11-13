@@ -13,11 +13,11 @@ pytest -q
 | `test_logging.py` | `run_id`, manifest, ghi CSV ván/nước, percentile | Da co, dang chay |
 | `test_engine.py` | Luat: tha quan, cot day, thang/hoa, undo, clone | Can viet khi lam Task 1 |
 | `test_crosscheck.py` | Engine bitboard vs `ReferenceGame` tren 1000 chuoi nuoc ngau nhien | Can viet sau khi co ban tham chieu |
-| `test_positions.py` | Doc `data/positions.csv`, kiem tra `winning_moves` | Can viet |
+| `test_positions.py` | 31 vi tri CSV; doi chieu `winning_moves` va `blocking_moves` tren hai engine | Da co, dang chay |
 | `test_agents.py` | Random/Heuristic: nuoc hop le, seed, khong doi game, van ket thuc | Da co, chay tren ca hai engine |
 | `test_heuristic.py` | Thang > chan > an toan > diem; hoa diem, ham diem, van hoa, thong ke | Da co, chay tren ca hai engine |
 | `test_alphabeta.py` | Minimax do sau 1–4, bon to hop cat tia/sap xep, thong ke, Budget(depth/time_s), timeout va khong doi game | Da co, chay tren ca hai engine |
-| `test_mcts.py` | MCTS thang Random >= 95% o 500 mo phong | Can viet |
+| `test_mcts.py` | Bon buoc UCT, doi goc nhin, Budget(simulations/time_s), seed, thong ke, terminal va khong doi game | Da co, ca hai engine va cay bay doi thu |
 | `test_metrics.py` | Wilson, bootstrap, p95 | Can viet |
 
 Nguyen tac:
@@ -35,3 +35,13 @@ Cau hinh `configs/k1_random_heuristic.json`: 200 van, 100 khai cuoc ngau nhien
 khac nhau, moi khai cuoc dau hai lan doi ben; seed khai cuoc/Heuristic = 0,
 Random = 1. Script luu log van, nuoc, manifest va bang ket qua; bao loi neu
 Heuristic thang duoi 190/200 van. Xem `docs/EXPERIMENT_LOG.md` de doc lan chay thuc te.
+
+Danh gia K3 (tach khoi unit test de CI nhanh):
+
+```bash
+PYTHONPATH=src python scripts/evaluate_k3.py
+```
+
+Cau hinh `configs/k3_random_mcts.json`: 500 mo phong/nuoc, 200 van tren 100
+khai cuoc doi ben; luu log va bao loi neu thang duoi 190/200 van.
+Xem [huong dan MCTS](../docs/MCTS.md) va `docs/EXPERIMENT_LOG.md`.
