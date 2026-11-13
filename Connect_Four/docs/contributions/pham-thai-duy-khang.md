@@ -43,7 +43,7 @@ Codex và Ponytail hỗ trợ rà soát, chỉnh sửa tài liệu, kiểm tra q
 
 | Ngày | Việc | Dẫn chứng | Giờ |
 | --- | --- | --- | --- |
-| 11/11/2026 | Hoàn thiện MCTS-UCT, hỗ trợ ngân sách mô phỏng/thời gian, bổ sung kiểm thử và đánh giá 200 ván với Random | [Issue #14](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/issues/14), [PR #63](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/pull/63), commit `4dbe441`, [log kiểm thử](../../results/logs/k3_pytest_20261111.txt) | Chưa ghi nhận |
+| 11/11/2026 | Hoàn thiện MCTS-UCT, hỗ trợ ngân sách mô phỏng/thời gian, bổ sung kiểm thử và đánh giá 200 ván với Random | [Issue #14](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/issues/14), [PR #63](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/pull/63), commit `4dbe441`, [log kiểm thử](../../results/logs/k3_pytest_20261111.txt) | khoảng 2 giờ |
 
 - Nhánh: `feat/issue-14-mcts-uct`, phát triển từ `main`.
 - Tệp chính: `src/connect_four/agents/mcts.py`, `tests/test_mcts.py`. Cài đặt đủ selection, expansion, simulation và backpropagation; hỗ trợ `Budget(simulations)`/`Budget(time_s)`, seed, thống kê và giữ nguyên game gốc.
@@ -53,4 +53,17 @@ Codex và Ponytail hỗ trợ rà soát, chỉnh sửa tài liệu, kiểm tra q
 - Tài liệu: cập nhật README, ROADMAP, kế hoạch kiểm thử và hướng dẫn MCTS.
 - Giới hạn: kết quả áp dụng cho bộ seed/khai cuộc đã công bố; hạn giờ được kiểm tra giữa các thao tác nên có thể vượt nhẹ. Chưa đánh giá trước Alpha-Beta hoặc chạy giải đấu/ablation M3.
 - Công cụ: Codex hỗ trợ hoàn thiện. Tái sử dụng API engine, `Agent/Budget/SearchStats`, cấu trúc `MCTSNode`, mẫu đánh giá K1 và hệ thống `play_match`/`save_run`/manifest của dự án.
-- Trạng thái: đã có code, test và log; PR #63 đang mở, chờ Đức review/approve trước khi merge. Giờ đóng góp chờ tác giả ghi theo thực tế.
+- Trạng thái: đã có code, test và log; PR #63 đang mở, chờ Đức review/approve trước khi merge.
+
+## Nhật ký
+
+| Ngày | Việc | Dẫn chứng | Giờ |
+| --- | --- | --- | --- |
+| 13/11/2026 | Hoàn thiện mục 2.1–2.2 về tác tử, Minimax, Alpha-Beta, MCTS/UCT và mục 3.3 về thuật toán cấp 1–4; đối chiếu proposal, tài liệu lý thuyết và mã nguồn | [Issue #35](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/issues/35), [PR #74](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/pull/74), [mục 2.1–2.2](../report/02a_tim_kiem.md), [mục 3.3](../report/03b_thuat_toan.md) | Chưa ghi nhận |
+
+- Nhánh: `docs/issue-35-search-report`; đã push và mở PR #74.
+- Chỉ bổ sung tài liệu; không thay đổi thuật toán hoặc ghi thêm kết quả giải đấu.
+- Kiểm tra tại máy: `python -m pytest -o addopts= -q` đạt **283 passed in 35.82s**; đối chiếu ví dụ trên hai engine và kiểm tra 27 liên kết tương đối trong hai mục báo cáo và nhật ký đóng góp. `git diff --check` đạt.
+- Công cụ: Codex hỗ trợ hoàn thiện.
+- Thời gian đóng góp và khả năng tự giải thích cần được tác giả xác nhận theo thực tế.
+- Trạng thái: PR #74 đã mở, chờ Đức review/approve trước khi merge.
