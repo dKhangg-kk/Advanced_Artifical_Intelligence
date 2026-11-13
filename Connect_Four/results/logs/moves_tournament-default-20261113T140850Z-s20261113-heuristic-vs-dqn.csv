@@ -1,0 +1,191 @@
+run_id,game_id,ply,player,agent,action,legal_actions,time_ms,nodes,simulations,depth_reached,eval_score,is_terminal
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g000,4,1,heuristic,3,0 1 2 3 4 5 6,0.3309589999958007,7,0,1,28.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g000,5,2,dqn,5,0 1 2 3 4 5 6,8.148387000005641,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g000,6,1,heuristic,2,0 1 2 3 4 5 6,0.36773399997969136,7,0,1,9114.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g000,7,2,dqn,1,0 1 2 3 4 5 6,0.2688959999943563,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g000,8,1,heuristic,4,0 1 2 3 4 5 6,0.00899299999446157,0,0,0,10000.0,1
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g001,4,1,dqn,2,0 1 2 3 4 5 6,0.2796519999890279,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g001,5,2,heuristic,2,0 1 2 3 4 5 6,0.3371489999892674,7,0,1,20.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g001,6,1,dqn,2,0 1 2 3 4 5 6,0.24851399999192836,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g001,7,2,heuristic,0,0 1 2 3 4 5 6,0.34507999998822925,7,0,1,98.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g001,8,1,dqn,3,0 1 2 3 4 5 6,0.29541600000015933,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g001,9,2,heuristic,3,0 1 2 3 4 5 6,0.008042000018804174,0,0,0,10000.0,1
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g002,4,1,heuristic,3,0 1 2 3 4 5 6,0.310358000007227,7,0,1,6.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g002,5,2,dqn,1,0 1 2 3 4 5 6,0.23887999998351006,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g002,6,1,heuristic,2,0 1 2 3 4 5 6,0.3331730000013522,7,0,1,52.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g002,7,2,dqn,2,0 1 2 3 4 5 6,0.25037699998620155,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g002,8,1,heuristic,1,0 1 2 3 4 5 6,0.3073530000108349,7,0,1,9216.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g002,9,2,dqn,2,0 1 2 3 4 5 6,0.23976100001732448,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g002,10,1,heuristic,0,0 1 2 3 4 5 6,0.007341000014093879,0,0,0,10000.0,1
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g003,4,1,dqn,6,0 1 2 3 4 5 6,0.24323700000650206,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g003,5,2,heuristic,3,0 1 2 3 4 5 6,0.30283700002087244,7,0,1,40.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g003,6,1,dqn,3,0 1 2 3 4 5 6,0.2560959999868828,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g003,7,2,heuristic,2,0 1 2 3 4 5 6,0.44649400001617323,7,0,1,64.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g003,8,1,dqn,3,0 1 2 3 4 5 6,0.2868619999958355,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g003,9,2,heuristic,5,0 1 2 3 4 5 6,0.34989700000664925,7,0,1,142.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g003,10,1,dqn,2,0 1 2 3 4 5 6,0.4210650000118221,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g003,11,2,heuristic,5,0 1 2 3 4 5 6,0.3797329999883914,7,0,1,9136.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g003,12,1,dqn,2,0 1 2 3 4 5 6,0.32119499999794243,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g003,13,2,heuristic,5,0 1 2 3 4 5 6,0.009194000000434244,0,0,0,10000.0,1
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g004,4,1,heuristic,3,0 1 2 3 4 5 6,0.303247000005058,7,0,1,9112.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g004,5,2,dqn,0,0 1 2 3 4 5 6,0.25217000001021006,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g004,6,1,heuristic,2,0 1 2 3 4 5 6,0.007961999983763235,0,0,0,10000.0,1
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g005,4,1,dqn,5,0 1 2 3 4 5 6,0.23360200000865916,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g005,5,2,heuristic,3,0 1 2 3 4 5 6,0.3463630000055673,7,0,1,18.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g005,6,1,dqn,1,0 1 2 3 4 5 6,0.250607999987551,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g005,7,2,heuristic,3,0 1 2 3 4 5 6,0.38960699998824566,7,0,1,30.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g005,8,1,dqn,3,0 1 2 3 4 5 6,0.3486760000157574,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g005,9,2,heuristic,4,0 1 2 3 4 5 6,0.42491099998187565,7,0,1,44.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g005,10,1,dqn,2,0 1 2 3 4 5 6,0.3626169999790818,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g005,11,2,heuristic,5,0 1 2 3 4 5 6,0.40463999999929,7,0,1,9218.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g005,12,1,dqn,2,0 1 2 3 4 5 6,0.26943599999640355,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g005,13,2,heuristic,6,0 1 2 3 4 5 6,0.31958200000303805,7,0,1,9026.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g005,14,1,dqn,2,0 1 2 3 4 5 6,0.5064030000028197,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g005,15,2,heuristic,6,0 1 2 3 4 5 6,0.011217000007945899,0,0,0,10000.0,1
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g006,4,1,heuristic,0,0 1 2 3 4 5 6,0.35211100001220075,7,0,1,9050.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g006,5,2,dqn,0,0 1 2 3 4 5 6,0.27091800001244337,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g006,6,1,heuristic,2,0 1 2 3 4 5 6,0.3073229999870364,7,0,1,-38.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g006,7,2,dqn,0,0 1 2 3 4 5 6,0.4279949999954624,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g006,8,1,heuristic,2,0 1 2 3 4 5 6,0.3051900000059504,7,0,1,4.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g006,9,2,dqn,0,0 1 2 3 4 5 6,23.64481399999363,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g006,10,1,heuristic,2,1 2 3 4 5 6,0.4734640000094714,6,0,1,9136.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g006,11,2,dqn,2,1 2 3 4 5 6,0.4302380000069661,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g006,12,1,heuristic,3,1 2 3 4 5 6,0.274944000011601,6,0,1,132.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g006,13,2,dqn,6,1 2 3 4 5 6,0.3358460000129071,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g006,14,1,heuristic,5,1 2 3 4 5 6,0.06765200001268568,1,0,1,148.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g006,15,2,dqn,6,1 2 3 4 5 6,0.3351149999843983,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g006,16,1,heuristic,4,1 2 3 4 5 6,0.2901069999836636,6,0,1,9330.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g006,17,2,dqn,6,1 2 3 4 5 6,0.26359699998579345,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g006,18,1,heuristic,5,1 2 3 4 5 6,0.008041999990382465,0,0,0,10000.0,1
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g007,4,1,dqn,5,0 1 2 3 4 5 6,0.2679340000213415,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g007,5,2,heuristic,2,0 1 2 3 4 5 6,0.31141900001330214,7,0,1,9126.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g007,6,1,dqn,1,0 1 2 3 4 5 6,0.24690199998644857,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g007,7,2,heuristic,3,0 1 2 3 4 5 6,0.4308789999925011,7,0,1,68.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g007,8,1,dqn,3,0 1 2 3 4 5 6,0.2745539999864377,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g007,9,2,heuristic,4,0 1 2 3 4 5 6,0.3183000000035463,7,0,1,92.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g007,10,1,dqn,2,0 1 2 3 4 5 6,0.28660200001695557,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g007,11,2,heuristic,2,0 1 2 3 4 5 6,0.3040180000084547,7,0,1,92.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g007,12,1,dqn,4,0 1 2 3 4 5 6,0.25160900000287256,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g007,13,2,heuristic,4,0 1 2 3 4 5 6,0.06446700001561112,1,0,1,152.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g007,14,1,dqn,4,0 1 2 3 4 5 6,0.2321700000038618,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g007,15,2,heuristic,5,0 1 2 3 4 5 6,0.34680300001355135,7,0,1,236.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g007,16,1,dqn,2,0 1 2 3 4 5 6,0.24871499999790103,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g007,17,2,heuristic,6,0 1 2 3 4 5 6,0.3225560000146288,7,0,1,9204.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g007,18,1,dqn,2,0 1 2 3 4 5 6,0.2850699999896733,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g007,19,2,heuristic,6,0 1 2 3 4 5 6,0.008672999996406361,0,0,0,10000.0,1
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g008,4,1,heuristic,3,0 1 2 3 4 5 6,0.2994219999834513,7,0,1,9118.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g008,5,2,dqn,0,0 1 2 3 4 5 6,0.24229500002093118,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g008,6,1,heuristic,1,0 1 2 3 4 5 6,0.008301999997684106,0,0,0,10000.0,1
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g009,4,1,dqn,5,0 1 2 3 4 5 6,0.32738300001255993,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g009,5,2,heuristic,3,0 1 2 3 4 5 6,0.32309700000610064,7,0,1,12.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g009,6,1,dqn,1,0 1 2 3 4 5 6,0.3558669999961239,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g009,7,2,heuristic,3,0 1 2 3 4 5 6,0.3457619999949202,7,0,1,54.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g009,8,1,dqn,3,0 1 2 3 4 5 6,0.2574179999896842,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g009,9,2,heuristic,2,0 1 2 3 4 5 6,0.3144639999845822,7,0,1,9148.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g009,10,1,dqn,3,0 1 2 3 4 5 6,0.2378690000170991,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g009,11,2,heuristic,1,0 1 2 3 4 5 6,0.007621000008839474,0,0,0,10000.0,1
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g010,4,1,heuristic,3,0 1 2 3 4 5 6,0.33256099999334765,7,0,1,6.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g010,5,2,dqn,1,0 1 2 3 4 5 6,0.2496160000191594,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g010,6,1,heuristic,2,0 1 2 3 4 5 6,0.5794340000022657,7,0,1,52.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g010,7,2,dqn,2,0 1 2 3 4 5 6,0.28842500000791915,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g010,8,1,heuristic,1,0 1 2 3 4 5 6,0.3114399999901707,7,0,1,9216.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g010,9,2,dqn,2,0 1 2 3 4 5 6,0.37032900002031965,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g010,10,1,heuristic,0,0 1 2 3 4 5 6,0.00965499998528685,0,0,0,10000.0,1
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g011,4,1,dqn,6,0 1 2 3 4 5 6,0.2917900000056761,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g011,5,2,heuristic,3,0 1 2 3 4 5 6,0.3474540000070192,7,0,1,40.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g011,6,1,dqn,3,0 1 2 3 4 5 6,0.28475999999955093,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g011,7,2,heuristic,2,0 1 2 3 4 5 6,0.3889570000126241,7,0,1,64.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g011,8,1,dqn,3,0 1 2 3 4 5 6,0.26988599998389873,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g011,9,2,heuristic,5,0 1 2 3 4 5 6,0.35433400000783877,7,0,1,142.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g011,10,1,dqn,2,0 1 2 3 4 5 6,0.2642390000175965,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g011,11,2,heuristic,5,0 1 2 3 4 5 6,0.27702799999929084,7,0,1,9136.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g011,12,1,dqn,2,0 1 2 3 4 5 6,0.23696799999584073,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g011,13,2,heuristic,5,0 1 2 3 4 5 6,0.007641999985708026,0,0,0,10000.0,1
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g012,4,1,heuristic,3,0 1 2 3 4 5 6,0.333112000021174,7,0,1,9112.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g012,5,2,dqn,5,0 1 2 3 4 5 6,0.249617000008584,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g012,6,1,heuristic,4,0 1 2 3 4 5 6,0.007621000008839474,0,0,0,10000.0,1
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g013,4,1,dqn,2,0 1 2 3 4 5 6,0.3193220000241581,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g013,5,2,heuristic,5,0 1 2 3 4 5 6,0.35813000002349327,7,0,1,9090.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g013,6,1,dqn,2,0 1 2 3 4 5 6,0.2672330000166312,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g013,7,2,heuristic,5,0 1 2 3 4 5 6,0.007861999989700053,0,0,0,10000.0,1
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g014,4,1,heuristic,3,0 1 2 3 4 5 6,0.3369789999965178,7,0,1,16.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g014,5,2,dqn,3,0 1 2 3 4 5 6,0.2816250000137188,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g014,6,1,heuristic,2,0 1 2 3 4 5 6,0.3023659999996653,7,0,1,50.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g014,7,2,dqn,3,0 1 2 3 4 5 6,0.2553949999821725,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g014,8,1,heuristic,4,0 1 2 3 4 5 6,0.39094000001682616,7,0,1,9224.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g014,9,2,dqn,2,0 1 2 3 4 5 6,0.26557099999990896,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g014,10,1,heuristic,5,0 1 2 3 4 5 6,0.008221999991064877,0,0,0,10000.0,1
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g015,4,1,dqn,1,0 1 2 3 4 5 6,0.23301099997752317,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g015,5,2,heuristic,3,0 1 2 3 4 5 6,0.573043999992251,7,0,1,44.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g015,6,1,dqn,3,0 1 2 3 4 5 6,0.286963000007745,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g015,7,2,heuristic,4,0 1 2 3 4 5 6,0.3075739999758298,7,0,1,68.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g015,8,1,dqn,2,0 1 2 3 4 5 6,0.3821359999847118,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g015,9,2,heuristic,2,0 1 2 3 4 5 6,0.27963099998373764,7,0,1,68.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g015,10,1,dqn,2,0 1 2 3 4 5 6,0.2861110000083045,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g015,11,2,heuristic,5,0 1 2 3 4 5 6,0.2992819999860785,7,0,1,142.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g015,12,1,dqn,2,0 1 2 3 4 5 6,0.251659000014115,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g015,13,2,heuristic,6,0 1 2 3 4 5 6,0.26985699997794654,7,0,1,9140.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g015,14,1,dqn,2,0 1 2 3 4 5 6,0.2628360000187513,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g015,15,2,heuristic,6,0 1 3 4 5 6,0.008712999999715976,0,0,0,10000.0,1
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g016,4,1,heuristic,3,0 1 2 3 4 5 6,0.3001829999789152,7,0,1,12.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g016,5,2,dqn,0,0 1 2 3 4 5 6,0.2451500000120177,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g016,6,1,heuristic,2,0 1 2 3 4 5 6,0.40603200000077777,7,0,1,54.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g016,7,2,dqn,2,0 1 2 3 4 5 6,0.27160999999864543,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g016,8,1,heuristic,3,0 1 2 3 4 5 6,0.31543500000452696,7,0,1,80.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g016,9,2,dqn,3,0 1 2 3 4 5 6,0.23912100002121406,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g016,10,1,heuristic,1,0 1 2 3 4 5 6,0.3511090000074546,7,0,1,118.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g016,11,2,dqn,2,0 1 2 3 4 5 6,0.2506479999908606,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g016,12,1,heuristic,1,0 1 2 3 4 5 6,0.3403940000055172,7,0,1,172.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g016,13,2,dqn,2,0 1 2 3 4 5 6,0.27167999999733183,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g016,14,1,heuristic,2,0 1 2 3 4 5 6,0.06110199998943244,1,0,1,162.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g016,15,2,dqn,0,0 1 3 4 5 6,0.23698699999386008,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g016,16,1,heuristic,1,0 1 3 4 5 6,0.2765870000018822,6,0,1,9258.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g016,17,2,dqn,4,0 1 3 4 5 6,0.23472300000548785,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g016,18,1,heuristic,1,0 1 3 4 5 6,0.007361000001537832,0,0,0,10000.0,1
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g017,4,1,dqn,5,0 1 2 3 4 5 6,0.24394800001914518,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g017,5,2,heuristic,3,0 1 2 3 4 5 6,0.36371800001688825,7,0,1,28.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g017,6,1,dqn,3,0 1 2 3 4 5 6,0.2552150000099118,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g017,7,2,heuristic,2,0 1 2 3 4 5 6,0.33101899998655426,7,0,1,42.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g017,8,1,dqn,3,0 1 2 3 4 5 6,0.24667200000294542,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g017,9,2,heuristic,5,0 1 2 3 4 5 6,0.3122910000001866,7,0,1,110.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g017,10,1,dqn,2,0 1 2 3 4 5 6,0.27009800001565054,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g017,11,2,heuristic,4,0 1 2 3 4 5 6,0.2816850000044724,7,0,1,8990.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g017,12,1,dqn,2,0 1 2 3 4 5 6,0.2397019999875738,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g017,13,2,heuristic,4,0 1 2 3 4 5 6,0.008152000020800187,0,0,0,10000.0,1
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g018,4,1,heuristic,4,0 1 2 3 4 5 6,0.35370399999123947,7,0,1,9118.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g018,5,2,dqn,5,0 1 2 3 4 5 6,0.25941100000181905,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g018,6,1,heuristic,3,0 1 2 3 4 5 6,0.3117500000087148,7,0,1,50.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g018,7,2,dqn,5,0 1 2 3 4 5 6,0.23767800001905925,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g018,8,1,heuristic,3,0 1 2 3 4 5 6,0.5725439999935134,7,0,1,9152.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g018,9,2,dqn,3,0 1 2 3 4 5 6,0.2802520000102504,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g018,10,1,heuristic,2,0 1 2 3 4 5 6,0.35288199998717573,7,0,1,76.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g018,11,2,dqn,5,0 1 2 3 4 5 6,0.2903780000167444,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g018,12,1,heuristic,5,0 1 2 3 4 5 6,0.06369600001221443,1,0,1,86.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g018,13,2,dqn,5,0 1 2 3 4 5 6,0.23717700000247532,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g018,14,1,heuristic,2,0 1 2 3 4 5 6,0.3428569999925912,7,0,1,212.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g018,15,2,dqn,5,0 1 2 3 4 5 6,0.2498670000079528,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g018,16,1,heuristic,2,0 1 2 3 4 6,0.2708979999965777,6,0,1,9338.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g018,17,2,dqn,2,0 1 2 3 4 6,0.26412799999775416,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g018,18,1,heuristic,1,0 1 2 3 4 6,0.2585599999918031,6,0,1,222.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g018,19,2,dqn,2,0 1 2 3 4 6,0.2527010000221708,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g018,20,1,heuristic,1,0 1 3 4 6,0.1888850000000275,5,0,1,9386.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g018,21,2,dqn,4,0 1 3 4 6,0.33558600000560546,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g018,22,1,heuristic,4,0 1 3 4 6,0.093931999998631,1,0,1,18546.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g018,23,2,dqn,4,0 1 3 4 6,0.2661419999867576,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g018,24,1,heuristic,1,0 1 3 4 6,0.007390999996914616,0,0,0,10000.0,1
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g019,4,1,dqn,1,0 1 2 3 4 5 6,0.23466400000415888,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g019,5,2,heuristic,3,0 1 2 3 4 5 6,0.34223599999450016,7,0,1,16.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g019,6,1,dqn,2,0 1 2 3 4 5 6,0.2824960000111787,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g019,7,2,heuristic,3,0 1 2 3 4 5 6,0.3181900000015503,7,0,1,22.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g019,8,1,dqn,3,0 1 2 3 4 5 6,0.24115399997981513,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g019,9,2,heuristic,2,0 1 2 3 4 5 6,0.35109899999952177,7,0,1,46.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g019,10,1,dqn,2,0 1 2 3 4 5 6,0.26148400002057315,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g019,11,2,heuristic,4,0 1 2 3 4 5 6,0.3381099999728576,7,0,1,116.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g019,12,1,dqn,2,0 1 2 3 4 5 6,0.37064899998995315,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g019,13,2,heuristic,4,0 1 2 3 4 5 6,0.32630200001904086,7,0,1,196.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g019,14,1,dqn,2,0 1 2 3 4 5 6,0.41288200000622055,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g019,15,2,heuristic,4,0 1 3 4 5 6,0.33220100002040454,6,0,1,9616.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g019,16,1,dqn,4,0 1 3 4 5 6,0.27034800001501935,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g019,17,2,heuristic,5,0 1 3 4 5 6,0.2687050000247382,6,0,1,9340.0,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g019,18,1,dqn,5,0 1 3 4 5 6,0.2762769999833381,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,heuristic_vs_dqn-g019,19,2,heuristic,5,0 1 3 4 5 6,0.008463000000347165,0,0,0,10000.0,1

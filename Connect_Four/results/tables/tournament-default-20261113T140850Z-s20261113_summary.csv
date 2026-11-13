@@ -1,0 +1,4 @@
+agent_a,agent_b,wins_a,draws,wins_b,score_a
+random,heuristic,0,0,20,0.0
+random,dqn,6,0,14,0.3
+heuristic,dqn,20,0,0,1.0

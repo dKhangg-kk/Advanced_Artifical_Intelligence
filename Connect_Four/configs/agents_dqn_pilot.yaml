@@ -1,0 +1,18 @@
+# Tham so rieng cho giai dau pilot sau khi hoan tat huan luyen DQN pilot.
+random:
+  level: 1
+  seed: null
+heuristic:
+  level: 2
+  weights:
+    win: 10000.0
+    block: 9000.0
+    avoid_opponent_win: 5000.0
+    own_three: 100.0
+    own_two: 10.0
+    opponent_three: 80.0
+    center_bonus: 6.0
+dqn:
+  level: 6
+  checkpoint: checkpoints/level6_dqn/pilot/dqn_model.pt
+  epsilon: 0.0

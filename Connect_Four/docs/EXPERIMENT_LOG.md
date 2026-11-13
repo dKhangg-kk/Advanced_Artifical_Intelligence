@@ -165,3 +165,17 @@ Mỗi mục dùng mẫu sau:
   `run_id` và manifest dùng UTC; 18:13 ngày 10/11 UTC là 01:13 ngày 11/11 tại Việt Nam.
 - **Giải thích thuật toán/công cụ:** [hướng dẫn MCTS](MCTS.md),
   [nhật ký đóng góp](contributions/pham-thai-duy-khang.md). Chờ review trước khi merge.
+
+
+## 2026-11-13 — DQN pilot va Round-Robin pilot (Như Ý)
+
+- **Training run_id:** `20261113_140831_508593`
+- **Cau hinh:** 200 episodes; doi thu `heuristic`; seed 42; lr=0.001; gamma=0.99; epsilon 1.0 → floor 0.05 voi decay 0.9995; batch_size=64; replay capacity=100000; target sync moi 500 optimizer updates; CPU (`torch 2.10.0+cpu`, Python 3.13.5, NumPy 2.3.5).
+- **Ket qua pilot:** 1 win, 0 draw, 199 losses; mean reward=-0.99; 757 optimizer updates; mean episode loss (cot `mean_loss`)≈0.004874; metadata elapsed=10.665 s; replay size=820.
+- **Artifacts:** `results/logs/train_dqn_20261113_140831_508593.csv`; `checkpoints/level6_dqn/pilot/dqn_model.json`; model `.pt` giu local de kiem tra, chua phai checkpoint dong bang va khong dua vao patch GitHub giua ky.
+- **Tournament run_id prefix:** `tournament-default-20261113T140850Z-s20261113`
+- **Cau hinh:** 3 agents (`random`, `heuristic`, `dqn`); 20 games/pair; 10 shared openings; mode `default`; seed 20261113; total 60 games.
+- **W-D-L theo agent A:** random–heuristic 0-0-20; random–DQN 6-0-14; heuristic–DQN 20-0-0. DQN (agent B) thang 14/20 truoc Random va 0/20 truoc Heuristic.
+- **Artifacts:** `results/logs/games_tournament-default-20261113T140850Z-s20261113-*.csv`, cac file `moves_*.csv`, `results/tables/tournament-default-20261113T140850Z-s20261113_summary.csv`, `results/logs/run_manifest.csv`.
+- **Environment:** Linux x86_64; CPU-only; `git_commit` khong co do chay tren ban ZIP khong kem thu muc `.git`; khong tu gan commit id.
+- **Interpretation:** day la pilot 20 games/pair, khong dap ung nguong chinh thuc toi thieu 100 games/pair; khong dung de ket luan cuoi cung. DQN pilot chua hoc duoc chien luoc tot truoc Heuristic; can chay A4 3 decay × 3 seeds va chon checkpoint bang validation theo ke hoach truoc khi dong bang (17/11).
