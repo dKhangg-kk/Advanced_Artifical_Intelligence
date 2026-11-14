@@ -1,14 +1,28 @@
 # Ablation A3 - Anh huong cua kich thuoc du lieu huan luyen CNN Policy.
-# Giu nguyen mang/sieu tham so; dung 2000 van danh rieng cho A3 (3000 van cho model chinh).
-# Do: Training Loss, Validation Loss, Top-1 Accuracy, Win Rate truoc Alpha-Beta.
+# Giu nguyen mang/sieu tham so; dung cohort A3 (2000 van danh rieng, 3000 van
+# cho model chinh). Chia theo van 70/15/15 tu manifest seed 0, sau do loai
+# trung/dedupe nen so van con mau duy nhat thuc te la:
+#   1332 van train / 254 van validation / 264 van test.
+# Validation va test duoc giu co dinh cho moi muc; vi vay muc lon nhat chi co
+# the dung 1332 van train thuc co (khong phai 2000 van cua ca cohort).
+# Do: Training Loss, Validation Loss, Top-1 Accuracy, va do chinh xac theo
+# tinh huong thang ngay / chan / kiem soat trung tam (tra loi RQ2).
 
 name: ablation_a3_cnn_data
 agent: nn
-dataset_sizes_games: [250, 500, 1000, 2000]
+cohort: a3
+data_dir: data/generated/splits
+dataset_sizes_games: [250, 500, 1000, 1332]
 epochs: 20
 batch_size: 64
 lr: 0.001
 split_ratio: [0.70, 0.15, 0.15]
+out_dir: checkpoints
+log_dir: results/logs
+table_output: results/tables/ablation_a3_results.csv
+figure_output: results/figures/ablation_a3_accuracy.png
+# Win rate doi khang truoc Alpha-Beta de danh cho dot danh gia giai dau;
+# issue #22 chi do top-1 va do chinh xac theo tinh huong.
 test_opponent: alphabeta_depth4
 eval_games: 100
 seed: 20261105

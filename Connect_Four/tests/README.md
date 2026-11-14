@@ -16,7 +16,8 @@ pytest -q
 | `test_data_split.py` | Sinh nhãn Alpha-Beta, chia theo ván, lọc trùng và lật gương chỉ ở train | Đã có |
 | `test_positions.py` | 31 vi tri CSV; doi chieu `winning_moves` va `blocking_moves` tren hai engine | Da co, dang chay |
 | `test_agents.py` | Random/Heuristic: nuoc hop le, seed, khong doi game, van ket thuc | Da co, chay tren ca hai engine |
-| `test_train_supervised.py` | CNN: chọn checkpoint theo val loss, log/metadata, test chỉ dùng một lần, loại cột đầy khi suy luận | Da co |
+| `test_train_supervised.py` | CNN: chọn checkpoint theo val loss, log/metadata, test chỉ dùng một lần, giới hạn số ván theo cohort A3, loại cột đầy khi suy luận | Đã có |
+| `test_situations.py` | Phân loại thắng ngay/chặn/trung tâm và accuracy theo tình huống cho ablation A3 (RQ2) | Da co |
 | `test_heuristic.py` | Thang > chan > an toan > diem; hoa diem, ham diem, van hoa, thong ke | Da co, chay tren ca hai engine |
 | `test_alphabeta.py` | Minimax do sau 1–4, bon to hop cat tia/sap xep, thong ke, Budget(depth/time_s), timeout va khong doi game | Da co, chay tren ca hai engine |
 | `test_mcts.py` | Bon buoc UCT, doi goc nhin, Budget(simulations/time_s), seed, thong ke, terminal va khong doi game | Da co, ca hai engine va cay bay doi thu |
