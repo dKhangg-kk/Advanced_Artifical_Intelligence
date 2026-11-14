@@ -8,7 +8,7 @@ tung thanh vien xac nhan; khong tu suy ra tu so dong code hoac thoi gian chay.
 | Bui Anh Duc | Engine bitboard, engine tham chieu, test/check va tai lieu kien truc | `docs/contributions/bui-anh-duc.md` | CAN DIEN | CAN DIEN |
 | Pham Thai Duy Khang | Heuristic, Alpha-Beta, pilot K1 | `docs/contributions/khang.md` | CAN DIEN | CAN DIEN |
 | Phan Le Ngoc Nhu Y | Khung DQN va ReplayBuffer | `docs/contributions/phan-le-ngoc-nhu-y.md` | CAN DIEN | CAN DIEN |
-| Bui Quyen Kiet | Chua co file dong gop rieng trong repository | CAN BO SUNG | CAN DIEN | CAN DIEN |
+| Bui Quyen Kiet | Metrics/CI, kiem thu luat, du lieu va CNN, ablation, bao cao | `docs/contributions/kiet.md` | CAN DIEN | CAN DIEN |
 
 ## Quy tac chot truoc khi nop
 
