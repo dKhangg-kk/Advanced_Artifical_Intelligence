@@ -11,6 +11,7 @@ test đối chiếu và phần báo cáo kiến trúc tương ứng (mục 3.1�
 | --- | --- | --- | --- |
 | 08/11/2026 | Bổ sung `ReferenceGame`, hoàn thiện engine bitboard, bộ chạy trận và giao diện cơ bản | `0f31c47` | TODO |
 | 08/11/2026 | Bổ sung terminal, test engine/cross-check/match và tài liệu kiến trúc mục 3.1–3.2 | `1e1ca30` | TODO |
+| 12/11/2026 | Hoàn thiện CLI giải đấu: tạo tác tử theo tham số, áp dụng ngân sách depth/simulation/time, chạy cặp đấu đổi bên và lưu log games/moves; bổ sung test MCTS về nước hợp lệ, tính tái lập, ngân sách và không làm đổi bàn cờ | `48a682c` | Chưa ghi nhận |
 
 ## Kết quả kiểm tra
 

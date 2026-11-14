@@ -41,7 +41,7 @@ Mỗi mục dùng mẫu sau:
 
 - **Nhận xét:** điều quan sát được, khác biệt so với lần trước, vấn đề cần điều tra.
 - **Việc tiếp theo:** ...
-```
+```md
 
 ## Quy tắc
 
@@ -181,3 +181,43 @@ Mỗi mục dùng mẫu sau:
 - **Nhận xét:** Top-1 tăng 9,90 điểm phần trăm từ 250 lên 1.332 ván; thắng ngay (tactical) tăng 17,45 điểm; chặn (tactical) tăng 24,65 điểm; kiểm soát trung tâm (top-1) tăng 11,10 điểm. Chặn là tình huống cải thiện mạnh nhất. Tỷ lệ chọn đúng cột giữa giảm khi tăng dữ liệu (38,51% → 27,57%) vì mô hình học sát nhãn Alpha-Beta hơn, mà Alpha-Beta depth 4 chỉ chọn cột giữa ở khoảng 22,8% vị trí không có nước chiến thuật; vì vậy chỉ báo cáo tỷ lệ này như chẩn đoán. Trong 321 vị trí thắng ngay của test, 98 nhãn Alpha-Beta (30,5%) không phải nước thắng ngay, nên tactical accuracy mới là thước đo đúng cho `win_now`.
 - **Việc tiếp theo:** lặp thêm seed/bộ chia để có khoảng tin cậy; đo win rate đối kháng trước Alpha-Beta ở hạng mục đánh giá giải đấu (ngoài phạm vi Issue #22).
 
+## K3 — MCTS-UCT, issue #14 (11/11/2026, giờ Việt Nam)
+
+- **Mục tiêu:** MCTS thắng Random ít nhất 95% ở 500 mô phỏng/nước.
+- **Mã nguồn:** commit `4dbe441`, nhánh `feat/issue-14-mcts-uct`.
+- **Lệnh:** `PYTHONPATH=src python scripts/evaluate_k3.py` trong `Connect_Four`.
+- **Cấu hình:** [`configs/k3_random_mcts.json`](../configs/k3_random_mcts.json);
+  200 ván, 100 khai cuộc khác nhau dài 4 nước, đổi bên từng cặp;
+  seed khai cuộc/MCTS = 0, Random = 1, `c=1.414`, rollout random.
+- **Run chính thức:** `k3-mcts-random-20261110T181313Z-s0`, thực hiện sau khi commit mã nguồn.
+- **Kết quả:** **199 thắng, 0 hòa, 1 thua — 99,5%**, vượt ngưỡng 190/200.
+- **Log thô:** [ván](../results/logs/games_k3-mcts-random-20261110T181313Z-s0.csv),
+  [nước](../results/logs/moves_k3-mcts-random-20261110T181313Z-s0.csv),
+  [bảng tổng hợp](../results/tables/k3-mcts-random-20261110T181313Z-s0.csv),
+  [manifest và môi trường](../results/logs/run_manifest.csv).
+- **Kiểm tra:** script phát lại toàn bộ 200 ván, đối chiếu bên thắng và số ván
+  đi trước/đi sau; log MCTS ghi đúng 500 mô phỏng cho mỗi nước.
+  Toàn bộ kiểm thử: **218 passed in 22.80s**, gồm 38 test K3;
+  [log kiểm thử](../results/logs/k3_pytest_20261111.txt).
+- **Lần thử trước commit:** `k3-mcts-random-20261110T181053Z-s0` cũng đạt
+  199/200; giữ nguyên log và ghi rõ trong manifest rằng `9e03821` chưa chứa
+  thay đổi lúc chạy. Dùng run chính thức ở trên để tái lập.
+- **Giới hạn:** một bộ seed và cấu hình cố định, không bảo đảm tỷ lệ này với
+  mọi khai cuộc/seed hoặc đối thủ mạnh hơn. Chưa chạy ablation A2/giải đấu M3.
+  `run_id` và manifest dùng UTC; 18:13 ngày 10/11 UTC là 01:13 ngày 11/11 tại Việt Nam.
+- **Giải thích thuật toán/công cụ:** [hướng dẫn MCTS](MCTS.md),
+  [nhật ký đóng góp](contributions/pham-thai-duy-khang.md). Chờ review trước khi merge.
+
+
+## 2026-11-13 — DQN pilot va Round-Robin pilot (Như Ý)
+
+- **Training run_id:** `20261113_140831_508593`
+- **Cau hinh:** 200 episodes; doi thu `heuristic`; seed 42; lr=0.001; gamma=0.99; epsilon 1.0 → floor 0.05 voi decay 0.9995; batch_size=64; replay capacity=100000; target sync moi 500 optimizer updates; CPU (`torch 2.10.0+cpu`, Python 3.13.5, NumPy 2.3.5).
+- **Ket qua pilot:** 1 win, 0 draw, 199 losses; mean reward=-0.99; 757 optimizer updates; mean episode loss (cot `mean_loss`)≈0.004874; metadata elapsed=10.665 s; replay size=820.
+- **Artifacts:** `results/logs/train_dqn_20261113_140831_508593.csv`; `checkpoints/level6_dqn/pilot/dqn_model.json`; model `.pt` giu local de kiem tra, chua phai checkpoint dong bang va khong dua vao patch GitHub giua ky.
+- **Tournament run_id prefix:** `tournament-default-20261113T140850Z-s20261113`
+- **Cau hinh:** 3 agents (`random`, `heuristic`, `dqn`); 20 games/pair; 10 shared openings; mode `default`; seed 20261113; total 60 games.
+- **W-D-L theo agent A:** random–heuristic 0-0-20; random–DQN 6-0-14; heuristic–DQN 20-0-0. DQN (agent B) thang 14/20 truoc Random va 0/20 truoc Heuristic.
+- **Artifacts:** `results/logs/games_tournament-default-20261113T140850Z-s20261113-*.csv`, cac file `moves_*.csv`, `results/tables/tournament-default-20261113T140850Z-s20261113_summary.csv`, `results/logs/run_manifest.csv`.
+- **Environment:** Linux x86_64; CPU-only; `git_commit` khong co do chay tren ban ZIP khong kem thu muc `.git`; khong tu gan commit id.
+- **Interpretation:** day la pilot 20 games/pair, khong dap ung nguong chinh thuc toi thieu 100 games/pair; khong dung de ket luan cuoi cung. DQN pilot chua hoc duoc chien luoc tot truoc Heuristic; can chay A4 3 decay × 3 seeds va chon checkpoint bang validation theo ke hoach truoc khi dong bang (17/11).

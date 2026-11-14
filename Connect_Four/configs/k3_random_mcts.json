@@ -1,0 +1,5 @@
+{
+  "mcts": {"simulations": 500, "c": 1.414, "seed": 0},
+  "random": {"seed": 1},
+  "match": {"games_per_pair": 200, "openings": 100, "seed": 0, "opening_plies": 4}
+}
