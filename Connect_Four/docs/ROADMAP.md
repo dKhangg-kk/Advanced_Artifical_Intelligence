@@ -7,9 +7,9 @@ Commit theo quy ước của học phần: `TuanXX/DuAn/Noi dung cong viec`.
 
 ## Mốc M1 — Engine đúng luật (ưu tiên số 1)
 
-- [ ] **[L]** `game/constants.py` — đã có hằng số, không cần sửa
-- [ ] **[L]** `game/reference.py` — bản chậm bằng list 2 chiều
-- [ ] **[L]** `game/engine.py` — bitboard 49-bit
+- [x] **[L]** `game/constants.py` — đã có hằng số, không cần sửa
+- [x] **[L]** `game/reference.py` — bản chậm bằng list 2 chiều
+- [x] **[L]** `game/engine.py` — bitboard 49-bit
 - [ ] **[L]** `tests/test_engine.py` — luật: thả quân, cột đầy, 4 hướng thắng, hòa, undo, clone
 - [ ] **[L]** `tests/test_crosscheck.py` — 1000 chuỗi nước ngẫu nhiên, bitboard == reference
 - [ ] **[D]** `tests/data/positions.csv` — nâng lên ≥ 30 vị trí
@@ -23,7 +23,7 @@ Commit theo quy ước của học phần: `TuanXX/DuAn/Noi dung cong viec`.
 - [x] **[L]** `agents/alphabeta.py` — cấp 3, negamax + cắt tỉa/sắp xếp bật tắt, đếm nút, ngân sách độ sâu/thời gian; có test trên hai engine (K2, chờ review PR)
 - [x] **[L]** `agents/mcts.py` — cấp 4, đủ bốn bước UCT, Budget(simulations/time_s), test hai engine; K3 chờ review PR
 - [x] **[L]** `solver.py` — solver exact dùng làm thước đo, có test trên hai engine
-- [ ] **[L]** `evaluation/metrics.py` — Wilson, bootstrap, p95
+- [x] **[L]** `evaluation/metrics.py` — Wilson, bootstrap có seed, p95
 - [ ] **[L]** `evaluation/runlog.py` + `evaluation/match.py` + `evaluation/cli.py` — `run_id`, manifest, chạy trận, ghi CSV ván/nước
 - [ ] **[L]** `play.py` — chơi terminal
 
