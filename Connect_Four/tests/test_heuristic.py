@@ -38,11 +38,14 @@ def test_avoid_supporting_opponent_win(game):
     assert not game.clone_after(action).winning_moves(opponent)
 
 
-def test_unavoidable_double_threat_still_returns_legal_block(game):
+def test_unavoidable_double_threat_is_not_reported_as_defended(game):
     for move in [6, 1, 6, 2, 5, 3]:
         game.step(move)
     assert game.winning_moves(2) == [0, 4]
-    assert HeuristicAgent(seed=0).choose(game) in [0, 4]
+    agent = HeuristicAgent(seed=0)
+    action = agent.choose(game)
+    assert action in game.legal_actions()
+    assert agent.last_stats.extra["unavoidable_double_threat"] == 1.0
 
 
 def test_tied_wins_are_seeded_and_not_always_leftmost(game):
