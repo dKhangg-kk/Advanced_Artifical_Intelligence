@@ -1,4 +1,7 @@
 report_section,metric,value,unit,type,source_type,source_path,source_filter,formula,run_id
+2.3.4,train_accuracy_epoch20_main,88.6817,percent,measured,log,checkpoints/logs/train_cnn_20261111T140304Z_87e7371b.csv,epoch=20,train_accuracy*100,20261111T140304Z_87e7371b
+2.3.4,max_val_accuracy_main,59.7889,percent,derived,log,checkpoints/logs/train_cnn_20261111T140304Z_87e7371b.csv,all epochs,max(val_accuracy)*100,20261111T140304Z_87e7371b
+2.3.4,val_loss_epoch20_main,1.74198761,loss,measured,log,checkpoints/logs/train_cnn_20261111T140304Z_87e7371b.csv,epoch=20,val_loss,20261111T140304Z_87e7371b
 3.4.1,unique_games,5000,games,measured,table,data/generated/splits/manifest.json,seed=0,unique_games,dataset-seed0
 3.4.1,duplicate_games_removed,16,games,measured,table,data/generated/splits/manifest.json,seed=0,duplicate_games_removed,dataset-seed0
 3.4.1,raw_examples,110083,examples,measured,table,data/generated/splits/manifest.json,seed=0,raw_examples,dataset-seed0
@@ -47,9 +50,6 @@ report_section,metric,value,unit,type,source_type,source_path,source_filter,form
 3.4.4,main_test_loss,1.112209249435365,loss,measured,log,checkpoints/level5_cnn/test_evaluation_20261111T140304Z_87e7371b.json,cohort=main_model,metrics.test_loss,20261111T140304Z_87e7371b
 3.4.4,main_top1_accuracy,56.7644,percent,measured,log,checkpoints/level5_cnn/test_evaluation_20261111T140304Z_87e7371b.json,cohort=main_model,metrics.top1_accuracy*100,20261111T140304Z_87e7371b
 3.4.4,main_legal_action_rate,1.0,ratio,measured,log,checkpoints/level5_cnn/test_evaluation_20261111T140304Z_87e7371b.json,cohort=main_model,metrics.legal_action_rate,20261111T140304Z_87e7371b
-2.3.4,train_accuracy_epoch20_main,88.6817,percent,measured,log,checkpoints/logs/train_cnn_20261111T140304Z_87e7371b.csv,epoch=20,train_accuracy*100,20261111T140304Z_87e7371b
-2.3.4,max_val_accuracy_main,59.7889,percent,derived,log,checkpoints/logs/train_cnn_20261111T140304Z_87e7371b.csv,all epochs,max(val_accuracy)*100,20261111T140304Z_87e7371b
-2.3.4,val_loss_epoch20_main,1.74198761,loss,measured,log,checkpoints/logs/train_cnn_20261111T140304Z_87e7371b.csv,epoch=20,val_loss,20261111T140304Z_87e7371b
 3.4.4,a3_val_examples,5070,examples,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105,val_examples,ablation-a3-20261111T150514Z-s20261105
 3.4.4,a3_test_examples,5012,examples,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105,test_examples,ablation-a3-20261111T150514Z-s20261105
 3.4.4,a3_test_win_now_n,321,examples,measured,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105,win_now_n,ablation-a3-20261111T150514Z-s20261105
@@ -102,3 +102,26 @@ report_section,metric,value,unit,type,source_type,source_path,source_filter,form
 3.4.4,win_now_tactical_gain_250_to_1332,17.4455,percentage_points,derived,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105,59.8131-42.3676,ablation-a3-20261111T150514Z-s20261105
 3.4.4,block_tactical_gain_250_to_1332,24.6478,percentage_points,derived,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105,77.6408-52.9930,ablation-a3-20261111T150514Z-s20261105
 3.4.4,center_top1_gain_250_to_1332,11.1003,percentage_points,derived,table,results/tables/ablation_a3_results.csv,ablation_run_id=ablation-a3-20261111T150514Z-s20261105,52.6537-41.5534,ablation-a3-20261111T150514Z-s20261105
+3.5 DQN pilot,episodes,200,episode,observed,training_log,results/logs/train_dqn_train_dqn_20261113_140831_508593.csv,all rows,COUNT(episode),train_dqn_20261113_140831_508593
+3.5 DQN pilot,wins,1,game,observed,training_log,results/logs/train_dqn_train_dqn_20261113_140831_508593.csv,result == win,"COUNTIF(result, win)",train_dqn_20261113_140831_508593
+3.5 DQN pilot,draws,0,game,observed,training_log,results/logs/train_dqn_train_dqn_20261113_140831_508593.csv,result == draw,"COUNTIF(result, draw)",train_dqn_20261113_140831_508593
+3.5 DQN pilot,losses,199,game,observed,training_log,results/logs/train_dqn_train_dqn_20261113_140831_508593.csv,result == loss,"COUNTIF(result, loss)",train_dqn_20261113_140831_508593
+3.5 DQN pilot,mean_reward,-0.99,reward/episode,derived,training_log,results/logs/train_dqn_train_dqn_20261113_140831_508593.csv,all 200 episodes,MEAN(reward),train_dqn_20261113_140831_508593
+3.5 DQN pilot,mean_huber_loss,0.004874197963158494,loss,derived,training_log,results/logs/train_dqn_train_dqn_20261113_140831_508593.csv,episodes with updates; mean_loss column,MEAN(mean_loss),train_dqn_20261113_140831_508593
+3.5 DQN pilot,optimizer_updates,757,update,observed,training_log,results/logs/train_dqn_train_dqn_20261113_140831_508593.csv,episode 200,LAST(optimizer_updates),train_dqn_20261113_140831_508593
+3.5 DQN pilot,epsilon_checkpoint,0.904814789840326,epsilon,observed,checkpoint_metadata,checkpoints/level6_dqn/pilot/dqn_model.json,episode == 200,metadata.epsilon,train_dqn_20261113_140831_508593
+3.5 DQN pilot,training_elapsed_seconds,10.665,second,observed,checkpoint_metadata,checkpoints/level6_dqn/pilot/dqn_model.json,episode == 200,metadata.training_elapsed_seconds,train_dqn_20261113_140831_508593
+3.6.1 Round-Robin pilot,DQN_wins_vs_Random,14,game,observed,games_log,results/logs/games_tournament-default-20261113T140850Z-s20261113-random-vs-dqn.csv,agent_b == dqn; winner == b,COUNT(winner == b),tournament-default-20261113T140850Z-s20261113-random-vs-dqn
+3.6.1 Round-Robin pilot,DQN_win_rate_vs_Random,0.7,ratio,derived,games_log,results/logs/games_tournament-default-20261113T140850Z-s20261113-random-vs-dqn.csv,DQN is agent B; n=20,14 / 20,tournament-default-20261113T140850Z-s20261113-random-vs-dqn
+3.6.1 Round-Robin pilot,DQN_Wilson95_vs_Random,"[0.481, 0.855]",ratio interval,derived,games_log,results/logs/games_tournament-default-20261113T140850Z-s20261113-random-vs-dqn.csv,DQN is agent B; n=20,"Wilson score interval, z=1.96",tournament-default-20261113T140850Z-s20261113-random-vs-dqn
+3.6.1 Round-Robin pilot,DQN_wins_vs_Heuristic,0,game,observed,games_log,results/logs/games_tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn.csv,agent_b == dqn; winner != b,COUNT(winner == b),tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn
+3.6.1 Round-Robin pilot,DQN_win_rate_vs_Heuristic,0.0,ratio,derived,games_log,results/logs/games_tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn.csv,DQN is agent B; n=20,0 / 20,tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn
+3.6.1 Round-Robin pilot,DQN_Wilson95_vs_Heuristic,"[0.000, 0.161]",ratio interval,derived,games_log,results/logs/games_tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn.csv,DQN is agent B; n=20,"Wilson score interval, z=1.96",tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn
+3.6.1 Round-Robin pilot,Heuristic_wins_vs_Random,20,game,observed,games_log,results/logs/games_tournament-default-20261113T140850Z-s20261113-random-vs-heuristic.csv,agent_b == heuristic; winner == b,COUNT(winner == b),tournament-default-20261113T140850Z-s20261113-random-vs-heuristic
+4.1,games,200,games,measured,log,results/logs/games_k1-heuristic-random-20261109T061032Z-s0.csv,pair=heuristic_vs_random,count(*),k1-heuristic-random-20261109T061032Z-s0
+4.1,heuristic_wins,198,games,measured,log,results/logs/games_k1-heuristic-random-20261109T061032Z-s0.csv,winner=a,count(winner=a),k1-heuristic-random-20261109T061032Z-s0
+4.1,draws,0,games,measured,log,results/logs/games_k1-heuristic-random-20261109T061032Z-s0.csv,winner=draw,count(winner=draw),k1-heuristic-random-20261109T061032Z-s0
+4.1,heuristic_losses,2,games,measured,log,results/logs/games_k1-heuristic-random-20261109T061032Z-s0.csv,winner=b,count(winner=b),k1-heuristic-random-20261109T061032Z-s0
+4.1,score,0.99,ratio,derived,log,results/logs/games_k1-heuristic-random-20261109T061032Z-s0.csv,pair=heuristic_vs_random,(wins+0.5*draws)/games,k1-heuristic-random-20261109T061032Z-s0
+4.1,heuristic_mean_move_time,0.2253645557,ms,measured,log,results/logs/moves_k1-heuristic-random-20261109T061032Z-s0.csv,agent=heuristic,mean(time_ms),k1-heuristic-random-20261109T061032Z-s0
+4.1,heuristic_p95_move_time,0.3323329147,ms,measured,log,results/logs/moves_k1-heuristic-random-20261109T061032Z-s0.csv,agent=heuristic,"percentile(time_ms,95)",k1-heuristic-random-20261109T061032Z-s0
