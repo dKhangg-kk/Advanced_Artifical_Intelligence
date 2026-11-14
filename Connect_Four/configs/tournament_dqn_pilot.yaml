@@ -1,0 +1,16 @@
+# Giai dau pilot cua phan DQN: chi chay voi cac tac tu da co the khoi tao.
+# DQN checkpoint duoc tao tu configs/dqn_training_pilot.yaml.
+mode: default
+games_per_pair: 20
+openings: 10
+seed: 20261113
+max_moves: 42
+time_per_move_s: null
+agents:
+  - random
+  - heuristic
+  - dqn
+agent_config: configs/agents_dqn_pilot.yaml
+output_dir: results/logs
+figures_dir: results/figures
+tables_dir: results/tables

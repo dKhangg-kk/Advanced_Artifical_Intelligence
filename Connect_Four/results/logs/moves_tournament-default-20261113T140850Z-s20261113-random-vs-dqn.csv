@@ -1,0 +1,269 @@
+run_id,game_id,ply,player,agent,action,legal_actions,time_ms,nodes,simulations,depth_reached,eval_score,is_terminal
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g000,4,1,random,2,0 1 2 3 4 5 6,0.005157999993343765,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g000,5,2,dqn,0,0 1 2 3 4 5 6,27.341997999997147,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g000,6,1,random,0,0 1 2 3 4 5 6,0.005739000016546925,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g000,7,2,dqn,0,0 1 2 3 4 5 6,0.3243390000022828,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g000,8,1,random,3,0 1 2 3 4 5 6,0.0022129999877051887,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g000,9,2,dqn,4,0 1 2 3 4 5 6,0.25533499999141895,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g000,10,1,random,5,0 1 2 3 4 5 6,0.0019230000134484726,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g000,11,2,dqn,0,0 1 2 3 4 5 6,0.2366070000050513,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g000,12,1,random,6,0 1 2 3 4 5 6,0.001711999999542968,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g000,13,2,dqn,0,0 1 2 3 4 5 6,0.542848000009144,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g000,14,1,random,6,1 2 3 4 5 6,0.002623999989737058,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g000,15,2,dqn,5,1 2 3 4 5 6,0.3162170000052811,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g000,16,1,random,6,1 2 3 4 5 6,0.004816999989998294,0,0,0,,1
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g001,4,1,dqn,2,0 1 2 3 4 5 6,0.33107900000572954,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g001,5,2,random,6,0 1 2 3 4 5 6,0.0022229999956380198,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g001,6,1,dqn,2,0 1 2 3 4 5 6,0.4109999999855063,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g001,7,2,random,4,0 1 2 3 4 5 6,0.0018730000022060267,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g001,8,1,dqn,2,0 1 2 3 4 5 6,0.23630600000501545,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g001,9,2,random,1,0 1 2 3 4 5 6,0.0018230000193852902,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g001,10,1,dqn,0,0 1 2 3 4 5 6,0.45385499998928935,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g001,11,2,random,2,0 1 2 3 4 5 6,0.0018830000101388578,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g001,12,1,dqn,2,0 1 2 3 4 5 6,0.24358699999993405,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g001,13,2,random,1,0 1 2 3 4 5 6,0.0019430000008924253,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g001,14,1,dqn,6,0 1 2 3 4 5 6,0.27052799998728005,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g001,15,2,random,5,0 1 2 3 4 5 6,0.0019829999757803307,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g001,16,1,dqn,6,0 1 2 3 4 5 6,0.4620969999962199,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g001,17,2,random,5,0 1 2 3 4 5 6,0.00214299998901879,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g001,18,1,dqn,2,0 1 2 3 4 5 6,0.2672330000166312,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g001,19,2,random,4,0 1 3 4 5 6,0.0024429999996300467,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g001,20,1,dqn,6,0 1 3 4 5 6,0.24949599998080885,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g001,21,2,random,6,0 1 3 4 5 6,0.0017730000081428443,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g001,22,1,dqn,0,0 1 3 4 5,0.2966369999910512,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g001,23,2,random,1,0 1 3 4 5,0.002182999992328405,0,0,0,,1
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g002,4,1,random,5,0 1 2 3 4 5 6,0.001762000010785414,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g002,5,2,dqn,1,0 1 2 3 4 5 6,0.2366070000050513,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g002,6,1,random,0,0 1 2 3 4 5 6,0.001952999980403547,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g002,7,2,dqn,1,0 1 2 3 4 5 6,0.22684200001776844,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g002,8,1,random,0,0 1 2 3 4 5 6,0.0016030000153932633,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g002,9,2,dqn,2,0 1 2 3 4 5 6,0.2226750000033917,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g002,10,1,random,1,0 1 2 3 4 5 6,0.0016430000187028782,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g002,11,2,dqn,2,0 1 2 3 4 5 6,0.37887199999886434,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g002,12,1,random,4,0 1 2 3 4 5 6,0.0018730000022060267,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g002,13,2,dqn,1,0 1 2 3 4 5 6,0.2291859999843382,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g002,14,1,random,5,0 1 2 3 4 5 6,0.0015820000101030018,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g002,15,2,dqn,2,0 1 2 3 4 5 6,0.2712090000045464,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g002,16,1,random,1,0 1 2 3 4 5 6,0.0014219999968645425,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g002,17,2,dqn,2,0 1 2 3 4 5 6,0.3360970000017005,0,0,0,,1
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g003,4,1,dqn,6,0 1 2 3 4 5 6,0.2293950000193945,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g003,5,2,random,1,0 1 2 3 4 5 6,0.0018929999896499794,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g003,6,1,dqn,2,0 1 2 3 4 5 6,0.26610099999402337,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g003,7,2,random,0,0 1 2 3 4 5 6,0.0018730000022060267,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g003,8,1,dqn,2,0 1 2 3 4 5 6,0.26767299999619354,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g003,9,2,random,4,0 1 2 3 4 5 6,0.001782999987653966,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g003,10,1,dqn,2,0 1 2 3 4 5 6,0.236255999993773,0,0,0,,1
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g004,4,1,random,3,0 1 2 3 4 5 6,0.001993000012134871,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g004,5,2,dqn,0,0 1 2 3 4 5 6,0.28342699999939214,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g004,6,1,random,1,0 1 2 3 4 5 6,0.0016530000266357092,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g004,7,2,dqn,0,0 1 2 3 4 5 6,0.2266219999853547,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g004,8,1,random,6,0 1 2 3 4 5 6,0.001651999980367691,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g004,9,2,dqn,0,0 1 2 3 4 5 6,0.24956699999734155,0,0,0,,1
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g005,4,1,dqn,5,0 1 2 3 4 5 6,0.22844499997631829,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g005,5,2,random,4,0 1 2 3 4 5 6,0.002023000007511655,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g005,6,1,dqn,2,0 1 2 3 4 5 6,0.2243689999943399,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g005,7,2,random,6,0 1 2 3 4 5 6,0.0016319999929237383,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g005,8,1,dqn,2,0 1 2 3 4 5 6,0.5194239999752881,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g005,9,2,random,6,0 1 2 3 4 5 6,0.0025839999864274432,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g005,10,1,dqn,2,0 1 2 3 4 5 6,0.2509180000060951,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g005,11,2,random,5,0 1 2 3 4 5 6,0.0017130000173892768,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g005,12,1,dqn,2,0 1 2 3 4 5 6,0.23088799997594833,0,0,0,,1
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g006,4,1,random,5,0 1 2 3 4 5 6,0.0019029999975828105,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g006,5,2,dqn,3,0 1 2 3 4 5 6,0.2904080000121212,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g006,6,1,random,2,0 1 2 3 4 5 6,0.0023839999983010784,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g006,7,2,dqn,0,0 1 2 3 4 5 6,0.24227599999449012,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g006,8,1,random,2,0 1 2 3 4 5 6,0.001742999984344351,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g006,9,2,dqn,0,0 1 2 3 4 5 6,0.2256709999812756,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g006,10,1,random,6,0 1 2 3 4 5 6,0.0025539999910506594,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g006,11,2,dqn,0,0 1 2 3 4 5 6,0.2675239999803125,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g006,12,1,random,6,0 1 2 3 4 5 6,0.0019329999929595942,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g006,13,2,dqn,6,0 1 2 3 4 5 6,0.2689259999897331,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g006,14,1,random,1,0 1 2 3 4 5 6,0.001912999977093932,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g006,15,2,dqn,0,0 1 2 3 4 5 6,0.30206600001747574,0,0,0,,1
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g007,4,1,dqn,5,0 1 2 3 4 5 6,0.2424760000110382,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g007,5,2,random,2,0 1 2 3 4 5 6,0.002064000000245869,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g007,6,1,dqn,1,0 1 2 3 4 5 6,0.22469900000032794,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g007,7,2,random,3,0 1 2 3 4 5 6,0.001962999988336378,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g007,8,1,dqn,3,0 1 2 3 4 5 6,0.2706779999925857,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g007,9,2,random,2,0 1 2 3 4 5 6,0.001962999988336378,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g007,10,1,dqn,3,0 1 2 3 4 5 6,0.22944599999163984,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g007,11,2,random,5,0 1 2 3 4 5 6,0.0019219999956021638,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g007,12,1,dqn,2,0 1 2 3 4 5 6,0.3159469999900466,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g007,13,2,random,1,0 1 2 3 4 5 6,0.0023530000134996953,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g007,14,1,dqn,2,0 1 2 3 4 5 6,0.3015650000008918,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g007,15,2,random,4,0 1 2 3 4 5 6,0.002023000007511655,0,0,0,,1
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g008,4,1,random,0,0 1 2 3 4 5 6,0.0015720000021701708,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g008,5,2,dqn,0,0 1 2 3 4 5 6,0.23802900000191585,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g008,6,1,random,4,0 1 2 3 4 5 6,0.0018229999909635808,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g008,7,2,dqn,2,0 1 2 3 4 5 6,0.22357700001407466,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g008,8,1,random,3,0 1 2 3 4 5 6,0.0017730000081428443,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g008,9,2,dqn,4,0 1 2 3 4 5 6,0.22289599999680831,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g008,10,1,random,0,0 1 2 3 4 5 6,0.001612999994904385,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g008,11,2,dqn,0,0 1 2 3 4 5 6,0.2485249999892858,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g008,12,1,random,3,1 2 3 4 5 6,0.0018830000101388578,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g008,13,2,dqn,3,1 2 3 4 5 6,0.23191900001506838,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g008,14,1,random,5,1 2 3 4 5 6,0.0018020000140950287,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g008,15,2,dqn,3,1 2 3 4 5 6,0.2259800000103951,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g008,16,1,random,3,1 2 3 4 5 6,0.0017319999869869207,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g008,17,2,dqn,3,1 2 3 4 5 6,0.2729309999836005,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g008,18,1,random,4,1 2 4 5 6,0.002373000000943648,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g008,19,2,dqn,2,1 2 4 5 6,0.2756059999740046,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g008,20,1,random,6,1 2 4 5 6,0.0021030000141308847,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g008,21,2,dqn,5,1 2 4 5 6,0.473634000002221,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g008,22,1,random,4,1 2 4 5 6,0.0018720000127814274,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g008,23,2,dqn,4,1 2 4 5 6,0.23257000000853623,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g008,24,1,random,6,1 2 5 6,0.0016919999836773059,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g008,25,2,dqn,5,1 2 5 6,0.24587100000417195,0,0,0,,1
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g009,4,1,dqn,5,0 1 2 3 4 5 6,0.22937600002137515,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g009,5,2,random,6,0 1 2 3 4 5 6,0.001952999980403547,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g009,6,1,dqn,1,0 1 2 3 4 5 6,0.22533000000635184,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g009,7,2,random,2,0 1 2 3 4 5 6,0.0017529999922771822,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g009,8,1,dqn,2,0 1 2 3 4 5 6,0.25036700000669043,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g009,9,2,random,0,0 1 2 3 4 5 6,0.0019430000008924253,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g009,10,1,dqn,2,0 1 2 3 4 5 6,0.2357249999818123,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g009,11,2,random,5,0 1 2 3 4 5 6,0.0017129999889675673,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g009,12,1,dqn,2,0 1 2 3 4 5 6,0.2233860000160348,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g009,13,2,random,1,0 1 2 3 4 5 6,0.001623000002837216,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g009,14,1,dqn,2,0 1 2 3 4 5 6,0.22249500000270928,0,0,0,,1
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g010,4,1,random,6,0 1 2 3 4 5 6,0.0016319999929237383,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g010,5,2,dqn,1,0 1 2 3 4 5 6,0.2563959999974941,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g010,6,1,random,6,0 1 2 3 4 5 6,0.002073000018754101,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g010,7,2,dqn,1,0 1 2 3 4 5 6,0.23773800000981282,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g010,8,1,random,0,0 1 2 3 4 5 6,0.0016320000213454477,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g010,9,2,dqn,2,0 1 2 3 4 5 6,0.27513499998121915,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g010,10,1,random,0,0 1 2 3 4 5 6,0.00198300000420204,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g010,11,2,dqn,2,0 1 2 3 4 5 6,0.28715300001636024,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g010,12,1,random,3,0 1 2 3 4 5 6,0.001843000006829243,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g010,13,2,dqn,2,0 1 2 3 4 5 6,0.3191710000010062,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g010,14,1,random,5,0 1 2 3 4 5 6,0.001843000006829243,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g010,15,2,dqn,2,0 1 2 3 4 5 6,0.2695969999990666,0,0,0,,1
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g011,4,1,dqn,6,0 1 2 3 4 5 6,0.22965599998769903,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g011,5,2,random,0,0 1 2 3 4 5 6,0.0020530000028884388,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g011,6,1,dqn,2,0 1 2 3 4 5 6,0.2547439999887047,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g011,7,2,random,3,0 1 2 3 4 5 6,0.0021130000220637157,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g011,8,1,dqn,3,0 1 2 3 4 5 6,0.23788800001511845,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g011,9,2,random,5,0 1 2 3 4 5 6,0.0016219999849909073,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g011,10,1,dqn,2,0 1 2 3 4 5 6,0.22462900000164154,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g011,11,2,random,3,0 1 2 3 4 5 6,0.0016820000041661842,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g011,12,1,dqn,2,0 1 2 3 4 5 6,0.2683550000028845,0,0,0,,1
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g012,4,1,random,2,0 1 2 3 4 5 6,0.001742999984344351,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g012,5,2,dqn,1,0 1 2 3 4 5 6,0.26197500000080254,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g012,6,1,random,5,0 1 2 3 4 5 6,0.0017419999949197518,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g012,7,2,dqn,5,0 1 2 3 4 5 6,0.24302599999259655,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g012,8,1,random,4,0 1 2 3 4 5 6,0.002334000015480342,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g012,9,2,dqn,5,0 1 2 3 4 5 6,0.2696570000182419,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g012,10,1,random,0,0 1 2 3 4 6,0.002144000006865099,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g012,11,2,dqn,6,0 1 2 3 4 6,0.2951550000034331,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g012,12,1,random,1,0 1 2 3 4 6,0.001673000014079662,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g012,13,2,dqn,3,0 1 2 3 4 6,0.2421959999878709,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g012,14,1,random,0,0 1 2 3 4 6,0.0017330000048332295,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g012,15,2,dqn,3,0 1 2 3 4 6,0.22698300000456584,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g012,16,1,random,0,0 1 2 3 4 6,0.0016430000187028782,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g012,17,2,dqn,3,0 1 2 3 4 6,0.2700470000149835,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g012,18,1,random,2,0 1 2 3 4 6,0.0019130000055156415,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g012,19,2,dqn,2,0 1 2 3 4 6,0.2801130000023022,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g012,20,1,random,4,0 1 2 3 4 6,0.0018730000022060267,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g012,21,2,dqn,2,0 1 2 3 4 6,0.27172000000064145,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g012,22,1,random,2,0 1 2 3 4 6,0.0018519999969157652,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g012,23,2,dqn,6,0 1 2 3 4 6,0.22959599999694547,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g012,24,1,random,4,0 1 2 3 4 6,0.001843000006829243,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g012,25,2,dqn,3,0 1 2 3 4 6,0.22541000001297107,0,0,0,,1
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g013,4,1,dqn,2,0 1 2 3 4 5 6,0.23944100001926927,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g013,5,2,random,2,0 1 2 3 4 5 6,0.0019430000008924253,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g013,6,1,dqn,2,0 1 2 3 4 5 6,0.22319600000741957,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g013,7,2,random,5,0 1 2 3 4 5 6,0.001962999988336378,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g013,8,1,dqn,2,0 1 2 3 4 5 6,0.23918100001196763,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g013,9,2,random,0,0 1 2 3 4 5 6,0.0015820000101030018,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g013,10,1,dqn,2,0 1 2 3 4 5 6,0.34764400001563445,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g013,11,2,random,0,0 1 2 3 4 5 6,0.0024639999764985987,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g013,12,1,dqn,2,0 1 2 3 4 5 6,0.24162499997260056,0,0,0,,1
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g014,4,1,random,2,0 1 2 3 4 5 6,0.0018629999942731956,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g014,5,2,dqn,0,0 1 2 3 4 5 6,0.22908500000085041,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g014,6,1,random,1,0 1 2 3 4 5 6,0.0018829999817171483,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g014,7,2,dqn,0,0 1 2 3 4 5 6,0.22614099998463644,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g014,8,1,random,2,0 1 2 3 4 5 6,0.0018829999817171483,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g014,9,2,dqn,2,0 1 2 3 4 5 6,0.26356699999041666,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g014,10,1,random,5,0 1 2 3 4 5 6,0.00198300000420204,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g014,11,2,dqn,2,0 1 2 3 4 5 6,0.2276740000013433,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g014,12,1,random,2,0 1 2 3 4 5 6,0.0016030000153932633,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g014,13,2,dqn,0,0 1 3 4 5 6,0.31652699999540346,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g014,14,1,random,6,0 1 3 4 5 6,0.0021330000095076684,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g014,15,2,dqn,6,0 1 3 4 5 6,0.2647690000117109,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g014,16,1,random,1,0 1 3 4 5 6,0.002002999991645993,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g014,17,2,dqn,0,0 1 3 4 5 6,0.3359270000089509,0,0,0,,1
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g015,4,1,dqn,1,0 1 2 3 4 5 6,0.2322100000071714,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g015,5,2,random,4,0 1 2 3 4 5 6,0.0018730000022060267,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g015,6,1,dqn,5,0 1 2 3 4 5 6,0.2891460000000734,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g015,7,2,random,5,0 1 2 3 4 5 6,0.0018930000180716888,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g015,8,1,dqn,2,0 1 2 3 4 5 6,0.23936099998422833,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g015,9,2,random,5,0 1 2 3 4 5 6,0.0017830000160756754,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g015,10,1,dqn,5,0 1 2 3 4 5 6,0.22293600000011793,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g015,11,2,random,1,0 1 2 3 4 5 6,0.0014519999922413263,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g015,12,1,dqn,4,0 1 2 3 4 5 6,0.22223499999540763,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g015,13,2,random,2,0 1 2 3 4 5 6,0.0016820000041661842,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g015,14,1,dqn,4,0 1 2 3 4 5 6,0.22203500000728127,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g015,15,2,random,1,0 1 2 3 4 5 6,0.0020629999823995604,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g015,16,1,dqn,4,0 1 2 3 4 5 6,0.24003199999356184,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g015,17,2,random,5,0 1 2 3 4 5 6,0.0015530000041508174,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g015,18,1,dqn,4,0 1 2 3 4 6,0.22339599999554594,0,0,0,,1
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,4,1,random,6,0 1 2 3 4 5 6,0.0017830000160756754,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,5,2,dqn,0,0 1 2 3 4 5 6,0.22384700000088742,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,6,1,random,4,0 1 2 3 4 5 6,0.001803000003519628,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,7,2,dqn,2,0 1 2 3 4 5 6,0.24876599999856808,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,8,1,random,4,0 1 2 3 4 5 6,0.0015329999882851553,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,9,2,dqn,4,0 1 2 3 4 5 6,0.23484399997641958,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,10,1,random,1,0 1 2 3 4 5 6,0.001491999995550941,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,11,2,dqn,2,0 1 2 3 4 5 6,0.34592100001873405,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,12,1,random,2,0 1 2 3 4 5 6,0.0015219999909277249,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,13,2,dqn,2,0 1 2 3 4 5 6,0.2801830000009886,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,14,1,random,4,0 1 2 3 4 5 6,0.0016529999982139998,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,15,2,dqn,4,0 1 2 3 4 5 6,0.3357359999824894,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,16,1,random,2,0 1 2 3 4 5 6,0.0015919999896141235,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,17,2,dqn,4,0 1 3 4 5 6,0.2301369999884173,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,18,1,random,0,0 1 3 5 6,0.0017529999922771822,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,19,2,dqn,0,0 1 3 5 6,0.2263410000011845,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,20,1,random,6,0 1 3 5 6,0.001531999998860556,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,21,2,dqn,0,0 1 3 5 6,0.3565270000081,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,22,1,random,5,0 1 3 5 6,0.002163000004884452,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,23,2,dqn,0,0 1 3 5 6,0.24218499999051346,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,24,1,random,5,1 3 5 6,0.0017330000048332295,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,25,2,dqn,5,1 3 5 6,0.2775080000105845,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,26,1,random,5,1 3 5 6,0.0019329999929595942,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,27,2,dqn,5,1 3 5 6,0.260022000020399,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,28,1,random,1,1 3 5 6,0.0019630000167580874,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,29,2,dqn,5,1 3 5 6,0.2472630000056597,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,30,1,random,6,1 3 6,0.0016019999975469545,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,31,2,dqn,3,1 3 6,0.22850499999549356,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g016,32,1,random,6,1 3 6,0.0018429999784075335,0,0,0,,1
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g017,4,1,dqn,5,0 1 2 3 4 5 6,0.24431800000002113,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g017,5,2,random,4,0 1 2 3 4 5 6,0.0015720000021701708,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g017,6,1,dqn,5,0 1 2 3 4 5 6,0.26081400000066424,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g017,7,2,random,3,0 1 2 3 4 5 6,0.001803000003519628,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g017,8,1,dqn,3,0 1 2 3 4 5 6,0.23001700000691017,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g017,9,2,random,4,0 1 2 3 4 5 6,0.0016420000008565694,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g017,10,1,dqn,2,0 1 2 3 4 5 6,0.2227859999948123,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g017,11,2,random,0,0 1 2 3 4 5 6,0.00148199998761811,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g017,12,1,dqn,4,0 1 2 3 4 5 6,0.274834000009605,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g017,13,2,random,6,0 1 2 3 4 5 6,0.0016420000008565694,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g017,14,1,dqn,2,0 1 2 3 4 5 6,0.2717099999927086,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g017,15,2,random,0,0 1 2 3 4 5 6,0.0015019999750620627,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g017,16,1,dqn,2,0 1 2 3 4 5 6,0.34029299999360774,0,0,0,,1
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g018,4,1,random,3,0 1 2 3 4 5 6,0.001853000014762074,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g018,5,2,dqn,6,0 1 2 3 4 5 6,0.5769400000019687,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g018,6,1,random,3,0 1 2 3 4 5 6,0.002043000023377317,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g018,7,2,dqn,3,0 1 2 3 4 5 6,0.24469900000667621,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g018,8,1,random,1,0 1 2 3 4 5 6,0.001803000003519628,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g018,9,2,dqn,5,0 1 2 3 4 5 6,0.24267599999916456,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g018,10,1,random,1,0 1 2 3 4 5 6,0.001711999999542968,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g018,11,2,dqn,4,0 1 2 3 4 5 6,0.22813400002519302,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g018,12,1,random,1,0 1 2 3 4 5 6,0.001792999995586797,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g018,13,2,dqn,4,0 1 2 3 4 5 6,0.35218099998246544,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g018,14,1,random,1,0 1 2 3 4 5 6,0.0019230000134484726,0,0,0,,1
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g019,4,1,dqn,1,0 1 2 3 4 5 6,0.23809900000060225,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g019,5,2,random,4,0 1 2 3 4 5 6,0.0016820000041661842,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g019,6,1,dqn,5,0 1 2 3 4 5 6,0.2259510000044429,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g019,7,2,random,6,0 1 2 3 4 5 6,0.0018020000140950287,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g019,8,1,dqn,1,0 1 2 3 4 5 6,0.27903099999093683,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g019,9,2,random,6,0 1 2 3 4 5 6,0.00198300000420204,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g019,10,1,dqn,1,0 1 2 3 4 5 6,0.2361859999950866,0,0,0,,0
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,random_vs_dqn-g019,11,2,random,6,0 1 2 3 4 5 6,0.0016120000054797856,0,0,0,,1

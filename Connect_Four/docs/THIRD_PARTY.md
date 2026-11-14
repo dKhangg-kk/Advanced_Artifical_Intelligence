@@ -7,7 +7,7 @@ Nếu **sao chép mã**, ghi rõ tệp và dòng.
 |---|---|---|---|
 | Mark Liu (2025), *AlphaGo Simplified*, CRC Press | Sách có bản quyền; mã kèm sách | Ý tưởng thuật toán (đọc chương 1–8) | Toàn bộ engine, agent, giải đấu, thống kê, kiểm thử |
 | Stuart Russell & Peter Norvig (2022), *AIMA* 4th | Sách | Định nghĩa tác tử, minimax, alpha-beta, MCTS | Cài đặt lại theo thiết kế của nhóm |
-| Pascal Pons — kỹ thuật bitboard Connect Four | — | Ý tưởng 7 bit/cột và kiểm tra 4 quân bằng dịch bit | Tự cài đặt và kiểm thử chéo với bản tham chiếu |
+| Pascal Pons — kỹ thuật bitboard Connect Four |Slide bài giảng /  Liu - AlphaGo  / Tài liệu mạng| Ý tưởng 7 bit/cột và kiểm tra 4 quân bằng dịch bit | Tự cài đặt và kiểm thử chéo với bản tham chiếu |
 | Thư viện: numpy, torch, pygame, pytest, pandas, matplotlib | BSD/MIT/Apache | Dùng như công cụ | Không sửa mã thư viện |
 
 ## Quy ước
