@@ -20,8 +20,8 @@ Commit theo quy ước của học phần: `TuanXX/DuAn/Noi dung cong viec`.
 
 - [x] **[L]** `agents/random_agent.py` — cấp 1, có test hành động hợp lệ và seed
 - [x] **[L]** `agents/heuristic.py` — cấp 2, thắng > chặn > an toàn > điểm; có test trên hai engine
-- [x] **[L]** `agents/alphabeta.py` — cấp 3, negamax + cắt tỉa/sắp xếp bật tắt, đếm nút, ngân sách độ sâu/thời gian; có test trên hai engine (K2, chờ review PR)
-- [x] **[L]** `agents/mcts.py` — cấp 4, đủ bốn bước UCT, Budget(simulations/time_s), test hai engine; K3 chờ review PR
+- [x] **[L]** `agents/alphabeta.py` — cấp 3, negamax + cắt tỉa/sắp xếp bật tắt, đếm nút, ngân sách độ sâu/thời gian; có test trên hai engine (K2, PR #61 đã merge)
+- [x] **[L]** `agents/mcts.py` — cấp 4, đủ bốn bước UCT, Budget(simulations/time_s), test hai engine; K3, PR #63 đã merge
 - [x] **[L]** `solver.py` — solver exact dùng làm thước đo, có test trên hai engine
 - [x] **[L]** `evaluation/metrics.py` — Wilson, bootstrap có seed, p95
 - [x] **[L]** `evaluation/runlog.py` + `evaluation/match.py` + `evaluation/cli.py` — `run_id`, manifest, chạy trận, ghi CSV ván/nước
@@ -32,9 +32,9 @@ Commit theo quy ước của học phần: `TuanXX/DuAn/Noi dung cong viec`.
 K1: Heuristic thắng Random 198/200 ván (99%), seed khai cuộc/Heuristic = 0,
 Random = 1; 100 khai cuộc, đổi bên theo cặp. Xem lần chạy
 `k1-heuristic-random-20261109T061032Z-s0` trong [nhật ký thực nghiệm](EXPERIMENT_LOG.md).
-K2: đã có code/test Alpha-Beta, chờ review PR; xem [hướng dẫn K2](ALPHABETA.md).
+K2: đã có code/test Alpha-Beta, PR #61 đã merge; xem [hướng dẫn K2](ALPHABETA.md).
 K3: MCTS thắng Random 199/200 ván (99,5%) ở 500 mô phỏng/nước; xem
-[hướng dẫn K3](MCTS.md) và nhật ký thực nghiệm. Chờ review/approve trước khi merge.
+[hướng dẫn K3](MCTS.md) và nhật ký thực nghiệm. PR #63 đã merge.
 
 ## Mốc M3 — Giải đấu và ablation
 
@@ -43,15 +43,18 @@ K3: MCTS thắng Random 199/200 ván (99,5%) ở 500 mô phỏng/nước; xem
 - [ ] **[D]** Giải đấu chế độ cùng thời gian mỗi nước
 - [ ] **[D]** Ghi `results/logs/run_manifest.csv`, `games_<run_id>.csv`, `moves_<run_id>.csv`
 - [ ] **[D]** Ghi mục tương ứng trong `docs/EXPERIMENT_LOG.md`
-- [ ] **[L]** Ablation A1: bật/tắt cắt tỉa (xem `configs/ablation_a1_pruning.yaml`)
-- [ ] **[L]** Ablation A2: ngân sách MCTS 100→5000 (xem `configs/ablation_a2_mcts_budget.yaml`)
+- [x] **[L]** Ablation A1: bật/tắt cắt tỉa (xem `configs/ablation_a1_pruning.yaml`)
+- [x] **[L]** Ablation A2: ngân sách MCTS 100→5000 (xem `configs/ablation_a2_mcts_budget.yaml`)
+- [x] **[L]** Ablation A5: Alpha-Beta sâu 2–6; 100 ván/mức trước Heuristic, đo thế cờ ba lần/mức.
+- [x] **[L]** `notebooks/03_search_ablations.ipynb`: kiểm tra log và dựng bảng/hình A1/A2/A5.
 
 **Điều kiện xong:** `results/logs/*.csv` + `results/tables/*.csv` + hình trong `results/figures/`.
 
 Lưu ý trạng thái: giải đấu pilot ngày 13/11 chạy 3 tác tử (Random, Heuristic,
 DQN), 20 ván/cặp, tổng 60 ván; chưa thay thế giải đấu 4 tác tử cổ điển 1.200
-ván. Chưa có log giải đấu timed hoặc kết quả A1/A2; hai tệp cấu hình A1/A2
-hiện chỉ mô tả tham số thí nghiệm.
+ván. Chưa có log giải đấu timed. A1/A2/A5 đã chạy ngày 15/11/2026; có log thô,
+bảng, hình và mục 4.5. Xem [hướng dẫn thực nghiệm tìm kiếm](SEARCH_ABLATIONS.md).
+Các ablation không thay thế giải đấu đủ tác tử hoặc chế độ cùng thời gian.
 
 ## Mốc M4 — Cấp 5 (NN) và cấp 6 (DQN)
 
@@ -86,8 +89,9 @@ Lưu ý trạng thái: GUI đã có màn chọn tác tử và hiển thị thờ
 `python -m connect_four.ui.gui --help` chạy được. Notebook phân tích hiện đọc
 bảng summary, chưa dựng trực tiếp từ log thô. Nhật ký thực nghiệm chưa liệt kê
 đầy đủ các run huấn luyện và giải đấu pilot đã có; báo cáo còn thiếu nhiều mục
-theo danh sách tệp bên dưới. Thư mục slide/poster hiện chỉ có README nội dung
-nháp, chưa có sản phẩm trình chiếu; chưa tìm thấy gói ZIP hoặc kiểm tra máy sạch.
+theo danh sách tệp bên dưới. Đã có slide Khang và bản tổng hợp nhóm theo dữ liệu ngày 15/11; slide nhóm
+còn cần các thành viên xác nhận và cập nhật khi đóng băng số liệu. Poster còn
+thiếu sản phẩm hoàn chỉnh; chưa xác nhận gói cuối trên máy sạch.
 
 ## Cấu trúc báo cáo 5 chương
 

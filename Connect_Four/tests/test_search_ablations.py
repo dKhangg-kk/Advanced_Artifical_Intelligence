@@ -66,7 +66,7 @@ def test_cli_writes_traceable_outputs(exp, tmp_path, monkeypatch):
                   positions=str(positions), repeat=1, repeat_per_position=1,
                   games_per_budget=2, games_per_depth=2, opening_plies=4,
                   opponent='alphabeta_depth4' if exp == 'a2' else 'heuristic',
-                  output='results/tables/summary.csv')
+                  output=f'results/tables/ablation_{exp}_results.csv')
     (tmp_path / 'configs' / f'{runner.CONFIGS[exp]}.yaml').write_text(yaml.safe_dump(config))
     monkeypatch.chdir(tmp_path)
     monkeypatch.setattr(sys, 'argv', ['run_search_ablations.py', '--experiment', exp])
@@ -75,8 +75,23 @@ def test_cli_writes_traceable_outputs(exp, tmp_path, monkeypatch):
         manifest = list(csv.DictReader(f))
     assert len(manifest) == 1 and manifest[0]['status'] == 'completed'
     assert manifest[0]['config_hash']
-    with (tmp_path / 'results/tables/summary.csv').open() as f:
+    with (tmp_path / f'results/tables/ablation_{exp}_results.csv').open() as f:
         summary = list(csv.DictReader(f))
+    monkeypatch.syspath_prepend(str(Path(__file__).parents[1] / 'scripts'))
+    from analyze_search_ablations import rebuild
+    assert len(rebuild(exp)) == len(summary)
     for row in summary:
         assert row['run_id'] == manifest[0]['run_id']
         assert (tmp_path / row['raw_log_path']).is_file()
+
+
+def test_report_rows_keep_zero_flags_and_unique_filters():
+    import sys
+    sys.path.insert(0, str(Path(__file__).parents[1] / 'scripts'))
+    from analyze_search_ablations import report_rows
+    rows = report_rows({'a1': [dict(run_id='test', phase='positions', depth=4,
+                                     pruning=0, ordering=0, mean_nodes=42)]})
+    assert len(rows) == 1
+    assert rows[0]['metric'] == 'a1_positions_depth4_pruning0_ordering0_mean_nodes'
+    assert 'pruning=0;ordering=0' in rows[0]['source_filter']
+    assert rows[0]['source_path'] == 'results/tables/test.csv'
