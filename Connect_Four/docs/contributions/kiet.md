@@ -1,5 +1,12 @@
 # Đóng góp của Bùi Quyền Kiệt (3124720036)
 
+## Phần phụ trách
+
+- Bộ vị trí kiểm thử luật Connect Four và đối chiếu hai engine trong milestone M1.
+- Metrics cho các tác tử cổ điển trong M2.
+- Sinh dữ liệu policy gán nhãn Alpha-Beta, CNN cấp 5 và ablation A3 trong M4.
+- Các phần báo cáo được giao trong Chương 1–4 và nhật ký đóng góp trong M5.
+
 ## Mã việc và phạm vi sở hữu
 
 | Mã việc | Milestone | Phụ trách | Review | Tệp trong phạm vi |
@@ -26,6 +33,7 @@ nhân nếu chưa có issue hoặc xác nhận riêng.
 | 09/11/2026 | Chưa xác minh được hoạt động Connect Four của tôi trong lịch sử Git/PR đã kiểm tra. | Chưa có dẫn chứng | Chưa ghi nhận |
 | 10/11/2026 | Chưa xác minh được hoạt động Connect Four của tôi trong lịch sử Git/PR đã kiểm tra. | Chưa có dẫn chứng | Chưa ghi nhận |
 | 11/11/2026 | Cài đặt Wilson và bootstrap CI có seed; bổ sung test cho giá trị 200/200, tính lặp lại và dữ liệu sai; cập nhật tài liệu và nhật ký. | [PR #66](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/pull/66), commit `19521e5` | Chưa ghi nhận; cần tác giả xác nhận |
+| 11/11/2026 | Bổ sung 31 vị trí kiểm tra thắng dọc/ngang/hai chéo, chặn, đòn kép, hòa và cột đầy; thêm kiểm thử đối chiếu engine bitboard với `ReferenceGame`. | [PR #67](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/pull/67); commit `ca70abf`; `cd Connect_Four && .venv/bin/pytest -q` xanh (3 skipped) | Chưa ghi nhận; cần tác giả xác nhận |
 | 11/11/2026 | Đối chiếu Issue #44, thông tin thành viên và lộ trình; lập nhật ký này. | Issue #44; commit `49d129f`, được ghi nhận trong [PR #72](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/pull/72) | Chưa ghi nhận; cần tác giả xác nhận |
 | 11/11/2026 | Hoàn thiện bộ sinh 5.000 ván duy nhất ở Alpha-Beta depth 4 sau khai cuộc ngẫu nhiên 6–8 nước; chia theo ván 70/15/15, lọc trạng thái trùng/đối xứng và chỉ lật gương train. | [PR #68](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/pull/68); commits `769b4e4`, `8e10571`, `8c2569c`; manifest: `data/generated/splits/manifest.json` | Chưa ghi nhận; cần tác giả xác nhận |
 | 11/11/2026 | Chạy bộ dữ liệu seed 0: 5.000 ván (3.000 main model, 2.000 A3), 110.083 mẫu thô, loại 18.025 trạng thái trùng; còn 66.619/13.028/12.411 mẫu train/val/test trước lật gương. | `cd Connect_Four && .venv/bin/python -c "from connect_four.training.gen_data import generate_dataset; generate_dataset(seed=0)"`; pytest xanh | Chưa ghi nhận; cần tác giả xác nhận |
@@ -54,6 +62,8 @@ công việc chưa có bằng chứng.
 
 - Phạm vi của Issue #18, #20–#22, #40 và #44; lý do nhật ký chỉ nhận quyền sở hữu
   đối với các tệp được giao.
+- Cách bộ 31 vị trí kiểm thử bao phủ thắng dọc/ngang/hai chéo, chặn, đòn kép,
+  hòa và cột đầy; cách đối chiếu hai engine giúp phát hiện sai khác luật chơi.
 - Công thức Wilson và cách khoảng tin cậy vẫn có cận dưới hữu ích khi tỷ lệ
   quan sát là 200/200.
 - Cách bootstrap lấy mẫu có hoàn lại, tính khoảng percentile và dùng seed để
