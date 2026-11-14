@@ -34,6 +34,13 @@ from connect_four.evaluation.runlog import (
     new_run_id,
     write_csv,
 )
+from connect_four.evaluation.situations import (
+    SITUATION_NAMES,
+    Situation,
+    classify_position,
+    situation_hit,
+    situation_metrics,
+)
 
 __all__ = [
     "ABLATION_FIELDS",
@@ -41,13 +48,16 @@ __all__ = [
     "MOVE_FIELDS",
     "REPORT_NUMBER_FIELDS",
     "RUN_MANIFEST_FIELDS",
+    "SITUATION_NAMES",
     "TRAIN_CNN_FIELDS",
     "TRAIN_DQN_FIELDS",
     "GameRecord",
     "MatchConfig",
     "MoveRecord",
+    "Situation",
     "append_manifest",
     "bootstrap_ci",
+    "classify_position",
     "make_manifest_row",
     "mean",
     "new_run_id",
@@ -61,6 +71,8 @@ __all__ = [
     "save_records",
     "save_run",
     "score",
+    "situation_hit",
+    "situation_metrics",
     "win_rate",
     "wilson_interval",
     "write_csv",

@@ -4,6 +4,7 @@
 
 | Mã việc | Milestone | Phụ trách | Review | Tệp trong phạm vi |
 | --- | --- | --- | --- | --- |
+| `METRICS-CI` ([Issue #18](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/issues/18)) | M2 — Bốn tác tử cổ điển | Bùi Quyền Kiệt | Ý | `src/connect_four/evaluation/metrics.py`, `tests/test_metrics.py` |
 | `DONGGOP-KIET` ([Issue #44](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/issues/44)) | M5 — Demo và báo cáo | Bùi Quyền Kiệt | Ý | `docs/contributions/kiet.md` |
 | `DATA-CNN` ([Issue #20](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/issues/20)) | M4 — Cấp 5 và cấp 6 | Bùi Quyền Kiệt | Ý | `src/connect_four/training/gen_data.py`, `data/generated/` |
 | `CNN-L5` ([Issue #21](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/issues/21)) | M4 — Cấp 5 và cấp 6 | Bùi Quyền Kiệt | Ý | `src/connect_four/agents/networks.py`, `src/connect_four/agents/nn_agent.py`, `src/connect_four/training/train_supervised.py`, `checkpoints/level5_cnn/` |
@@ -11,11 +12,11 @@
 | `BC13-KIET` ([Issue #40](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/issues/40)) | Giữa kỳ | Bùi Quyền Kiệt | Ý | `docs/report/01_gioi_thieu.md`, `docs/report/02b_hoc_giam_sat.md`, `docs/report/03c_cnn.md`, `results/tables/report_numbers.csv` |
 | `BC45-KIET` ([Issue #41](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/issues/41)) | M5 — Demo và báo cáo | Bùi Quyền Kiệt | Ý | `docs/report/04b_cnn_duong_cong.md`, `docs/report/04e_ablation_cnn.md`, `results/figures/cnn_main_learning_curve.png`, `src/connect_four/evaluation/plots.py`, `tests/test_plots.py`, `results/tables/report_numbers.csv` |
 
-Issue #44 giao nhật ký đóng góp này. Issue #20–#22 giao pipeline dữ liệu, CNN
-cấp 5 và ablation A3. Issue #40 giao phần báo cáo Chương 1–3; Issue #41 giao
-mục 4.4 (đường cong học CNN) và 4.5 (ablation A3). Các tệp khác trong
-[lộ trình M5](../ROADMAP.md) không được xem là phân công cá nhân nếu chưa có
-issue hoặc xác nhận riêng.
+Issue #18 giao phần khoảng tin cậy; Issue #44 giao nhật ký này. Issue #20–#22
+giao pipeline dữ liệu, CNN cấp 5 và ablation A3. Issue #40 giao phần báo cáo
+Chương 1–3; Issue #41 giao mục 4.4 (đường cong học CNN) và 4.5 (ablation A3).
+Các tệp khác trong [lộ trình M5](../ROADMAP.md) không được xem là phân công cá
+nhân nếu chưa có issue hoặc xác nhận riêng.
 
 ## Nhật ký
 
@@ -24,7 +25,8 @@ issue hoặc xác nhận riêng.
 | 08/11/2026 | Xác minh lịch sử tài khoản: commit đầu tiên trong ngày là `e7cdfa0`, nhưng thay đổi thuộc Tuan01/Lab00, không thuộc dự án Connect Four nên không tính là đóng góp cho đồ án. | [Commit `e7cdfa0`](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/commit/e7cdfa0) | Chưa ghi nhận; không tính giờ đồ án từ commit ngoài phạm vi |
 | 09/11/2026 | Chưa xác minh được hoạt động Connect Four của tôi trong lịch sử Git/PR đã kiểm tra. | Chưa có dẫn chứng | Chưa ghi nhận |
 | 10/11/2026 | Chưa xác minh được hoạt động Connect Four của tôi trong lịch sử Git/PR đã kiểm tra. | Chưa có dẫn chứng | Chưa ghi nhận |
-| 11/11/2026 | Đối chiếu Issue #44, thông tin thành viên và lộ trình; lập nhật ký này. Cập nhật lần sau bằng công việc thực tế, dẫn chứng và thời lượng do tôi xác nhận. | Issue #44; commit `49d129f` (nhánh local, chưa có PR) | Chưa ghi nhận; cần tác giả xác nhận |
+| 11/11/2026 | Cài đặt Wilson và bootstrap CI có seed; bổ sung test cho giá trị 200/200, tính lặp lại và dữ liệu sai; cập nhật tài liệu và nhật ký. | [PR #66](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/pull/66), commit `19521e5` | Chưa ghi nhận; cần tác giả xác nhận |
+| 11/11/2026 | Đối chiếu Issue #44, thông tin thành viên và lộ trình; lập nhật ký này. | Issue #44; commit `49d129f`, được ghi nhận trong [PR #72](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/pull/72) | Chưa ghi nhận; cần tác giả xác nhận |
 | 11/11/2026 | Hoàn thiện bộ sinh 5.000 ván duy nhất ở Alpha-Beta depth 4 sau khai cuộc ngẫu nhiên 6–8 nước; chia theo ván 70/15/15, lọc trạng thái trùng/đối xứng và chỉ lật gương train. | [PR #68](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/pull/68); commits `769b4e4`, `8e10571`, `8c2569c`; manifest: `data/generated/splits/manifest.json` | Chưa ghi nhận; cần tác giả xác nhận |
 | 11/11/2026 | Chạy bộ dữ liệu seed 0: 5.000 ván (3.000 main model, 2.000 A3), 110.083 mẫu thô, loại 18.025 trạng thái trùng; còn 66.619/13.028/12.411 mẫu train/val/test trước lật gương. | `cd Connect_Four && .venv/bin/python -c "from connect_four.training.gen_data import generate_dataset; generate_dataset(seed=0)"`; pytest xanh | Chưa ghi nhận; cần tác giả xác nhận |
 | 11/11/2026 | Huấn luyện CNN seed 0 trong 20 epoch trên 79.924 mẫu train / 7.958 validation; checkpoint tốt nhất ở epoch 5 (val loss 1,0835). Đánh giá test đúng một lần trên 7.399 mẫu main_model: loss 1,1122, top-1 56,76%, tỷ lệ dự đoán hợp lệ 100%; thời gian 134,27 giây trên CPU. | [PR #69](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/pull/69); commit huấn luyện `bc8010b`; run `20261111T140304Z_87e7371b`; checkpoint, metadata, CSV và báo cáo test tại `checkpoints/level5_cnn/` và `checkpoints/logs/` | Chưa ghi nhận; cần tác giả xác nhận |
@@ -37,6 +39,10 @@ trong ngày đó. Không hồi tố ngày commit, không suy ra số giờ từ 
 thời gian chạy công cụ. Tiếp tục bổ sung từng ngày đến 21/11/2026; ngày không
 làm việc cần ghi rõ, và giờ cần dựa trên thời gian thực tế.
 
+Kiểm tra Issue #18: `python -m pytest -q tests/test_metrics.py` đạt 12 test;
+toàn bộ `python -m pytest -q` đạt 189 test, 3 test skip. Import
+`connect_four.evaluation.metrics` không nạp `torch`.
+
 ## Căn cứ chốt tỷ lệ đóng góp
 
 Tỷ lệ đóng góp chưa được xác định. Trước 19/11 cần tổng hợp các PR đã
@@ -46,8 +52,12 @@ công việc chưa có bằng chứng.
 
 ## Phần tôi tự giải thích được
 
-- Phạm vi của Issue #44, #20–#22 và #40; lý do nhật ký chỉ nhận quyền sở hữu
+- Phạm vi của Issue #18, #20–#22, #40 và #44; lý do nhật ký chỉ nhận quyền sở hữu
   đối với các tệp được giao.
+- Công thức Wilson và cách khoảng tin cậy vẫn có cận dưới hữu ích khi tỷ lệ
+  quan sát là 200/200.
+- Cách bootstrap lấy mẫu có hoàn lại, tính khoảng percentile và dùng seed để
+  tái lập kết quả.
 - Cấu trúc báo cáo 5 chương và phạm vi bản giữa kỳ (Chương 1–3).
 - Phân biệt policy network và value network; vì sao cấp 5 chỉ huấn luyện policy
   network từ nhãn Alpha-Beta, còn value/Q-value thuộc cấp 6.
@@ -68,12 +78,14 @@ công việc chưa có bằng chứng.
 - Vì sao `center_control_top1_accuracy` tăng nhưng tỷ lệ chọn cột 3 giảm: mô
   hình bắt chước nhãn Alpha-Beta sát hơn, không phải yếu đi.
 - Ý nghĩa của bộ số đóng băng 19/11/2026 22:00 và việc phải đối chiếu lại bản
-  nháp trước khi merge.
+  nháp trước khi chốt báo cáo/PDF.
 - Cách dùng `run_id` và log huấn luyện để tái lập kết quả CNN và ablation A3.
+- Cách dùng PR/commit, kết quả bàn giao và thời lượng thực tế làm căn cứ; không
+  suy ra tỷ lệ hay giờ từ lịch sử commit đơn thuần.
 
 ## Công cụ và nguồn
 
-- Git và GitHub: kiểm tra lịch sử commit, Issue #20–#22, Issue #40–#41, Issue #44
+- Git và GitHub: kiểm tra lịch sử commit, Issue #18, #20–#22, #40–#41, #44
   và các PR liên quan.
 - Nguồn trong repository: proposal đã nộp
   `docs/proposal/ConnectFour_7x6_Proposal_Nhom100_HoanChinh.docx`,
@@ -85,5 +97,5 @@ công việc chưa có bằng chứng.
   `docs/EXPERIMENT_LOG.md` và `results/tables/report_numbers.csv`.
 - GitHub Copilot và trợ lý OpenCode: hỗ trợ đối chiếu thông tin, soạn thảo và
   kiểm tra số liệu; nội dung cần được tôi xác nhận theo công việc thực tế.
-- Issue #44 dẫn nguồn “Kế hoạch & phân công Nhóm 100 - Connect Four AI
-  (8 11 → 22 11 2026).docx”.
+- Issue #18, #20–#22, #40–#41, #44 dẫn nguồn “Kế hoạch & phân công Nhóm 100 -
+  Connect Four AI (8 11 → 22 11 2026).docx”.

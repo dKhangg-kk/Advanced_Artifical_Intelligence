@@ -1,0 +1,38 @@
+{
+  "checkpoint_file": "dqn_model.pt",
+  "episode": 200,
+  "epsilon": 0.904814789840326,
+  "optimizer_updates": 757,
+  "run_id": "20261113_140831_508593",
+  "status": "pilot",
+  "git_commit": null,
+  "python_version": "3.13.5",
+  "torch_version": "2.10.0+cpu",
+  "device": "cpu",
+  "accelerator": "CPU",
+  "hardware": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "training_elapsed_seconds": 10.665,
+  "created_at_utc": "2026-11-13T14:08:43.833029+00:00",
+  "config": {
+    "episodes": 200,
+    "opponent": "heuristic",
+    "lr": 0.001,
+    "gamma": 0.99,
+    "epsilon_start": 1.0,
+    "epsilon_min": 0.05,
+    "epsilon_decay": 0.9995,
+    "buffer_size": 100000,
+    "batch_size": 64,
+    "target_update_freq": 500,
+    "checkpoint_milestones": [
+      1000,
+      2500,
+      5000,
+      10000
+    ],
+    "out_dir": "checkpoints/level6_dqn/pilot",
+    "log_dir": "results/logs",
+    "seed": 42,
+    "device": "cpu"
+  }
+}

@@ -1,10 +1,32 @@
 id,moves,side_to_move,winning_moves,blocking_moves,note
-empty-board,,1,-,-,Ban co trong: chua ai thang
-vertical-three,1 2 1 2 1,2,-,1,"Nguoi 1 co 3 quan chong o cot 1: nguoi 2 phai chan cot 1"
-# Them >= 30 vi tri da dang. Moi dong:
-#   id            : ten ngan gon, khong dau cach
-#   moves         : chuoi cot 0..6, cach nhau bang dau cach
-#   side_to_move  : 1 hoac 2
-#   winning_moves : cac cot thang ngay, ngan cach bang dau cach ("-": khong co)
-#   blocking_moves: cac cot phai chan, "-" neu khong co
-#   note          : giai thich ngan
+empty-board,,1,-,-,Ban co trong chua ai thang
+win-vertical-1,6 3 6 3 0 2 4 3 3 6 6 2 3 2 4,2,2,-,Thang doc
+win-vertical-2,1 4 6 6 6 0 2 0 3 6 3 3 5 3 6 1 0 3 0,2,3,-,Thang doc
+win-vertical-3,6 6 0 0 0 2 6 1 5 6 5 6 2 2 4 1 4 0 4 5,1,3 4,-,Hai nuoc thang doc
+win-vertical-4,1 4 4 1 2 4 3 5 4 0 4 0 6 3 2 4 1 1 6 3 5 5 3 3 6 1,1,6,2,Thang doc
+win-horizontal-1,6 3 6 3 0 2 4 3 3 6 6 2 3 2 4 1 4 1 2,2,0 4,4,Thang ngang
+win-horizontal-2,6 6 0 0 0 2 6 1 5 6 5 6 2 2 4 1,1,3,-,Thang ngang
+win-horizontal-3,1 4 4 1 2 4 3 5,1,0,-,Thang ngang
+win-horizontal-4,1 2 0 5 3 3 1 0 0 0 3 4 2 6 6 0 1 4,1,1 2,-,Hai nuoc thang ngang
+win-diagonal-up-1,6 3 6 3 0 2 4 3 3 6 6 2 3 2 4 1 4,2,2 4,4,Thang cheo len
+win-diagonal-up-2,1 4 6 6 6 0 2 0 3 6 3 3 5 3 6 1 0 3 0 6 3 4 5 0 4 2 1,2,2,-,Thang cheo len
+win-diagonal-up-3,1 4 4 1 2 4 3 5 4 0 4 0 6 3 2 4,1,3,-,Thang cheo len
+win-diagonal-up-4,1 2 0 5 3 3 1 0 0 0 3 4 2 6 6 0 1 4 4 2,1,1 4,1,Hai nuoc thang cheo len
+win-diagonal-down-1,1 4 6 6 6 0 2 0 3 6 3 3 5 3 6 1 0 3 0 6 3 4 5 0 4 2 1 5 0,2,2 4,5,Thang cheo xuong
+win-diagonal-down-2,1 4 4 1 2 4 3 5 4 0 4 0 6 3 2 4 1 1 6,2,2,3,Thang cheo xuong
+win-diagonal-down-3,1 2 0 5 3 3 1 0 0 0 3 4 2 6 6 0 1 4 4 2 2,2,1,1 4,Thang cheo xuong
+win-diagonal-down-4,2 1 3 5 0 0 6 4 0 2 4 0 4 1 0 0 4 4 1 2 1 5 4 1 6 1 3 2 6,2,2 3,6,Thang cheo xuong va ngang
+block-vertical-three,1 2 1 2 1,2,-,1,Doi thu co ba quan doc
+block-single-1,6 3 6 3 0 2 4 3,1,-,3,Chan nuoc thang
+block-single-2,1 4 6 6 6 0 2 0 3 6 3 3 5 3 6 1 0 3,1,-,3,Chan nuoc thang
+block-single-3,6 6 0 0 0 2 6 1 5 6 5 6 2 2 4,2,-,3,Chan nuoc thang
+block-single-4,1 4 4 1 2 4 3,2,-,0,Chan nuoc thang
+double-threat-1,6 3 6 3 0 2 4 3 3 6 6 2 3 2 4 1 4 1,1,4,0 2 4,Doi thu co nhieu nuoc thang
+double-threat-2,1 4 6 6 6 0 2 0 3 6 3 3 5 3 6 1 0 3 0 6 3 4 5 0 4 2 1 5,1,5,2 4,Doi thu co hai nuoc thang
+double-threat-3,6 6 0 0 0 2 6 1 5 6 5 6 2 2 4 1 4 0 4,2,-,3 4,Doi thu co hai nuoc thang
+quiet-1,6 3 6 3 0 2,1,-,-,Chua co nuoc thang
+quiet-2,1 4 6 6 6 0,1,-,-,Chua co nuoc thang
+quiet-3,6 6 0 0 0 2,1,-,-,Chua co nuoc thang
+quiet-4,1 4 4 1 2 4,1,-,-,Chua co nuoc thang
+draw-full-board,4 6 0 1 6 4 2 1 3 5 5 3 2 4 0 6 3 6 3 0 1 0 1 0 0 2 1 1 4 2 2 4 5 3 4 3 5 5 6 5 6 2,1,-,-,Ban co day hoa
+full-column,0 0 0 0 0 0,1,-,-,Cot 0 da day nhung van co chua ket thuc
