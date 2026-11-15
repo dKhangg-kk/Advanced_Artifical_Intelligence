@@ -10,13 +10,10 @@
 | 13/11/2026 | Chạy kiểm thử toàn dự án và bổ sung log, bảng, hình, notebook phân tích pilot | [PR #75](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/pull/75), run `20261113_140831_508593` | Chưa ghi nhận |
 | Đến 15/11/2026 | Hoàn thiện phần báo cáo giữa kỳ về DQN cấp 6 và thiết kế giải đấu | `docs/report/03d_dqn_giai_dau.md`, [PR #75](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/pull/75) | Chưa ghi nhận |
 
-Các PR #59, #64 và #75 đã được merge vào `main`. Chưa có số Issue riêng được ghi nhận cho các mục Y1–Y6; không tự bổ sung mã Issue hoặc thời lượng chưa xác nhận.
 
 ## Công cụ hỗ trợ
 
-Python, NumPy, PyTorch, PyYAML, pytest, Jupyter Notebook, pandas, Matplotlib, Git và GitHub. ChatGPT được dùng hỗ trợ rà soát yêu cầu, cấu trúc triển khai và diễn giải kiểm thử; mã nguồn, kết quả chạy và số liệu cần được người thực hiện tự kiểm tra và chịu trách nhiệm.
-
-Thời gian đóng góp cá nhân chưa được ghi nhận; tác giả bổ sung theo thời lượng thực tế, không suy ra từ thời gian chạy tự động.
+Python, NumPy, PyTorch, PyYAML, pytest, Jupyter Notebook, pandas, Matplotlib, Git và GitHub. ChatGPT được dùng hỗ trợ rà soát yêu cầu. Kết quả chạy và số liệu cần được người thực hiện tự kiểm tra và chịu trách nhiệm.
 
 ## Nhật ký Y1 — ReplayBuffer, EpsilonSchedule và Action Mask
 
@@ -125,5 +122,5 @@ Các mục được phân công trong báo cáo 5 chương:
 
 ## Công cụ và khai báo hỗ trợ
 
-Python, NumPy, PyTorch, PyYAML, pytest, Jupyter Notebook, pandas và Matplotlib. ChatGPT được dùng hỗ trợ rà soát yêu cầu, cấu trúc triển khai và diễn giải kiểm thử; người thực hiện cần tự đọc, chạy, kiểm tra và chịu trách nhiệm với mã nguồn, log và số liệu trước khi nộp.
+Python, NumPy, PyTorch, PyYAML, pytest, Jupyter Notebook, pandas, Matplotlib, Git và GitHub. ChatGPT được dùng hỗ trợ rà soát yêu cầu. Kết quả chạy và số liệu cần được người thực hiện tự kiểm tra và chịu trách nhiệm.
 
