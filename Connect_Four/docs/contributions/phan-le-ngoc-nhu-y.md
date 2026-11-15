@@ -1,35 +1,79 @@
-# Đóng góp của Phan Lê Ngọc Như Ý (3124720079)
+# Phan Lê Ngọc Như Ý (3124720079)
 
-## Phần phụ trách
+**Dự án:** Connect Four AI — Học phần Trí tuệ nhân tạo nâng cao  
+**Vai trò:** Phát triển tác tử học tăng cường cấp 6 (DQN), hệ thống giải đấu và phân tích thực nghiệm.
 
-Học tăng cường cấp 6 (DQN), lõi Replay Buffer/epsilon, DQN Agent, vòng huấn luyện, CLI/cấu hình giải đấu, pilot Round-Robin và phân tích ban đầu.
+## 1. Phạm vi công việc được phân công
 
-## Nhật ký công việc đến 15/11/2026
+### 1.1. Phát triển tác tử DQN (Level 6)
 
-| Ngày | Việc thực hiện | Nhánh / PR / bằng chứng |
-| --- | --- | --- |
-| 08/11/2026 | Cài đặt ReplayBuffer FIFO sức chứa 100.000 transition; lưu mặt nạ cột hợp lệ của trạng thái kế tiếp; lấy mẫu ngẫu nhiên không hoàn lại; bổ sung EpsilonSchedule từ 1.0, có sàn 0.05 và kiểm thử độc lập PyTorch. | `feat/y1-dqn-core` |
-| 09–10/11/2026 | Hoàn thiện DQNAgent lazy-load checkpoint; chuyển `game.to_array()` dạng 2×6×7 qua DQNNet; che cột không hợp lệ trước argmax; kiểm tra không sửa trạng thái game. | `feat/nhu-y-y1-y2`; PR #59 đã merge vào `main` theo nhật ký nhóm |
-| 11–13/11/2026 | Hoàn thiện vòng huấn luyện DQN: luân phiên bên đi trước; lưu transition sau lượt đáp của đối thủ; thưởng cuối ván +1/0/−1; Bellman target có mask; Huber loss; đồng bộ Target Network mỗi 500 optimizer updates; lưu CSV theo episode và checkpoint kèm JSON metadata. | `training/train_dqn.py`; run pilot `20261113_140831_508593` |
-| 12–13/11/2026 | Bổ sung `evaluation/config.py` và hoàn thiện `evaluation/cli.py`: cấu hình agent bằng YAML, chạy một cặp hoặc Round-Robin, ghi log games/moves/manifest và bảng tổng hợp theo từng cặp. Bổ sung `tests/test_cli.py`. | `evaluation/config.py`, `evaluation/cli.py`, `tests/test_cli.py` |
-| 13/11/2026 | Chạy bộ kiểm thử đầy đủ: 289 passed. Chạy pilot huấn luyện 200 episode (CPU, 10.665 giây trong metadata; 757 optimizer updates), sau đó chạy pilot Round-Robin 3 cặp × 20 ván (60 ván). | `results/logs/`, `results/tables/`, `results/figures/`; log chi tiết trong `docs/EXPERIMENT_LOG.md` |
-| Đến 15/11/2026 | Hoàn thiện phần báo cáo giữa kỳ được phân công: mục tiêu/phạm vi, cơ sở RL-DQN, thiết kế Level 6, quy chuẩn Round-Robin và phân tích pilot. | `docs/report/03d_dqn_giai_dau.md`; bản ghép giữa kỳ trong `docs/report/dist/` (do nhóm trưởng quản lý) |
+- **ReplayBuffer:** Xây dựng bộ nhớ kinh nghiệm FIFO tối đa 100.000 transition; lưu trạng thái, hành động, phần thưởng, trạng thái kế tiếp, trạng thái kết thúc và mặt nạ hành động hợp lệ.
+- **EpsilonSchedule:** Xây dựng lịch giảm epsilon theo episode từ 1.0, không thấp hơn 0.05.
+- **Action Mask:** Loại các cột đã đầy khi chọn hành động và khi tính mục tiêu Bellman.
+- **DQN Agent:** Xử lý trạng thái bàn cờ dạng 2×6×7, nạp checkpoint theo cơ chế lazy-load, dự đoán Q-value và chọn nước đi hợp lệ.
+- **DQN Training:** Xây dựng vòng huấn luyện với phần thưởng thắng/hòa/thua (+1/0/−1), luân phiên bên đi trước, Replay Buffer, Target Network, Bellman Target có mask và Huber Loss.
+- **Checkpoint & Logging:** Lưu checkpoint, metadata và log huấn luyện theo episode để theo dõi, đánh giá và tái lập.
 
-## Kết quả pilot đã kiểm chứng
+### 1.2. Xây dựng hệ thống giải đấu
 
-- Huấn luyện 200 episode gặp Heuristic, seed 42: 1 thắng, 0 hòa, 199 thua; mean reward = −0.99; 757 optimizer updates. Đây là pilot để xác nhận pipeline chạy và ghi log, chưa chứng minh DQN hội tụ.
-- Round-Robin pilot 20 ván/cặp, 10 khai cuộc dùng chung, seed 20261113: Random–Heuristic (0–0–20 theo góc nhìn Random); Random–DQN (6–0–14 theo góc nhìn Random, do đó DQN thắng 14/20); Heuristic–DQN (20–0–0 theo góc nhìn Heuristic, do đó DQN thua 20/20).
-- Kết quả chỉ là pilot, chưa đạt mức đánh giá chính thức tối thiểu 100 ván/cặp. Ablation A4 đủ 3 decay × 3 seed và checkpoint đóng băng vẫn thuộc mốc 14–17/11, chưa ghi nhận hoàn thành trong nhật ký này.
+- Phát triển `evaluation/config.py` và `evaluation/cli.py`.
+- Xây dựng cấu hình tác tử và giải đấu bằng YAML.
+- Hỗ trợ chạy đối đầu từng cặp và giải đấu vòng tròn Round-Robin.
+- Thiết lập hai chế độ đánh giá: mặc định và giới hạn thời gian cho mỗi nước đi.
+- Ghi kết quả trận đấu, thông tin nước đi và Run Manifest ra CSV; hỗ trợ lưu kết quả theo từng cặp để dễ kiểm tra.
 
-## Phần cần nắm để trình bày
+### 1.3. Thực nghiệm và phân tích kết quả
 
-- ReplayBuffer FIFO thay thế transition cũ nhất khi đầy; lấy mẫu không hoàn lại để giảm tương quan giữa các mẫu liên tiếp.
-- Mỗi transition lưu `next_legal_mask` của bàn kế tiếp. Khi tính max Q ở mục tiêu Bellman, chỉ các cột còn hợp lệ được tham gia phép lấy cực đại.
-- Epsilon-greedy khởi đầu 1.0, giảm theo episode và không thấp hơn 0.05; khi thi đấu, DQNAgent dùng epsilon = 0.0.
-- Mỗi transition chỉ được chốt sau khi đối thủ đáp lại, để `next_state` phản ánh trạng thái ở lượt DQN tiếp theo. Trạng thái kết thúc không bootstrap.
-- Target Network giữ mục tiêu Bellman ổn định giữa hai lần đồng bộ; Huber loss hạn chế ảnh hưởng của sai số TD lớn.
-- Pilot 200 episode thua Heuristic gần như toàn bộ, cho thấy cần tăng huấn luyện, kiểm tra reward/góc nhìn/mặt nạ và lựa chọn mô hình theo validation, không chọn checkpoint theo kết quả test.
+- Thực hiện Ablation A4 để khảo sát ảnh hưởng của các mức Epsilon Decay và Random Seed đến quá trình huấn luyện DQN.
+- Đánh giá các mốc checkpoint bằng tập Validation trước khi chọn mô hình.
+- Tổ chức và tổng hợp kết quả giải đấu, kiểm tra cân bằng lượt đi trước và đi sau.
+- Phân tích thắng/hòa/thua, score, khoảng tin cậy Wilson, thời gian trung bình và p95 mỗi nước, chi phí tính toán và thời gian huấn luyện.
+- Sử dụng notebook để xử lý dữ liệu, tạo bảng và biểu đồ; cập nhật số liệu có thể truy ngược về run_id trong `report_numbers.csv`.
 
-## Công cụ và khai báo hỗ trợ
+### 1.4. Báo cáo và thuyết trình
 
-Python, NumPy, PyTorch, PyYAML và pytest. ChatGPT được dùng hỗ trợ rà soát yêu cầu, cấu trúc triển khai và diễn giải kiểm thử; người thực hiện cần đọc, chạy, kiểm tra và chịu trách nhiệm với mã nguồn và số liệu trước khi nộp. Thời lượng lao động cá nhân và mã PR cho các phần mới chưa được điền vì không có dữ liệu xác thực trong snapshot.
+| Phần | Nội dung phụ trách |
+| --- | --- |
+| Chương 2 – Mục 2.4 | Học tăng cường (RL), DQN, Self-play; phân biệt AlphaGo-inspired và AlphaZero-inspired |
+| Chương 3 – Mục 3.5–3.6 | Thiết kế tác tử DQN cấp 6 và quy trình tổ chức giải đấu công bằng |
+| Chương 4 – Mục 4.1–4.3 | Môi trường thực nghiệm, ma trận đối đầu, thắng/hòa/thua, độ trễ và chi phí |
+| Chương 4 – Mục 4.4 | Phân tích đường cong huấn luyện DQN |
+| Chương 4 – Mục 4.5 | Phân tích Ablation A4 |
+| Chương 4 – Mục 4.7 | Thảo luận kết quả, nguyên nhân, hạn chế và lợi thế đi trước |
+
+Ngoài ra, phụ trách 2–4 slide về DQN, giải đấu và kết quả thực nghiệm; phối hợp rà soát báo cáo và đối chiếu số liệu với log.
+
+## 2. Các tệp và thư mục phụ trách
+
+| Thành phần | Đường dẫn trong repository |
+| --- | --- |
+| DQN Agent | `Connect_Four/src/connect_four/agents/dqn.py` |
+| DQN Network | Lớp DQNNet trong `Connect_Four/src/connect_four/agents/networks.py` |
+| DQN Training | `Connect_Four/src/connect_four/training/train_dqn.py` |
+| Tournament CLI và cấu hình | `Connect_Four/src/connect_four/evaluation/cli.py`, `config.py` |
+| Kiểm thử | `Connect_Four/tests/test_dqn.py`, `test_cli.py` |
+| Cấu hình giải đấu và A4 | `Connect_Four/configs/tournament_*`, `ablation_a4_dqn_training.yaml` |
+| Notebook phân tích | `Connect_Four/notebooks/01_*` |
+| Checkpoint DQN | `Connect_Four/checkpoints/level6_dqn/` |
+| Log, bảng và biểu đồ | `Connect_Four/results/logs/`, `results/tables/`, `results/figures/` |
+| Báo cáo | `Connect_Four/docs/report/02c_hoc_tang_cuong.md`, `03d_dqn_giai_dau.md`, các mục Chương 4 được phân công |
+
+## 3. Kết quả đã có minh chứng
+
+- **PR #59:** Hoàn thiện DQN Core và DQN Agent — [xem Pull Request](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/pull/59).
+- **PR #64:** Hoàn thiện vòng huấn luyện DQN và kiểm thử — [xem Pull Request](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/pull/64).
+- **PR #75:** Bổ sung Tournament CLI, cấu hình, pilot và minh chứng giữa kỳ — [xem Pull Request](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/pull/75).
+- Đợt kiểm thử ngày 13/11/2026 ghi nhận **289 test passed**.
+- Pilot huấn luyện DQN 200 episode gặp Heuristic: 1 thắng, 0 hòa, 199 thua. Pilot này xác nhận pipeline và khả năng ghi log, **không phải kết quả chứng minh mô hình đã hội tụ**.
+- Pilot Round-Robin gồm 3 cặp, 20 ván/cặp (60 ván). Kết quả pilot chưa đạt mức đánh giá chính thức tối thiểu 100 ván/cặp.
+
+**Lưu ý về trạng thái:** Phần trên mô tả phạm vi được phân công và các kết quả đã có minh chứng. Ablation A4 đầy đủ, lựa chọn checkpoint cuối và giải đấu chính thức phải được cập nhật khi có log thực tế; không xem kế hoạch hoặc pilot là kết quả hoàn thành cuối kỳ.
+
+## 4. Công nghệ sử dụng
+
+Python, NumPy, PyTorch, PyYAML, pytest, Jupyter Notebook, pandas, Matplotlib, Git và GitHub.
+
+## 5. Repository và tài liệu
+
+- [Repository nhóm – Advanced Artificial Intelligence](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence)
+- [Lịch sử Pull Request của Như Ý](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/pulls?q=is%3Apr+author%3Amealley9-ui)
