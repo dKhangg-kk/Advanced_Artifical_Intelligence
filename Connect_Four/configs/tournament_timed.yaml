@@ -1,26 +1,17 @@
-# Che do "cung tran thoi gian moi nuoc": moi tac tu co dung ngan sach thoi gian.
-# Dung de tra loi cau hoi nghien cuu 1 (Alpha-Beta vs MCTS trong cung thoi gian).
-
+# Giai dau cung gioi han thoi gian moi nuoc cho cac tac tu tim kiem.
+# 100 van/cap la muc toi thieu cua de; ngan sach 0.2 giay theo ke hoach cat giam.
 mode: timed
-games_per_pair: 200
-openings: 100
-seed: 20261103
+games_per_pair: 100
+openings: 50
+seed: 20261119
 max_moves: 42
-time_per_move_s: 1.0    # neu chay cham, ha xuong 0.1 hoac 0.3 cho pilot
-
-agents:
-  - random
-  - heuristic
-  - alphabeta
-  - mcts
-  - nn
-  - dqn
-
-notes: |
-  Ghi ro phan cung (CPU/GPU) va cach xu ly khi tac tu vuot thoi gian.
-  Quy uoc de xuat: neu vuot qua 3 lan ngan sach, ghi nhan nuoc di nhung danh
-  dau van la "over_budget" va bao cao rieng ty le nay.
-
+time_per_move_s: 0.2
+agent_config: configs/agents_tournament.yaml
+agents: [random, heuristic, alphabeta, mcts, nn, dqn]
 output_dir: results/logs
 figures_dir: results/figures
 tables_dir: results/tables
+notes: |
+  Che do timed ap dung cung nguong 0.2 giay cho moi nuoc cua Alpha-Beta va MCTS.
+  Cac tac tu khong dung bo tim kiem ghi nhan thoi gian thuc te; over_budget chi la
+  co quan sat, engine khong cuong buc dung tac tu giua mot nuoc di.
