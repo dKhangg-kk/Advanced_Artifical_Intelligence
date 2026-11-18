@@ -24,7 +24,7 @@ Nếu **sao chép mã**, ghi rõ tệp và dòng.
 | Hoàn thiện Random/Heuristic, Alpha-Beta, MCTS và kiểm thử | Codex hỗ trợ hoàn thiện | Hỗ trợ viết/sửa mã, đối chiếu minimax, kiểm tra seed/ngân sách/bàn gốc và chuẩn bị tài liệu trong PR #57, #61, #63. |
 | Báo cáo tìm kiếm và thuật toán cấp 1–4 | Codex hỗ trợ hoàn thiện | Hỗ trợ tổng hợp, diễn giải và đối chiếu nội dung với mã trong PR #74. |
 | A1/A2/A5, notebook phân tích, phần báo cáo và slide của Khang | Codex hỗ trợ hoàn thiện | Hỗ trợ triển khai chương trình chạy, kiểm thử, thực thi và phân tích log thực tế, soạn tài liệu. Không dùng số liệu mô phỏng giả để thay kết quả chạy. |
-| Hạ tầng thực nghiệm | API engine, bộ chạy trận, thống kê và ghi log của chính dự án | Tái sử dụng `ConnectFour`, `ReferenceGame`, `play_game`, `save_run`, `bootstrap_ci`, `wilson_interval` và `runlog`; không nhận toàn bộ các mô-đun này là đóng góp riêng của Khang. |
+| Hạ tầng thực nghiệm | API engine, bộ chạy trận, thống kê và ghi log của chính dự án | Tái sử dụng `ConnectFour`, `ReferenceGame`, `play_game`, `save_run`, `bootstrap_ci`, `wilson_interval` và `runlog`|
 
 Các mục trên khai báo phạm vi hỗ trợ xác định được, không khẳng định đã kiểm tra
 nguồn gốc từng dòng của toàn bộ mã lịch sử. Nếu sử dụng nguyên đoạn mã bên ngoài,
