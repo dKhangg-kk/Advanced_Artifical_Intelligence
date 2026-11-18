@@ -1,5 +1,6 @@
-# A4: so sanh epsilon decay va do on dinh giua 3 seed.
-# Model chinh duoc chon bang validation co dinh, khong dung tournament lam test.
+# A4 fallback theo muc "Cat giam" trong ke hoach:
+# Mot run 10.000 episode da vuot 1 gio; giu 2 seed (0, 42), bo decay cham 0.9998.
+# Checkpoint duoc chon bang validation co dinh, khong dung tournament lam test.
 name: ablation_a4_dqn_training
 agent: dqn
 episodes: 10000
@@ -16,10 +17,9 @@ milestones: [1000, 2500, 5000, 10000]
 epsilon_decay_configs:
   - {name: fast_decay, decay: 0.9990, eps_min: 0.05}
   - {name: default_decay, decay: 0.9995, eps_min: 0.05}
-  - {name: slow_decay, decay: 0.9998, eps_min: 0.05}
 opponents: [random, heuristic]
 eval_games_per_milestone: 100
-seeds: [0, 42, 2026]
+seeds: [0, 42]
 validation_seeds:
   random: 20261102
   heuristic: 20261103
