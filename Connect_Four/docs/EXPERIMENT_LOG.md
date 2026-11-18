@@ -221,3 +221,32 @@ Mỗi mục dùng mẫu sau:
 - **Artifacts:** `results/logs/games_tournament-default-20261113T140850Z-s20261113-*.csv`, cac file `moves_*.csv`, `results/tables/tournament-default-20261113T140850Z-s20261113_summary.csv`, `results/logs/run_manifest.csv`.
 - **Environment:** Linux x86_64; CPU-only; `git_commit` khong co do chay tren ban ZIP khong kem thu muc `.git`; khong tu gan commit id.
 - **Interpretation:** day la pilot 20 games/pair, khong dap ung nguong chinh thuc toi thieu 100 games/pair; khong dung de ket luan cuoi cung. DQN pilot chua hoc duoc chien luoc tot truoc Heuristic; can chay A4 3 decay × 3 seeds va chon checkpoint bang validation theo ke hoach truoc khi dong bang (17/11).
+
+## K4 — A1/A2/A5, ngày 15/11/2026 (giờ Việt Nam)
+
+- Mã chạy: `1b79dd5`; thuật toán lấy từ main `3a40170`, không thay đổi tác tử.
+- A1: `ablation-a1-20261114T172315Z-s20261104`, 00:23:15–00:35:51 giờ Việt Nam.
+  30 thế hoạt động × 3 độ sâu × 4 cấu hình × 5 lần = 1.800 lần đo;
+  thế hòa đầy bàn ghi riêng là `excluded_terminal`.
+- A5: `ablation-a5-20261114T173556Z-s20261104`, 00:35:56–00:39:56.
+  450 lần đo thế và 500 ván trước Heuristic ở độ sâu 2–6.
+- A2: `ablation-a2-20261114T173956Z-s20261104`, 00:39:56–00:45:54.
+  500 ván trước Alpha-Beta sâu 4 ở 100/500/1000/2000/5000 mô phỏng.
+- Cấu hình: các YAML `ablation_a1_pruning`, `ablation_a2_mcts_budget`,
+  `ablation_a5_depth`; hash cấu hình và bộ thế ghi trong manifest.
+- Khai cuộc A2/A5: 50 khai cuộc dài 4 nước, seed 20261104, đổi bên từng cặp;
+  mỗi mức dùng cùng lịch RNG ván `seed + i`, i=0..99.
+- Môi trường: ARM CPU, RAM 16 GB, Darwin 25.6.0, Python 3.13.7, NumPy 2.5.4;
+  chạy tuần tự trên CPU. Thời gian máy không phải giờ đóng góp cá nhân.
+- Kiểm tra: mọi ván phát lại bằng ReferenceGame; mọi nước MCTS đúng số mô
+  phỏng; A1 giữ cùng giá trị minimax theo thế/độ sâu và giữ nguyên bàn đầu vào.
+- Kết quả: bảng `results/tables/ablation_a{1,2,5}_results.csv`, bản bất biến
+  theo run ID và log `positions_`, `games_`, `moves_`, `ablation_` trong
+  `results/logs/`; bảng đối đầu liên kết run cha và run con theo từng mức.
+- Phân tích: `scripts/analyze_search_ablations.py` kiểm tra lại các độ đo từ
+  log trước khi dựng ba hình và thêm dòng vào `report_numbers.csv`.
+  CI score bootstrap theo cặp khai cuộc, 10.000 lần lấy mẫu.
+- Diễn giải/giới hạn: xem [mục 4.5](report/04d_ablation_tim_kiem.md).
+  Giữ nguyên kết quả Alpha-Beta sâu 3 kém sâu 2; không coi tăng độ sâu luôn
+  tăng sức mạnh. A2 chưa phải so sánh cùng thời gian mỗi nước. Chưa đóng băng
+  số liệu toàn nhóm ngày 19/11.

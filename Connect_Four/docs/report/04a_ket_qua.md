@@ -1,8 +1,9 @@
 # 4.1. Ket qua da thuc hien
 
-Phan nay chi ghi so lieu co log nguon. Tai thoi diem cap nhat, nhom moi co mot
-pilot Heuristic--Random; chua co co so de ket luan ve Alpha-Beta, MCTS, NN hoac
-DQN.
+Phan nay trinh bay rieng pilot Heuristic--Random co log nguon. Ket qua
+A1/A2/A5 nam o [ablation tim kiem](04d_ablation_tim_kiem.md), CNN o
+[A3](04e_ablation_cnn.md), DQN pilot o [muc 3.5–3.6](03d_dqn_giai_dau.md).
+Khong dung pilot mot cap de xep hang toan bo tac tu.
 
 ## Pilot Heuristic--Random
 
@@ -22,6 +23,7 @@ minh Heuristic dat 99% truoc moi seed hoac moi tac tu manh hon.
 
 ## Nhung ket qua chua duoc bao cao
 
-Chua co log hop le cho giai dau day du, ablation, huan luyen NN/DQN hoac danh
-gia bang solver tren tap lon. Cac muc nay phai duoc chay va ghi `run_id` truoc
-khi dua vao bang ket qua hoac ket luan.
+Chua co giai dau day du sau tac tu o hai che do hay danh gia solver tren tap
+lon. Da co A1/A2/A3/A5, log CNN va DQN pilot nhu cac muc duoc dan o tren;
+cac ket qua do khong thay the giai dau day du hoac A4. Moi ket luan phai
+gioi han theo dung cau hinh va log da chay.
