@@ -1,0 +1,13 @@
+# Y6: cung ngan sach thoi gian 0.2 giay/nuoc; giam con 100 van/cap theo phuong an cat giam.
+mode: timed
+games_per_pair: 100
+openings: 50
+seed: 20261119
+max_moves: 42
+time_per_move_s: 0.2
+agent_config: configs/agents_y6.yaml
+agents: [random, heuristic, alphabeta, mcts, nn]
+output_dir: results/logs
+tables_dir: results/tables
+figures_dir: results/figures
+notes: "0.2 seconds per move for each agent; 100 games/pair per the runtime-reduction plan; DQN excluded pending a frozen checkpoint."

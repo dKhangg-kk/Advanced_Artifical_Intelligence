@@ -1,0 +1,12 @@
+# Y6: Round-Robin cau hinh mac dinh; 5 tac tu kha dung.
+mode: default
+games_per_pair: 10
+openings: 5
+seed: 20261118
+max_moves: 42
+agent_config: configs/agents_y6.yaml
+agents: [random, heuristic, alphabeta, mcts, nn]
+output_dir: results/logs
+tables_dir: results/tables
+figures_dir: results/figures
+notes: "10-game smoke pilot only; not official tournament minimum."

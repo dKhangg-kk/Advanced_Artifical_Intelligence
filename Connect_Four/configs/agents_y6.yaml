@@ -1,0 +1,29 @@
+# Cau hinh rieng cho loat thi nghiem Y6 den 19/11/2026.
+# DQN duoc tam loai khoi danh sach vi snapshot chua co checkpoint da dong bang;
+# khong su dung checkpoint pilot thieu file trong giai dau chinh thuc.
+random:
+  level: 1
+  seed: null
+heuristic:
+  level: 2
+  weights:
+    win: 10000.0
+    block: 9000.0
+    avoid_opponent_win: 5000.0
+    own_three: 100.0
+    own_two: 10.0
+    opponent_three: 80.0
+    center_bonus: 6.0
+alphabeta:
+  level: 3
+  depth: 5
+  use_pruning: true
+  use_ordering: true
+mcts:
+  level: 4
+  simulations: 1000
+  c: 1.414
+  rollout: random
+nn:
+  level: 5
+  checkpoint: checkpoints/level5_cnn/final.pt
