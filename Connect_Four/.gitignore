@@ -1,13 +1,13 @@
-# Trong so trung gian khong commit; chi cho phep hai checkpoint cuoi co ten co dinh
+# Trong so trung gian khong commit; chi cho phep phep hai checkpoint cuoi co ten co dinh
 checkpoints/**/*.pt
 checkpoints/**/*.pth
 checkpoints/**/*.pkl
 *.pt
 *.pth
 !checkpoints/level5_cnn/final.pt
-!checkpoints/level6_dqn/final.pt
+!checkpoints/level6_dqn/dqn_model.pt
 
-# Du lieu sinh tu dong (lon) - giu lai file mo ta va bo vi tri test
+# Du lieu sinh tu dong (lon) - giu lai file mo ta va bo vi tri thu muc
 data/generated/
 # Giu .gitkeep de clone may moi van co cau truc thu muc
 data/raw/*
