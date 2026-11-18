@@ -8,4 +8,4 @@ Không dùng pilot để tuyên bố đã hoàn tất giải đấu chính thứ
 
 Trước khi chốt slide nhóm: từng thành viên xác nhận phần của mình, cập nhật số
 đóng băng và thống nhất với báo cáo/PDF. Khang ghép bản đã xác nhận thành
-`slide_nhom100.pptx`. Phần nguồn của Khang: Codex hỗ trợ hoàn thiện.
+`slide_nhom100.pptx`. 
