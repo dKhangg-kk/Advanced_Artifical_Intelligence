@@ -1,4 +1,5 @@
-# Y6: cung ngan sach thoi gian 0.2 giay/nuoc; giam con 100 van/cap theo phuong an cat giam.
+# Y6: cung ngan sach thoi gian 0.2 giay/nuoc cho tac tu tim kiem (Alpha-Beta, MCTS).
+# 100 van/cap theo phuong an cat giam so 3 cua ke hoach (che do mac dinh van 200 van/cap).
 mode: timed
 games_per_pair: 100
 openings: 50
@@ -6,8 +7,8 @@ seed: 20261119
 max_moves: 42
 time_per_move_s: 0.2
 agent_config: configs/agents_y6.yaml
-agents: [random, heuristic, alphabeta, mcts, nn]
+agents: [random, heuristic, alphabeta, mcts, nn, dqn]
 output_dir: results/logs
 tables_dir: results/tables
 figures_dir: results/figures
-notes: "0.2 seconds per move for each agent; 100 games/pair per the runtime-reduction plan; DQN excluded pending a frozen checkpoint."
+notes: "0.2 seconds per move for the search agents; 100 games/pair per the runtime-reduction plan; frozen nn and dqn checkpoints; seed differs from the validation seeds."

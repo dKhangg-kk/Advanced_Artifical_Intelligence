@@ -8,6 +8,7 @@ Nếu **sao chép mã**, ghi rõ tệp và dòng.
 | Mark Liu (2025), *AlphaGo Simplified*, CRC Press | Sách có bản quyền; mã kèm sách | Ý tưởng thuật toán (đọc chương 1–8) | Toàn bộ engine, agent, giải đấu, thống kê, kiểm thử |
 | Stuart Russell & Peter Norvig (2022), *AIMA* 4th | Sách | Định nghĩa tác tử, minimax, alpha-beta, MCTS | Cài đặt lại theo thiết kế của nhóm |
 | Pascal Pons — kỹ thuật bitboard Connect Four |Slide bài giảng /  Liu - AlphaGo  / Tài liệu mạng| Ý tưởng 7 bit/cột và kiểm tra 4 quân bằng dịch bit | Tự cài đặt và kiểm thử chéo với bản tham chiếu |
+| Claude (Anthropic), công cụ AI — phần việc của Phan Lê Ngọc Như Ý (Y5–Y6) | Dịch vụ thương mại, không kế thừa mã | Hỗ trợ viết `scripts/run_ablation_a4.py`, `freeze_dqn_checkpoint.py`, `summarize_a4.py`, `summarize_tournament.py`, `evaluate_positions.py`, `diagnose_dqn_openings.py`, `check_alphabeta_win_values.py`, `build_report_numbers_y.py`; chạy ablation A4, giải đấu và tổng hợp bảng/hình; soạn nháp các mục báo cáo 2.4, 4.1–4.5, 4.7, slide `docs/slides/y.pptx` và nhật ký thực nghiệm ngày 18–19/11/2026 | Các số liệu đều lấy từ log thô trong `results/logs/`; Như Ý cần đọc, chạy lại và tự giải thích phần này trước khi nộp (chưa xác nhận) |
 | Thư viện: numpy, torch, pygame, pytest, pandas, matplotlib | BSD/MIT/Apache | Dùng như công cụ | Không sửa mã thư viện |
 
 ## Quy ước

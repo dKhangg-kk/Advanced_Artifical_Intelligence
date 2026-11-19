@@ -1,13 +1,15 @@
-# Y6: Round-Robin cau hinh mac dinh; 5 tac tu co checkpoint/tham so kha dung.
-# DQN khong duoc dua vao khi chua co checkpoint da huan luyen va dong bang.
+# Y6: Round-Robin cau hinh mac dinh, 6 tac tu = 15 cap.
+# 200 van/cap (muc tieu cua de): 100 khai cuoc khac nhau, moi khai cuoc choi 2 van doi ben.
+# Chi dung checkpoint da dong bang: nn = checkpoints/level5_cnn/final.pt,
+# dqn = checkpoints/level6_dqn/final.pt (xem agent_config).
 mode: default
-games_per_pair: 100
-openings: 50
+games_per_pair: 200
+openings: 100
 seed: 20261118
 max_moves: 42
 agent_config: configs/agents_y6.yaml
-agents: [random, heuristic, alphabeta, mcts, nn]
+agents: [random, heuristic, alphabeta, mcts, nn, dqn]
 output_dir: results/logs
 tables_dir: results/tables
 figures_dir: results/figures
-notes: "100 games/pair; 50 unique openings played twice with sides swapped; DQN excluded because only pilot metadata exists, no tracked frozen checkpoint."
+notes: "200 games/pair; 100 unique openings played twice with sides swapped; frozen nn and dqn checkpoints; seed differs from the validation seeds 20261102/20261103."

@@ -250,3 +250,23 @@ Mỗi mục dùng mẫu sau:
   Giữ nguyên kết quả Alpha-Beta sâu 3 kém sâu 2; không coi tăng độ sâu luôn
   tăng sức mạnh. A2 chưa phải so sánh cùng thời gian mỗi nước. Chưa đóng băng
   số liệu toàn nhóm ngày 19/11.
+
+## 2026-11-18 — A4, đóng băng DQN, chẩn đoán, giải đấu Round-Robin đầy đủ (Claude hỗ trợ Y5–Y6; Như Ý cần rà soát)
+
+- **Quy tắc chọn checkpoint (đăng ký trước khi xem giải đấu):** mốc có validation trung bình cao nhất (Random seed 20261102, Heuristic seed 20261103, 100 ván, 4 nước khai cuộc ngẫu nhiên, DQN greedy) trong ô `default_decay` seed 0; hòa chọn mốc sớm. Kết quả: episode 10.000 (0,375). `checkpoints/level6_dqn/final.pt` + `final.json` (sha256 trong JSON). Đóng băng ngày 18/11, muộn hơn kế hoạch 17/11.
+- **A4:** 3 decay (0,9990/0,9995/0,9998) × seed (0, 42, 2026) × 10.000 episode; chạy 2 tiến trình song song, `OMP_NUM_THREADS=1`. Log: `results/logs/ablation_a4_cell_*.csv`, `ablation_a4-*.csv`, `train_dqn_a4-*.csv`; bảng: `results/tables/ablation_a4_results.csv`, `ablation_a4_summary.csv`. Các run_id nằm trong `results/logs/run_manifest.csv`.
+- **Ô mở rộng (không thuộc A4 gốc):** `default_decay_open4` seed 0 với `--opening-plies 4`, chạy sau chẩn đoán; không dùng để chọn checkpoint.
+- **Chẩn đoán:** `scripts/diagnose_dqn_openings.py` → `results/tables/dqn_opening_diagnostic.csv` (0/2/4 nước khai cuộc ngẫu nhiên).
+- **Bộ 31 vị trí:** `scripts/evaluate_positions.py` → `y6_position_choices.csv`, `y6_position_accuracy.csv`; `scripts/check_alphabeta_win_values.py` → `y6_alphabeta_root_values.csv` (Alpha-Beta bỏ lỡ 5/18 thế thắng ngay; chưa sửa, chuyển cho Khang).
+- **Giải đấu mặc định:** `configs/tournament_y6_default.yaml`, seed 20261118, 200 ván/cặp, prefix `tournament-default-20261118T163224Z-s20261118`. Chạy một mình trên máy 2 nhân, `OMP_NUM_THREADS=1`.
+- **Giải đấu cùng thời gian:** `configs/tournament_y6_timed.yaml`, seed 20261119, 0,2 s/nước, 100 ván/cặp, prefix `tournament-timed-20261118T164206Z-s20261119`.
+- **Tổng hợp:** `scripts/summarize_tournament.py` → `results/tables/y6_<default|timed>_*.csv`, `results/figures/y6_*`; `scripts/build_report_numbers_y.py` → `results/tables/report_numbers.csv`.
+- **Giải thích:** DQN thua Heuristic rõ (score Heuristic 0,912/0,880); nguyên nhân chẩn đoán là quá khớp đường chơi cố định của Heuristic khi huấn luyện từ bàn trống (xem `docs/report/04c_dqn_duong_cong.md`). Không điều chỉnh checkpoint sau khi xem giải.
+- **Giới hạn:** `git_commit` trong manifest có thể là commit trước khi các thay đổi chưa commit lúc chạy được lưu; tái lập bằng commit chứa các file này.
+
+## 2026-11-19 — Hợp nhất và kiểm tra số liệu (Claude hỗ trợ Y6; Như Ý cần rà soát)
+
+- Hợp nhất công việc Y5–Y6 vào bản zip ngày 19/11 (có A1/A2/A5 của Khang). Xung đột ở nhật ký, `report_numbers.csv`, `run_manifest.csv`, 04a và hồ sơ đóng góp được giải bằng cách giữ cả hai phía; dòng của Ý được dựng lại bằng `scripts/build_report_numbers_y.py` (idempotent).
+- Kiểm tra `report_numbers.csv`: 1.219 dòng, không trùng (`report_section`, `metric`), mọi dòng có `run_id`. 32 dòng mục 3.4 (Kiệt) trỏ tới `data/generated/`, thư mục không commit theo kế hoạch. Sửa đường dẫn sai của 7 dòng pilot DQN (`train_dqn_train_dqn_…` → `train_dqn_…`).
+- Mục báo cáo 4.7 (`docs/report/04h_thao_luan.md`) và slide `docs/slides/y.pptx` đã soạn nháp từ các bảng ở trên; không có thí nghiệm mới.
+- Không chạy lại giải đấu hay A4; số liệu giữ nguyên bộ ngày 18/11.

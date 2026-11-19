@@ -252,3 +252,40 @@ def test_train_dqn_rejects_invalid_training_settings() -> None:
         train_dqn(episodes=1, opponent="alphabeta")
     with pytest.raises(ValueError, match="batch_size"):
         train_dqn(episodes=1, buffer_size=4, batch_size=8)
+
+
+def test_train_dqn_opening_plies_default_keeps_old_behaviour_and_validates(tmp_path) -> None:
+    pytest.importorskip("torch")
+    import csv
+    import json
+
+    from connect_four.training.train_dqn import train_dqn
+
+    def run(out: str, **extra: object) -> tuple[list[dict[str, str]], dict[str, object]]:
+        checkpoint = train_dqn(
+            episodes=4, opponent="random", buffer_size=64, batch_size=4, target_update_freq=5,
+            checkpoint_milestones=(), out_dir=tmp_path / out, log_dir=tmp_path / out,
+            seed=11, device="cpu", run_id="unit_open", **extra,
+        )
+        with (tmp_path / out / "train_dqn_unit_open.csv").open(newline="", encoding="utf-8") as stream:
+            rows = list(csv.DictReader(stream))
+        return rows, json.loads(checkpoint.with_suffix(".json").read_text(encoding="utf-8"))
+
+    rows_default, meta_default = run("default")
+    rows_zero, meta_zero = run("zero", opening_plies=0)
+    # opening_plies=0 khong goi them so ngau nhien va khong them khoa vao metadata
+    assert [r["reward"] for r in rows_default] == [r["reward"] for r in rows_zero]
+    assert [r["moves"] for r in rows_default] == [r["moves"] for r in rows_zero]
+    assert "opening_plies" not in meta_default["config"] and "opening_plies" not in meta_zero["config"]
+
+    rows_open, meta_open = run("open", opening_plies=4)
+    assert meta_open["config"]["opening_plies"] == 4
+    # 4 nuoc dat truoc + it nhat mot nuoc nua nen moi van dai tu 5 nuoc tro len
+    assert all(int(r["moves"]) >= 5 for r in rows_open)
+    # DQN chi tinh cac nuoc cua chinh no, khong tinh 4 nuoc khai cuoc
+    assert all(int(r["dqn_moves"]) < int(r["moves"]) - 3 for r in rows_open)
+
+    with pytest.raises(ValueError, match="opening_plies"):
+        train_dqn(episodes=1, opening_plies=11)
+    with pytest.raises(ValueError, match="opening_plies"):
+        train_dqn(episodes=1, opening_plies=-1)
