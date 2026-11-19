@@ -37,3 +37,6 @@ CLI nhận tên tác tử và cấu hình qua YAML; có thể chạy một cặp
 - `results/tables/report_numbers.csv`: số liệu được liên kết tới `run_id` và đường dẫn log.
 
 Các giới hạn cần nêu: pilot DQN chỉ 200 episode; vòng tròn mới có 20 ván/cặp; checkpoint tạo ra mang trạng thái `pilot`, không phải checkpoint đóng băng; A4 đủ 9 tổ hợp và đợt đánh giá chính thức còn ở mốc tiếp theo.
+
+
+> **Cập nhật 18/11/2026:** các câu về trạng thái A4/giải đấu trong phần này là tại thời điểm giữa kỳ và đã cũ. Kết quả A4, checkpoint đóng băng và giải đấu đầy đủ nằm ở `04a_ket_qua.md`, `04c_dqn_duong_cong.md`, `04f_ablation_dqn.md`.

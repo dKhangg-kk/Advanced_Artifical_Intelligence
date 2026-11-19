@@ -1,0 +1,16 @@
+agent_a,agent_b,wins_a,draws,wins_b,score_a
+random,heuristic,0,0,100,0.0
+random,alphabeta,0,0,100,0.0
+random,mcts,0,0,100,0.0
+random,nn,4,0,96,0.04
+random,dqn,40,0,60,0.4
+heuristic,alphabeta,17,6,77,0.2
+heuristic,mcts,10,3,87,0.115
+heuristic,nn,56,3,41,0.575
+heuristic,dqn,88,0,12,0.88
+alphabeta,mcts,37,4,59,0.39
+alphabeta,nn,78,2,20,0.79
+alphabeta,dqn,99,0,1,0.99
+mcts,nn,86,0,14,0.86
+mcts,dqn,100,0,0,1.0
+nn,dqn,87,1,12,0.875

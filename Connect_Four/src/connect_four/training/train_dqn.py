@@ -359,6 +359,7 @@ def train_dqn(
     seed: int = 0,
     device: str = "auto",
     run_id: str | None = None,
+    opening_plies: int = 0,
 ) -> Path:
     """Huan luyen DQN gap Random/Heuristic va tra ve checkpoint cuoi.
 
@@ -366,6 +367,11 @@ def train_dqn(
     thu da dap lai, de ``next_state`` la ban co o luot DQN tiep theo. Phan thuong
     cuoi van theo goc nhin DQN: thang +1, hoa 0, thua -1; cac buoc chua ket thuc
     nhan 0. Target Network dung mask cot hop le va Huber loss.
+
+    ``opening_plies`` (mac dinh 0 = bat dau tu ban trong, hanh vi goc) cho phep dat truoc
+    mot so nuoc ngau nhien hop le o dau moi episode, de huan luyen tren cung kieu
+    khai cuoc ngau nhien nhu luc validation/giai dau. Cac nuoc dat truoc khong tao
+    transition cho DQN.
 
     PyTorch chi duoc import khi ham duoc goi. Log moi episode duoc ghi vao
     ``results/logs/train_dqn_<run_id>.csv``. Checkpoint o cac moc duoc kem JSON
@@ -395,6 +401,8 @@ def train_dqn(
     milestones = tuple(sorted(set(checkpoint_milestones)))
     if any(isinstance(value, bool) or not isinstance(value, int) or value <= 0 for value in milestones):
         raise ValueError("checkpoint_milestones phai gom cac so nguyen duong.")
+    if isinstance(opening_plies, bool) or not isinstance(opening_plies, int) or not 0 <= opening_plies <= 10:
+        raise ValueError("opening_plies phai la so nguyen trong khoang 0..10.")
     if device != "auto" and device not in {"cpu", "cuda"}:
         raise ValueError("device chi nhan 'auto', 'cpu' hoac 'cuda'.")
     if run_id is None:
@@ -458,6 +466,8 @@ def train_dqn(
         "seed": seed,
         "device": selected_device,
     }
+    if opening_plies:
+        config_snapshot["opening_plies"] = opening_plies
 
     update_steps = 0
     started_all = time.perf_counter()
@@ -484,6 +494,8 @@ def train_dqn(
 
         for episode in range(1, episodes + 1):
             game = ConnectFour()
+            for _ in range(opening_plies):
+                game.step(int(rng.choice(game.legal_actions())))
             agent_player = PLAYER_1 if episode % 2 == 1 else PLAYER_2
             opponent_agent = _build_opponent(opponent, seed + episode)
             epsilon_used = schedule.value
@@ -650,6 +662,7 @@ def train_dqn_from_config(config_path: str | Path) -> Path:
         "seed",
         "device",
         "run_id",
+        "opening_plies",
     }
     unknown = sorted(set(data) - allowed)
     if unknown:

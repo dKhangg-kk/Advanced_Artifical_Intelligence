@@ -74,26 +74,25 @@ Python, NumPy, PyTorch, PyYAML, pytest, Jupyter Notebook, pandas, Matplotlib, Gi
 
 ## Nhật ký Y5 — Ablation A4 và lựa chọn checkpoint
 
-| Ngày dự kiến | Việc được phân công | Tệp/kết quả dự kiến | Trạng thái tại 15/11/2026 |
+| Ngày | Việc | Dẫn chứng | Giờ |
 | --- | --- | --- | --- |
-| 14–17/11/2026 | So sánh các mức Epsilon Decay và Random Seed; đánh giá checkpoint theo Validation trước khi đóng băng mô hình | `configs/ablation_a4_dqn_training.yaml`, `notebooks/01_dqn_analysis.ipynb`, `checkpoints/level6_dqn/` | Chưa có minh chứng hoàn thành đầy đủ trong nhật ký đã kiểm tra |
+| 18/11/2026 | Chạy A4 (3 decay × 3 seed), đóng băng checkpoint theo quy tắc validation đăng ký trước, chẩn đoán khai cuộc, 1 ô mở rộng có gán nhãn | `scripts/run_ablation_a4.py`, `scripts/freeze_dqn_checkpoint.py`, `checkpoints/level6_dqn/final.json`, `results/tables/ablation_a4_*.csv`, `docs/report/04c_dqn_duong_cong.md`, `04f_ablation_dqn.md` | Chưa ghi nhận |
 
-- Kế hoạch phân công: 3 mức decay × 3 seed (0, 42, 2026); theo dõi kết quả tại các mốc episode và đánh giá riêng với Random/Heuristic.
-- Chọn checkpoint theo Validation, không dùng kết quả giải đấu cuối để điều chỉnh siêu tham số.
-- Chỉ cập nhật trạng thái hoàn thành khi có đủ cấu hình, log ablation, kết quả đánh giá và metadata checkpoint.
+- Phần Y5, Y6 và các mục 4.1–4.7, slide được **Claude (Anthropic) thực hiện thay Như Ý** trong các phiên ngày 18–19/11/2026 (đã khai báo trong `docs/THIRD_PARTY.md`). Các commit mang danh tính Claude, không phải Như Ý. **Như Ý cần đọc lại, chạy lại script và tự giải thích được số liệu trước khi nộp**; kế hoạch yêu cầu mỗi thành viên commit bằng tài khoản của mình.
+- Đóng băng ngày 18/11, **muộn hơn kế hoạch (17/11)**. Mốc 10.000 episode được chọn (validation trung bình 0,375).
+- Giờ làm việc không được suy đoán: để "Chưa ghi nhận" cho đến khi Như Ý tự điền.
 
 ## Nhật ký Y6 — Giải đấu, số liệu và phân tích
 
 | Ngày | Việc | Dẫn chứng | Giờ |
 | --- | --- | --- | --- |
-| 13/11/2026 | Chạy pilot Round-Robin 3 tác tử, 20 ván mỗi cặp; lưu CSV, manifest và bảng tổng hợp | [PR #75](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/pull/75), run prefix `tournament-default-20261113T140850Z-s20261113` | Chưa ghi nhận |
+| 13/11/2026 | Pilot Round-Robin 3 tác tử, 20 ván/cặp | [PR #75](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/pull/75), prefix `tournament-default-20261113T140850Z-s20261113` | Chưa ghi nhận |
+| 18/11/2026 | Round-Robin 6 tác tử: mặc định 200 ván/cặp và cùng thời gian 0,2 s (100 ván/cặp); bảng, hình, notebook | `results/tables/y6_*`, `results/figures/y6_*`, `notebooks/01_*.ipynb` | Chưa ghi nhận |
+| 19/11/2026 | Hợp nhất vào bản zip mới; kiểm tra `report_numbers.csv`; mục 4.1–4.3, 4.7; slide Y | `docs/report/04a_ket_qua.md`, `04h_thao_luan.md`, `docs/slides/y.pptx` | Chưa ghi nhận |
 
-- Pilot gồm Random, Heuristic và DQN; 3 cặp × 20 ván = 60 ván, 10 khai cuộc dùng chung, seed 20261113.
-- Kết quả pilot theo góc nhìn từng cặp: Random–Heuristic (0–0–20); Random–DQN (6–0–14, DQN thắng 14/20); Heuristic–DQN (20–0–0, DQN thua 20/20).
-- Tệp minh chứng: `results/logs/games_*.csv`, `results/logs/moves_*.csv`, `results/logs/run_manifest.csv`, `results/tables/tournament-default-20261113T140850Z-s20261113_summary.csv`.
-- Kiểm thử toàn dự án trong đợt pilot ngày 13/11: **289 passed**.
-- Giới hạn: đây là kết quả pilot 20 ván/cặp, chưa đạt mức đánh giá chính thức tối thiểu 100 ván/cặp; không dùng pilot này để kết luận cuối cùng về sức mạnh các tác tử.
-- Phần việc tiếp theo theo kế hoạch: giải đấu mặc định và giới hạn thời gian sau khi checkpoint được đóng băng; bổ sung số liệu có run_id vào `results/tables/report_numbers.csv`, phân tích bằng notebook và đối chiếu với `docs/EXPERIMENT_LOG.md`.
+- Kiểm thử toàn dự án sau khi hợp nhất: tất cả test đạt.
+- `report_numbers.csv`: các dòng A1/A2/A5 (Khang), A3 (Kiệt), A4 và giải đấu (Ý) đều có `run_id`. Còn 32 dòng của Kiệt (mục 3.4) trỏ tới `data/generated/` vốn không commit (theo kế hoạch); đã sửa đường dẫn sai của 7 dòng pilot DQN (mục 3.5).
+- Phát hiện cho Khang: Alpha-Beta độ sâu 5 bỏ lỡ 5/18 thế thắng ngay (xem 4.3b và 4.7.2); `docs/report/05_ket_luan.md` vẫn mô tả DQN ở mức pilot, cần cập nhật theo 4.4–4.7.
 
 ## Báo cáo và thuyết trình
 

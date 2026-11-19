@@ -1,0 +1,38 @@
+{
+  "checkpoint_file": "dqn_model_ep005000.pt",
+  "episode": 5000,
+  "epsilon": 0.08203369443190199,
+  "optimizer_updates": 36515,
+  "run_id": "a4-default_decay-s0-20261118T155757Z",
+  "status": "training",
+  "git_commit": "3f4da7378f8c3844cd7ad275adf8880009502f07",
+  "python_version": "3.13.18",
+  "torch_version": "2.15.0+cu132",
+  "device": "cpu",
+  "accelerator": "x86_64",
+  "hardware": "Linux-6.18.44-fc-v595-x86_64-with-glibc2.39",
+  "training_elapsed_seconds": 536.561,
+  "created_at_utc": "2026-11-18T16:06:58.686020+00:00",
+  "config": {
+    "episodes": 10000,
+    "opponent": "heuristic",
+    "lr": 0.001,
+    "gamma": 0.99,
+    "epsilon_start": 1.0,
+    "epsilon_min": 0.05,
+    "epsilon_decay": 0.9995,
+    "buffer_size": 100000,
+    "batch_size": 64,
+    "target_update_freq": 500,
+    "checkpoint_milestones": [
+      1000,
+      2500,
+      5000,
+      10000
+    ],
+    "out_dir": "checkpoints/level6_dqn/a4/default_decay_s0",
+    "log_dir": "results/logs",
+    "seed": 0,
+    "device": "cpu"
+  }
+}

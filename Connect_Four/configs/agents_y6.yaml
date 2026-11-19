@@ -1,6 +1,8 @@
 # Cau hinh rieng cho loat thi nghiem Y6 den 19/11/2026.
-# DQN duoc tam loai khoi danh sach vi snapshot chua co checkpoint da dong bang;
-# khong su dung checkpoint pilot thieu file trong giai dau chinh thuc.
+# Ban pilot 18/11 (10 van/cap) chay 5 tac tu vi chua co checkpoint DQN dong bang.
+# Giai dau chinh thuc dung checkpoint DQN da dong bang ngay 18/11/2026
+# (checkpoints/level6_dqn/final.pt + final.json), chon bang validation theo
+# docs/report/04f_ablation_dqn.md; khong dung checkpoint pilot.
 random:
   level: 1
   seed: null
@@ -27,3 +29,7 @@ mcts:
 nn:
   level: 5
   checkpoint: checkpoints/level5_cnn/final.pt
+dqn:
+  level: 6
+  checkpoint: checkpoints/level6_dqn/final.pt
+  epsilon: 0.0
