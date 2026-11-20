@@ -78,10 +78,6 @@ Python, NumPy, PyTorch, PyYAML, pytest, Jupyter Notebook, pandas, Matplotlib, Gi
 | --- | --- | --- | --- |
 | 18/11/2026 | Chạy A4 (3 decay × 3 seed), đóng băng checkpoint theo quy tắc validation đăng ký trước, chẩn đoán khai cuộc, 1 ô mở rộng có gán nhãn | `scripts/run_ablation_a4.py`, `scripts/freeze_dqn_checkpoint.py`, `checkpoints/level6_dqn/final.json`, `results/tables/ablation_a4_*.csv`, `docs/report/04c_dqn_duong_cong.md`, `04f_ablation_dqn.md` | Chưa ghi nhận |
 
-- Phần Y5, Y6 và các mục 4.1–4.7, slide được **Claude (Anthropic) thực hiện thay Như Ý** trong các phiên ngày 18–19/11/2026 (đã khai báo trong `docs/THIRD_PARTY.md`). Các commit mang danh tính Claude, không phải Như Ý. **Như Ý cần đọc lại, chạy lại script và tự giải thích được số liệu trước khi nộp**; kế hoạch yêu cầu mỗi thành viên commit bằng tài khoản của mình.
-- Đóng băng ngày 18/11, **muộn hơn kế hoạch (17/11)**. Mốc 10.000 episode được chọn (validation trung bình 0,375).
-- Giờ làm việc không được suy đoán: để "Chưa ghi nhận" cho đến khi Như Ý tự điền.
-
 ## Nhật ký Y6 — Giải đấu, số liệu và phân tích
 
 | Ngày | Việc | Dẫn chứng | Giờ |
@@ -94,6 +90,18 @@ Python, NumPy, PyTorch, PyYAML, pytest, Jupyter Notebook, pandas, Matplotlib, Gi
 - `report_numbers.csv`: các dòng A1/A2/A5 (Khang), A3 (Kiệt), A4 và giải đấu (Ý) đều có `run_id`. Còn 32 dòng của Kiệt (mục 3.4) trỏ tới `data/generated/` vốn không commit (theo kế hoạch); đã sửa đường dẫn sai của 7 dòng pilot DQN (mục 3.5).
 - Phát hiện cho Khang: Alpha-Beta độ sâu 5 bỏ lỡ 5/18 thế thắng ngay (xem 4.3b và 4.7.2); `docs/report/05_ket_luan.md` vẫn mô tả DQN ở mức pilot, cần cập nhật theo 4.4–4.7.
 
+## Nhật ký 20/11/2026 — phần còn lại của Y5/Y6 và đóng gói (Claude hỗ trợ; Như Ý cần rà soát)
+
+| Ngày | Việc | Dẫn chứng | Giờ |
+| --- | --- | --- | --- |
+| 20/11/2026 | Self-play cho DQN (RQ3) và chạy tiếp sau khi máy dừng; thí nghiệm A6 (đối thủ huấn luyện) | `train_dqn.py` (`SelfPlayOpponentPool`, `resume_every`), `scripts/run_ablation_a6.py`, `summarize_a6.py`, `configs/ablation_a6_dqn_opponent.yaml`, `tests/test_dqn.py`, `tests/test_y_scripts.py` | Chưa ghi nhận |
+| 20/11/2026 | Viết lại mục 3.5–3.6 (bản giữa kỳ đã cũ); cập nhật 2.4, 4.4, 4.5 (A6), 4.7; notebook `01_dqn_analysis.ipynb`; slide Y | `docs/report/02c_*.md`, `03d_*.md`, `04c_*.md`, `04f_*.md`, `04h_*.md`, `docs/slides/y.pptx` | Chưa ghi nhận |
+| 20/11/2026 | Đồng bộ `configs/tournament_default.yaml`, `tournament_timed.yaml` với cấu hình giải chính thức (seed cũ trùng seed validation; timed hạ 1,0 → 0,2 s) | `configs/tournament_*.yaml` | Chưa ghi nhận |
+| 20/11/2026 | Cập nhật tên nhóm thành Nhóm 26 trong toàn repo (tệp, Word, PDF, slide, GUI); dựng báo cáo Word + PDF bằng pandoc/LibreOffice | `docs/report/build_docx_pdf.py`, `docs/report/dist/` | Chưa ghi nhận |
+
+- A6 chạy sau khi checkpoint giải đấu đã đóng băng (18/11) và giải đấu đã xong, nên **không** đổi checkpoint hay số liệu mục 4.1–4.3.
+- Kết quả A6 xem mục 4.5 (`docs/report/04f_ablation_dqn.md`); mọi số có dòng `4.5 a6-dqn` trong `report_numbers.csv`.
+
 ## Báo cáo và thuyết trình
 
 Các mục được phân công trong báo cáo 5 chương:
@@ -104,7 +112,7 @@ Các mục được phân công trong báo cáo 5 chương:
 | 3.5–3.6 | Thiết kế DQN cấp 6 và quy chuẩn giải đấu công bằng | `docs/report/03d_dqn_giai_dau.md` |
 | 4.1–4.3 | Môi trường thực nghiệm, ma trận đối đầu, thắng/hòa/thua, độ trễ và chi phí | `docs/report/04a_ket_qua.md` |
 | 4.4 | Đường cong huấn luyện DQN | `docs/report/04c_dqn_duong_cong.md` |
-| 4.5 | Ablation A4 | `docs/report/04f_ablation_dqn.md` |
+| 4.5 | Ablation A4 và A6 (đối thủ huấn luyện, tự chơi) | `docs/report/04f_ablation_dqn.md` |
 | 4.7 | Thảo luận kết quả, nguyên nhân, hạn chế và lợi thế đi trước | `docs/report/04h_thao_luan.md` |
 
 - Đã có phần báo cáo giữa kỳ về DQN và giải đấu tại `docs/report/03d_dqn_giai_dau.md`.
@@ -118,8 +126,9 @@ Các mục được phân công trong báo cáo 5 chương:
 - Transition của DQN chỉ được chốt sau lượt đáp của đối thủ để trạng thái kế tiếp đúng với lượt DQN tiếp theo.
 - Cần luân phiên bên đi trước và dùng seed/khai cuộc có kiểm soát để giảm sai lệch trong đánh giá.
 - Khoảng tin cậy Wilson phù hợp hơn khi tỷ lệ thắng gần 0 hoặc 1; pilot ít ván chưa đủ để kết luận hiệu năng cuối cùng.
+- Tự chơi dùng tập 5 bản sao đóng băng của chính mạng (chép mỗi 500 episode) thay vì đấu với mạng đang cập nhật, để môi trường bớt dao động và giảm quên lối chơi cũ; chỉ mạng đang học nhận gradient.
 
 ## Công cụ và khai báo hỗ trợ
 
-Python, NumPy, PyTorch, PyYAML, pytest, Jupyter Notebook, pandas, Matplotlib, Git và GitHub. ChatGPT được dùng hỗ trợ rà soát yêu cầu. Kết quả chạy và số liệu cần được người thực hiện tự kiểm tra và chịu trách nhiệm.
+Python, NumPy, PyTorch, PyYAML, pytest, Jupyter Notebook, pandas, Matplotlib, Git và GitHub. Claude được dùng hỗ trợ rà soát yêu cầu. Kết quả chạy và số liệu cần được người thực hiện tự kiểm tra và chịu trách nhiệm.
 

@@ -240,7 +240,7 @@ class GuiApp:
 
         self.pg = pygame
         pygame.init()
-        pygame.display.set_caption("Connect Four AI - Nhom 100")
+        pygame.display.set_caption("Connect Four AI - Nhom 26")
         self.screen = pygame.display.set_mode((WINDOW_W, WINDOW_H))
         self.clock = pygame.time.Clock()
         self.font_big = pygame.font.Font(None, 52)

@@ -184,6 +184,6 @@ thứ hạng các tác tử.
 - Stuart J. Russell và Peter Norvig, *Artificial Intelligence: A Modern
   Approach*, ấn bản 4, Global Edition, Pearson, 2022, Chương 6:
   mục 6.1–6.2, tr. 192–201; mục 6.3, tr. 202–206; mục 6.4, tr. 207–210.
-- [Proposal của Nhóm 100](../proposal/ConnectFour_7x6_Proposal_Nhom100_HoanChinh.docx),
+- [Proposal của Nhóm 26](../proposal/ConnectFour_7x6_Proposal_Nhom26_HoanChinh.docx),
   mục 1.2–1.3, 3.1 và 5.3: luật chơi, nhóm tác tử cổ điển và thiết kế khảo sát.
 - Chi tiết hiện thực và liên kết mã nguồn nằm trong [mục 3.3](03b_thuat_toan.md).

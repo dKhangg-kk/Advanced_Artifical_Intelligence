@@ -30,7 +30,7 @@ DOI: [10.1038/nature14236](https://doi.org/10.1038/nature14236).
 Nguồn nền tảng cho DQN; không dùng kết quả Atari của bài báo làm kết quả
 Connect Four của nhóm.
 
-[6] Nhóm 100 (2026). [Proposal Connect Four](../proposal/ConnectFour_7x6_Proposal_Nhom100_HoanChinh.docx),
+[6] Nhóm 26 (2026). [Proposal Connect Four](../proposal/ConnectFour_7x6_Proposal_Nhom26_HoanChinh.docx),
 [kế hoạch và phân công](../kehoachphancong.pdf),
 [mã nguồn và lịch sử đóng góp](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence).
 Đây là tài liệu nội bộ xác định phạm vi, phân công và thiết kế thực nghiệm.

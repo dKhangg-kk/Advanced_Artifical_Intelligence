@@ -38,6 +38,7 @@ OWNED_PREFIXES = (
     "4.3 latency-",
     "4.4 dqn",
     "4.5 a4-dqn",
+    "4.5 a6-dqn",
     "4.7 first-move-",
 )
 
@@ -225,6 +226,66 @@ def a4_rows() -> list[dict[str, str]]:
     return out
 
 
+def a6_rows() -> list[dict[str, str]]:
+    """A6 (doi thu huan luyen): score validation tong hop, doi dau voi final.pt, do dung vi tri."""
+    out: list[dict[str, str]] = []
+    sec = "4.5 a6-dqn"
+    src = TABLES / "ablation_a6_summary.csv"
+    for s in read(src):
+        tag = f"{s['train_opponent']}_ep{s['episode']}_vs_{s['opponent']}"
+        flt = f"train_opponent={s['train_opponent']}; episode={s['episode']}; opponent={s['opponent']}; seeds={s['seeds']}"
+        for key, formula in (("score_mean", "mean(score) tren cac seed"), ("score_sd", "do lech chuan mau giua seed"),
+                             ("score_min", "min(score)"), ("score_max", "max(score)")):
+            out.append(row(sec, f"{key}_{tag}", float(s[key]), "ratio", "derived", "table", src, flt, formula, s["run_ids"]))
+        if s["opponent"] == "random":
+            out.append(row(sec, f"train_win_rate_last500_{s['train_opponent']}_ep{s['episode']}",
+                           float(s["train_win_rate_last500"]), "ratio", "derived", "table", src, flt,
+                           "ty le thang 500 episode huan luyen cuoi (doi thu huan luyen cua chinh o do), trung binh seed",
+                           s["run_ids"]))
+            out.append(row(sec, f"training_seconds_{s['train_opponent']}_ep{s['episode']}",
+                           float(s["training_elapsed_seconds_mean"]), "seconds", "derived", "table", src, flt,
+                           "mean(training_elapsed_seconds) tren cac seed", s["run_ids"]))
+    for r in read(TABLES / "ablation_a6_results.csv"):
+        if int(r["episode"]) != 10000:
+            continue
+        tag = f"{r['train_opponent']}_s{r['seed']}_ep10000_vs_{r['opponent']}"
+        flt = f"train_opponent={r['train_opponent']}; seed={r['seed']}; validation seed={r['validation_seed']}"
+        out += [
+            row(sec, f"wins_{tag}", int(r["wins"]), "games", "measured", "table", TABLES / "ablation_a6_results.csv", flt, "count(winner=dqn)", r["run_id"]),
+            row(sec, f"draws_{tag}", int(r["draws"]), "games", "measured", "table", TABLES / "ablation_a6_results.csv", flt, "count(draw)", r["run_id"]),
+            row(sec, f"losses_{tag}", int(r["losses"]), "games", "measured", "table", TABLES / "ablation_a6_results.csv", flt, "count(winner=doi thu)", r["run_id"]),
+            row(sec, f"score_{tag}", float(r["score"]), "ratio", "derived", "table", TABLES / "ablation_a6_results.csv", flt, "(W + 0.5*D) / N", r["run_id"]),
+        ]
+    for h in read(TABLES / "ablation_a6_head_to_head.csv"):
+        tag = f"{h['train_opponent']}_s{h['seed']}"
+        flt = f"vs {h['opponent_checkpoint']}; seed={h['match_seed']}; n={h['games']}"
+        out += [
+            row(sec, f"h2h_frozen_wins_{tag}", int(h["wins"]), "games", "measured", "table", TABLES / "ablation_a6_head_to_head.csv", flt, "count(winner=dqn A6)", h["run_id"]),
+            row(sec, f"h2h_frozen_draws_{tag}", int(h["draws"]), "games", "measured", "table", TABLES / "ablation_a6_head_to_head.csv", flt, "count(draw)", h["run_id"]),
+            row(sec, f"h2h_frozen_losses_{tag}", int(h["losses"]), "games", "measured", "table", TABLES / "ablation_a6_head_to_head.csv", flt, "count(winner=final.pt)", h["run_id"]),
+            row(sec, f"h2h_frozen_score_{tag}", float(h["score"]), "ratio", "derived", "table", TABLES / "ablation_a6_head_to_head.csv", flt, "(W + 0.5*D) / N", h["run_id"]),
+            row(sec, f"h2h_frozen_wilson95_low_{tag}", float(h["score_ci95_low"]), "ratio", "derived", "table", TABLES / "ablation_a6_head_to_head.csv", flt, "Wilson 95%", h["run_id"]),
+            row(sec, f"h2h_frozen_wilson95_high_{tag}", float(h["score_ci95_high"]), "ratio", "derived", "table", TABLES / "ablation_a6_head_to_head.csv", flt, "Wilson 95%", h["run_id"]),
+        ]
+    for g in read(TABLES / "ablation_a6_pooled.csv"):
+        tag = f"{g['train_opponent']}_ep{g['episode']}_vs_{g['opponent']}"
+        flt = f"gop seed {g['seeds']}; n={g['games']}"
+        src_p = TABLES / "ablation_a6_pooled.csv"
+        out += [
+            row(sec, f"pooled_score_{tag}", float(g["score"]), "ratio", "derived", "table", src_p, flt, "(sum W + 0.5*sum D) / sum N tren cac seed", g["run_ids"]),
+            row(sec, f"pooled_wilson95_low_{tag}", float(g["score_ci95_low"]), "ratio", "derived", "table", src_p, flt, "Wilson 95% coi cac van doc lap (bo qua bien thien giua seed)", g["run_ids"]),
+            row(sec, f"pooled_wilson95_high_{tag}", float(g["score_ci95_high"]), "ratio", "derived", "table", src_p, flt, "Wilson 95% coi cac van doc lap (bo qua bien thien giua seed)", g["run_ids"]),
+        ]
+    results = read(TABLES / "ablation_a6_results.csv")
+    for pos in read(TABLES / "ablation_a6_positions.csv"):
+        rid = next((r["run_id"] for r in results if r["train_opponent"] == pos["train_opponent"] and r["seed"] == pos["seed"]), "")
+        tag = f"{pos['train_opponent']}_s{pos['seed']}_{pos['situation']}"
+        out.append(row(sec, f"positions_hits_{tag}", int(pos["hits"]), "positions", "measured", "table",
+                       TABLES / "ablation_a6_positions.csv", f"checkpoint={pos['checkpoint']}; n={pos['positions']}",
+                       "so vi tri chon dung (DQN greedy, 1 lan)", rid))
+    return out
+
+
 def main() -> int:
     rows = list(csv.DictReader(REPORT.open(encoding="utf-8")))
     kept = [r for r in rows if not r["report_section"].startswith(OWNED_PREFIXES)]
@@ -236,6 +297,8 @@ def main() -> int:
         new += dqn_rows()
     if (TABLES / "ablation_a4_summary.csv").exists():
         new += a4_rows()
+    if (TABLES / "ablation_a6_summary.csv").exists():
+        new += a6_rows()
     with REPORT.open("w", newline="", encoding="utf-8") as stream:
         writer = csv.DictWriter(stream, fieldnames=list(REPORT_NUMBER_FIELDS), lineterminator="\n")
         writer.writeheader()
