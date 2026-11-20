@@ -7,9 +7,14 @@ Nếu **sao chép mã**, ghi rõ tệp và dòng.
 |---|---|---|---|
 | Mark Liu (2025), *AlphaGo Simplified*, CRC Press | Sách có bản quyền; mã kèm sách | Ý tưởng thuật toán (đọc chương 1–8) | Toàn bộ engine, agent, giải đấu, thống kê, kiểm thử |
 | Stuart Russell & Peter Norvig (2022), *AIMA* 4th | Sách | Định nghĩa tác tử, minimax, alpha-beta, MCTS | Cài đặt lại theo thiết kế của nhóm |
-| Pascal Pons — kỹ thuật bitboard Connect Four |Slide bài giảng /  Liu - AlphaGo  / Tài liệu mạng| Ý tưởng 7 bit/cột và kiểm tra 4 quân bằng dịch bit | Tự cài đặt và kiểm thử chéo với bản tham chiếu |
+| [Pascal Pons, `connect4/Position.hpp`](https://github.com/PascalPons/connect4/blob/master/Position.hpp); slide bài giảng; Mark Liu, *AlphaGo Simplified*; tài liệu mạng | Tài liệu kỹ thuật tham khảo; không sao chép mã nguồn | Ý tưởng bitboard 7 bit/cột và kiểm tra bốn quân bằng dịch bit | Tự cài đặt trong `src/connect_four/game/engine.py`; đối chiếu `ReferenceGame` và test ngẫu nhiên |
 | Claude (Anthropic), công cụ AI — phần việc của Phan Lê Ngọc Như Ý (Y5–Y6) | Dịch vụ thương mại, không kế thừa mã | Hỗ trợ viết `scripts/run_ablation_a4.py`, `freeze_dqn_checkpoint.py`, `summarize_a4.py`, `summarize_tournament.py`, `evaluate_positions.py`, `diagnose_dqn_openings.py`, `check_alphabeta_win_values.py`, `build_report_numbers_y.py`; chạy ablation A4, giải đấu và tổng hợp bảng/hình; soạn nháp các mục báo cáo 2.4, 4.1–4.5, 4.7, slide `docs/slides/y.pptx` và nhật ký thực nghiệm ngày 18–19/11/2026 | Các số liệu đều lấy từ log thô trong `results/logs/`; Như Ý cần đọc, chạy lại và tự giải thích phần này trước khi nộp (chưa xác nhận) |
-| Thư viện: numpy, torch, pygame, pytest, pandas, matplotlib | BSD/MIT/Apache | Dùng như công cụ | Không sửa mã thư viện |
+| NumPy | BSD-3-Clause | Mảng bàn cờ và tensor trạng thái | Mã game/agent của dự án |
+| PyTorch | BSD-style | Mạng neural và huấn luyện tác tử | Mã mô hình/huấn luyện của dự án |
+| Pygame | LGPL-2.1-or-later | Cửa sổ, sự kiện và vẽ giao diện trong `src/connect_four/ui/gui.py` | Điều phối game và giao diện của dự án |
+| pytest | MIT | Chạy kiểm thử tự động | Bộ test của dự án |
+| pandas, matplotlib, PyYAML, psutil | Giấy phép tương ứng của từng thư viện | Tiện ích phân tích, cấu hình và đo môi trường | Không sửa mã thư viện |
+| Codex (trợ lý AI) — phần việc của Bùi Anh Đức (Đ6) | Dịch vụ/phần mềm | Hỗ trợ tổng hợp log, biên tập Mục 4.6, mô tả kiến trúc, tạo script ghép DOCX và sinh slide trong phiên làm việc ngày 20/11/2026 | Số liệu được truy về log/bảng trong repo; tác giả cần đọc, xác nhận nội dung và tự giải thích khi bảo vệ; không dùng ghi nhận này để suy ra tác giả AI cho các commit mã nguồn trước đó |
 
 ## Quy ước
 

@@ -17,5 +17,9 @@ psutil>=5.9
 # --- Giao dien ---
 pygame>=2.5,<3
 
+# --- Tao tai lieu bao cao va slide ---
+python-docx>=1.1,<2
+python-pptx>=1.0,<2
+
 # --- Hoc sau (cap 5 - NN, cap 6 - DQN) ---
 torch>=2.2,<3
