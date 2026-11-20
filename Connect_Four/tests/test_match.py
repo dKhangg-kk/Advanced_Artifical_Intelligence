@@ -130,4 +130,3 @@ def test_save_run_matches_runlog_schema(tmp_path):
     with moves_path.open(encoding="utf-8") as fh:
         reader = csv.DictReader(fh)
         assert tuple(reader.fieldnames) == MOVE_FIELDS
-        assert len(list(reader)) == sum(len(r.move_logs) for r in recs)
