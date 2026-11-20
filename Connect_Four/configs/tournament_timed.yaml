@@ -1,12 +1,21 @@
-# Che do "cung tran thoi gian moi nuoc": moi tac tu co dung ngan sach thoi gian.
+# Che do "cung tran thoi gian moi nuoc": Alpha-Beta va MCTS cung Budget(time_s) moi nuoc.
 # Dung de tra loi cau hoi nghien cuu 1 (Alpha-Beta vs MCTS trong cung thoi gian).
+#
+# Cap nhat 20/11/2026 (Y4/Y6): dong bo voi cau hinh chinh thuc configs/tournament_y6_timed.yaml
+# (run tournament-timed-20261118T164206Z-s20261119):
+# - time_per_move_s ha tu 1.0 xuong 0.2 giay (uoc tinh 1.0 s ~ 10 gio/che do, 0.2 s ~ 2 gio);
+# - 100 van/cap theo phuong an cat giam so 3 cua ke hoach (van >= 100 van/cap cua de);
+# - seed 20261119, khac seed validation DQN 20261102/20261103.
+# Nuoc vuot ngan sach khong bi ngat; van co nuoc vuot ngan sach duoc danh dau over_budget
+# va bao cao rieng (muc 4.3).
 
 mode: timed
-games_per_pair: 200
-openings: 100
-seed: 20261103
+games_per_pair: 100
+openings: 50
+seed: 20261119
 max_moves: 42
-time_per_move_s: 1.0    # neu chay cham, ha xuong 0.1 hoac 0.3 cho pilot
+time_per_move_s: 0.2
+agent_config: configs/agents_y6.yaml
 
 agents:
   - random
@@ -15,11 +24,6 @@ agents:
   - mcts
   - nn
   - dqn
-
-notes: |
-  Ghi ro phan cung (CPU/GPU) va cach xu ly khi tac tu vuot thoi gian.
-  Quy uoc de xuat: neu vuot qua 3 lan ngan sach, ghi nhan nuoc di nhung danh
-  dau van la "over_budget" va bao cao rieng ty le nay.
 
 output_dir: results/logs
 figures_dir: results/figures

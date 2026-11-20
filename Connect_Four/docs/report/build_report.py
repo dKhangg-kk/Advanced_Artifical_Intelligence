@@ -13,7 +13,7 @@ from docx.shared import Inches, Pt, RGBColor
 ROOT = Path(__file__).resolve().parents[2]
 REPORT = ROOT / "docs" / "report"
 DIST = REPORT / "dist"
-OUTPUT = DIST / "BaoCao_CuoiKy_Nhom100.docx"
+OUTPUT = DIST / "BaoCao_CuoiKy_Nhom26_ban_nhanh.docx"  # ban day du: build_docx_pdf.py
 
 
 def clean_inline(text: str) -> str:
@@ -156,8 +156,8 @@ def main() -> int:
             document.add_page_break()
         add_markdown(document, source)
 
-    document.core_properties.title = "Connect Four AI — Báo cáo cuối kỳ Nhóm 100 (bản ghép làm việc)"
-    document.core_properties.author = "Nhóm 100"
+    document.core_properties.title = "Connect Four AI — Báo cáo cuối kỳ Nhóm 26 (bản ghép làm việc)"
+    document.core_properties.author = "Nhóm 26"
     document.core_properties.subject = "Generated from available Markdown sections in docs/report/order.txt"
     document.save(OUTPUT)
     print(f"Built: {OUTPUT}")

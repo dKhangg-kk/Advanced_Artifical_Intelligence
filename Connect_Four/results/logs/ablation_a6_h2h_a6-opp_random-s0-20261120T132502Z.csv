@@ -1,0 +1,2 @@
+run_id,train_opponent,seed,episode,opponent_checkpoint,games,wins,draws,losses,score,score_ci95_low,score_ci95_high,match_seed
+a6-opp_random-s0-20261120T132502Z,random,0,10000,checkpoints/level6_dqn/final.pt,100,37,0,63,0.37,0.28182212569509163,0.46779652424866885,20261104

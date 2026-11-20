@@ -1,0 +1,40 @@
+{
+  "checkpoint_file": "dqn_model.pt",
+  "episode": 10000,
+  "epsilon": 0.05,
+  "optimizer_updates": 113043,
+  "run_id": "a6-opp_selfplay-s2026-20261120T140154Z",
+  "status": "training",
+  "git_commit": "d7804c358c62063bcee47f2168cb731f45ff55b8",
+  "python_version": "3.13.18",
+  "torch_version": "2.15.0+cu132",
+  "device": "cpu",
+  "accelerator": "x86_64",
+  "hardware": "Linux-6.18.44-fc-v726-x86_64-with-glibc2.39",
+  "training_elapsed_seconds": 2169.583,
+  "created_at_utc": "2026-11-20T14:38:04.745018+00:00",
+  "config": {
+    "episodes": 10000,
+    "opponent": "selfplay",
+    "lr": 0.001,
+    "gamma": 0.99,
+    "epsilon_start": 1.0,
+    "epsilon_min": 0.05,
+    "epsilon_decay": 0.9995,
+    "buffer_size": 100000,
+    "batch_size": 64,
+    "target_update_freq": 500,
+    "checkpoint_milestones": [
+      1000,
+      2500,
+      5000,
+      10000
+    ],
+    "out_dir": "checkpoints/level6_dqn/a6/opp_selfplay_s2026",
+    "log_dir": "results/logs",
+    "seed": 2026,
+    "device": "cpu",
+    "selfplay_snapshot_every": 500,
+    "selfplay_pool_size": 5
+  }
+}

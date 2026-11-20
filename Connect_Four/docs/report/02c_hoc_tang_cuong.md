@@ -2,7 +2,8 @@
 
 Mục này trình bày nền tảng lý thuyết cho tác tử cấp 6 (DQN). Phần cài đặt cụ thể
 nằm ở mục 3.5 (`03d_dqn_giai_dau.md`), kết quả huấn luyện ở mục 4.4
-(`04c_dqn_duong_cong.md`) và ablation A4 ở mục 4.5 (`04f_ablation_dqn.md`).
+(`04c_dqn_duong_cong.md`), ablation A4 và thí nghiệm đối thủ huấn luyện A6 ở mục 4.5
+(`04f_ablation_dqn.md`).
 
 ## 2.4.1. Học tăng cường và quá trình quyết định Markov
 
@@ -88,9 +89,12 @@ của nó (Mark Liu, 2025, chương 13). Lợi ích là đối thủ mạnh dầ
 tín hiệu học không bão hòa như khi đấu một đối thủ cố định. Nhược điểm là quá
 trình không còn là một MDP dừng: môi trường thay đổi khi chính sách thay đổi, dễ
 xuất hiện dao động hoặc "quên" cách thắng các lối chơi cũ, nên thường cần giữ
-một tập đối thủ lịch sử. Đồ án chọn đối thủ cố định (Heuristic cấp 2) cho cấp 6
-để MDP dừng, dễ kiểm tra và dễ tái lập trong thời gian hai tuần; self-play được
-ghi là hướng mở rộng.
+một tập đối thủ lịch sử. Mô hình chính của cấp 6 được huấn luyện với đối thủ cố định (Heuristic cấp 2)
+để MDP dừng, dễ kiểm tra và dễ tái lập trong thời gian hai tuần. Self-play được
+cài đặt sau đó như một thí nghiệm riêng (A6): đối thủ là một trong 5 bản sao đóng
+băng gần nhất của chính mạng đang học, chép mới mỗi 500 episode (mục 3.5.4). Tập
+đối thủ lịch sử này là cách giảm dao động và hiện tượng quên vừa nêu; kết quả so
+sánh với đối thủ cố định ở mục 4.5.
 
 ## 2.4.5. AlphaGo-inspired và AlphaZero-inspired
 

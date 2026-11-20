@@ -39,10 +39,10 @@ K3: MCTS thắng Random 199/200 ván (99,5%) ở 500 mô phỏng/nước; xem
 ## Mốc M3 — Giải đấu và ablation
 
 - [x] **[D]** Pilot: Heuristic–Random, 200 ván, run `k1-heuristic-random-20261109T061032Z-s0`
-- [ ] **[D]** Giải đấu mặc định cho 4 tác tử cổ điển (Random, Heuristic, Alpha-Beta, MCTS): 200 ván × 6 cặp = 1.200 ván
-- [ ] **[D]** Giải đấu chế độ cùng thời gian mỗi nước
-- [ ] **[D]** Ghi `results/logs/run_manifest.csv`, `games_<run_id>.csv`, `moves_<run_id>.csv`
-- [ ] **[D]** Ghi mục tương ứng trong `docs/EXPERIMENT_LOG.md`
+- [x] **[D]** Giải đấu mặc định: thay bằng giải đủ 6 tác tử, 200 ván × 15 cặp = 3.000 ván (Y6, 18/11, `tournament-default-20261118T163224Z-s20261118`)
+- [x] **[D]** Giải đấu chế độ cùng thời gian 0,2 giây/nước: 100 ván × 15 cặp = 1.500 ván (Y6, `tournament-timed-20261118T164206Z-s20261119`)
+- [x] **[D]** Ghi `results/logs/run_manifest.csv`, `games_<run_id>.csv`, `moves_<run_id>.csv`
+- [x] **[D]** Ghi mục tương ứng trong `docs/EXPERIMENT_LOG.md`
 - [x] **[L]** Ablation A1: bật/tắt cắt tỉa (xem `configs/ablation_a1_pruning.yaml`)
 - [x] **[L]** Ablation A2: ngân sách MCTS 100→5000 (xem `configs/ablation_a2_mcts_budget.yaml`)
 - [x] **[L]** Ablation A5: Alpha-Beta sâu 2–6; 100 ván/mức trước Heuristic, đo thế cờ ba lần/mức.
@@ -50,7 +50,8 @@ K3: MCTS thắng Random 199/200 ván (99,5%) ở 500 mô phỏng/nước; xem
 
 **Điều kiện xong:** `results/logs/*.csv` + `results/tables/*.csv` + hình trong `results/figures/`.
 
-Lưu ý trạng thái: giải đấu pilot ngày 13/11 chạy 3 tác tử (Random, Heuristic,
+Cập nhật 20/11 (Ý): giải đấu đủ 6 tác tử ở hai chế độ đã chạy ngày 18/11 (mục 4.1–4.3 báo cáo).
+Ghi chú cũ, giữ để đối chiếu: giải đấu pilot ngày 13/11 chạy 3 tác tử (Random, Heuristic,
 DQN), 20 ván/cặp, tổng 60 ván; chưa thay thế giải đấu 4 tác tử cổ điển 1.200
 ván. Chưa có log giải đấu timed. A1/A2/A5 đã chạy ngày 15/11/2026; có log thô,
 bảng, hình và mục 4.5. Xem [hướng dẫn thực nghiệm tìm kiếm](SEARCH_ABLATIONS.md).
@@ -63,14 +64,16 @@ Các ablation không thay thế giải đấu đủ tác tử hoặc chế độ
 - [x] **[L]** `training/train_supervised.py` — huấn luyện CNN policy net
 - [x] **[L]** `agents/nn_agent.py` — nạp checkpoint, chọn nước hợp lệ (cấp 5)
 - [x] **[L]** `training/train_dqn.py` — DQN, Replay Buffer, Target Network, huấn luyện với đối thủ cố định
-- [ ] **[L]** `training/train_dqn.py` — mở rộng huấn luyện sang self-play
+- [x] **[L]** `training/train_dqn.py` — mở rộng huấn luyện sang self-play (`opponent="selfplay"`, tập 5 bản sao đóng băng; thí nghiệm A6, 20/11)
 - [x] **[L]** `agents/dqn.py` — chọn nước đi bằng Q-values trên cột hợp lệ (cấp 6)
 - [x] **[D]** Ghi `results/logs/train_cnn_<run_id>.csv` và `train_dqn_<run_id>.csv`
-- [ ] **[D]** Giải đấu đầy đủ 6 tác tử: 15 cặp × 200 ván = 3.000 ván/chế độ
+- [x] **[D]** Giải đấu đầy đủ 6 tác tử: 3.000 ván (mặc định) + 1.500 ván (cùng thời gian, 100 ván/cặp theo phương án cắt giảm số 3)
 
 **Điều kiện xong:** có checkpoint riêng cho cấp 5 và cấp 6, có log huấn luyện, có điểm đối kháng.
 
-Lưu ý trạng thái: đã có log huấn luyện CNN (4 run A3) và DQN pilot 200 episode.
+Cập nhật 20/11 (Ý): checkpoint DQN đóng băng `checkpoints/level6_dqn/final.pt` + `final.json` (18/11),
+A4 đủ 9 ô, self-play/A6 đã chạy; giải đấu đủ 6 tác tử đã có.
+Ghi chú cũ, giữ để đối chiếu: đã có log huấn luyện CNN (4 run A3) và DQN pilot 200 episode.
 Checkpoint CNN có trong `checkpoints/level5_cnn/`; metadata DQN pilot ghi tên
 `dqn_model.pt` nhưng file trọng số không có trong repository. Giải đấu ngày
 13/11 chỉ chạy 3 tác tử, 20 ván/cặp (60 ván), nên chưa đáp ứng giải đấu đầy đủ
@@ -79,8 +82,8 @@ Checkpoint CNN có trong `checkpoints/level5_cnn/`; metadata DQN pilot ghi tên
 ## Mốc M5 — Demo và báo cáo
 
 - [x] **[L]** `ui/gui.py` — pygame, chọn tác tử, hiện thời gian mỗi nước
-- [ ] **[L]** `notebooks/01_tournament_analysis.ipynb` — dựng bảng/hình từ log thô
-- [ ] **[D]** Hoàn thiện `docs/EXPERIMENT_LOG.md` và `results/tables/report_numbers.csv`
+- [x] **[L]** `notebooks/01_tournament_analysis.ipynb`, `01_dqn_analysis.ipynb` — dựng bảng/hình từ log thô
+- [x] **[D]** Hoàn thiện `docs/EXPERIMENT_LOG.md` và `results/tables/report_numbers.csv` (phần của Ý: giải đấu, A4, A6; cập nhật 20/11)
 - [ ] **[D]** Báo cáo đủ 5 chương theo cấu trúc bên dưới trong `docs/report/`
 - [ ] **[D]** Slide `docs/slides/`, poster `docs/poster/`
 - [ ] **[D]** Đóng gói ZIP đúng quy định, kiểm tra chạy lại trên máy sạch

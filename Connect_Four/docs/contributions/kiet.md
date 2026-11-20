@@ -98,7 +98,7 @@ công việc chưa có bằng chứng.
 - Git và GitHub: kiểm tra lịch sử commit, Issue #18, #20–#22, #40–#41, #44
   và các PR liên quan.
 - Nguồn trong repository: proposal đã nộp
-  `docs/proposal/ConnectFour_7x6_Proposal_Nhom100_HoanChinh.docx`,
+  `docs/proposal/ConnectFour_7x6_Proposal_Nhom26_HoanChinh.docx`,
   [lộ trình](../ROADMAP.md), [quy ước đóng góp](../../CONTRIBUTING.md),
   `data/generated/splits/manifest.json`, `checkpoints/level5_cnn/`,
   `checkpoints/logs/`, `results/logs/train_cnn_*.csv`,
@@ -107,5 +107,5 @@ công việc chưa có bằng chứng.
   `docs/EXPERIMENT_LOG.md` và `results/tables/report_numbers.csv`.
 - GitHub Copilot và trợ lý OpenCode: hỗ trợ đối chiếu thông tin, soạn thảo và
   kiểm tra số liệu; nội dung cần được tôi xác nhận theo công việc thực tế.
-- Issue #18, #20–#22, #40–#41, #44 dẫn nguồn “Kế hoạch & phân công Nhóm 100 -
+- Issue #18, #20–#22, #40–#41, #44 dẫn nguồn “Kế hoạch & phân công Nhóm 26 -
   Connect Four AI (8 11 → 22 11 2026).docx”.

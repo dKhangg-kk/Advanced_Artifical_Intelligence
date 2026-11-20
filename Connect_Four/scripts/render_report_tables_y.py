@@ -190,6 +190,73 @@ def opening_diag() -> str:
               rows, ["---", "---:", "---:", "---:", "---:", "---:", "---:"])
 
 
+A6_LABEL = {"heuristic": "Heuristic (A4)", "random": "Random", "selfplay": "Tự chơi"}
+
+
+def a6_main() -> str:
+    summary = read(TABLES / "ablation_a6_summary.csv")
+    out = []
+    for opponent, title in (("random", "Validation gặp Random"), ("heuristic", "Validation gặp Heuristic")):
+        episodes = sorted({int(s["episode"]) for s in summary})
+        rows = []
+        for train in ("heuristic", "random", "selfplay"):
+            cells = []
+            for ep in episodes:
+                s = next((x for x in summary if x["train_opponent"] == train and int(x["episode"]) == ep
+                          and x["opponent"] == opponent), None)
+                cells.append("—" if s is None else f"{f2(s['score_mean'])} ± {f2(s['score_sd'])} [{f2(s['score_min'])}–{f2(s['score_max'])}]")
+            n = next((x["n_seeds"] for x in summary if x["train_opponent"] == train), "0")
+            rows.append([f"{A6_LABEL[train]} (n={n})"] + cells)
+        out.append(f"**{title}** — score trung bình ± độ lệch chuẩn mẫu giữa các seed, [min–max]; mỗi điểm 100 ván/seed.\n")
+        out.append(md(["Đối thủ huấn luyện"] + [f"{e:,} ep".replace(",", ".") for e in episodes], rows,
+                      ["---"] + ["---:"] * len(episodes)))
+        out.append("")
+    return "\n".join(out).rstrip()
+
+
+def a6_seeds() -> str:
+    rows = []
+    results = [r for r in read(TABLES / "ablation_a6_results.csv") if int(r["episode"]) == 10000]
+    h2h = {(h["train_opponent"], h["seed"]): h for h in read(TABLES / "ablation_a6_head_to_head.csv")}
+    for train in ("heuristic", "random", "selfplay"):
+        for seed in sorted({r["seed"] for r in results if r["train_opponent"] == train}, key=int):
+            rr = {r["opponent"]: r for r in results if r["train_opponent"] == train and r["seed"] == seed}
+            h = h2h.get((train, seed))
+            h_txt = "— (là chính final.pt)" if train == "heuristic" and seed == "0" else (
+                "— (không còn .pt)" if h is None else f"{h['wins']}–{h['draws']}–{h['losses']} ({f2(h['score'])})")
+            rows.append([A6_LABEL[train], seed,
+                         f"{rr['random']['wins']}–{rr['random']['draws']}–{rr['random']['losses']} ({f2(rr['random']['score'])})",
+                         f"{rr['heuristic']['wins']}–{rr['heuristic']['draws']}–{rr['heuristic']['losses']} ({f2(rr['heuristic']['score'])})",
+                         h_txt, f2(rr["random"]["train_win_rate_last500"]),
+                         num(rr["random"]["training_elapsed_seconds"], 0)])
+    return md(["Đối thủ huấn luyện", "Seed", "vs Random T–H–B (score)", "vs Heuristic T–H–B (score)",
+               "vs final.pt T–H–B (score)", "Tỷ lệ thắng huấn luyện (500 ep cuối)", "Thời gian huấn luyện (s)"],
+              rows, ["---", "---:", "---:", "---:", "---:", "---:", "---:"])
+
+
+def a6_pooled() -> str:
+    names = {"random": "Random", "heuristic": "Heuristic", "final_pt": "DQN đóng băng final.pt"}
+    rows = []
+    for g in read(TABLES / "ablation_a6_pooled.csv"):
+        rows.append([A6_LABEL[g["train_opponent"]], names[g["opponent"]], g["games"],
+                     f"{g['wins']}–{g['draws']}–{g['losses']}", f2(g["score"]),
+                     f"[{f2(g['score_ci95_low'])}; {f2(g['score_ci95_high'])}]"])
+    return md(["Đối thủ huấn luyện", "Gặp", "Số ván (gộp seed)", "T–H–B", "score", "Wilson 95%"], rows,
+              ["---", "---", "---:", "---:", "---:", "---:"])
+
+
+def a6_positions() -> str:
+    pos = read(TABLES / "ablation_a6_positions.csv")
+    rows = []
+    for train in ("heuristic", "random", "selfplay"):
+        for seed in sorted({p["seed"] for p in pos if p["train_opponent"] == train}, key=int):
+            get = {p["situation"]: p for p in pos if p["train_opponent"] == train and p["seed"] == seed}
+            rows.append([A6_LABEL[train], seed] + [f"{get[k]['hits']}/{get[k]['positions']}"
+                                                  for k in ("win_now", "block", "double_threat", "quiet_legal")])
+    return md(["Đối thủ huấn luyện", "Seed", "Thắng ngay", "Chặn", "Đòn kép", "Thế yên (hợp lệ)"], rows,
+              ["---", "---:", "---:", "---:", "---:", "---:"])
+
+
 RENDERERS = {
     "default_matrix": lambda: matrix("default"), "timed_matrix": lambda: matrix("timed"),
     "default_pairs": lambda: pairs_table("default"), "timed_pairs": lambda: pairs_table("timed"),
@@ -197,6 +264,7 @@ RENDERERS = {
     "default_first_move": lambda: first_move("default"), "timed_first_move": lambda: first_move("timed"),
     "positions": positions, "dqn_validation": dqn_validation, "a4_main": a4_main, "a4_seeds": a4_seeds,
     "a4_extension": a4_extension, "opening_diag": opening_diag,
+    "a6_main": a6_main, "a6_seeds": a6_seeds, "a6_positions": a6_positions, "a6_pooled": a6_pooled,
 }
 
 

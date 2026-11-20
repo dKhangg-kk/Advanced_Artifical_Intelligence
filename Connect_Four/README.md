@@ -16,8 +16,10 @@
   dùng negamax, alpha-beta và bảng chuyển vị, không tham gia giải đấu.
 - Pilot thật hiện có: 200 ván, 198 thắng, 0 hòa, 2 thua, score 0,99. Nguồn:
   `k1-heuristic-random-20261109T061032Z-s0` trong `results/logs/`.
-- MCTS tournament, NN/DQN training, checkpoint và giải đấu toàn bộ tác tử vẫn
-  chưa được xác nhận hoàn thành; không dùng chúng làm kết quả trong báo cáo.
+- Cập nhật 20/11/2026 (phần của Như Ý): DQN cấp 6 đã huấn luyện và đóng băng
+  (`checkpoints/level6_dqn/final.pt`, 18/11); giải đấu đủ 6 tác tử đã chạy ở hai chế
+  độ (3.000 ván mặc định, 1.500 ván cùng 0,2 giây/nước); A4 và A6 (tự chơi) có log
+  thô. Xem [Tái lập cấp 6 và giải đấu](#tái-lập-cấp-6-dqn-và-giải-đấu-phần-của-như-ý).
 
 Alpha-Beta K2: xem [cách hoạt động, ngân sách và kiểm thử](docs/ALPHABETA.md).
 
@@ -283,9 +285,10 @@ Phân tích thêm ảnh hưởng seed, độ sâu, lượt đi trước và nh�
 
 Mỗi đợt chạy cần lưu phiên bản mã/commit, luật, cấu hình, seed, phần cứng và checkpoint sử dụng. Log ván gồm đối thủ, bên đi trước, chuỗi nước và kết quả; log từng nước có thời gian cùng số nút hoặc mô phỏng khi áp dụng. Notebook phải tạo lại được bảng/hình từ log thô. Quy ước log và cách truy vết từng con số nằm trong [`docs/LOGGING.md`](docs/LOGGING.md); nhật ký từng lần chạy nằm trong [`docs/EXPERIMENT_LOG.md`](docs/EXPERIMENT_LOG.md).
 
-**Kết quả thực nghiệm hiện có:** chỉ pilot Heuristic–Random 200 ván; xem
-[`docs/report/04a_ket_qua.md`](docs/report/04a_ket_qua.md). Các bảng xếp hạng
-toàn bộ tác tử và kết luận về NN/DQN chỉ được bổ sung sau khi chạy thực tế.
+**Kết quả thực nghiệm hiện có:** giải đấu Round-Robin đủ 6 tác tử ở hai chế độ
+(mục 4.1–4.3, [`docs/report/04a_ket_qua.md`](docs/report/04a_ket_qua.md)), đường cong
+học và ablation của CNN/DQN (mục 4.4–4.5) và thảo luận (mục 4.7). Mọi số có dòng trong
+`results/tables/report_numbers.csv`.
 
 ## Thành viên và phối hợp
 
@@ -331,3 +334,27 @@ ngân sách MCTS và độ sâu tìm kiếm. Xem [hướng dẫn chạy](docs/SE
 [notebook](notebooks/03_search_ablations.ipynb) và
 [phân tích kết quả](docs/report/04d_ablation_tim_kiem.md). Các phép thử này
 không thay thế giải đấu đầy đủ hoặc chế độ cùng thời gian mỗi nước.
+
+## Tái lập cấp 6 (DQN) và giải đấu (phần của Như Ý)
+
+Chạy từ thư mục `Connect_Four/`, sau khi `pip install -r requirements.txt` và
+`pip install -e .`. Đặt `OMP_NUM_THREADS=1` để số đo thời gian ổn định. Thời gian ghi
+dưới đây đo trên máy 2 nhân CPU của nhóm.
+
+| Bước | Lệnh | Kết quả |
+| --- | --- | --- |
+| Huấn luyện thử | `python -m connect_four.training.train_dqn --config configs/dqn_training_pilot.yaml` | log `results/logs/train_dqn_<run_id>.csv`, checkpoint + JSON |
+| A4 (một ô, ~25–30 phút) | `PYTHONPATH=src python scripts/run_ablation_a4.py --decay default_decay --seed 0` | `results/logs/ablation_a4_cell_*.csv`; gộp: `--merge`, rồi `scripts/summarize_a4.py` |
+| Đóng băng checkpoint | `PYTHONPATH=src python scripts/freeze_dqn_checkpoint.py` (cần các `.pt` của ô A4 `default_decay` seed 0 vừa chạy; `.pt` mốc không commit) | `checkpoints/level6_dqn/final.pt` + `final.json` (quy tắc chọn theo validation) |
+| A6: tự chơi / Random (một ô) | `PYTHONPATH=src python scripts/run_ablation_a6.py --opponent selfplay --seed 0` | `results/logs/ablation_a6_cell_*.csv`; chạy lại cùng lệnh sau khi máy khởi động lại sẽ tiếp tục từ `resume_state.pt` |
+| Gộp A6 | `PYTHONPATH=src python scripts/run_ablation_a6.py --merge && PYTHONPATH=src python scripts/summarize_a6.py` | `results/tables/ablation_a6_*.csv`, `results/figures/ablation_a6_*.png` |
+| Giải đấu mặc định (~2–4 giờ) | `python -m connect_four.evaluation.cli --config configs/tournament_y6_default.yaml` | `games_/moves_<run_id>.csv` mỗi cặp, dòng `run_manifest.csv` |
+| Giải đấu cùng thời gian (~2 giờ) | `python -m connect_four.evaluation.cli --config configs/tournament_y6_timed.yaml` | như trên, Alpha-Beta/MCTS 0,2 giây/nước |
+| Một cặp nhanh | `python -m connect_four.evaluation.cli --a alphabeta --b mcts --openings 5` | 10 ván, đổi bên |
+| Bảng, hình, số liệu báo cáo | `PYTHONPATH=src python scripts/summarize_tournament.py --prefix tournament-default-20261118T163224Z-s20261118 --label default` (tương tự `--label timed`), rồi `scripts/build_report_numbers_y.py`, `scripts/render_report_tables_y.py docs/report/04*.md` | `results/tables/y6_*`, `report_numbers.csv`, bảng trong Markdown |
+| Báo cáo Word + PDF | `sh docs/report/build.sh` (cần pandoc và LibreOffice) | `docs/report/dist/BaoCao_CuoiKy_Nhom26.docx` và `.pdf` |
+
+Seed: validation chọn checkpoint 20261102 (Random) / 20261103 (Heuristic); đấu trực tiếp
+trong A6 20261104; giải đấu 20261118 (mặc định) / 20261119 (cùng thời gian). Không seed nào
+dùng cho cả chọn mô hình và đánh giá cuối.
+

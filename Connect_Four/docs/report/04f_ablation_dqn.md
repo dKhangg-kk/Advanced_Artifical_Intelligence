@@ -65,3 +65,125 @@ Sau khi thấy kết quả chẩn đoán ở 4.4, chạy thêm **một** ô `def
 <!-- /TABLE:a4_extension -->
 
 Ở 10.000 episode ô mở rộng đạt score 0,425 trước Heuristic và 0,740 trước Random, so với 0,120 và 0,630 của ô A4 gốc cùng seed; cải thiện cho thấy hướng khắc phục là đa dạng hóa khai cuộc, nhưng một seed không đủ kết luận định lượng. Đề xuất cho giai đoạn sau, nếu còn thời gian: huấn luyện lại có khai cuộc ngẫu nhiên và đóng băng trước khi chạy lại giải.
+
+## A6: đối thủ huấn luyện — Heuristic, Random hay tự chơi (mở rộng cho RQ3)
+
+**Câu hỏi.** RQ3 hỏi DQN có tự học được qua tương tác hoặc tự chơi không, và đối thủ huấn
+luyện ảnh hưởng thế nào. A4 chỉ dùng đối thủ Heuristic, nên A6 giữ nguyên mọi siêu tham số
+của ô A4 `default_decay` (decay 0,9995, 10.000 episode, 3 seed 0 / 42 / 2026) và chỉ đổi
+đối thủ:
+
+- **Heuristic:** dùng lại ba ô A4 `default_decay`, không chạy lại;
+- **Random:** đối thủ Random cố định;
+- **Tự chơi:** đối thủ là một trong 5 bản sao đóng băng gần nhất của chính mạng, chép mới
+  mỗi 500 episode, chọn nước ε-greedy cùng ε của episode (mục 3.5.4).
+
+Đánh giá giống hệt A4 (100 ván/đối thủ/mốc, seed validation 20261102 / 20261103). Ở mốc
+10.000 thêm 100 ván đấu trực tiếp với checkpoint đóng băng `final.pt` (seed 20261104) và độ
+đúng trên bộ vị trí kiểm thử. Cấu hình `configs/ablation_a6_dqn_opponent.yaml`, script
+`scripts/run_ablation_a6.py`, bảng `results/tables/ablation_a6_results.csv`,
+`ablation_a6_summary.csv`, `ablation_a6_pooled.csv`, `ablation_a6_head_to_head.csv`,
+`ablation_a6_positions.csv`. A6 chạy ngày 20/11/2026, 6 ô mới, mỗi ô khoảng 34–37 phút CPU,
+**sau** khi checkpoint giải đấu đã đóng băng và giải đấu đã xong; vì vậy A6 không được dùng
+để chọn checkpoint và không thay đổi mục 4.1–4.3.
+
+<!-- TABLE:a6_main -->
+**Validation gặp Random** — score trung bình ± độ lệch chuẩn mẫu giữa các seed, [min–max]; mỗi điểm 100 ván/seed.
+
+| Đối thủ huấn luyện | 1.000 ep | 2.500 ep | 5.000 ep | 10.000 ep |
+| --- | ---: | ---: | ---: | ---: |
+| Heuristic (A4) (n=3) | 0,60 ± 0,02 [0,59–0,62] | 0,55 ± 0,01 [0,53–0,56] | 0,61 ± 0,07 [0,55–0,69] | 0,66 ± 0,06 [0,62–0,73] |
+| Random (n=3) | 0,52 ± 0,12 [0,38–0,60] | 0,56 ± 0,05 [0,50–0,60] | 0,52 ± 0,05 [0,48–0,57] | 0,58 ± 0,06 [0,53–0,65] |
+| Tự chơi (n=3) | 0,47 ± 0,03 [0,44–0,49] | 0,56 ± 0,03 [0,53–0,58] | 0,51 ± 0,04 [0,48–0,56] | 0,57 ± 0,03 [0,53–0,59] |
+
+**Validation gặp Heuristic** — score trung bình ± độ lệch chuẩn mẫu giữa các seed, [min–max]; mỗi điểm 100 ván/seed.
+
+| Đối thủ huấn luyện | 1.000 ep | 2.500 ep | 5.000 ep | 10.000 ep |
+| --- | ---: | ---: | ---: | ---: |
+| Heuristic (A4) (n=3) | 0,00 ± 0,01 [0,00–0,01] | 0,07 ± 0,06 [0,03–0,14] | 0,12 ± 0,06 [0,07–0,18] | 0,16 ± 0,05 [0,12–0,21] |
+| Random (n=3) | 0,00 ± 0,01 [0,00–0,01] | 0,01 ± 0,01 [0,00–0,02] | 0,00 ± 0,00 [0,00–0,00] | 0,01 ± 0,01 [0,00–0,02] |
+| Tự chơi (n=3) | 0,00 ± 0,01 [0,00–0,01] | 0,00 ± 0,00 [0,00–0,00] | 0,01 ± 0,01 [0,00–0,01] | 0,00 ± 0,01 [0,00–0,01] |
+<!-- /TABLE:a6_main -->
+
+![A6: score validation theo mốc episode](../../results/figures/ablation_a6_score_vs_episode.png)
+
+Gộp ba seed ở mốc 10.000 episode (300 ván mỗi dòng; khoảng Wilson coi 300 ván là độc lập nên
+bỏ qua phần biến thiên giữa seed và hẹp hơn khoảng thật):
+
+<!-- TABLE:a6_pooled -->
+| Đối thủ huấn luyện | Gặp | Số ván (gộp seed) | T–H–B | score | Wilson 95% |
+| --- | --- | ---: | ---: | ---: | ---: |
+| Heuristic (A4) | Random | 300 | 198–1–101 | 0,66 | [0,61; 0,71] |
+| Heuristic (A4) | Heuristic | 300 | 47–3–250 | 0,16 | [0,12; 0,21] |
+| Random | Random | 300 | 173–1–126 | 0,58 | [0,52; 0,63] |
+| Random | Heuristic | 300 | 3–0–297 | 0,01 | [0,00; 0,03] |
+| Random | DQN đóng băng final.pt | 300 | 117–2–181 | 0,39 | [0,34; 0,45] |
+| Tự chơi | Random | 300 | 170–1–129 | 0,57 | [0,51; 0,62] |
+| Tự chơi | Heuristic | 300 | 1–0–299 | 0,00 | [0,00; 0,02] |
+| Tự chơi | DQN đóng băng final.pt | 300 | 124–3–173 | 0,42 | [0,36; 0,47] |
+<!-- /TABLE:a6_pooled -->
+
+Chi tiết từng seed ở mốc 10.000 (tỷ lệ thắng huấn luyện đo trên đối thủ huấn luyện của chính ô
+đó, ε-greedy, nên không so được giữa các hàng):
+
+<!-- TABLE:a6_seeds -->
+| Đối thủ huấn luyện | Seed | vs Random T–H–B (score) | vs Heuristic T–H–B (score) | vs final.pt T–H–B (score) | Tỷ lệ thắng huấn luyện (500 ep cuối) | Thời gian huấn luyện (s) |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Heuristic (A4) | 0 | 63–0–37 (0,63) | 12–0–88 (0,12) | — (là chính final.pt) | 0,68 | 1 564 |
+| Heuristic (A4) | 42 | 73–0–27 (0,73) | 20–2–78 (0,21) | — (không còn .pt) | 0,67 | 1 858 |
+| Heuristic (A4) | 2026 | 62–1–37 (0,62) | 15–1–84 (0,15) | — (không còn .pt) | 0,70 | 1 729 |
+| Random | 0 | 56–0–44 (0,56) | 2–0–98 (0,02) | 37–0–63 (0,37) | 0,59 | 2 076 |
+| Random | 42 | 52–1–47 (0,53) | 0–0–100 (0,00) | 27–0–73 (0,27) | 0,49 | 2 113 |
+| Random | 2026 | 65–0–35 (0,65) | 1–0–99 (0,01) | 53–2–45 (0,54) | 0,57 | 2 015 |
+| Tự chơi | 0 | 53–0–47 (0,53) | 1–0–99 (0,01) | 42–1–57 (0,42) | 0,54 | 2 205 |
+| Tự chơi | 42 | 58–1–41 (0,58) | 0–0–100 (0,00) | 41–0–59 (0,41) | 0,49 | 2 143 |
+| Tự chơi | 2026 | 59–0–41 (0,59) | 0–0–100 (0,00) | 41–2–57 (0,42) | 0,49 | 2 170 |
+<!-- /TABLE:a6_seeds -->
+
+Độ đúng trên bộ vị trí kiểm thử (DQN greedy, mỗi vị trí một lần; ô Heuristic chỉ có seed 0
+vì file trọng số `.pt` của hai seed còn lại không được commit):
+
+<!-- TABLE:a6_positions -->
+| Đối thủ huấn luyện | Seed | Thắng ngay | Chặn | Đòn kép | Thế yên (hợp lệ) |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Heuristic (A4) | 0 | 4/18 | 4/6 | 1/3 | 6/6 |
+| Random | 0 | 7/18 | 1/6 | 1/3 | 6/6 |
+| Random | 42 | 6/18 | 3/6 | 1/3 | 6/6 |
+| Random | 2026 | 6/18 | 3/6 | 0/3 | 6/6 |
+| Tự chơi | 0 | 5/18 | 3/6 | 1/3 | 6/6 |
+| Tự chơi | 42 | 8/18 | 2/6 | 3/3 | 6/6 |
+| Tự chơi | 2026 | 6/18 | 2/6 | 1/3 | 6/6 |
+<!-- /TABLE:a6_positions -->
+
+![A6: tỷ lệ thắng khi huấn luyện](../../results/figures/ablation_a6_training_curves.png)
+
+### Nhận xét A6
+
+- **Tự chơi không giúp DQN trong ngân sách 10.000 episode.** Ở mốc cuối, ba mô hình tự chơi
+  gặp Heuristic gần như thua hết (gộp 1–0–299, score 0,003) và gặp Random chỉ đạt score
+  0,568 [0,512; 0,623], tức chỉ nhỉnh hơn mức ngẫu nhiên 0,5. Đấu trực tiếp với `final.pt`
+  (huấn luyện gặp Heuristic) cả ba seed đều thua, score 0,425 / 0,410 / 0,420, gộp 0,418
+  [0,363; 0,475], khoảng không chứa 0,5.
+- **Đối thủ Random cũng không tốt hơn.** Gặp Heuristic 0,010 và gặp Random 0,578
+  [0,522; 0,633]; đấu với `final.pt` 0,393 [0,340; 0,450], dao động giữa seed lớn
+  (0,27 – 0,54).
+- **Heuristic là đối thủ huấn luyện tốt nhất trong ba lựa chọn đã thử**: 0,162 gặp Heuristic
+  và 0,662 [0,606; 0,713] gặp Random. Khoảng của Heuristic và của tự chơi khi gặp Random chồng
+  nhau một phần, nên với Random chỉ nói được là "không kém hơn"; với Heuristic và với đấu trực
+  tiếp thì chênh lệch rõ.
+- **Độ đúng chiến thuật**: mô hình Random và tự chơi chọn đúng nước thắng ngay ở 5–8/18 thế,
+  nhiều hơn checkpoint Heuristic (4/18), nhưng chặn đúng ít hơn (1–3/6 so với 4/6). Mẫu chỉ
+  18 và 6 thế nên đây là quan sát, không phải kết luận.
+- Đường cong huấn luyện của tự chơi gần như phẳng quanh 0,5: hai bên là cùng một mạng ở hai
+  thời điểm gần nhau nên tỷ lệ thắng ≈ 0,5 là điều chờ đợi và **không** đo được tiến bộ; tiến
+  bộ chỉ đọc được qua validation với đối thủ cố định ở bảng trên.
+
+**Giải thích (giả thuyết, chưa kiểm chứng riêng).** Với phần thưởng chỉ ở cuối ván và ε còn
+cao trong khoảng 6.000 episode đầu, cả hai bên tự chơi đều đi gần như ngẫu nhiên nên tín hiệu
+học yếu. Đối thủ Heuristic trừng phạt ngay mọi nước bỏ lỡ chặn hoặc thắng, tạo nhiều ván kết
+thúc sớm với phần thưởng rõ ràng hơn. Có thể cần nhiều episode hơn, lưu transition của cả hai
+bên trong tự chơi, hoặc trộn tự chơi với đối thủ Heuristic; các hướng này chưa chạy.
+
+**Kết luận A6.** Trong cấu hình đã chạy, DQN học được rất ít qua tự chơi; đối thủ huấn luyện
+ảnh hưởng mạnh tới kết quả và Heuristic cho mô hình tốt nhất. Checkpoint giải đấu (gặp
+Heuristic) vẫn là lựa chọn hợp lý; A6 không thay đổi lựa chọn đó.

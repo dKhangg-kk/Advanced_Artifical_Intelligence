@@ -251,7 +251,7 @@ Mỗi mục dùng mẫu sau:
   tăng sức mạnh. A2 chưa phải so sánh cùng thời gian mỗi nước. Chưa đóng băng
   số liệu toàn nhóm ngày 19/11.
 
-## 2026-11-18 — A4, đóng băng DQN, chẩn đoán, giải đấu Round-Robin đầy đủ (Claude hỗ trợ Y5–Y6; Như Ý cần rà soát)
+## 2026-11-18 — A4, đóng băng DQN, chẩn đoán, giải đấu Round-Robin đầy đủ 
 
 - **Quy tắc chọn checkpoint (đăng ký trước khi xem giải đấu):** mốc có validation trung bình cao nhất (Random seed 20261102, Heuristic seed 20261103, 100 ván, 4 nước khai cuộc ngẫu nhiên, DQN greedy) trong ô `default_decay` seed 0; hòa chọn mốc sớm. Kết quả: episode 10.000 (0,375). `checkpoints/level6_dqn/final.pt` + `final.json` (sha256 trong JSON). Đóng băng ngày 18/11, muộn hơn kế hoạch 17/11.
 - **A4:** 3 decay (0,9990/0,9995/0,9998) × seed (0, 42, 2026) × 10.000 episode; chạy 2 tiến trình song song, `OMP_NUM_THREADS=1`. Log: `results/logs/ablation_a4_cell_*.csv`, `ablation_a4-*.csv`, `train_dqn_a4-*.csv`; bảng: `results/tables/ablation_a4_results.csv`, `ablation_a4_summary.csv`. Các run_id nằm trong `results/logs/run_manifest.csv`.
@@ -264,9 +264,23 @@ Mỗi mục dùng mẫu sau:
 - **Giải thích:** DQN thua Heuristic rõ (score Heuristic 0,912/0,880); nguyên nhân chẩn đoán là quá khớp đường chơi cố định của Heuristic khi huấn luyện từ bàn trống (xem `docs/report/04c_dqn_duong_cong.md`). Không điều chỉnh checkpoint sau khi xem giải.
 - **Giới hạn:** `git_commit` trong manifest có thể là commit trước khi các thay đổi chưa commit lúc chạy được lưu; tái lập bằng commit chứa các file này.
 
-## 2026-11-19 — Hợp nhất và kiểm tra số liệu (Claude hỗ trợ Y6; Như Ý cần rà soát)
+## 2026-11-19 — Hợp nhất và kiểm tra số liệu 
 
 - Hợp nhất công việc Y5–Y6 vào bản zip ngày 19/11 (có A1/A2/A5 của Khang). Xung đột ở nhật ký, `report_numbers.csv`, `run_manifest.csv`, 04a và hồ sơ đóng góp được giải bằng cách giữ cả hai phía; dòng của Ý được dựng lại bằng `scripts/build_report_numbers_y.py` (idempotent).
 - Kiểm tra `report_numbers.csv`: 1.219 dòng, không trùng (`report_section`, `metric`), mọi dòng có `run_id`. 32 dòng mục 3.4 (Kiệt) trỏ tới `data/generated/`, thư mục không commit theo kế hoạch. Sửa đường dẫn sai của 7 dòng pilot DQN (`train_dqn_train_dqn_…` → `train_dqn_…`).
 - Mục báo cáo 4.7 (`docs/report/04h_thao_luan.md`) và slide `docs/slides/y.pptx` đã soạn nháp từ các bảng ở trên; không có thí nghiệm mới.
 - Không chạy lại giải đấu hay A4; số liệu giữ nguyên bộ ngày 18/11.
+
+## 2026-11-20 — A6: đối thủ huấn luyện DQN (Heuristic / Random / tự chơi), mở rộng cho RQ3 
+
+- **Mục tiêu:** trả lời phần "tự chơi" và "đối thủ huấn luyện" của RQ3, phần A4 chưa đo.
+- **Thời điểm:** chạy sau khi checkpoint giải đấu đã đóng băng (18/11) và sau giải đấu; không dùng để chọn checkpoint, không đổi số liệu mục 4.1–4.3.
+- **Cấu hình:** `configs/ablation_a6_dqn_opponent.yaml`; siêu tham số như A4 `default_decay` (lr 0,001, γ 0,99, ε 1,0 → 0,05 decay 0,9995, buffer 100.000, batch 64, target 500); 10.000 episode; seed 0 / 42 / 2026. Tự chơi: tập 5 bản sao đóng băng của chính mạng, chép mỗi 500 episode. Ô Heuristic dùng lại 3 ô A4 `default_decay`.
+- **Lệnh:** `PYTHONPATH=src python scripts/run_ablation_a6.py --opponent <random|selfplay> --seed <s>` (2 tiến trình song song, `OMP_NUM_THREADS=1`), rồi `--merge`, `scripts/summarize_a6.py`, `scripts/build_report_numbers_y.py`, `scripts/render_report_tables_y.py`.
+- **Đánh giá:** như A4 (seed validation 20261102/20261103, 100 ván/đối thủ/mốc); thêm 100 ván gặp `final.pt` (seed 20261104) và bộ vị trí `tests/data/positions.csv` ở mốc 10.000.
+- **Môi trường:** máy 2 nhân CPU x86_64 Linux, Python 3.13, PyTorch 2.15 CPU; mỗi ô 2.022–2.211 giây.
+- **Sự cố:** máy khởi động lại khi hai ô đầu đang chạy (~1.700 episode); hai lần chạy dở bị xóa (không có run_id hoàn tất nào bị mất) và chạy lại từ đầu sau khi thêm `resume_every` vào `train_dqn` (lưu trạng thái mỗi 250 episode).
+- **run_id:** `a6-opp_random-s0-20261120T132502Z`, `a6-opp_selfplay-s0-20261120T132501Z`, `a6-opp_selfplay-s42-20261120T135944Z`, `a6-opp_selfplay-s2026-20261120T140154Z`, `a6-opp_random-s42-20261120T143551Z`, `a6-opp_random-s2026-20261120T143811Z`.
+- **Kết quả (gộp 3 seed, mốc 10.000):** tự chơi 0,568 gặp Random, 0,003 gặp Heuristic, 0,418 gặp `final.pt`; đối thủ Random 0,578 / 0,010 / 0,393; đối thủ Heuristic (A4) 0,662 / 0,162. Bảng: `results/tables/ablation_a6_*.csv`; hình: `results/figures/ablation_a6_*.png`; diễn giải: `docs/report/04f_ablation_dqn.md` (A6), `04h_thao_luan.md` (4.7.3, 4.7.6).
+- **Không commit:** các file `.pt` mốc của A6 (đã chặn bởi `.gitignore`, mỗi file ~4,6 MB); chỉ commit JSON metadata.
+

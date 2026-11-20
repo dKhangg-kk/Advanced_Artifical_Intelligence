@@ -22,6 +22,10 @@ Mốc được chọn: **10.000 episode** (validation trung bình 0,375). `final
 
 ![Đường cong học](../../results/figures/dqn_main_learning_curve.png)
 
+Lần chạy chính (ô A4 `default_decay` seed 0) đến mốc 10.000 episode thực hiện 94.696 lần cập
+nhật optimizer trong khoảng 1.564 giây CPU (khoảng 26 phút, một luồng PyTorch;
+`final.json`). Suy luận khi thi đấu dưới 1 ms/nước (mục 4.3).
+
 ## Vì sao DQN yếu trước Heuristic?
 
 DQN được huấn luyện gặp Heuristic từ bàn trống và Heuristic xác định, nên các ván huấn luyện lặp lại gần như cùng một chuỗi nước đi. Tỷ lệ thắng trong huấn luyện (≈ 0,68 ở 500 episode cuối) là số đo trên phân phối hẹp đó. Chẩn đoán `scripts/diagnose_dqn_openings.py` đo cùng checkpoint với 0, 2, 4 nước khai cuộc ngẫu nhiên:
@@ -40,3 +44,8 @@ DQN được huấn luyện gặp Heuristic từ bàn trống và Heuristic xác
 ![Chẩn đoán khai cuộc](../../results/figures/dqn_opening_diagnostic.png)
 
 Từ bàn trống, DQN thắng Heuristic gần như mọi ván nhưng chỉ có vài ván phân biệt (số ván khác nhau trong bảng); với khai cuộc ngẫu nhiên, score giảm mạnh. Đây là hiện tượng **quá khớp với đường chơi cố định của đối thủ huấn luyện**, không phải lỗi mã: kiểm thử đơn vị về mặt nạ cột, Bellman target và mạng mục tiêu đều đạt. Giải đấu và validation dùng khai cuộc ngẫu nhiên nên phản ánh đúng năng lực tổng quát hơn.
+
+Câu hỏi tiếp theo là liệu đổi cách huấn luyện, cụ thể là tự chơi hoặc gặp Random, có cho mô
+hình tổng quát tốt hơn không. Thí nghiệm A6 ở mục 4.5 trả lời: trong cùng 10.000 episode,
+cả hai cách đều kém hơn huấn luyện gặp Heuristic.
+

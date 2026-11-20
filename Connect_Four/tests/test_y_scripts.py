@@ -147,3 +147,27 @@ def test_report_numbers_helpers() -> None:
     with pytest.raises(ValueError):
         mod.prefix_of("k1-heuristic-random-20261109T060914Z-s0")
     assert mod.OWNED_PREFIXES  # nhom section do script quan ly khong rong
+
+
+def test_a6_position_accuracy_counts_each_situation(tmp_path: Path, monkeypatch) -> None:
+    pytest.importorskip("torch")
+    from connect_four.agents.networks import DQNNet
+
+    torch = pytest.importorskip("torch")
+    module = _load("run_ablation_a6")
+    checkpoint = tmp_path / "dqn.pt"
+    torch.save({"model_state_dict": DQNNet(in_channels=2).state_dict()}, checkpoint)
+    positions = tmp_path / "positions.csv"
+    _write(positions, ("id", "moves", "side_to_move", "winning_moves", "blocking_moves", "note"), [
+        {"id": "win-vertical", "moves": "0 1 0 1 0 1", "side_to_move": 1, "winning_moves": "0", "blocking_moves": "1"},
+        {"id": "double-threat-x", "moves": "1 1 2 2 3 3", "side_to_move": 1, "winning_moves": "0 4", "blocking_moves": "-"},
+        {"id": "block-row", "moves": "1 6 2 6 3", "side_to_move": 2, "winning_moves": "-", "blocking_moves": "0 4"},
+        {"id": "quiet", "moves": "", "side_to_move": 1, "winning_moves": "-", "blocking_moves": "-"},
+        {"id": "finished", "moves": "0 1 0 1 0 1 0", "side_to_move": 2, "winning_moves": "-", "blocking_moves": "-"},
+    ])
+    monkeypatch.setattr(module, "POSITIONS", positions)
+    result = module.position_accuracy(checkpoint)
+    assert {k: v[1] for k, v in result.items()} == {"win_now": 2, "block": 1, "double_threat": 1, "quiet_legal": 1}
+    # the yen chi can nuoc hop le nen luon dung
+    assert result["quiet_legal"] == (1, 1)
+    assert all(0 <= hits <= total for hits, total in result.values())

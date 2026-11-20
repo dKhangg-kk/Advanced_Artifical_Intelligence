@@ -289,3 +289,142 @@ def test_train_dqn_opening_plies_default_keeps_old_behaviour_and_validates(tmp_p
         train_dqn(episodes=1, opening_plies=11)
     with pytest.raises(ValueError, match="opening_plies"):
         train_dqn(episodes=1, opening_plies=-1)
+
+
+def test_selfplay_pool_snapshots_are_frozen_copies_and_capped() -> None:
+    torch = pytest.importorskip("torch")
+    import numpy as np
+
+    from connect_four.agents.networks import DQNNet
+    from connect_four.game import ConnectFour
+    from connect_four.training.train_dqn import SelfPlayOpponentPool
+
+    net = DQNNet(in_channels=2)
+    pool = SelfPlayOpponentPool(lambda: DQNNet(in_channels=2), torch, torch.device("cpu"),
+                                np.random.default_rng(0), snapshot_every=3, pool_size=2)
+    pool.add_snapshot(net, 0)
+    assert [ep for ep, _ in pool.snapshots] == [0]
+    assert not pool.maybe_snapshot(net, 2)
+    assert pool.maybe_snapshot(net, 3) and pool.maybe_snapshot(net, 6)
+    # chi giu pool_size ban gan nhat
+    assert [ep for ep, _ in pool.snapshots] == [3, 6]
+
+    # ban sao khong doi khi mang dang hoc doi trong so, va khong nhan gradient
+    _, snapshot = pool.snapshots[-1]
+    before = [p.detach().clone() for p in snapshot.parameters()]
+    with torch.no_grad():
+        for parameter in net.parameters():
+            parameter.add_(1.0)
+    assert all(torch.equal(a, b) for a, b in zip(before, snapshot.parameters()))
+    assert not any(p.requires_grad for p in snapshot.parameters())
+
+    # doi thu greedy luon chon cot hop le va khong sua game
+    game = ConnectFour()
+    for column in [3, 3, 3, 3, 3, 3]:
+        game.step(column)
+    opponent = pool.sample(epsilon=0.0)
+    before_moves = tuple(game.moves_played())
+    assert opponent.choose(game) in game.legal_actions()
+    assert tuple(game.moves_played()) == before_moves
+    assert opponent.snapshot_episode in {3, 6}
+
+
+def test_train_dqn_selfplay_logs_snapshot_and_saves_config(tmp_path) -> None:
+    pytest.importorskip("torch")
+    import csv
+    import json
+
+    from connect_four.agents.dqn import DQNAgent
+    from connect_four.game import ConnectFour
+    from connect_four.training.train_dqn import train_dqn
+
+    checkpoint = train_dqn(
+        episodes=6, opponent="selfplay", buffer_size=128, batch_size=4, target_update_freq=5,
+        checkpoint_milestones=(6,), out_dir=tmp_path, log_dir=tmp_path, seed=5, device="cpu",
+        run_id="unit_selfplay", selfplay_snapshot_every=2, selfplay_pool_size=2,
+    )
+    with (tmp_path / "train_dqn_unit_selfplay.csv").open(newline="", encoding="utf-8") as stream:
+        rows = list(csv.DictReader(stream))
+    assert len(rows) == 6
+    assert all(row["opponent"] == "selfplay" for row in rows)
+    assert [int(row["agent_player"]) for row in rows] == [1, 2, 1, 2, 1, 2]
+    # episode 1-2 chi co ban khoi tao (0); ban moi duoc chep sau episode 2 va 4
+    assert {int(r["opponent_snapshot_episode"]) for r in rows[:2]} == {0}
+    assert all(int(r["opponent_snapshot_episode"]) in {0, 2, 4} for r in rows)
+    assert all(int(r["opponent_snapshot_episode"]) < int(r["episode"]) for r in rows)
+    assert any(int(row["optimizer_updates"]) > 0 for row in rows)
+
+    meta = json.loads(checkpoint.with_suffix(".json").read_text(encoding="utf-8"))
+    assert meta["config"]["opponent"] == "selfplay"
+    assert meta["config"]["selfplay_snapshot_every"] == 2
+    assert meta["config"]["selfplay_pool_size"] == 2
+    agent = DQNAgent(checkpoint=checkpoint, epsilon=0.0, seed=1)
+    assert agent.choose(ConnectFour()) in range(7)
+
+    with pytest.raises(ValueError, match="selfplay_snapshot_every"):
+        train_dqn(episodes=1, opponent="selfplay", selfplay_snapshot_every=0, out_dir=tmp_path / "x",
+                  log_dir=tmp_path / "x", device="cpu", run_id="bad")
+
+
+def test_fixed_opponent_runs_do_not_log_selfplay_fields(tmp_path) -> None:
+    pytest.importorskip("torch")
+    import csv
+    import json
+
+    from connect_four.training.train_dqn import train_dqn
+
+    checkpoint = train_dqn(
+        episodes=2, opponent="random", buffer_size=64, batch_size=4, checkpoint_milestones=(),
+        out_dir=tmp_path, log_dir=tmp_path, seed=3, device="cpu", run_id="unit_fixed",
+    )
+    with (tmp_path / "train_dqn_unit_fixed.csv").open(newline="", encoding="utf-8") as stream:
+        header = next(csv.reader(stream))
+    assert "opponent_snapshot_episode" not in header
+    meta = json.loads(checkpoint.with_suffix(".json").read_text(encoding="utf-8"))
+    assert "selfplay_snapshot_every" not in meta["config"]
+
+
+def test_train_dqn_resume_after_crash_matches_uninterrupted_run(tmp_path, monkeypatch) -> None:
+    torch = pytest.importorskip("torch")
+    import csv
+
+    import importlib
+
+    module = importlib.import_module("connect_four.training.train_dqn")
+
+    common = dict(episodes=6, opponent="selfplay", buffer_size=128, batch_size=4, target_update_freq=3,
+                  checkpoint_milestones=(3, 6), seed=21, device="cpu", run_id="unit_resume",
+                  selfplay_snapshot_every=2, selfplay_pool_size=2)
+
+    def rows(folder):
+        with (folder / "train_dqn_unit_resume.csv").open(newline="", encoding="utf-8") as stream:
+            return [{k: v for k, v in r.items() if k != "elapsed_seconds"} for r in csv.DictReader(stream)]
+
+    straight = tmp_path / "straight"
+    module.train_dqn(out_dir=straight, log_dir=straight, **common)
+
+    crashed = tmp_path / "crashed"
+    original_sample = module.SelfPlayOpponentPool.sample
+    calls = {"n": 0}
+
+    def crash_on_fifth(self, epsilon):
+        calls["n"] += 1
+        if calls["n"] == 5:
+            raise RuntimeError("may sap gia lap")
+        return original_sample(self, epsilon)
+
+    monkeypatch.setattr(module.SelfPlayOpponentPool, "sample", crash_on_fifth)
+    with pytest.raises(RuntimeError, match="may sap"):
+        module.train_dqn(out_dir=crashed, log_dir=crashed, resume_every=2, **common)
+    assert (crashed / "resume_state.pt").is_file()
+    monkeypatch.setattr(module.SelfPlayOpponentPool, "sample", original_sample)
+    module.train_dqn(out_dir=crashed, log_dir=crashed, resume_every=2, **common)
+
+    assert not (crashed / "resume_state.pt").exists()
+    assert rows(straight) == rows(crashed)
+    a = torch.load(straight / "dqn_model.pt", weights_only=False)["model_state_dict"]
+    b = torch.load(crashed / "dqn_model.pt", weights_only=False)["model_state_dict"]
+    assert all(torch.equal(a[k], b[k]) for k in a)
+
+    with pytest.raises(ValueError, match="resume_every"):
+        module.train_dqn(episodes=1, resume_every=-1)
