@@ -41,7 +41,7 @@ Mỗi mục dùng mẫu sau:
 
 - **Nhận xét:** điều quan sát được, khác biệt so với lần trước, vấn đề cần điều tra.
 - **Việc tiếp theo:** ...
-```
+```md
 
 ## Quy tắc
 
@@ -58,6 +58,7 @@ Mỗi mục dùng mẫu sau:
 |---|---|---|---|---|---|
 | k1-heuristic-random-20261109T060914Z-s0 | 2026-11-09 | tournament | K1 Heuristic vs Random (pilot) | completed | `results/logs/games_k1-heuristic-random-20261109T060914Z-s0.csv` |
 | k1-heuristic-random-20261109T061032Z-s0 | 2026-11-09 | tournament | K1 Heuristic vs Random (bản đã commit) | completed | `results/logs/games_k1-heuristic-random-20261109T061032Z-s0.csv` |
+| ablation-a3-20261111T150514Z-s20261105 | 2026-11-11 | ablation | A3 — ảnh hưởng số ván huấn luyện CNN (RQ2) | completed | `results/logs/ablation_a3_ablation-a3-20261111T150514Z-s20261105.csv` |
 
 ## Mục chi tiết
 
@@ -139,6 +140,47 @@ Mỗi mục dùng mẫu sau:
 - **Kiểm chứng:** phát lại toàn bộ chuỗi nước, kiểm tra ván kết thúc và người thắng trước khi lưu log.
 - **Giới hạn:** một bộ seed cố định; không khẳng định đạt 99% ở mọi khai cuộc/seed hoặc trước các tác tử mạnh hơn. Chưa đánh giá Alpha-Beta/MCTS.
 
+## ablation-a3-20261111T150514Z-s20261105 — Ablation A3: số ván huấn luyện CNN (RQ2)
+
+- **Ngày:** 11/11/2026 (giờ Việt Nam).
+- **Người chạy:** Bùi Quyền Kiệt / 3124720036.
+- **Loại:** ablation.
+- **Mục tiêu:** RQ2 — khi tăng số ván huấn luyện CNN từ 250 đến tối đa ván train A3 thực có, top-1 và độ chính xác theo tình huống thắng ngay / chặn / kiểm soát trung tâm thay đổi thế nào.
+- **Config:** `configs/ablation_a3_cnn_data.yaml` (hash `bf81b780b50f3ccd`), `dataset_sizes_games: [250, 500, 1000, 1332]`.
+- **Commit:** `0516a8e` (mã, test và config đã commit trước khi chạy).
+- **Lệnh chạy:**
+  ```bash
+  cd Connect_Four
+  PYTHONPATH=src .venv/bin/python scripts/run_ablation_a3.py \
+      --config configs/ablation_a3_cnn_data.yaml
+  ```
+- **Seed:** 20261105 cho cả chia dữ liệu và huấn luyện.
+- **Thiết kế:** cohort A3 sau chia theo ván 70/15/15 và dedupe còn 1.332 ván train / 254 ván validation / 264 ván test. Validation và test giữ cố định; mỗi mức chỉ lấy N ván train đầu tiên theo thứ tự split đã xáo trộn nên các tập con lồng nhau. Kiến trúc, optimizer, 20 epoch, batch 64, learning rate 0,001 giữ nguyên; checkpoint chọn theo validation loss thấp nhất, test đọc một lần cho mỗi lần huấn luyện.
+- **Môi trường:** Python 3.14.9, NumPy 2.5.4, PyTorch 2.15.0+cu132, CPU x86_64, Linux 7.3.3, RAM 27,2 GB; không dùng GPU.
+- **Thời gian (UTC):** 2026-11-11T15:05:14+00:00 → 2026-11-11T15:08:16+00:00.
+- **Trạng thái:** completed.
+- **Log thô:**
+  - `results/logs/ablation_a3_ablation-a3-20261111T150514Z-s20261105.csv`
+  - `results/logs/train_cnn_20261111T150516Z_4ead9059.csv`
+  - `results/logs/train_cnn_20261111T150537Z_cde1dfc3.csv`
+  - `results/logs/train_cnn_20261111T150613Z_8a36348a.csv`
+  - `results/logs/train_cnn_20261111T150709Z_a9cc707c.csv`
+  - `checkpoints/level5_cnn/test_evaluation_<run_id>.json` cho bốn run huấn luyện
+- **Bảng/hình liên quan:** `results/tables/ablation_a3_results.csv`, `results/figures/ablation_a3_accuracy.png`, `results/figures/ablation_a3_learning_curves.png`, `notebooks/02_cnn_analysis.ipynb`.
+- **Số liệu chính** (test A3: 5.012 mẫu; 321 thắng ngay, 568 chặn, 3.090 kiểm soát trung tâm, 1.033 khác):
+
+  | Ván train | Run huấn luyện | Mẫu train | Epoch tốt nhất | Val loss | Test loss | Top-1 | Thắng ngay (tactical) | Chặn (tactical) | Trung tâm (top-1) | Trung tâm (chọn cột 3) |
+  |---:|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+  | 250 | `20261111T150516Z_4ead9059` | 10.857 | 3 | 1,3832 | 1,3959 | 47,19% | 42,37% | 52,99% | 41,55% | 38,51% |
+  | 500 | `20261111T150537Z_cde1dfc3` | 21.098 | 7 | 1,2830 | 1,3088 | 51,74% | 60,44% | 71,30% | 46,44% | 28,83% |
+  | 1.000 | `20261111T150613Z_8a36348a` | 40.561 | 5 | 1,1637 | 1,1589 | 55,35% | 58,57% | 73,59% | 50,87% | 21,62% |
+  | 1.332 | `20261111T150709Z_a9cc707c` | 53.284 | 5 | 1,1150 | 1,1106 | 57,08% | 59,81% | 77,64% | 52,65% | 27,57% |
+
+  Nguồn: `results/tables/ablation_a3_results.csv` (các cột `top1_accuracy`, `win_now_situation_accuracy`, `block_situation_accuracy`, `center_control_top1_accuracy`, `center_control_situation_accuracy`).
+
+- **Nhận xét:** Top-1 tăng 9,90 điểm phần trăm từ 250 lên 1.332 ván; thắng ngay (tactical) tăng 17,45 điểm; chặn (tactical) tăng 24,65 điểm; kiểm soát trung tâm (top-1) tăng 11,10 điểm. Chặn là tình huống cải thiện mạnh nhất. Tỷ lệ chọn đúng cột giữa giảm khi tăng dữ liệu (38,51% → 27,57%) vì mô hình học sát nhãn Alpha-Beta hơn, mà Alpha-Beta depth 4 chỉ chọn cột giữa ở khoảng 22,8% vị trí không có nước chiến thuật; vì vậy chỉ báo cáo tỷ lệ này như chẩn đoán. Trong 321 vị trí thắng ngay của test, 98 nhãn Alpha-Beta (30,5%) không phải nước thắng ngay, nên tactical accuracy mới là thước đo đúng cho `win_now`.
+- **Việc tiếp theo:** lặp thêm seed/bộ chia để có khoảng tin cậy; đo win rate đối kháng trước Alpha-Beta ở hạng mục đánh giá giải đấu (ngoài phạm vi Issue #22).
+
 ## K3 — MCTS-UCT, issue #14 (11/11/2026, giờ Việt Nam)
 
 - **Mục tiêu:** MCTS thắng Random ít nhất 95% ở 500 mô phỏng/nước.
@@ -165,3 +207,66 @@ Mỗi mục dùng mẫu sau:
   `run_id` và manifest dùng UTC; 18:13 ngày 10/11 UTC là 01:13 ngày 11/11 tại Việt Nam.
 - **Giải thích thuật toán/công cụ:** [hướng dẫn MCTS](MCTS.md),
   [nhật ký đóng góp](contributions/pham-thai-duy-khang.md). Chờ review trước khi merge.
+
+
+## 2026-11-13 — DQN pilot va Round-Robin pilot (Như Ý)
+
+- **Training run_id:** `20261113_140831_508593`
+- **Cau hinh:** 200 episodes; doi thu `heuristic`; seed 42; lr=0.001; gamma=0.99; epsilon 1.0 → floor 0.05 voi decay 0.9995; batch_size=64; replay capacity=100000; target sync moi 500 optimizer updates; CPU (`torch 2.10.0+cpu`, Python 3.13.5, NumPy 2.3.5).
+- **Ket qua pilot:** 1 win, 0 draw, 199 losses; mean reward=-0.99; 757 optimizer updates; mean episode loss (cot `mean_loss`)≈0.004874; metadata elapsed=10.665 s; replay size=820.
+- **Artifacts:** `results/logs/train_dqn_20261113_140831_508593.csv`; `checkpoints/level6_dqn/pilot/dqn_model.json`; model `.pt` giu local de kiem tra, chua phai checkpoint dong bang va khong dua vao patch GitHub giua ky.
+- **Tournament run_id prefix:** `tournament-default-20261113T140850Z-s20261113`
+- **Cau hinh:** 3 agents (`random`, `heuristic`, `dqn`); 20 games/pair; 10 shared openings; mode `default`; seed 20261113; total 60 games.
+- **W-D-L theo agent A:** random–heuristic 0-0-20; random–DQN 6-0-14; heuristic–DQN 20-0-0. DQN (agent B) thang 14/20 truoc Random va 0/20 truoc Heuristic.
+- **Artifacts:** `results/logs/games_tournament-default-20261113T140850Z-s20261113-*.csv`, cac file `moves_*.csv`, `results/tables/tournament-default-20261113T140850Z-s20261113_summary.csv`, `results/logs/run_manifest.csv`.
+- **Environment:** Linux x86_64; CPU-only; `git_commit` khong co do chay tren ban ZIP khong kem thu muc `.git`; khong tu gan commit id.
+- **Interpretation:** day la pilot 20 games/pair, khong dap ung nguong chinh thuc toi thieu 100 games/pair; khong dung de ket luan cuoi cung. DQN pilot chua hoc duoc chien luoc tot truoc Heuristic; can chay A4 3 decay × 3 seeds va chon checkpoint bang validation theo ke hoach truoc khi dong bang (17/11).
+
+## K4 — A1/A2/A5, ngày 15/11/2026 (giờ Việt Nam)
+
+- Mã chạy: `1b79dd5`; thuật toán lấy từ main `3a40170`, không thay đổi tác tử.
+- A1: `ablation-a1-20261114T172315Z-s20261104`, 00:23:15–00:35:51 giờ Việt Nam.
+  30 thế hoạt động × 3 độ sâu × 4 cấu hình × 5 lần = 1.800 lần đo;
+  thế hòa đầy bàn ghi riêng là `excluded_terminal`.
+- A5: `ablation-a5-20261114T173556Z-s20261104`, 00:35:56–00:39:56.
+  450 lần đo thế và 500 ván trước Heuristic ở độ sâu 2–6.
+- A2: `ablation-a2-20261114T173956Z-s20261104`, 00:39:56–00:45:54.
+  500 ván trước Alpha-Beta sâu 4 ở 100/500/1000/2000/5000 mô phỏng.
+- Cấu hình: các YAML `ablation_a1_pruning`, `ablation_a2_mcts_budget`,
+  `ablation_a5_depth`; hash cấu hình và bộ thế ghi trong manifest.
+- Khai cuộc A2/A5: 50 khai cuộc dài 4 nước, seed 20261104, đổi bên từng cặp;
+  mỗi mức dùng cùng lịch RNG ván `seed + i`, i=0..99.
+- Môi trường: ARM CPU, RAM 16 GB, Darwin 25.6.0, Python 3.13.7, NumPy 2.5.4;
+  chạy tuần tự trên CPU. Thời gian máy không phải giờ đóng góp cá nhân.
+- Kiểm tra: mọi ván phát lại bằng ReferenceGame; mọi nước MCTS đúng số mô
+  phỏng; A1 giữ cùng giá trị minimax theo thế/độ sâu và giữ nguyên bàn đầu vào.
+- Kết quả: bảng `results/tables/ablation_a{1,2,5}_results.csv`, bản bất biến
+  theo run ID và log `positions_`, `games_`, `moves_`, `ablation_` trong
+  `results/logs/`; bảng đối đầu liên kết run cha và run con theo từng mức.
+- Phân tích: `scripts/analyze_search_ablations.py` kiểm tra lại các độ đo từ
+  log trước khi dựng ba hình và thêm dòng vào `report_numbers.csv`.
+  CI score bootstrap theo cặp khai cuộc, 10.000 lần lấy mẫu.
+- Diễn giải/giới hạn: xem [mục 4.5](report/04d_ablation_tim_kiem.md).
+  Giữ nguyên kết quả Alpha-Beta sâu 3 kém sâu 2; không coi tăng độ sâu luôn
+  tăng sức mạnh. A2 chưa phải so sánh cùng thời gian mỗi nước. Chưa đóng băng
+  số liệu toàn nhóm ngày 19/11.
+
+## 2026-11-18 — A4, đóng băng DQN, chẩn đoán, giải đấu Round-Robin đầy đủ (Claude hỗ trợ Y5–Y6; Như Ý cần rà soát)
+
+- **Quy tắc chọn checkpoint (đăng ký trước khi xem giải đấu):** mốc có validation trung bình cao nhất (Random seed 20261102, Heuristic seed 20261103, 100 ván, 4 nước khai cuộc ngẫu nhiên, DQN greedy) trong ô `default_decay` seed 0; hòa chọn mốc sớm. Kết quả: episode 10.000 (0,375). `checkpoints/level6_dqn/final.pt` + `final.json` (sha256 trong JSON). Đóng băng ngày 18/11, muộn hơn kế hoạch 17/11.
+- **A4:** 3 decay (0,9990/0,9995/0,9998) × seed (0, 42, 2026) × 10.000 episode; chạy 2 tiến trình song song, `OMP_NUM_THREADS=1`. Log: `results/logs/ablation_a4_cell_*.csv`, `ablation_a4-*.csv`, `train_dqn_a4-*.csv`; bảng: `results/tables/ablation_a4_results.csv`, `ablation_a4_summary.csv`. Các run_id nằm trong `results/logs/run_manifest.csv`.
+- **Ô mở rộng (không thuộc A4 gốc):** `default_decay_open4` seed 0 với `--opening-plies 4`, chạy sau chẩn đoán; không dùng để chọn checkpoint.
+- **Chẩn đoán:** `scripts/diagnose_dqn_openings.py` → `results/tables/dqn_opening_diagnostic.csv` (0/2/4 nước khai cuộc ngẫu nhiên).
+- **Bộ 31 vị trí:** `scripts/evaluate_positions.py` → `y6_position_choices.csv`, `y6_position_accuracy.csv`; `scripts/check_alphabeta_win_values.py` → `y6_alphabeta_root_values.csv` (Alpha-Beta bỏ lỡ 5/18 thế thắng ngay; chưa sửa, chuyển cho Khang).
+- **Giải đấu mặc định:** `configs/tournament_y6_default.yaml`, seed 20261118, 200 ván/cặp, prefix `tournament-default-20261118T163224Z-s20261118`. Chạy một mình trên máy 2 nhân, `OMP_NUM_THREADS=1`.
+- **Giải đấu cùng thời gian:** `configs/tournament_y6_timed.yaml`, seed 20261119, 0,2 s/nước, 100 ván/cặp, prefix `tournament-timed-20261118T164206Z-s20261119`.
+- **Tổng hợp:** `scripts/summarize_tournament.py` → `results/tables/y6_<default|timed>_*.csv`, `results/figures/y6_*`; `scripts/build_report_numbers_y.py` → `results/tables/report_numbers.csv`.
+- **Giải thích:** DQN thua Heuristic rõ (score Heuristic 0,912/0,880); nguyên nhân chẩn đoán là quá khớp đường chơi cố định của Heuristic khi huấn luyện từ bàn trống (xem `docs/report/04c_dqn_duong_cong.md`). Không điều chỉnh checkpoint sau khi xem giải.
+- **Giới hạn:** `git_commit` trong manifest có thể là commit trước khi các thay đổi chưa commit lúc chạy được lưu; tái lập bằng commit chứa các file này.
+
+## 2026-11-19 — Hợp nhất và kiểm tra số liệu (Claude hỗ trợ Y6; Như Ý cần rà soát)
+
+- Hợp nhất công việc Y5–Y6 vào bản zip ngày 19/11 (có A1/A2/A5 của Khang). Xung đột ở nhật ký, `report_numbers.csv`, `run_manifest.csv`, 04a và hồ sơ đóng góp được giải bằng cách giữ cả hai phía; dòng của Ý được dựng lại bằng `scripts/build_report_numbers_y.py` (idempotent).
+- Kiểm tra `report_numbers.csv`: 1.219 dòng, không trùng (`report_section`, `metric`), mọi dòng có `run_id`. 32 dòng mục 3.4 (Kiệt) trỏ tới `data/generated/`, thư mục không commit theo kế hoạch. Sửa đường dẫn sai của 7 dòng pilot DQN (`train_dqn_train_dqn_…` → `train_dqn_…`).
+- Mục báo cáo 4.7 (`docs/report/04h_thao_luan.md`) và slide `docs/slides/y.pptx` đã soạn nháp từ các bảng ở trên; không có thí nghiệm mới.
+- Không chạy lại giải đấu hay A4; số liệu giữ nguyên bộ ngày 18/11.

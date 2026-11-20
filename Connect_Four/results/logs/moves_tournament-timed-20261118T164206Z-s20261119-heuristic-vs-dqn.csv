@@ -1,0 +1,1355 @@
+run_id,game_id,ply,player,agent,action,legal_actions,time_ms,nodes,simulations,depth_reached,eval_score,is_terminal
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g000,4,1,heuristic,5,0 1 2 3 4 5 6,0.3097940002589894,7,0,1,-8.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g000,5,2,dqn,5,0 1 2 3 4 5 6,3.246009000122285,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g000,6,1,heuristic,4,0 1 2 3 4 5 6,0.3068770001846133,7,0,1,18.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g000,7,2,dqn,6,0 1 2 3 4 5 6,0.23475599982702988,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g000,8,1,heuristic,4,0 1 2 3 4 5 6,0.3480450000097335,7,0,1,120.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g000,9,2,dqn,6,0 1 2 3 4 5 6,0.24926799960667267,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g000,10,1,heuristic,4,0 1 2 3 4 5 6,0.28270600023461157,7,0,1,9232.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g000,11,2,dqn,4,0 1 2 3 4 5 6,0.2845300000444695,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g000,12,1,heuristic,3,0 1 2 3 4 5 6,0.2961449999929755,7,0,1,238.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g000,13,2,dqn,6,0 1 2 3 4 5 6,0.23981999993338832,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g000,14,1,heuristic,6,0 1 2 3 4 5 6,0.06270099993344047,1,0,1,9338.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g000,15,2,dqn,3,0 1 2 3 4 5 6,0.28391399973770604,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g000,16,1,heuristic,3,0 1 2 3 4 5 6,0.009230000159732299,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g001,4,1,dqn,1,0 1 2 3 4 5 6,0.23172100009105634,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g001,5,2,heuristic,3,0 1 2 3 4 5 6,0.4536780002126761,7,0,1,56.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g001,6,1,dqn,3,0 1 2 3 4 5 6,0.30338799979290343,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g001,7,2,heuristic,4,0 1 2 3 4 5 6,0.277279999863822,7,0,1,80.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g001,8,1,dqn,4,0 1 2 3 4 5 6,0.22880799997437862,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g001,9,2,heuristic,5,0 1 2 3 4 5 6,0.2722230001381831,7,0,1,9214.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g001,10,1,dqn,5,0 1 2 3 4 5 6,0.2784319999591389,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g001,11,2,heuristic,6,0 1 2 3 4 5 6,0.009302999842475401,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g002,4,1,heuristic,3,0 1 2 3 4 5 6,0.2588759998616297,7,0,1,9130.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g002,5,2,dqn,3,0 1 2 3 4 5 6,0.21187899983488023,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g002,6,1,heuristic,2,0 1 2 3 4 5 6,0.008970000180852367,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g003,4,1,dqn,1,0 1 2 3 4 5 6,0.2592969999568595,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g003,5,2,heuristic,3,0 1 2 3 4 5 6,0.2711720003389928,7,0,1,10.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g003,6,1,dqn,3,0 1 2 3 4 5 6,0.2364360002502508,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g003,7,2,heuristic,2,0 1 2 3 4 5 6,0.296321999940119,7,0,1,9064.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g003,8,1,dqn,2,0 1 2 3 4 5 6,0.2875129998756165,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g003,9,2,heuristic,0,0 1 2 3 4 5 6,0.00841899964143522,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g004,4,1,heuristic,2,0 1 2 3 4 5 6,0.3348540003571543,7,0,1,22.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g004,5,2,dqn,3,0 1 2 3 4 5 6,0.2320309999959136,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g004,6,1,heuristic,2,0 1 2 3 4 5 6,0.3389700000298035,7,0,1,9116.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g004,7,2,dqn,2,0 1 2 3 4 5 6,0.22690100013278425,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g004,8,1,heuristic,3,0 1 2 3 4 5 6,0.29104399982315954,7,0,1,62.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g004,9,2,dqn,3,0 1 2 3 4 5 6,0.19721699982255814,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g004,10,1,heuristic,4,0 1 2 3 4 5 6,0.3485980000732525,7,0,1,236.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g004,11,2,dqn,3,0 1 2 3 4 5 6,0.22713699991072644,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g004,12,1,heuristic,5,0 1 2 3 4 5 6,0.29008299998167786,7,0,1,9184.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g004,13,2,dqn,5,0 1 2 3 4 5 6,0.19448700004431885,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g004,14,1,heuristic,1,0 1 2 3 4 5 6,0.3528560000631842,7,0,1,9064.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g004,15,2,dqn,0,0 1 2 3 4 5 6,0.22978000015427824,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g004,16,1,heuristic,1,0 1 2 3 4 5 6,0.008245999651990132,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g005,4,1,dqn,2,0 1 2 3 4 5 6,0.22899400028109085,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g005,5,2,heuristic,2,0 1 2 3 4 5 6,0.34717700009423424,7,0,1,20.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g005,6,1,dqn,3,0 1 2 3 4 5 6,0.2217940000264207,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g005,7,2,heuristic,3,0 1 2 3 4 5 6,0.328707000335271,7,0,1,110.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g005,8,1,dqn,4,0 1 2 3 4 5 6,0.2772220000224479,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g005,9,2,heuristic,3,0 1 2 3 4 5 6,0.28084799987482256,7,0,1,146.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g005,10,1,dqn,3,0 1 2 3 4 5 6,0.2221839999947406,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g005,11,2,heuristic,4,0 1 2 3 4 5 6,0.2758280002126412,7,0,1,320.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g005,12,1,dqn,0,0 1 2 3 4 5 6,0.26920800019070157,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g005,13,2,heuristic,0,0 1 2 3 4 5 6,0.2796049998323724,7,0,1,410.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g005,14,1,dqn,1,0 1 2 3 4 5 6,0.21113799994054716,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g005,15,2,heuristic,1,0 1 2 3 4 5 6,0.27632299998003873,7,0,1,9410.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g005,16,1,dqn,6,0 1 2 3 4 5 6,0.26472500030649826,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g005,17,2,heuristic,1,0 1 2 3 4 5 6,0.008583000180806266,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g006,4,1,heuristic,3,0 1 2 3 4 5 6,0.273633999768208,7,0,1,28.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g006,5,2,dqn,2,0 1 2 3 4 5 6,0.24009599974306184,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g006,6,1,heuristic,3,0 1 2 3 4 5 6,0.32636900004945346,7,0,1,44.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g006,7,2,dqn,3,0 1 2 3 4 5 6,0.22600600004807347,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g006,8,1,heuristic,2,0 1 2 3 4 5 6,0.34059800009345054,7,0,1,68.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g006,9,2,dqn,5,0 1 2 3 4 5 6,0.2232299998468079,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g006,10,1,heuristic,2,0 1 2 3 4 5 6,0.32752400011304417,7,0,1,114.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g006,11,2,dqn,2,0 1 2 3 4 5 6,0.22487999967779615,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g006,12,1,heuristic,4,0 1 2 3 4 5 6,0.2740049999374605,7,0,1,9114.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g006,13,2,dqn,2,0 1 2 3 4 5 6,0.19948699991800822,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g006,14,1,heuristic,4,0 1 3 4 5 6,0.05439200003820588,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g007,4,1,dqn,4,0 1 2 3 4 5 6,0.2216819998466235,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g007,5,2,heuristic,3,0 1 2 3 4 5 6,0.2657059999364719,7,0,1,16.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g007,6,1,dqn,3,0 1 2 3 4 5 6,0.19272300005468423,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g007,7,2,heuristic,4,0 1 2 3 4 5 6,0.31878600020718295,7,0,1,40.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g007,8,1,dqn,5,0 1 2 3 4 5 6,0.22294899963526404,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g007,9,2,heuristic,2,0 1 2 3 4 5 6,0.2696540000215464,7,0,1,126.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g007,10,1,dqn,2,0 1 2 3 4 5 6,0.22764100003769272,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g007,11,2,heuristic,1,0 1 2 3 4 5 6,0.3405849997761834,7,0,1,9090.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g007,12,1,dqn,1,0 1 2 3 4 5 6,0.22819499963588896,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g007,13,2,heuristic,5,0 1 2 3 4 5 6,0.33910799993464025,7,0,1,70.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g007,14,1,dqn,2,0 1 2 3 4 5 6,0.28527599988592556,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g007,15,2,heuristic,1,0 1 2 3 4 5 6,0.27273099976810045,7,0,1,154.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g007,16,1,dqn,3,0 1 2 3 4 5 6,0.21669900024789968,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g007,17,2,heuristic,0,0 1 2 3 4 5 6,0.05570699977397453,1,0,1,16.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g007,18,1,dqn,3,0 1 2 3 4 5 6,0.1884439998320886,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g007,19,2,heuristic,3,0 1 2 3 4 5 6,0.057685999763634754,1,0,1,26.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g007,20,1,dqn,2,0 1 2 4 5 6,0.29919600001449,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g007,21,2,heuristic,4,0 1 2 4 5 6,0.23841800020818482,6,0,1,-5044.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g007,22,1,dqn,2,0 1 2 4 5 6,0.2550929998506035,0,0,0,,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g008,4,1,heuristic,3,0 1 2 3 4 5 6,0.30103500012046425,7,0,1,28.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g008,5,2,dqn,6,0 1 2 3 4 5 6,0.23524199968960602,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g008,6,1,heuristic,3,0 1 2 3 4 5 6,0.2639029999045306,7,0,1,56.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g008,7,2,dqn,3,0 1 2 3 4 5 6,0.2408630002719292,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g008,8,1,heuristic,4,0 1 2 3 4 5 6,0.3271249997851555,7,0,1,90.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g008,9,2,dqn,4,0 1 2 3 4 5 6,0.2303179999216809,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g008,10,1,heuristic,2,0 1 2 3 4 5 6,0.32272199996441486,7,0,1,230.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g008,11,2,dqn,0,0 1 2 3 4 5 6,0.23078300000634044,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g008,12,1,heuristic,5,0 1 2 3 4 5 6,0.3312949997962278,7,0,1,9216.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g008,13,2,dqn,5,0 1 2 3 4 5 6,0.2369569997426879,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g008,14,1,heuristic,3,0 1 2 3 4 5 6,0.05806500030303141,1,0,1,138.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g008,15,2,dqn,3,0 1 2 3 4 5 6,0.1967130001503392,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g008,16,1,heuristic,1,0 1 2 3 4 5 6,0.3262669997639023,7,0,1,9116.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g008,17,2,dqn,1,0 1 2 3 4 5 6,0.21976400012135855,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g008,18,1,heuristic,1,0 1 2 3 4 5 6,0.27941899998040753,7,0,1,9126.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g008,19,2,dqn,1,0 1 2 3 4 5 6,0.18985299993801164,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g008,20,1,heuristic,0,0 1 2 3 4 5 6,0.008319999778905185,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g009,4,1,dqn,2,0 1 2 3 4 5 6,0.2696569999898202,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g009,5,2,heuristic,3,0 1 2 3 4 5 6,0.2615729999888572,7,0,1,6.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g009,6,1,dqn,2,0 1 2 3 4 5 6,0.20446300004550721,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g009,7,2,heuristic,3,0 1 2 3 4 5 6,0.26899100021182676,7,0,1,12.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g009,8,1,dqn,3,0 1 2 3 4 5 6,0.2743919999375066,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g009,9,2,heuristic,2,0 1 2 3 4 5 6,0.3318559997751436,7,0,1,-34.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g009,10,1,dqn,0,0 1 2 3 4 5 6,0.2866969998649438,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g009,11,2,heuristic,3,0 1 2 3 4 5 6,0.30628800004706136,7,0,1,-46.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g009,12,1,dqn,3,0 1 2 3 4 5 6,0.23874299995441106,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g009,13,2,heuristic,0,0 1 2 3 4 5 6,0.2659440001480107,7,0,1,16.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g009,14,1,dqn,3,0 1 2 3 4 5 6,0.21030600009908085,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g009,15,2,heuristic,2,0 1 2 4 5 6,0.27554200005397433,6,0,1,30.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g009,16,1,dqn,0,0 1 2 4 5 6,0.2359489999435027,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g009,17,2,heuristic,4,0 1 2 4 5 6,0.23045199986881926,6,0,1,62.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g009,18,1,dqn,6,0 1 2 4 5 6,0.20027499977004481,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g009,19,2,heuristic,4,0 1 2 4 5 6,0.29107199998179567,6,0,1,384.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g009,20,1,dqn,6,0 1 2 4 5 6,0.23400200007017702,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g009,21,2,heuristic,4,0 1 2 4 5 6,0.26108600013685646,6,0,1,9686.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g009,22,1,dqn,6,0 1 2 4 5 6,0.2194710000367195,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g009,23,2,heuristic,4,0 1 2 4 5 6,0.008386999979848042,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g010,4,1,heuristic,3,0 1 2 3 4 5 6,0.2693080000426562,7,0,1,48.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g010,5,2,dqn,3,0 1 2 3 4 5 6,0.2880259999074042,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g010,6,1,heuristic,4,0 1 2 3 4 5 6,0.27343300007487414,7,0,1,18292.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g010,7,2,dqn,3,0 1 2 3 4 5 6,0.28799099982279586,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g010,8,1,heuristic,6,0 1 2 3 4 5 6,0.009649999810790177,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,4,1,dqn,5,0 1 2 3 4 5 6,0.21242399998300243,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,5,2,heuristic,3,0 1 2 3 4 5 6,0.27396299992688,7,0,1,22.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,6,1,dqn,3,0 1 2 3 4 5 6,0.20083300023543416,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,7,2,heuristic,3,0 1 2 3 4 5 6,0.33240799984923797,7,0,1,22.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,8,1,dqn,3,0 1 2 3 4 5 6,0.23006099991107476,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,9,2,heuristic,3,0 1 2 3 4 5 6,0.277399999959016,7,0,1,22.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,10,1,dqn,3,0 1 2 3 4 5 6,0.255559000379435,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,11,2,heuristic,5,0 1 2 4 5 6,0.23360400018646033,6,0,1,40.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,12,1,dqn,0,0 1 2 4 5 6,0.23129500004870351,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,13,2,heuristic,2,0 1 2 4 5 6,0.2529999997022969,6,0,1,52.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,14,1,dqn,2,0 1 2 4 5 6,0.30048600001464365,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,15,2,heuristic,2,0 1 2 4 5 6,0.23556800033475156,6,0,1,142.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,16,1,dqn,2,0 1 2 4 5 6,0.2881770001295081,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,17,2,heuristic,2,0 1 2 4 5 6,0.23663399997531087,6,0,1,162.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,18,1,dqn,1,0 1 2 4 5 6,0.27638799974738504,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,19,2,heuristic,0,0 1 2 4 5 6,0.061748999996780185,1,0,1,86.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,20,1,dqn,1,0 1 2 4 5 6,0.2058229997601302,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,21,2,heuristic,1,0 1 2 4 5 6,0.06318499981716741,1,0,1,96.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,22,1,dqn,1,0 1 2 4 5 6,0.1973459998225735,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,23,2,heuristic,2,0 1 2 4 5 6,0.21490300014193053,5,0,1,172.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,24,1,dqn,0,0 1 4 5 6,0.27871199972651084,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,25,2,heuristic,5,0 1 4 5 6,0.1749439998093294,4,0,1,178.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,26,1,dqn,6,0 1 4 6,0.19954700019297889,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,27,2,heuristic,6,0 1 4 6,0.1384180000059132,3,0,1,268.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,28,1,dqn,6,0 1 4 6,0.2550049998717441,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,29,2,heuristic,6,0 1 4 6,0.15261999988069874,3,0,1,288.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,30,1,dqn,1,0 1 4 6,0.23785900020811823,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,31,2,heuristic,6,0 4 6,0.10598299968478386,2,0,1,382.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,32,1,dqn,6,0 4 6,0.24700999983906513,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,33,2,heuristic,0,0 4,0.06358700011332985,1,0,1,372.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,34,1,dqn,0,0 4,0.2909759996327921,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,35,2,heuristic,0,0 4,0.06281200012381305,1,0,1,372.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,36,1,dqn,4,4,0.2903140002672444,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g011,37,2,heuristic,4,4,0.006769999799871584,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g012,4,1,heuristic,3,0 1 2 3 4 5 6,0.31267099984688684,7,0,1,44.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g012,5,2,dqn,3,0 1 2 3 4 5 6,0.29666999989785836,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g012,6,1,heuristic,4,0 1 2 3 4 5 6,0.313594999624911,7,0,1,78.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g012,7,2,dqn,6,0 1 2 3 4 5 6,0.2044879997811222,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g012,8,1,heuristic,4,0 1 2 3 4 5 6,0.3185350001331244,7,0,1,9290.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g012,9,2,dqn,4,0 1 2 3 4 5 6,0.24052300022958661,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g012,10,1,heuristic,2,0 1 2 3 4 5 6,0.2719239996622491,7,0,1,370.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g012,11,2,dqn,3,0 1 2 3 4 5 6,0.20227400000294438,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g012,12,1,heuristic,2,0 1 2 3 4 5 6,0.324318999901152,7,0,1,9524.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g012,13,2,dqn,2,0 1 2 3 4 5 6,0.23177000002760906,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g012,14,1,heuristic,1,0 1 2 3 4 5 6,0.2904460002355336,7,0,1,9248.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g012,15,2,dqn,3,0 1 2 3 4 5 6,0.23456399958377006,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g012,16,1,heuristic,1,0 1 2 3 4 5 6,0.010209000265604118,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,4,1,dqn,4,0 1 2 3 4 5 6,0.23776399984853924,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,5,2,heuristic,3,0 1 2 3 4 5 6,0.3305079999336158,7,0,1,0.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,6,1,dqn,3,0 1 2 3 4 5 6,0.2374450000388606,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,7,2,heuristic,4,0 1 2 3 4 5 6,0.32047499962573056,7,0,1,-16.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,8,1,dqn,4,0 1 2 3 4 5 6,0.23281199992197799,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,9,2,heuristic,3,0 1 2 3 4 5 6,0.28682399988610996,7,0,1,0.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,10,1,dqn,3,0 1 2 3 4 5 6,0.20319299983384553,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,11,2,heuristic,6,0 1 2 3 4 5 6,0.33212800008186605,7,0,1,52.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,12,1,dqn,6,0 1 2 3 4 5 6,0.23156699990067864,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,13,2,heuristic,5,0 1 2 3 4 5 6,0.2851780000128201,7,0,1,8998.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,14,1,dqn,5,0 1 2 3 4 5 6,0.2739169999586011,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,15,2,heuristic,5,0 1 2 3 4 5 6,0.06552900003953255,1,0,1,-22.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,16,1,dqn,5,0 1 2 3 4 5 6,0.2144869999938237,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,17,2,heuristic,2,0 1 2 3 4 5 6,0.30397000000448315,7,0,1,14.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,18,1,dqn,3,0 1 2 3 4 5 6,0.22988399996393127,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,19,2,heuristic,2,0 1 2 4 5 6,0.29046300005575176,6,0,1,128.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,20,1,dqn,2,0 1 2 4 5 6,0.29755900004602154,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,21,2,heuristic,1,0 1 2 4 5 6,0.25701399999888963,6,0,1,9012.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,22,1,dqn,1,0 1 2 4 5 6,0.28244800023458083,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,23,2,heuristic,1,0 1 2 4 5 6,0.24223499985964736,6,0,1,2.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,24,1,dqn,1,0 1 2 4 5 6,0.21467299984578858,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,25,2,heuristic,1,0 1 2 4 5 6,0.06418800012397696,1,0,1,72.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,26,1,dqn,1,0 1 2 4 5 6,0.197259000287886,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,27,2,heuristic,4,0 2 4 5 6,0.2936549999503768,5,0,1,148.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,28,1,dqn,0,0 2 4 5 6,0.2283120002175565,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,29,2,heuristic,5,0 2 4 5 6,0.20318199995017494,5,0,1,9164.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,30,1,dqn,6,0 2 4 5 6,0.19297900007586577,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g013,31,2,heuristic,5,0 2 4 5 6,0.00756899999032612,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g014,4,1,heuristic,4,0 1 2 3 4 5 6,0.3233269999327604,7,0,1,54.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g014,5,2,dqn,4,0 1 2 3 4 5 6,0.23336699996434618,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g014,6,1,heuristic,3,0 1 2 3 4 5 6,0.29156600021451595,7,0,1,50.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g014,7,2,dqn,2,0 1 2 3 4 5 6,0.2797120000650466,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g014,8,1,heuristic,3,0 1 2 3 4 5 6,0.27148900016982225,7,0,1,256.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g014,9,2,dqn,4,0 1 2 3 4 5 6,0.28636200022447156,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g014,10,1,heuristic,3,0 1 2 3 4 5 6,0.27924100004383945,7,0,1,9392.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g014,11,2,dqn,6,0 1 2 3 4 5 6,0.2883920001295337,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g014,12,1,heuristic,3,0 1 2 3 4 5 6,0.00916599992706324,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g015,4,1,dqn,3,0 1 2 3 4 5 6,0.20876200005659484,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g015,5,2,heuristic,3,0 1 2 3 4 5 6,0.26663100015866803,7,0,1,-12.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g015,6,1,dqn,4,0 1 2 3 4 5 6,0.2013700000134122,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g015,7,2,heuristic,4,0 1 2 3 4 5 6,0.3221430001758563,7,0,1,88.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g015,8,1,dqn,3,0 1 2 3 4 5 6,0.22929899978407775,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g015,9,2,heuristic,3,0 1 2 3 4 5 6,0.2770400001281814,7,0,1,158.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g015,10,1,dqn,4,0 1 2 3 4 5 6,0.25999799981946126,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g015,11,2,heuristic,1,0 1 2 3 4 5 6,0.06493199998658383,1,0,1,82.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g015,12,1,dqn,0,0 1 2 3 4 5 6,0.2262630000586796,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g015,13,2,heuristic,5,0 1 2 3 4 5 6,0.2806679999594053,7,0,1,9098.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g015,14,1,dqn,5,0 1 2 3 4 5 6,0.23755599977448583,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g015,15,2,heuristic,5,0 1 2 3 4 5 6,0.33466200011389446,7,0,1,8998.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g015,16,1,dqn,3,0 1 2 3 4 5 6,0.29818999973940663,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g015,17,2,heuristic,5,0 1 2 3 4 5 6,0.008651999905850971,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g016,4,1,heuristic,3,0 1 2 3 4 5 6,0.2534290001676709,7,0,1,9144.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g016,5,2,dqn,2,0 1 2 3 4 5 6,0.29561700011981884,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g016,6,1,heuristic,5,0 1 2 3 4 5 6,0.2564039996286738,7,0,1,9118.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g016,7,2,dqn,6,0 1 2 3 4 5 6,0.2202400000896887,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g016,8,1,heuristic,3,0 1 2 3 4 5 6,0.2764490000117803,7,0,1,56.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g016,9,2,dqn,1,0 1 2 3 4 5 6,0.2822370001922536,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g016,10,1,heuristic,3,0 1 2 3 4 5 6,0.2714249999371532,7,0,1,9168.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g016,11,2,dqn,3,0 1 2 3 4 5 6,0.20607299984476413,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g016,12,1,heuristic,4,0 1 2 3 4 5 6,0.25026100001923623,6,0,1,12.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g016,13,2,dqn,4,0 1 2 3 4 5 6,0.2942689998235437,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g016,14,1,heuristic,1,0 1 2 3 4 5 6,0.25936600013665156,6,0,1,76.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g016,15,2,dqn,1,0 1 2 3 4 5 6,0.2386040000601497,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g016,16,1,heuristic,3,0 1 2 3 4 5 6,0.3107649999947171,6,0,1,18.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g016,17,2,dqn,2,0 1 2 3 4 5 6,0.22420300001613214,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g016,18,1,heuristic,2,0 1 2 3 4 5 6,0.008434999926976161,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g017,4,1,dqn,3,0 1 2 3 4 5 6,0.2605780000521918,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g017,5,2,heuristic,2,0 1 2 3 4 5 6,0.0576980000914773,1,0,1,-22.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g017,6,1,dqn,2,0 1 2 3 4 5 6,0.195963999885862,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g017,7,2,heuristic,3,0 1 2 3 4 5 6,0.31225900011122576,7,0,1,-16.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g017,8,1,dqn,3,0 1 2 3 4 5 6,0.22803699994256021,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g017,9,2,heuristic,2,0 1 2 3 4 5 6,0.22555199984708452,6,0,1,-82.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g017,10,1,dqn,2,0 1 2 3 4 5 6,0.19039200014958624,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g017,11,2,heuristic,3,0 1 2 3 4 5 6,0.2804770001603174,6,0,1,9024.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g017,12,1,dqn,3,0 1 2 3 4 5 6,0.22227299996302463,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g017,13,2,heuristic,1,0 1 2 3 4 5 6,0.007550999725935981,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g018,4,1,heuristic,3,0 1 2 3 4 5 6,0.2518880000934587,7,0,1,20.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g018,5,2,dqn,3,0 1 2 3 4 5 6,0.19577700004447252,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g018,6,1,heuristic,3,0 1 2 3 4 5 6,0.3079439998145972,7,0,1,110.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g018,7,2,dqn,4,0 1 2 3 4 5 6,0.2376590000494616,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g018,8,1,heuristic,2,0 1 2 3 4 5 6,0.06207699971128022,1,0,1,120.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g018,9,2,dqn,3,0 1 2 3 4 5 6,0.23120400010157027,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g018,10,1,heuristic,2,0 1 2 3 4 5 6,0.3218599999854632,7,0,1,27324.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g018,11,2,dqn,0,0 1 2 3 4 5 6,0.23294999982681475,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g018,12,1,heuristic,2,0 1 2 3 4 5 6,0.008952999905886827,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g019,4,1,dqn,2,0 1 2 3 4 5 6,0.27242300029683975,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g019,5,2,heuristic,2,0 1 2 3 4 5 6,0.26592799986246973,7,0,1,28.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g019,6,1,dqn,5,0 1 2 3 4 5 6,0.2752760001385468,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g019,7,2,heuristic,1,0 1 2 3 4 5 6,0.2857709996533231,7,0,1,118.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g019,8,1,dqn,3,0 1 2 3 4 5 6,0.2658319999682135,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g019,9,2,heuristic,3,0 1 2 3 4 5 6,0.31304100002671476,7,0,1,228.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g019,10,1,dqn,2,0 1 2 3 4 5 6,0.23400200007017702,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g019,11,2,heuristic,3,0 1 2 3 4 5 6,0.06242600011319155,1,0,1,214.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g019,12,1,dqn,3,0 1 2 3 4 5 6,0.19828400036203675,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g019,13,2,heuristic,2,0 1 2 3 4 5 6,0.26326499983042595,7,0,1,248.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g019,14,1,dqn,4,0 1 2 3 4 5 6,0.26103000027433154,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g019,15,2,heuristic,1,0 1 2 3 4 5 6,0.057998000102088554,1,0,1,452.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g019,16,1,dqn,3,0 1 2 3 4 5 6,0.1940030001605919,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g019,17,2,heuristic,1,0 1 2 4 5 6,0.24825900027281023,6,0,1,18710.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g019,18,1,dqn,1,0 1 2 4 5 6,0.22366399980455753,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g019,19,2,heuristic,4,0 2 4 5 6,0.007922999884613091,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g020,4,1,heuristic,3,0 1 2 3 4 5 6,0.25473200003034435,7,0,1,16.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g020,5,2,dqn,2,0 1 2 3 4 5 6,0.2830210000865918,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g020,6,1,heuristic,2,0 1 2 3 4 5 6,0.26077699976667645,7,0,1,26.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g020,7,2,dqn,3,0 1 2 3 4 5 6,0.29562700001406483,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g020,8,1,heuristic,3,0 1 2 3 4 5 6,0.262237999777426,7,0,1,9056.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g020,9,2,dqn,4,0 1 2 3 4 5 6,0.22125900022729184,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g020,10,1,heuristic,1,0 1 2 3 4 5 6,0.00904199987417087,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g021,4,1,dqn,2,0 1 2 3 4 5 6,0.20220499982315232,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g021,5,2,heuristic,3,0 1 2 3 4 5 6,0.33223700029338943,7,0,1,18.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g021,6,1,dqn,3,0 1 2 3 4 5 6,0.23552999982712208,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g021,7,2,heuristic,2,0 1 2 3 4 5 6,0.2620119998937298,7,0,1,22.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g021,8,1,dqn,1,0 1 2 3 4 5 6,0.20205100008752197,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g021,9,2,heuristic,4,0 1 2 3 4 5 6,0.31705700030215667,7,0,1,128.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g021,10,1,dqn,3,0 1 2 3 4 5 6,0.23049500032357173,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g021,11,2,heuristic,5,0 1 2 3 4 5 6,0.29279000000315136,7,0,1,9196.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g021,12,1,dqn,6,0 1 2 3 4 5 6,0.2853559999493882,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g021,13,2,heuristic,1,0 1 2 3 4 5 6,0.2718350001487124,7,0,1,9092.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g021,14,1,dqn,5,0 1 2 3 4 5 6,0.2651640002113709,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g021,15,2,heuristic,1,0 1 2 3 4 5 6,0.01000199972622795,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g022,4,1,heuristic,3,0 1 2 3 4 5 6,0.31054900000526686,7,0,1,22.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g022,5,2,dqn,4,0 1 2 3 4 5 6,0.2403220000815054,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g022,6,1,heuristic,2,0 1 2 3 4 5 6,0.264978000359406,7,0,1,9112.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g022,7,2,dqn,1,0 1 2 3 4 5 6,0.20384400022521731,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g022,8,1,heuristic,3,0 1 2 3 4 5 6,0.3197329997419729,7,0,1,44.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g022,9,2,dqn,2,0 1 2 3 4 5 6,0.2333910001652839,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g022,10,1,heuristic,3,0 1 2 3 4 5 6,0.2655780003806285,7,0,1,9150.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g022,11,2,dqn,3,0 1 2 3 4 5 6,0.19908900003429153,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g022,12,1,heuristic,2,0 1 2 3 4 5 6,0.3205900002285489,7,0,1,74.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g022,13,2,dqn,0,0 1 2 3 4 5 6,0.23385900021821726,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g022,14,1,heuristic,4,0 1 2 3 4 5 6,0.2896309997595381,7,0,1,96.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g022,15,2,dqn,6,0 1 2 3 4 5 6,0.22950399988985737,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g022,16,1,heuristic,4,0 1 2 3 4 5 6,0.3324889999021252,7,0,1,398.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g022,17,2,dqn,4,0 1 2 3 4 5 6,0.2872720001505513,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g022,18,1,heuristic,1,0 1 2 3 4 5 6,0.2911669998866273,7,0,1,9342.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g022,19,2,dqn,2,0 1 2 3 4 5 6,0.2805850003824162,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g022,20,1,heuristic,1,0 1 2 3 4 5 6,0.007952000032673823,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g023,4,1,dqn,3,0 1 2 3 4 5 6,0.20164799980193493,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g023,5,2,heuristic,3,0 1 2 3 4 5 6,0.2679579997675319,7,0,1,6.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g023,6,1,dqn,0,0 1 2 3 4 5 6,0.18968399990626494,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g023,7,2,heuristic,3,0 1 2 3 4 5 6,0.322312000207603,7,0,1,44.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g023,8,1,dqn,3,0 1 2 3 4 5 6,0.22829499994259095,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g023,9,2,heuristic,5,0 1 2 3 4 5 6,0.2799280000544968,7,0,1,42.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g023,10,1,dqn,6,0 1 2 3 4 5 6,0.20266199999241508,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g023,11,2,heuristic,5,0 1 2 3 4 5 6,0.32110400024976116,7,0,1,9148.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g023,12,1,dqn,6,0 1 2 3 4 5 6,0.23630800023966003,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g023,13,2,heuristic,5,0 1 2 3 4 5 6,0.007289000222954201,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g024,4,1,heuristic,3,0 1 2 3 4 5 6,0.26626700037013507,7,0,1,9118.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g024,5,2,dqn,0,0 1 2 3 4 5 6,0.2953080002043862,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g024,6,1,heuristic,2,0 1 2 3 4 5 6,0.26336300015827874,7,0,1,50.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g024,7,2,dqn,2,0 1 2 3 4 5 6,0.27409099993747077,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g024,8,1,heuristic,1,0 1 2 3 4 5 6,0.2681969999684952,7,0,1,34.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g024,9,2,dqn,3,0 1 2 3 4 5 6,0.2832359996318701,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g024,10,1,heuristic,1,0 1 2 3 4 5 6,0.05645300007017795,1,0,1,42.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g024,11,2,dqn,2,0 1 2 3 4 5 6,0.20569799971781322,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g024,12,1,heuristic,1,0 1 2 3 4 5 6,0.2305269999851589,6,0,1,9116.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g024,13,2,dqn,1,0 1 2 3 4 5 6,0.19769499976973748,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g024,14,1,heuristic,2,0 2 3 4 5 6,0.1975739996851189,5,0,1,62.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g024,15,2,dqn,3,0 2 3 4 5 6,0.2310700001544319,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g024,16,1,heuristic,3,0 2 3 4 5 6,0.060666000081255333,1,0,1,132.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g024,17,2,dqn,3,0 2 3 4 5 6,0.1886599998215388,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g024,18,1,heuristic,3,0 2 3 4 5 6,0.22552499967787298,6,0,1,202.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g024,19,2,dqn,2,0 2 4 5 6,0.27248300011706306,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g024,20,1,heuristic,0,0 4 5 6,0.15855299989198102,4,0,1,9180.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g024,21,2,dqn,5,0 4 5 6,0.19613699987530708,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g024,22,1,heuristic,0,0 4 5 6,0.007646999620192219,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g025,4,1,dqn,2,0 1 2 3 4 5 6,0.2507670001250517,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g025,5,2,heuristic,2,0 1 2 3 4 5 6,0.32465499998579617,7,0,1,10.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g025,6,1,dqn,5,0 1 2 3 4 5 6,0.2808090002872632,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g025,7,2,heuristic,0,0 1 2 3 4 5 6,0.3285640000285639,7,0,1,104.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g025,8,1,dqn,1,0 1 2 3 4 5 6,0.2847460000339197,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g025,9,2,heuristic,1,0 1 2 3 4 5 6,0.3202490001967817,7,0,1,194.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g025,10,1,dqn,6,0 1 2 3 4 5 6,0.21436399993035593,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g025,11,2,heuristic,3,0 1 2 3 4 5 6,0.3845450000881101,7,0,1,9222.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g025,12,1,dqn,6,0 1 2 3 4 5 6,0.2364320002925524,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g025,13,2,heuristic,3,0 1 2 3 4 5 6,0.008847000117384596,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g026,4,1,heuristic,3,0 1 2 3 4 5 6,0.3079289999732282,7,0,1,0.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g026,5,2,dqn,4,0 1 2 3 4 5 6,0.20501099970715586,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g026,6,1,heuristic,4,0 1 2 3 4 5 6,0.3862020002998179,7,0,1,10.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g026,7,2,dqn,3,0 1 2 3 4 5 6,0.23874799990153406,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g026,8,1,heuristic,3,0 1 2 3 4 5 6,0.3272240001024329,7,0,1,10.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g026,9,2,dqn,4,0 1 2 3 4 5 6,0.2820830000018759,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g026,10,1,heuristic,3,0 1 2 3 4 5 6,0.340551000135747,7,0,1,126.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g026,11,2,dqn,5,0 1 2 3 4 5 6,0.23333899980571005,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g026,12,1,heuristic,5,0 1 2 3 4 5 6,0.00810999972600257,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g027,4,1,dqn,5,0 1 2 3 4 5 6,0.2788610004245129,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g027,5,2,heuristic,2,0 1 2 3 4 5 6,0.2691929998945852,7,0,1,34.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g027,6,1,dqn,3,0 1 2 3 4 5 6,0.22325300005832105,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g027,7,2,heuristic,2,0 1 2 3 4 5 6,0.2671629999895231,7,0,1,9138.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g027,8,1,dqn,2,0 1 2 3 4 5 6,0.2753019998635864,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g027,9,2,heuristic,3,0 1 2 3 4 5 6,0.2721910000218486,7,0,1,164.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g027,10,1,dqn,1,0 1 2 3 4 5 6,0.20955999980287743,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g027,11,2,heuristic,4,0 1 2 3 4 5 6,0.27579600009630667,7,0,1,9260.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g027,12,1,dqn,3,0 1 2 3 4 5 6,0.2842419999069534,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g027,13,2,heuristic,5,0 1 2 3 4 5 6,0.00897900008567376,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g028,4,1,heuristic,3,0 1 2 3 4 5 6,0.2738039997893793,7,0,1,0.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g028,5,2,dqn,0,0 1 2 3 4 5 6,0.23833700015529757,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g028,6,1,heuristic,3,0 1 2 3 4 5 6,0.34085700008290587,7,0,1,28.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g028,7,2,dqn,3,0 1 2 3 4 5 6,0.23215999999592896,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g028,8,1,heuristic,4,0 1 2 3 4 5 6,0.3267569995841768,7,0,1,22.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g028,9,2,dqn,6,0 1 2 3 4 5 6,0.2686990001166123,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g028,10,1,heuristic,4,0 1 2 3 4 5 6,0.28311500000199885,7,0,1,74.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g028,11,2,dqn,5,0 1 2 3 4 5 6,0.22390300000552088,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g028,12,1,heuristic,4,0 1 2 3 4 5 6,0.27787499993792153,7,0,1,9210.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g028,13,2,dqn,4,0 1 2 3 4 5 6,0.2748530000644678,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g028,14,1,heuristic,2,0 1 2 3 4 5 6,0.2883700003621925,7,0,1,150.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g028,15,2,dqn,6,0 1 2 3 4 5 6,0.21701099967685877,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g028,16,1,heuristic,6,0 1 2 3 4 5 6,0.06128699988039443,1,0,1,180.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g028,17,2,dqn,0,0 1 2 3 4 5 6,0.19940499987569638,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g028,18,1,heuristic,2,0 1 2 3 4 5 6,0.33313299991277745,7,0,1,9372.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g028,19,2,dqn,2,0 1 2 3 4 5 6,0.23676900036662119,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g028,20,1,heuristic,5,0 1 2 3 4 5 6,0.008084000000962988,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g029,4,1,dqn,4,0 1 2 3 4 5 6,0.23670600012337673,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g029,5,2,heuristic,3,0 1 2 3 4 5 6,0.3279620000284922,7,0,1,44.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g029,6,1,dqn,3,0 1 2 3 4 5 6,0.24165800004993798,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g029,7,2,heuristic,4,0 1 2 3 4 5 6,0.31613999999535736,7,0,1,148.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g029,8,1,dqn,3,0 1 2 3 4 5 6,0.23655099994357442,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g029,9,2,heuristic,5,0 1 2 3 4 5 6,0.32351999971069745,7,0,1,9106.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g029,10,1,dqn,5,0 1 2 3 4 5 6,0.23796699997546966,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g029,11,2,heuristic,4,0 1 2 3 4 5 6,0.0673829999868758,1,0,1,42.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g029,12,1,dqn,2,0 1 2 3 4 5 6,0.20072000006621238,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g029,13,2,heuristic,4,0 1 2 3 4 5 6,0.3781400000661961,7,0,1,9142.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g029,14,1,dqn,4,0 1 2 3 4 5 6,0.2279220002492366,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g029,15,2,heuristic,5,0 1 2 3 4 5 6,0.2875159998438903,7,0,1,9196.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g029,16,1,dqn,3,0 1 2 3 4 5 6,0.19593300021369942,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g029,17,2,heuristic,3,0 1 2 3 4 5 6,0.11104900022473885,1,0,1,66.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g029,18,1,dqn,4,0 1 2 4 5 6,0.23126799987949198,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g029,19,2,heuristic,6,0 1 2 5 6,0.21020699978180346,5,0,1,9054.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g029,20,1,dqn,6,0 1 2 5 6,0.24715100016692304,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g029,21,2,heuristic,5,0 1 2 5 6,0.24543800009269034,5,0,1,9050.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g029,22,1,dqn,5,0 1 2 5 6,0.24090800025078352,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g029,23,2,heuristic,6,0 1 2 5 6,0.007611999990331242,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g030,4,1,heuristic,2,0 1 2 3 4 5 6,0.32354700033465633,7,0,1,9136.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g030,5,2,dqn,5,0 1 2 3 4 5 6,0.23571300016556052,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g030,6,1,heuristic,3,0 1 2 3 4 5 6,0.332049000007828,7,0,1,78.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g030,7,2,dqn,2,0 1 2 3 4 5 6,0.2325590003238176,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g030,8,1,heuristic,3,0 1 2 3 4 5 6,0.2806149996104068,7,0,1,9184.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g030,9,2,dqn,3,0 1 2 3 4 5 6,0.2071300000352494,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g030,10,1,heuristic,2,0 1 2 3 4 5 6,0.28622599984373664,7,0,1,188.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g030,11,2,dqn,5,0 1 2 3 4 5 6,0.23157299983722623,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g030,12,1,heuristic,5,0 1 2 3 4 5 6,0.2536040001359652,6,0,1,218.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g030,13,2,dqn,2,0 1 2 3 4 5 6,0.2701159996831848,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g030,14,1,heuristic,5,0 1 2 3 4 5 6,0.2621020003061858,6,0,1,302.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g030,15,2,dqn,5,0 1 2 3 4 5 6,0.2095269996971183,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g030,16,1,heuristic,3,0 1 2 3 4 5 6,0.2754910001385724,6,0,1,324.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g030,17,2,dqn,3,0 1 2 3 4 5 6,0.29589199994006776,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g030,18,1,heuristic,6,0 1 2 4 5 6,0.21241400008875644,5,0,1,396.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g030,19,2,dqn,4,0 1 2 4 5 6,0.2697199997783173,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g030,20,1,heuristic,4,0 1 2 4 5 6,0.008695999895280693,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g031,4,1,dqn,2,0 1 2 3 4 5 6,0.19870500000251923,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g031,5,2,heuristic,5,0 1 2 3 4 5 6,0.11641399987638579,1,0,1,-30.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g031,6,1,dqn,5,0 1 2 3 4 5 6,0.2295369999956165,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g031,7,2,heuristic,4,0 1 2 3 4 5 6,0.27871399970536004,7,0,1,-14.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g031,8,1,dqn,2,0 1 2 3 4 5 6,0.20355600008770125,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g031,9,2,heuristic,2,0 1 2 3 4 5 6,0.3326139999444422,7,0,1,-24.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g031,10,1,dqn,2,0 1 2 3 4 5 6,0.2337800001441792,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g031,11,2,heuristic,4,0 1 2 3 4 5 6,0.2909859999817854,7,0,1,-4.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g031,12,1,dqn,4,0 1 2 3 4 5 6,0.20363499970699195,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g031,13,2,heuristic,5,0 1 2 3 4 5 6,0.34527500019976287,7,0,1,50.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g031,14,1,dqn,3,0 1 2 3 4 5 6,0.2327340002921119,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g031,15,2,heuristic,3,0 1 2 3 4 5 6,0.010977999863825971,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g032,4,1,heuristic,4,0 1 2 3 4 5 6,0.28565000002345187,7,0,1,16.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g032,5,2,dqn,4,0 1 2 3 4 5 6,0.30363899986696197,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g032,6,1,heuristic,2,0 1 2 3 4 5 6,0.26896000008491683,7,0,1,16.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g032,7,2,dqn,5,0 1 2 3 4 5 6,0.282056999822089,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g032,8,1,heuristic,2,0 1 2 3 4 5 6,0.3265790001023561,7,0,1,12.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g032,9,2,dqn,2,0 1 2 3 4 5 6,0.24624299976494513,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g032,10,1,heuristic,3,0 1 2 3 4 5 6,0.29196400009823265,7,0,1,28.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g032,11,2,dqn,3,0 1 2 3 4 5 6,0.20980299996153917,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g032,12,1,heuristic,3,0 1 2 3 4 5 6,0.3098550000686373,6,0,1,-42.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g032,13,2,dqn,3,0 1 2 3 4 5 6,0.2381560002504557,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g032,14,1,heuristic,4,0 1 2 3 4 5 6,0.27638299980026204,7,0,1,-1028.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g032,15,2,dqn,4,0 1 2 3 4 5 6,0.20814600020457874,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g032,16,1,heuristic,1,0 1 2 3 4 5 6,0.007685000127821695,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g033,4,1,dqn,3,0 1 2 3 4 5 6,0.2837570000338019,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g033,5,2,heuristic,3,0 1 2 3 4 5 6,0.2780279996841273,7,0,1,16.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g033,6,1,dqn,5,0 1 2 3 4 5 6,0.24623799981782213,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g033,7,2,heuristic,2,0 1 2 3 4 5 6,0.32827499990162323,7,0,1,52.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g033,8,1,dqn,3,0 1 2 3 4 5 6,0.23616999988007592,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g033,9,2,heuristic,2,0 1 2 3 4 5 6,0.336128000071767,7,0,1,9156.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g033,10,1,dqn,2,0 1 2 3 4 5 6,0.23508200001742807,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g033,11,2,heuristic,4,0 1 2 3 4 5 6,0.33911399987118784,7,0,1,126.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g033,12,1,dqn,3,0 1 2 3 4 5 6,0.23492199989050278,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g033,13,2,heuristic,1,0 1 2 3 4 5 6,0.28774800011888146,7,0,1,9054.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g033,14,1,dqn,1,0 1 2 3 4 5 6,0.24673799998709,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g033,15,2,heuristic,4,0 1 2 3 4 5 6,0.28144600037194323,7,0,1,80.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g033,16,1,dqn,2,0 1 2 3 4 5 6,0.22458000012193224,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g033,17,2,heuristic,4,0 1 2 3 4 5 6,0.27408999994804617,7,0,1,9200.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g033,18,1,dqn,4,0 1 2 3 4 5 6,0.2864080001927505,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g033,19,2,heuristic,5,0 1 2 3 4 5 6,0.2772170000753249,7,0,1,9084.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g033,20,1,dqn,4,0 1 2 3 4 5 6,0.2333440002075804,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g033,21,2,heuristic,5,0 1 2 3 5 6,0.009812999905989273,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g034,4,1,heuristic,5,0 1 2 3 4 5 6,0.3150590000586817,7,0,1,20.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g034,5,2,dqn,5,0 1 2 3 4 5 6,0.24018700014494243,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g034,6,1,heuristic,4,0 1 2 3 4 5 6,0.34042600009343005,7,0,1,26.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g034,7,2,dqn,4,0 1 2 3 4 5 6,0.23883500034571625,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g034,8,1,heuristic,4,0 1 2 3 4 5 6,0.34221899977637804,7,0,1,6.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g034,9,2,dqn,2,0 1 2 3 4 5 6,0.34970900014741346,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g034,10,1,heuristic,2,0 1 2 3 4 5 6,0.32615000009172945,7,0,1,106.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g034,11,2,dqn,2,0 1 2 3 4 5 6,0.28567399976964225,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g034,12,1,heuristic,3,0 1 2 3 4 5 6,0.28942000017195824,7,0,1,9042.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g034,13,2,dqn,6,0 1 2 3 4 5 6,0.20295600006647874,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g034,14,1,heuristic,3,0 1 2 3 4 5 6,0.008445000275969505,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g035,4,1,dqn,1,0 1 2 3 4 5 6,0.2533349997975165,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g035,5,2,heuristic,4,0 1 2 3 4 5 6,0.27165000028617214,7,0,1,32.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g035,6,1,dqn,4,0 1 2 3 4 5 6,0.230685000133235,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g035,7,2,heuristic,5,0 1 2 3 4 5 6,0.2938719999292516,7,0,1,116.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g035,8,1,dqn,2,0 1 2 3 4 5 6,0.2978470001835376,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g035,9,2,heuristic,3,0 1 2 3 4 5 6,0.32481400012329686,7,0,1,9122.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g035,10,1,dqn,1,0 1 2 3 4 5 6,0.23298199994314928,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g035,11,2,heuristic,3,0 1 2 3 4 5 6,0.010206999832007568,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g036,4,1,heuristic,1,0 1 2 3 4 5 6,0.3244600002290099,7,0,1,20.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g036,5,2,dqn,5,0 1 2 3 4 5 6,0.23686300028202822,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g036,6,1,heuristic,1,0 1 2 3 4 5 6,0.2807099999699858,7,0,1,9110.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g036,7,2,dqn,1,0 1 2 3 4 5 6,0.20468699995035422,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g036,8,1,heuristic,2,0 1 2 3 4 5 6,0.35913000010623364,7,0,1,36.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g036,9,2,dqn,6,0 1 2 3 4 5 6,0.23694799983786652,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g036,10,1,heuristic,2,0 1 2 3 4 5 6,0.2772100001493527,7,0,1,168.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g036,11,2,dqn,2,0 1 2 3 4 5 6,0.19148199999108328,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g036,12,1,heuristic,3,0 1 2 3 4 5 6,0.3259019999859447,7,0,1,244.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g036,13,2,dqn,1,0 1 2 3 4 5 6,0.23400200007017702,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g036,14,1,heuristic,0,0 1 2 3 4 5 6,0.292545999855065,7,0,1,9308.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g036,15,2,dqn,2,0 1 2 3 4 5 6,0.2974190001623356,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g036,16,1,heuristic,0,0 1 2 3 4 5 6,0.00797300026533776,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g037,4,1,dqn,2,0 1 2 3 4 5 6,0.21190699999351637,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g037,5,2,heuristic,3,0 1 2 3 4 5 6,0.31920799983709003,7,0,1,12.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g037,6,1,dqn,5,0 1 2 3 4 5 6,0.23897799974292866,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g037,7,2,heuristic,3,0 1 2 3 4 5 6,0.26973100011673523,7,0,1,34.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g037,8,1,dqn,5,0 1 2 3 4 5 6,0.23869699998613214,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g037,9,2,heuristic,3,0 1 2 3 4 5 6,0.27055300006395555,7,0,1,9146.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g037,10,1,dqn,3,0 1 2 3 4 5 6,0.2796460003082757,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g037,11,2,heuristic,2,0 1 2 3 4 5 6,0.28422400009731064,7,0,1,60.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g037,12,1,dqn,5,0 1 2 3 4 5 6,0.2190690001953044,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g037,13,2,heuristic,5,0 1 2 3 4 5 6,0.07003900009294739,1,0,1,160.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g037,14,1,dqn,5,0 1 2 3 4 5 6,0.2505100001144456,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g037,15,2,heuristic,4,0 1 2 3 4 5 6,0.29136000011931174,7,0,1,256.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g037,16,1,dqn,5,0 1 2 3 4 5 6,0.2436469999338442,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g037,17,2,heuristic,4,0 1 2 3 4 6,0.2609550001579919,6,0,1,9282.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g037,18,1,dqn,6,0 1 2 3 4 6,0.2818200000547222,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g037,19,2,heuristic,4,0 1 2 3 4 6,0.009049999789567664,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g038,4,1,heuristic,3,0 1 2 3 4 5 6,0.26385299997855327,7,0,1,-2.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g038,5,2,dqn,3,0 1 2 3 4 5 6,0.27194699987376225,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g038,6,1,heuristic,3,0 1 2 3 4 5 6,0.3262899999754154,7,0,1,-2.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g038,7,2,dqn,3,0 1 2 3 4 5 6,0.2395970000179659,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g038,8,1,heuristic,0,0 1 2 4 5 6,0.21822000007887254,6,0,1,0.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g038,9,2,dqn,2,0 1 2 4 5 6,0.21144900028957636,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g038,10,1,heuristic,0,0 1 2 4 5 6,0.28278099989620387,6,0,1,9078.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g038,11,2,dqn,0,0 1 2 4 5 6,0.2341909998904157,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g038,12,1,heuristic,2,0 1 2 4 5 6,0.2318000001650944,6,0,1,70.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g038,13,2,dqn,1,0 1 2 4 5 6,0.19972099971710122,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g038,14,1,heuristic,1,0 1 2 4 5 6,0.2870650000659225,6,0,1,9260.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g038,15,2,dqn,2,0 1 2 4 5 6,0.23142100008044508,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g038,16,1,heuristic,2,0 1 2 4 5 6,0.009692000276118051,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g039,4,1,dqn,3,0 1 2 3 4 5 6,0.2038719999291061,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g039,5,2,heuristic,4,0 1 2 3 4 5 6,0.2924140003415232,7,0,1,44.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g039,6,1,dqn,5,0 1 2 3 4 5 6,0.2904850002778403,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g039,7,2,heuristic,4,0 1 2 3 4 5 6,0.27957800011790823,7,0,1,80.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g039,8,1,dqn,4,0 1 2 3 4 5 6,0.2709640002649394,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g039,9,2,heuristic,5,0 1 2 3 4 5 6,0.28118099999119295,7,0,1,214.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g039,10,1,dqn,5,0 1 2 3 4 5 6,0.22907699985807994,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g039,11,2,heuristic,2,0 1 2 3 4 5 6,0.27789000023403787,7,0,1,9070.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g039,12,1,dqn,2,0 1 2 3 4 5 6,0.20809300031032762,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g039,13,2,heuristic,6,0 1 2 3 4 5 6,0.3306209996480902,7,0,1,-1132.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g039,14,1,dqn,4,0 1 2 3 4 5 6,0.23067899974194006,0,0,0,,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g040,4,1,heuristic,3,0 1 2 3 4 5 6,0.2718400000958354,7,0,1,-2.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g040,5,2,dqn,3,0 1 2 3 4 5 6,0.20593499993992737,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g040,6,1,heuristic,3,0 1 2 3 4 5 6,0.32168100005947053,7,0,1,-2.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g040,7,2,dqn,4,0 1 2 3 4 5 6,0.23680899994360516,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g040,8,1,heuristic,4,0 1 2 3 4 5 6,0.2895739999075886,7,0,1,78.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g040,9,2,dqn,5,0 1 2 3 4 5 6,0.23107699962565675,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g040,10,1,heuristic,4,0 1 2 3 4 5 6,0.2868250003302819,7,0,1,124.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g040,11,2,dqn,5,0 1 2 3 4 5 6,0.28634700038310257,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g040,12,1,heuristic,4,0 1 2 3 4 5 6,0.28101899988541845,7,0,1,9230.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g040,13,2,dqn,4,0 1 2 3 4 5 6,0.28635200033022556,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g040,14,1,heuristic,1,0 1 2 3 4 5 6,0.30007100031070877,7,0,1,194.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g040,15,2,dqn,5,0 1 2 3 4 5 6,0.19819399994958076,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g040,16,1,heuristic,5,0 1 2 3 4 5 6,0.06283199991230504,1,0,1,374.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g040,17,2,dqn,3,0 1 2 3 4 5 6,0.18597600001157844,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g040,18,1,heuristic,2,0 1 2 4 5 6,0.24770400023044203,6,0,1,9298.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g040,19,2,dqn,6,0 1 2 4 5 6,0.2237200001218298,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g040,20,1,heuristic,2,0 1 2 4 5 6,0.009638999927119585,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g041,4,1,dqn,1,0 1 2 3 4 5 6,0.19859199983329745,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g041,5,2,heuristic,3,0 1 2 3 4 5 6,0.332944999627216,7,0,1,9152.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g041,6,1,dqn,3,0 1 2 3 4 5 6,0.2363399999012472,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g041,7,2,heuristic,1,0 1 2 3 4 5 6,0.27150599999004044,7,0,1,50.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g041,8,1,dqn,1,0 1 2 3 4 5 6,0.2458029998706479,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g041,9,2,heuristic,0,0 1 2 3 4 5 6,0.3287180002189416,7,0,1,134.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g041,10,1,dqn,1,0 1 2 3 4 5 6,0.27893299966308405,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g041,11,2,heuristic,2,0 1 2 3 4 5 6,0.28593600018211873,7,0,1,9120.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g041,12,1,dqn,2,0 1 2 3 4 5 6,0.29629099981320905,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g041,13,2,heuristic,1,0 1 2 3 4 5 6,0.2832599998328078,7,0,1,34.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g041,14,1,dqn,3,0 1 2 3 4 5 6,0.2220169999418431,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g041,15,2,heuristic,2,0 1 2 3 4 5 6,0.2690509995773027,7,0,1,28.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g041,16,1,dqn,1,0 1 2 3 4 5 6,0.2738519997365074,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g041,17,2,heuristic,2,0 2 3 4 5 6,0.24317799989148625,6,0,1,244.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g041,18,1,dqn,0,0 2 3 4 5 6,0.20549999999275315,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g041,19,2,heuristic,2,0 2 3 4 5 6,0.23662000012336648,6,0,1,9356.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g041,20,1,dqn,5,0 2 3 4 5 6,0.2660589998413343,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g041,21,2,heuristic,2,0 2 3 4 5 6,0.008569999863539124,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g042,4,1,heuristic,3,0 1 2 3 4 5 6,0.2760160000434553,7,0,1,9140.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g042,5,2,dqn,2,0 1 2 3 4 5 6,0.2423309997539036,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g042,6,1,heuristic,5,0 1 2 3 4 5 6,0.009517999842501013,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g043,4,1,dqn,3,0 1 2 3 4 5 6,0.2675660002751101,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g043,5,2,heuristic,5,0 1 2 3 4 5 6,0.06524900027216063,1,0,1,-24.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g043,6,1,dqn,2,0 1 2 3 4 5 6,0.22648200001640362,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g043,7,2,heuristic,1,0 1 2 3 4 5 6,0.06476499993368634,1,0,1,-20.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g043,8,1,dqn,2,0 1 2 3 4 5 6,0.2745080000750022,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g043,9,2,heuristic,6,0 1 2 3 4 5 6,0.3334919997541874,7,0,1,9048.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g043,10,1,dqn,6,0 1 2 3 4 5 6,0.23718000011285767,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g043,11,2,heuristic,4,0 1 2 3 4 5 6,0.27692999992723344,7,0,1,-30.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g043,12,1,dqn,2,0 1 2 3 4 5 6,0.20094299998163478,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g043,13,2,heuristic,2,0 1 2 3 4 5 6,0.0683220000610163,1,0,1,70.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g043,14,1,dqn,1,0 1 2 3 4 5 6,0.2743599998211721,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g043,15,2,heuristic,3,0 1 2 3 4 5 6,0.2914390001933498,7,0,1,18162.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g043,16,1,dqn,1,0 1 2 3 4 5 6,0.2079119999507384,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g043,17,2,heuristic,5,0 1 2 3 4 5 6,0.009572999715601327,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g044,4,1,heuristic,3,0 1 2 3 4 5 6,0.3310840002086479,7,0,1,9150.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g044,5,2,dqn,1,0 1 2 3 4 5 6,0.23826000006010872,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g044,6,1,heuristic,4,0 1 2 3 4 5 6,0.010161999853153247,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g045,4,1,dqn,5,0 1 2 3 4 5 6,0.21038699969722074,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g045,5,2,heuristic,3,0 1 2 3 4 5 6,0.2865379997274431,7,0,1,0.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g045,6,1,dqn,3,0 1 2 3 4 5 6,0.2948889996332582,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g045,7,2,heuristic,2,0 1 2 3 4 5 6,0.27425300004324527,7,0,1,-6.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g045,8,1,dqn,4,0 1 2 3 4 5 6,0.22765500034438446,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g045,9,2,heuristic,2,0 1 2 3 4 5 6,0.3280609998910222,7,0,1,14.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g045,10,1,dqn,2,0 1 2 3 4 5 6,0.22273900003710878,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g045,11,2,heuristic,3,0 1 2 3 4 5 6,0.284252999790624,7,0,1,50.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g045,12,1,dqn,3,0 1 2 3 4 5 6,0.1972660002138582,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g045,13,2,heuristic,1,0 1 2 3 4 5 6,0.3235230001337186,7,0,1,88.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g045,14,1,dqn,1,0 1 2 3 4 5 6,0.2376649999860092,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g045,15,2,heuristic,1,0 1 2 3 4 5 6,0.27056399994762614,7,0,1,358.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g045,16,1,dqn,1,0 1 2 3 4 5 6,0.20008199999210774,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g045,17,2,heuristic,4,0 1 2 3 4 5 6,0.33216799965885,7,0,1,9224.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g045,18,1,dqn,3,0 1 2 3 4 5 6,0.23362300044027506,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g045,19,2,heuristic,4,0 1 2 3 4 5 6,0.009514999874227215,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g046,4,1,heuristic,4,0 1 2 3 4 5 6,0.28660199996011215,7,0,1,9140.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g046,5,2,dqn,4,0 1 2 3 4 5 6,0.31190799973046524,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g046,6,1,heuristic,3,0 1 2 3 4 5 6,0.2688820000003034,7,0,1,46.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g046,7,2,dqn,3,0 1 2 3 4 5 6,0.27536300012798165,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g046,8,1,heuristic,5,0 1 2 3 4 5 6,0.27944200019192067,7,0,1,9134.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g046,9,2,dqn,4,0 1 2 3 4 5 6,0.27682499967340846,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g046,10,1,heuristic,2,0 1 2 3 4 5 6,0.010308000128134154,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g047,4,1,dqn,3,0 1 2 3 4 5 6,0.20282499963286682,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g047,5,2,heuristic,4,0 1 2 3 4 5 6,0.2702819997466577,7,0,1,-34.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g047,6,1,dqn,4,0 1 2 3 4 5 6,0.24895799970181542,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g047,7,2,heuristic,3,0 1 2 3 4 5 6,0.2739110000220535,7,0,1,-8.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g047,8,1,dqn,3,0 1 2 3 4 5 6,0.23236600009113317,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g047,9,2,heuristic,3,0 1 2 3 4 5 6,0.2851509998436086,7,0,1,62.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g047,10,1,dqn,3,0 1 2 3 4 5 6,0.2701260000321781,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g047,11,2,heuristic,5,0 1 2 3 4 5 6,0.28881599973829,7,0,1,9050.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g047,12,1,dqn,5,0 1 2 3 4 5 6,0.23961600027178065,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g047,13,2,heuristic,2,0 1 2 3 4 5 6,0.28055300026608165,7,0,1,36.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g047,14,1,dqn,3,0 1 2 3 4 5 6,0.2772459997686383,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g047,15,2,heuristic,5,0 1 2 4 5 6,0.2862979999918025,6,0,1,9054.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g047,16,1,dqn,5,0 1 2 4 5 6,0.23525100004917476,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g047,17,2,heuristic,1,0 1 2 4 5 6,0.30161800032146857,6,0,1,-26.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g047,18,1,dqn,4,0 1 2 4 5 6,0.2314150001438975,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g047,19,2,heuristic,1,0 1 2 4 5 6,0.22390900039681583,5,0,1,8958.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g047,20,1,dqn,1,0 1 2 4 5 6,0.2012259997172805,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g047,21,2,heuristic,2,0 1 2 4 5 6,0.27732499984267633,5,0,1,-46.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g047,22,1,dqn,4,0 1 2 4 5 6,0.22421299991037813,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g047,23,2,heuristic,2,0 1 2 5 6,0.18603499984237715,4,0,1,18114.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g047,24,1,dqn,1,0 1 2 5 6,0.20238000024619396,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g047,25,2,heuristic,0,0 1 2 5 6,0.008742000318306964,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g048,4,1,heuristic,2,0 1 2 3 4 5 6,0.3316759998597263,7,0,1,-6.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g048,5,2,dqn,0,0 1 2 3 4 5 6,0.23568300002807518,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g048,6,1,heuristic,2,0 1 2 3 4 5 6,0.3442919996814453,7,0,1,26.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g048,7,2,dqn,3,0 1 2 3 4 5 6,0.23670800010222592,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g048,8,1,heuristic,2,0 1 2 3 4 5 6,0.3835860002254776,7,0,1,9110.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g048,9,2,dqn,2,0 1 2 3 4 5 6,0.30395500016311416,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g048,10,1,heuristic,3,0 1 2 3 4 5 6,0.37114599990673014,7,0,1,146.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g048,11,2,dqn,3,0 1 2 3 4 5 6,0.2423869996164285,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g048,12,1,heuristic,3,0 1 2 3 4 5 6,0.33233700014534406,7,0,1,116.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g048,13,2,dqn,4,0 1 2 3 4 5 6,0.2127650000147696,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g048,14,1,heuristic,2,0 1 2 3 4 5 6,0.39188399978229427,7,0,1,146.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g048,15,2,dqn,2,0 1 2 3 4 5 6,0.23334399975283304,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g048,16,1,heuristic,3,0 1 3 4 5 6,0.2314710000064224,6,0,1,162.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g048,17,2,dqn,6,0 1 4 5 6,0.2023799997914466,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g048,18,1,heuristic,4,0 1 4 5 6,0.24355100003958796,5,0,1,174.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g048,19,2,dqn,4,0 1 4 5 6,0.22978700008025044,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g048,20,1,heuristic,4,0 1 4 5 6,0.007052999990264652,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g049,4,1,dqn,4,0 1 2 3 4 5 6,0.21880400026930147,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g049,5,2,heuristic,4,0 1 2 3 4 5 6,0.2799589997266594,7,0,1,38.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g049,6,1,dqn,2,0 1 2 3 4 5 6,0.24040600010266644,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g049,7,2,heuristic,3,0 1 2 3 4 5 6,0.33019100010278635,7,0,1,84.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g049,8,1,dqn,5,0 1 2 3 4 5 6,0.24129600024025422,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g049,9,2,heuristic,3,0 1 2 3 4 5 6,0.33354799961671233,7,0,1,9266.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g049,10,1,dqn,3,0 1 2 3 4 5 6,0.23214000020743697,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g049,11,2,heuristic,4,0 1 2 3 4 5 6,0.06821900024078786,1,0,1,210.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g049,12,1,dqn,5,0 1 2 3 4 5 6,0.1999700002670579,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g049,13,2,heuristic,2,0 1 2 3 4 5 6,0.34221799978695344,7,0,1,9296.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g049,14,1,dqn,2,0 1 2 3 4 5 6,0.2303050000591611,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g049,15,2,heuristic,2,0 1 2 3 4 5 6,0.00949099967328948,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g050,4,1,heuristic,2,0 1 2 3 4 5 6,0.27414500027589384,7,0,1,18200.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g050,5,2,dqn,0,0 1 2 3 4 5 6,0.19568000016079168,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g050,6,1,heuristic,4,0 1 2 3 4 5 6,0.00873099997988902,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g051,4,1,dqn,3,0 1 2 3 4 5 6,0.2798279997477948,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g051,5,2,heuristic,2,0 1 2 3 4 5 6,0.2683819998310355,7,0,1,16.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g051,6,1,dqn,5,0 1 2 3 4 5 6,0.20836900012000115,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g051,7,2,heuristic,2,0 1 2 3 4 5 6,0.2890329997171648,7,0,1,62.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g051,8,1,dqn,5,0 1 2 3 4 5 6,0.28102699980081525,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g051,9,2,heuristic,2,0 1 2 3 4 5 6,0.324955999985832,7,0,1,9178.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g051,10,1,dqn,2,0 1 2 3 4 5 6,0.23676199998590164,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g051,11,2,heuristic,1,0 1 2 3 4 5 6,0.3358620001563395,7,0,1,212.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g051,12,1,dqn,1,0 1 2 3 4 5 6,0.23232000012285425,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g051,13,2,heuristic,4,0 1 2 3 4 5 6,0.282251000044198,7,0,1,18278.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g051,14,1,dqn,3,0 1 2 3 4 5 6,0.1992150000660331,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g051,15,2,heuristic,1,0 1 2 3 4 5 6,0.009053000212588813,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g052,4,1,heuristic,4,0 1 2 3 4 5 6,0.3166569999848434,7,0,1,9116.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g052,5,2,dqn,6,0 1 2 3 4 5 6,0.23491599995395518,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g052,6,1,heuristic,5,0 1 2 3 4 5 6,0.008213000000978354,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g053,4,1,dqn,2,0 1 2 3 4 5 6,0.1944079999702808,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g053,5,2,heuristic,2,0 1 2 3 4 5 6,0.317894000090746,7,0,1,26.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g053,6,1,dqn,1,0 1 2 3 4 5 6,0.22195800011104438,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g053,7,2,heuristic,3,0 1 2 3 4 5 6,0.2784820003398636,7,0,1,128.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g053,8,1,dqn,4,0 1 2 3 4 5 6,0.23154100017563906,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g053,9,2,heuristic,5,0 1 2 3 4 5 6,0.06860100029371097,1,0,1,152.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g053,10,1,dqn,5,0 1 2 3 4 5 6,0.2836519997799769,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g053,11,2,heuristic,3,0 1 2 3 4 5 6,0.3306129997326934,7,0,1,9254.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g053,12,1,dqn,3,0 1 2 3 4 5 6,0.23327100007008994,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g053,13,2,heuristic,4,0 1 2 3 4 5 6,0.34972200000993325,7,0,1,238.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g053,14,1,dqn,5,0 1 2 3 4 5 6,0.23226700022860314,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g053,15,2,heuristic,2,0 1 2 3 4 5 6,0.28522899992822204,7,0,1,9264.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g053,16,1,dqn,3,0 1 2 3 4 5 6,0.19873800010827836,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g053,17,2,heuristic,2,0 1 2 4 5 6,0.009299999874201603,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g054,4,1,heuristic,0,0 1 2 3 4 5 6,0.3178169999955571,7,0,1,9082.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g054,5,2,dqn,0,0 1 2 3 4 5 6,0.23906200021883706,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g054,6,1,heuristic,3,0 1 2 3 4 5 6,0.25999799981946126,7,0,1,0.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g054,7,2,dqn,4,0 1 2 3 4 5 6,0.2036390001194377,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g054,8,1,heuristic,3,0 1 2 3 4 5 6,0.31623600034436095,7,0,1,26.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g054,9,2,dqn,3,0 1 2 3 4 5 6,0.2316170002814033,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g054,10,1,heuristic,2,0 1 2 3 4 5 6,0.2880299998651026,7,0,1,110.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g054,11,2,dqn,5,0 1 2 3 4 5 6,0.29816500000379165,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g054,12,1,heuristic,1,0 1 2 3 4 5 6,0.28311000005487585,7,0,1,9090.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g054,13,2,dqn,1,0 1 2 3 4 5 6,0.2856399996744585,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g054,14,1,heuristic,2,0 1 2 3 4 5 6,0.3156040002068039,7,0,1,6.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g054,15,2,dqn,2,0 1 2 3 4 5 6,0.23733499983791262,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g054,16,1,heuristic,4,0 1 2 3 4 5 6,0.06086199982746621,1,0,1,-4.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g054,17,2,dqn,3,0 1 2 3 4 5 6,0.19715500002348563,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g054,18,1,heuristic,5,0 1 2 3 4 5 6,0.2581629996711854,6,0,1,-36.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g054,19,2,dqn,2,0 1 2 3 4 5 6,0.27114400018035667,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g054,20,1,heuristic,4,0 1 2 3 4 5 6,0.06896299964864738,1,0,1,4.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g054,21,2,dqn,2,0 1 2 3 4 5 6,0.2191529997617181,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g054,22,1,heuristic,4,0 1 3 4 5 6,0.2165900000363763,5,0,1,9134.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g054,23,2,dqn,4,0 1 3 4 5 6,0.19779199965341832,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g054,24,1,heuristic,3,0 1 3 4 5 6,0.27984799999103416,5,0,1,130.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g054,25,2,dqn,0,0 1 3 4 5 6,0.23351900017587468,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g054,26,1,heuristic,6,0 1 3 4 5 6,0.2179709999836632,5,0,1,9120.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g054,27,2,dqn,3,0 1 3 4 5 6,0.24026300025070668,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g054,28,1,heuristic,6,0 1 4 5 6,0.00866799973664456,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g055,4,1,dqn,4,0 1 2 3 4 5 6,0.277370000276278,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g055,5,2,heuristic,4,0 1 2 3 4 5 6,0.3095890001532098,7,0,1,18.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g055,6,1,dqn,5,0 1 2 3 4 5 6,0.22346500009007286,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g055,7,2,heuristic,2,0 1 2 3 4 5 6,0.3267329998379864,7,0,1,44.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g055,8,1,dqn,2,0 1 2 3 4 5 6,0.22038099996279925,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g055,9,2,heuristic,2,0 1 2 3 4 5 6,0.28042799976901733,7,0,1,114.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g055,10,1,dqn,2,0 1 2 3 4 5 6,0.19161499994879705,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g055,11,2,heuristic,4,0 1 2 3 4 5 6,0.3287859999545617,7,0,1,134.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g055,12,1,dqn,4,0 1 2 3 4 5 6,0.22564299979421776,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g055,13,2,heuristic,3,0 1 2 3 4 5 6,0.28504300007625716,7,0,1,150.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g055,14,1,dqn,3,0 1 2 3 4 5 6,0.19861700002365978,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g055,15,2,heuristic,3,0 1 2 3 4 5 6,0.007783000000927132,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,4,1,heuristic,4,0 1 2 3 4 5 6,0.3156379998472403,7,0,1,38.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,5,2,dqn,4,0 1 2 3 4 5 6,0.24003399994398933,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,6,1,heuristic,3,0 1 2 3 4 5 6,0.285329000234924,7,0,1,84.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,7,2,dqn,5,0 1 2 3 4 5 6,0.28161799991721637,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,8,1,heuristic,3,0 1 2 3 4 5 6,0.2700469999581401,7,0,1,9256.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,9,2,dqn,3,0 1 2 3 4 5 6,0.2829929999279557,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,10,1,heuristic,6,0 1 2 3 4 5 6,0.06646400015597465,1,0,1,58.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,11,2,dqn,4,0 1 2 3 4 5 6,0.21300800017343136,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,12,1,heuristic,1,0 1 2 3 4 5 6,0.34028499976557214,7,0,1,112.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,13,2,dqn,1,0 1 2 3 4 5 6,0.23656199982724502,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,14,1,heuristic,2,0 1 2 3 4 5 6,0.28506899980129674,7,0,1,9118.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,15,2,dqn,2,0 1 2 3 4 5 6,0.27427999975770945,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,16,1,heuristic,2,0 1 2 3 4 5 6,0.28676200008703745,7,0,1,9018.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,17,2,dqn,2,0 1 2 3 4 5 6,0.20578699968609726,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,18,1,heuristic,1,0 1 2 3 4 5 6,0.27885200006494415,7,0,1,-5088.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,19,2,dqn,3,0 1 2 3 4 5 6,0.7536520001849567,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,20,1,heuristic,2,0 1 2 3 4 5 6,0.06268000015552389,1,0,1,-154.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,21,2,dqn,3,0 1 2 3 4 5 6,0.28119499984313734,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,22,1,heuristic,2,0 1 2 4 5 6,0.1494200000706769,3,0,1,-160.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,23,2,dqn,1,0 1 4 5 6,0.2263650003442308,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,24,1,heuristic,6,0 1 4 5 6,0.1534689999971306,2,0,1,-146.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,25,2,dqn,1,0 1 4 5 6,0.2297699998052849,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,26,1,heuristic,6,0 4 5 6,0.06509400009235833,1,0,1,8948.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,27,2,dqn,6,0 4 5 6,0.2636720000737114,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,28,1,heuristic,6,0 4 5 6,0.06488200006060652,1,0,1,-242.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,29,2,dqn,6,0 4 5 6,0.20008499996038154,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,30,1,heuristic,4,0 4 5,0.11773400001402479,3,0,1,-5230.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,31,2,dqn,5,0 4 5,0.1879820001704502,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,32,1,heuristic,5,0 4 5,0.11824200009868946,3,0,1,-5070.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,33,2,dqn,5,0 4 5,0.2599570002530527,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,34,1,heuristic,4,0 4 5,0.05661300019710325,1,0,1,26.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,35,2,dqn,5,0 5,0.1967929997590545,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,36,1,heuristic,0,0,0.051875000281143,1,0,1,-4980.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g056,37,2,dqn,0,0,0.181474999862985,0,0,0,,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g057,4,1,dqn,4,0 1 2 3 4 5 6,0.1928689998749178,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g057,5,2,heuristic,3,0 1 2 3 4 5 6,0.3370859999449749,7,0,1,-10.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g057,6,1,dqn,1,0 1 2 3 4 5 6,0.2303189999111055,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g057,7,2,heuristic,3,0 1 2 3 4 5 6,0.3001390000463289,7,0,1,32.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g057,8,1,dqn,3,0 1 2 3 4 5 6,0.29327700030989945,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g057,9,2,heuristic,4,0 1 2 3 4 5 6,0.27848199988511624,7,0,1,46.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g057,10,1,dqn,0,0 1 2 3 4 5 6,0.2735550001489173,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g057,11,2,heuristic,4,0 1 2 3 4 5 6,0.33303499958492466,7,0,1,108.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g057,12,1,dqn,0,0 1 2 3 4 5 6,0.23902300017653033,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g057,13,2,heuristic,4,0 1 2 3 4 5 6,0.28522399998109904,7,0,1,9210.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g057,14,1,dqn,0,0 1 2 3 4 5 6,0.20747999997183797,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g057,15,2,heuristic,4,0 1 2 3 4 5 6,0.008011999852897134,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g058,4,1,heuristic,2,0 1 2 3 4 5 6,0.31377699997392483,7,0,1,-12.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g058,5,2,dqn,4,0 1 2 3 4 5 6,0.2341700001124991,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g058,6,1,heuristic,5,0 1 2 3 4 5 6,0.06470300013461383,1,0,1,-8.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g058,7,2,dqn,5,0 1 2 3 4 5 6,0.19576499971662997,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g058,8,1,heuristic,3,0 1 2 3 4 5 6,0.2930420000666345,7,0,1,24.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g058,9,2,dqn,1,0 1 2 3 4 5 6,0.26883000009547686,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g058,10,1,heuristic,3,0 1 2 3 4 5 6,0.27839400036100415,7,0,1,136.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g058,11,2,dqn,5,0 1 2 3 4 5 6,0.22477799984699232,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g058,12,1,heuristic,3,0 1 2 3 4 5 6,0.3432319999774336,7,0,1,9228.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g058,13,2,dqn,3,0 1 2 3 4 5 6,0.22568900021724403,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g058,14,1,heuristic,4,0 1 2 3 4 5 6,0.349845000073401,7,0,1,202.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g058,15,2,dqn,4,0 1 2 3 4 5 6,0.23004900003797957,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g058,16,1,heuristic,4,0 1 2 3 4 5 6,0.010476999705133494,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g059,4,1,dqn,4,0 1 2 3 4 5 6,0.24028300003919867,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g059,5,2,heuristic,3,0 1 2 3 4 5 6,0.2708269998947799,7,0,1,50.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g059,6,1,dqn,2,0 1 2 3 4 5 6,0.19858599989674985,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g059,7,2,heuristic,3,0 1 2 3 4 5 6,0.31801500017536455,7,0,1,9156.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g059,8,1,dqn,3,0 1 2 3 4 5 6,0.23239699976329575,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g059,9,2,heuristic,2,0 1 2 3 4 5 6,0.27426399992691586,7,0,1,70.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g059,10,1,dqn,5,0 1 2 3 4 5 6,0.19997999970655655,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g059,11,2,heuristic,4,0 1 2 3 4 5 6,0.34011699972325005,7,0,1,106.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g059,12,1,dqn,6,0 1 2 3 4 5 6,0.24473599978591665,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g059,13,2,heuristic,4,0 1 2 3 4 5 6,0.3057570002056309,7,0,1,408.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g059,14,1,dqn,4,0 1 2 3 4 5 6,0.2855239999917103,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g059,15,2,heuristic,5,0 1 2 3 4 5 6,0.2878330001294671,7,0,1,9352.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g059,16,1,dqn,5,0 1 2 3 4 5 6,0.285707999864826,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g059,17,2,heuristic,5,0 1 2 3 4 5 6,0.011721000191755593,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g060,4,1,heuristic,3,0 1 2 3 4 5 6,0.27381500012779725,7,0,1,70.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g060,5,2,dqn,2,0 1 2 3 4 5 6,0.287112000023626,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g060,6,1,heuristic,5,0 1 2 3 4 5 6,0.26801700005307794,7,0,1,9134.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g060,7,2,dqn,6,0 1 2 3 4 5 6,0.20942999981343746,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g060,8,1,heuristic,3,0 1 2 3 4 5 6,0.32521000002816436,7,0,1,102.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g060,9,2,dqn,5,0 1 2 3 4 5 6,0.23776499983796384,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g060,10,1,heuristic,2,0 1 2 3 4 5 6,0.25191699978677207,6,0,1,118.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g060,11,2,dqn,2,0 1 2 3 4 5 6,0.20148900011918158,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g060,12,1,heuristic,2,0 1 2 3 4 5 6,0.30253400018409593,6,0,1,9178.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g060,13,2,dqn,3,0 1 2 3 4 5 6,0.23636700007045874,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g060,14,1,heuristic,1,0 1 2 3 4 5 6,0.3075599997828249,7,0,1,-1114.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g060,15,2,dqn,1,0 1 2 3 4 5 6,0.23106999969968456,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g060,16,1,heuristic,3,0 1 2 3 4 5 6,0.3459659997133713,7,0,1,-10082.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g060,17,2,dqn,5,0 1 2 3 4 5 6,0.28754300001310185,0,0,0,,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g061,4,1,dqn,5,0 1 2 3 4 5 6,0.2181330000894377,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g061,5,2,heuristic,3,0 1 2 3 4 5 6,0.33476800035714405,7,0,1,0.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g061,6,1,dqn,2,0 1 2 3 4 5 6,0.22967399991102866,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g061,7,2,heuristic,3,0 1 2 3 4 5 6,0.2772689999801514,7,0,1,16.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g061,8,1,dqn,4,0 1 2 3 4 5 6,0.19228799965276266,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g061,9,2,heuristic,3,0 1 2 3 4 5 6,0.3327199997329444,7,0,1,9162.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g061,10,1,dqn,6,0 1 2 3 4 5 6,0.22408699987863656,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g061,11,2,heuristic,3,0 1 2 3 4 5 6,0.010443000064697117,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g062,4,1,heuristic,2,0 1 2 3 4 5 6,0.2680529996723635,7,0,1,9128.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g062,5,2,dqn,1,0 1 2 3 4 5 6,0.20067500008735806,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g062,6,1,heuristic,4,0 1 2 3 4 5 6,0.26789599996845936,7,0,1,44.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g062,7,2,dqn,4,0 1 2 3 4 5 6,0.2358009996896726,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g062,8,1,heuristic,2,0 1 2 3 4 5 6,0.2903949998653843,7,0,1,44.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g062,9,2,dqn,0,0 1 2 3 4 5 6,0.30070599996179226,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g062,10,1,heuristic,2,0 1 2 3 4 5 6,0.26862000004257425,7,0,1,9156.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g062,11,2,dqn,2,0 1 2 3 4 5 6,0.2756879998742079,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g062,12,1,heuristic,3,0 1 2 3 4 5 6,0.326286000017717,7,0,1,72.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g062,13,2,dqn,3,0 1 2 3 4 5 6,0.23271400004887255,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g062,14,1,heuristic,4,0 1 2 3 4 5 6,0.2781829998639296,7,0,1,126.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g062,15,2,dqn,0,0 1 2 3 4 5 6,0.20265700004529208,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g062,16,1,heuristic,0,0 1 2 3 4 5 6,0.32686200029274914,7,0,1,206.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g062,17,2,dqn,5,0 1 2 3 4 5 6,0.2374360001340392,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g062,18,1,heuristic,1,0 1 2 3 4 5 6,0.3126950000478246,7,0,1,-944.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g062,19,2,dqn,1,0 1 2 3 4 5 6,0.22282700001596822,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g062,20,1,heuristic,3,0 1 2 3 4 5 6,0.3301669999018486,7,0,1,-10012.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g062,21,2,dqn,1,0 1 2 3 4 5 6,0.23152299991124892,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g062,22,1,heuristic,2,0 1 2 3 4 5 6,0.3016990003743558,7,0,1,-9966.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g062,23,2,dqn,0,0 1 2 3 4 5 6,0.29494999989765347,0,0,0,,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g063,4,1,dqn,5,0 1 2 3 4 5 6,0.21360099981393432,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g063,5,2,heuristic,3,0 1 2 3 4 5 6,0.33646199972281465,7,0,1,16.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g063,6,1,dqn,3,0 1 2 3 4 5 6,0.23553999972136808,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g063,7,2,heuristic,4,0 1 2 3 4 5 6,0.3258440001445706,7,0,1,90.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g063,8,1,dqn,5,0 1 2 3 4 5 6,0.23156699990067864,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g063,9,2,heuristic,4,0 1 2 3 4 5 6,0.27958300006503123,7,0,1,146.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g063,10,1,dqn,5,0 1 2 3 4 5 6,0.28429499980120454,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g063,11,2,heuristic,5,0 1 2 3 4 5 6,0.09709899995868909,1,0,1,136.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g063,12,1,dqn,5,0 1 2 3 4 5 6,0.27830899989567115,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g063,13,2,heuristic,4,0 1 2 3 4 6,0.25378400005138246,6,0,1,9442.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g063,14,1,dqn,4,0 1 2 3 4 6,0.2635619998727634,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g063,15,2,heuristic,2,0 1 2 3 4 6,0.24182500010283547,6,0,1,9252.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g063,16,1,dqn,4,0 1 2 3 4 6,0.2191389999097737,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g063,17,2,heuristic,2,0 1 2 3 6,0.0084520002019417,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g064,4,1,heuristic,2,0 1 2 3 4 5 6,0.27885200006494415,7,0,1,58.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g064,5,2,dqn,4,0 1 2 3 4 5 6,0.28317399983279756,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g064,6,1,heuristic,4,0 1 2 3 4 5 6,0.2583659997981158,7,0,1,258.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g064,7,2,dqn,4,0 1 2 3 4 5 6,0.2716899998631561,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g064,8,1,heuristic,5,0 1 2 3 4 5 6,0.26802899992617313,7,0,1,9222.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g064,9,2,dqn,5,0 1 2 3 4 5 6,0.27774299996963236,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g064,10,1,heuristic,1,0 1 2 3 4 5 6,0.28355399990687147,7,0,1,9092.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g064,11,2,dqn,1,0 1 2 3 4 5 6,0.2020880001509795,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g064,12,1,heuristic,5,0 1 2 3 4 5 6,0.3330109998387343,7,0,1,92.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g064,13,2,dqn,2,0 1 2 3 4 5 6,0.23488499982704525,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g064,14,1,heuristic,1,0 1 2 3 4 5 6,0.061671999901591334,1,0,1,166.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g064,15,2,dqn,3,0 1 2 3 4 5 6,0.19803199984380626,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g064,16,1,heuristic,0,0 1 2 3 4 5 6,0.2778449998004362,7,0,1,-5082.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g064,17,2,dqn,4,0 1 2 3 4 5 6,0.275939999937691,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g064,18,1,heuristic,4,0 1 2 3 4 5 6,0.28554700020322343,7,0,1,-5032.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g064,19,2,dqn,1,0 1 2 3 4 5 6,0.24082100026134867,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g064,20,1,heuristic,6,0 1 2 3 4 5 6,0.32753699997556396,7,0,1,-5038.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g064,21,2,dqn,3,0 1 2 3 4 5 6,0.23302800036617555,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g064,22,1,heuristic,3,0 1 2 3 4 5 6,0.3386070002306951,7,0,1,-5018.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g064,23,2,dqn,5,0 1 2 4 5 6,0.22291300001597847,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g064,24,1,heuristic,2,0 1 2 4 5 6,0.07033900010355865,1,0,1,-4992.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g064,25,2,dqn,2,0 1 2 4 5 6,0.22287799993137014,0,0,0,,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g065,4,1,dqn,3,0 1 2 3 4 5 6,0.18838100004359148,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g065,5,2,heuristic,2,0 1 2 3 4 5 6,0.2716489998420002,7,0,1,18.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g065,6,1,dqn,2,0 1 2 3 4 5 6,0.1894299998639326,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g065,7,2,heuristic,1,0 1 2 3 4 5 6,0.3340870002830343,7,0,1,42.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g065,8,1,dqn,2,0 1 2 3 4 5 6,0.23758299994369736,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g065,9,2,heuristic,1,0 1 2 3 4 5 6,0.2598270002636127,7,0,1,26.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g065,10,1,dqn,2,0 1 2 3 4 5 6,0.2805330000228423,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g065,11,2,heuristic,2,0 1 2 3 4 5 6,0.06404199984899606,1,0,1,16.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g065,12,1,dqn,3,0 1 3 4 5 6,0.2176059997509583,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g065,13,2,heuristic,1,0 1 3 4 5 6,0.2331870000489289,6,0,1,9074.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g065,14,1,dqn,1,0 1 3 4 5 6,0.2419329998701869,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g065,15,2,heuristic,4,0 1 3 4 5 6,0.06366099978549755,1,0,1,-240.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g065,16,1,dqn,1,0 1 3 4 5 6,0.2746369996202702,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g065,17,2,heuristic,3,0 1 3 4 5 6,0.28838099979111576,6,0,1,-328.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g065,18,1,dqn,1,0 1 4 5 6,0.23270700012290035,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g065,19,2,heuristic,5,0 4 5 6,0.13751899996350403,3,0,1,-418.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g065,20,1,dqn,6,0 4 5 6,0.27715099986380665,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g065,21,2,heuristic,5,0 4 5 6,0.13488299964592443,3,0,1,-392.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g065,22,1,dqn,4,0 4 5 6,0.20260700011931476,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g065,23,2,heuristic,4,0 4 5 6,0.06370600021909922,1,0,1,3688.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g065,24,1,dqn,4,0 4 5 6,0.19529499968484743,0,0,0,,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g066,4,1,heuristic,3,0 1 2 3 4 5 6,0.32539399990128004,7,0,1,9124.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g066,5,2,dqn,3,0 1 2 3 4 5 6,0.2296930001648434,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g066,6,1,heuristic,4,0 1 2 3 4 5 6,0.009330000011686934,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g067,4,1,dqn,6,0 1 2 3 4 5 6,0.2009210002142936,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g067,5,2,heuristic,3,0 1 2 3 4 5 6,0.280697000107466,7,0,1,12.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g067,6,1,dqn,6,0 1 2 3 4 5 6,0.28461000010793214,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g067,7,2,heuristic,3,0 1 2 3 4 5 6,0.2779589999590826,7,0,1,50.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g067,8,1,dqn,3,0 1 2 3 4 5 6,0.2376669999648584,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g067,9,2,heuristic,5,0 1 2 3 4 5 6,0.33546599979672465,7,0,1,118.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g067,10,1,dqn,0,0 1 2 3 4 5 6,0.2434180000818742,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g067,11,2,heuristic,4,0 1 2 3 4 5 6,0.32330300018657,7,0,1,9150.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g067,12,1,dqn,4,0 1 2 3 4 5 6,0.305038000078639,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g067,13,2,heuristic,2,0 1 2 3 4 5 6,0.28384300003381213,7,0,1,9060.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g067,14,1,dqn,1,0 1 2 3 4 5 6,0.2289939998263435,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g067,15,2,heuristic,4,0 1 2 3 4 5 6,0.2886639999815088,7,0,1,56.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g067,16,1,dqn,3,0 1 2 3 4 5 6,0.27386300007492537,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g067,17,2,heuristic,5,0 1 2 3 4 5 6,0.2840229999492294,7,0,1,9024.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g067,18,1,dqn,5,0 1 2 3 4 5 6,0.20340099990789895,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g067,19,2,heuristic,4,0 1 2 3 4 5 6,0.060958000176469795,1,0,1,9050.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g067,20,1,dqn,1,0 1 2 3 4 5 6,0.1912430002448673,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g067,21,2,heuristic,3,0 1 2 3 4 5 6,0.007935000212455634,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g068,4,1,heuristic,4,0 1 2 3 4 5 6,0.31978400011212216,7,0,1,9118.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g068,5,2,dqn,6,0 1 2 3 4 5 6,0.23617700026079547,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g068,6,1,heuristic,4,0 1 2 3 4 5 6,0.29097600008753943,7,0,1,50.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g068,7,2,dqn,5,0 1 2 3 4 5 6,0.2848460003406217,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g068,8,1,heuristic,4,0 1 2 3 4 5 6,0.2752740001596976,7,0,1,9146.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g068,9,2,dqn,4,0 1 2 3 4 5 6,0.2930330001618131,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g068,10,1,heuristic,3,0 1 2 3 4 5 6,0.3149530002701795,7,0,1,62.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g068,11,2,dqn,3,0 1 2 3 4 5 6,0.23956600034580333,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g068,12,1,heuristic,2,0 1 2 3 4 5 6,0.28407299987520673,7,0,1,136.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g068,13,2,dqn,4,0 1 2 3 4 5 6,0.20275099996069912,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g068,14,1,heuristic,1,0 1 2 3 4 5 6,0.34391200006211875,7,0,1,9130.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g068,15,2,dqn,1,0 1 2 3 4 5 6,0.2283819999320258,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g068,16,1,heuristic,2,0 1 2 3 4 5 6,0.2849500001502747,7,0,1,136.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g068,17,2,dqn,3,0 1 2 3 4 5 6,0.20638299974962138,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g068,18,1,heuristic,2,0 1 2 3 4 5 6,0.3260230000705633,7,0,1,9210.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g068,19,2,dqn,3,0 1 2 3 4 5 6,0.22407099959309562,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g068,20,1,heuristic,2,0 1 2 3 4 5 6,0.00848199988467968,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g069,4,1,dqn,5,0 1 2 3 4 5 6,0.22097200007920037,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g069,5,2,heuristic,3,0 1 2 3 4 5 6,0.3191379996678734,7,0,1,16.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g069,6,1,dqn,3,0 1 2 3 4 5 6,0.23405600040860008,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g069,7,2,heuristic,2,0 1 2 3 4 5 6,0.339469999744324,7,0,1,100.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g069,8,1,dqn,5,0 1 2 3 4 5 6,0.24019800002861302,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g069,9,2,heuristic,2,0 1 2 3 4 5 6,0.33140300001832657,7,0,1,9216.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g069,10,1,dqn,2,0 1 2 3 4 5 6,0.23776099988026544,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g069,11,2,heuristic,3,0 1 2 3 4 5 6,0.24798300000838935,6,0,1,72.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g069,12,1,dqn,6,0 1 2 3 4 5 6,0.20363599969641655,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g069,13,2,heuristic,4,0 1 2 3 4 5 6,0.1161680002041976,1,0,1,4174.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g069,14,1,dqn,0,0 1 2 3 4 5 6,0.23575400018671644,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g069,15,2,heuristic,4,0 1 2 3 4 5 6,0.010194999958912376,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g070,4,1,heuristic,3,0 1 2 3 4 5 6,0.26512200020079035,7,0,1,18218.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g070,5,2,dqn,3,0 1 2 3 4 5 6,0.20741700018334086,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g070,6,1,heuristic,1,0 1 2 3 4 5 6,0.0081419998423371,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g071,4,1,dqn,2,0 1 2 3 4 5 6,0.27365500000087195,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g071,5,2,heuristic,3,0 1 2 3 4 5 6,0.26303200002075755,7,0,1,36.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g071,6,1,dqn,4,0 1 2 3 4 5 6,0.22192500000528526,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g071,7,2,heuristic,3,0 1 2 3 4 5 6,0.28671100017163553,7,0,1,242.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g071,8,1,dqn,4,0 1 2 3 4 5 6,0.2677279999261373,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g071,9,2,heuristic,3,0 1 2 3 4 5 6,0.3350990000399179,7,0,1,9378.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g071,10,1,dqn,6,0 1 2 3 4 5 6,0.22126800013211323,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g071,11,2,heuristic,3,0 1 2 3 4 5 6,0.007782000011502532,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g072,4,1,heuristic,3,0 1 2 3 4 5 6,0.3116119996775524,7,0,1,80.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g072,5,2,dqn,3,0 1 2 3 4 5 6,0.22545100000570528,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g072,6,1,heuristic,1,0 1 2 3 4 5 6,0.26188299989371444,7,0,1,148.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g072,7,2,dqn,3,0 1 2 3 4 5 6,0.19584999972721562,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g072,8,1,heuristic,2,0 1 2 3 4 5 6,0.31609999996362603,7,0,1,9142.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g072,9,2,dqn,2,0 1 2 3 4 5 6,0.2231560001746402,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g072,10,1,heuristic,3,0 1 2 3 4 5 6,0.23206400010167272,6,0,1,-42.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g072,11,2,dqn,1,0 1 2 3 4 5 6,0.19395399976929184,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g072,12,1,heuristic,2,0 1 2 3 4 5 6,0.28269800031921477,6,0,1,-26.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g072,13,2,dqn,1,0 1 2 3 4 5 6,0.2327009997316054,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g072,14,1,heuristic,2,0 1 2 3 4 5 6,0.2347310000914149,6,0,1,-30.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g072,15,2,dqn,2,0 1 2 3 4 5 6,0.24487700011377456,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g072,16,1,heuristic,3,0 1 2 3 4 5 6,0.28881999969598837,6,0,1,-54.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g072,17,2,dqn,6,0 1 2 4 5 6,0.22915900035513914,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g072,18,1,heuristic,6,0 1 2 4 5 6,0.2560089997132309,5,0,1,36.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g072,19,2,dqn,1,0 1 2 4 5 6,0.23770699999658973,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g072,20,1,heuristic,1,0 1 2 4 5 6,0.11502400002427748,1,0,1,76.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g072,21,2,dqn,6,0 2 4 5 6,0.2296019997629628,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g072,22,1,heuristic,5,0 2 4 5 6,0.17693500012683216,4,0,1,9072.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g072,23,2,dqn,5,0 2 4 5 6,0.19949499983340502,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g072,24,1,heuristic,4,0 2 4 5 6,0.06827900006101117,1,0,1,-4882.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g072,25,2,dqn,4,0 2 4 5 6,0.19952899992858875,0,0,0,,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g073,4,1,dqn,4,0 1 2 3 4 5 6,0.23522199990111403,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g073,5,2,heuristic,4,0 1 2 3 4 5 6,0.33119299996542395,7,0,1,-12.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g073,6,1,dqn,2,0 1 2 3 4 5 6,0.20903700033159112,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g073,7,2,heuristic,2,0 1 2 3 4 5 6,0.36842100007561385,7,0,1,78.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g073,8,1,dqn,0,0 1 2 3 4 5 6,0.22905300011188956,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g073,9,2,heuristic,3,0 1 2 3 4 5 6,0.3075919998991594,7,0,1,9126.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g073,10,1,dqn,3,0 1 2 3 4 5 6,0.29186499978095526,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g073,11,2,heuristic,1,0 1 2 3 4 5 6,0.2731929998844862,7,0,1,9054.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g073,12,1,dqn,0,0 1 2 3 4 5 6,0.2895500001613982,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g073,13,2,heuristic,1,0 1 2 3 4 5 6,0.29123500007699477,7,0,1,9060.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g073,14,1,dqn,1,0 1 2 3 4 5 6,0.2850640003089211,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g073,15,2,heuristic,3,0 1 2 3 4 5 6,0.2780139998321829,7,0,1,-18.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g073,16,1,dqn,4,0 1 2 3 4 5 6,0.2006099998652644,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g073,17,2,heuristic,3,0 1 2 3 4 5 6,0.32395199968959787,7,0,1,8.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g073,18,1,dqn,6,0 1 2 3 4 5 6,0.25164199996652314,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g073,19,2,heuristic,4,0 1 2 3 4 5 6,0.28120099977968493,7,0,1,110.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g073,20,1,dqn,6,0 1 2 3 5 6,0.23868600010246155,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g073,21,2,heuristic,2,0 1 2 3 5 6,0.304066999888164,6,0,1,9122.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g073,22,1,dqn,6,0 1 2 3 5 6,0.23742799976389506,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g073,23,2,heuristic,2,0 1 2 3 5 6,0.007689999620197341,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g074,4,1,heuristic,6,0 1 2 3 4 5 6,0.2824570001394022,7,0,1,9066.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g074,5,2,dqn,2,0 1 2 3 4 5 6,0.28097599988541333,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g074,6,1,heuristic,6,0 1 2 3 4 5 6,0.00815700013845344,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g075,4,1,dqn,3,0 1 2 3 4 5 6,0.21966000031170552,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g075,5,2,heuristic,2,0 1 2 3 4 5 6,0.32885000018723076,7,0,1,18208.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g075,6,1,dqn,3,0 1 2 3 4 5 6,0.23136300023907097,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g075,7,2,heuristic,0,0 1 2 3 4 5 6,0.009430999853066169,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g076,4,1,heuristic,2,0 1 2 3 4 5 6,0.32310200003848877,7,0,1,42.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g076,5,2,dqn,2,0 1 2 3 4 5 6,0.24129700022967882,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g076,6,1,heuristic,3,0 1 2 3 4 5 6,0.2650930000527296,7,0,1,38.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g076,7,2,dqn,3,0 1 2 3 4 5 6,0.25761000006241375,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g076,8,1,heuristic,1,0 1 2 3 4 5 6,0.27227000009588664,7,0,1,9016.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g076,9,2,dqn,5,0 1 2 3 4 5 6,0.22840000019641593,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g076,10,1,heuristic,0,0 1 2 3 4 5 6,0.00900999975783634,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,4,1,dqn,4,0 1 2 3 4 5 6,0.20009100035167648,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,5,2,heuristic,3,0 1 2 3 4 5 6,0.3291389998594241,7,0,1,16.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,6,1,dqn,6,0 1 2 3 4 5 6,0.2386769997428928,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,7,2,heuristic,3,0 1 2 3 4 5 6,0.2870309999707388,7,0,1,54.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,8,1,dqn,3,0 1 2 3 4 5 6,0.23353999995379127,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,9,2,heuristic,2,0 1 2 3 4 5 6,0.32184100018639583,7,0,1,28.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,10,1,dqn,4,0 1 2 3 4 5 6,0.2919379999184457,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,11,2,heuristic,2,0 1 2 3 4 5 6,0.28293100012888317,7,0,1,138.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,12,1,dqn,2,0 1 2 3 4 5 6,0.27476000013848534,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,13,2,heuristic,5,0 1 2 3 4 5 6,0.0669969999762543,1,0,1,32.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,14,1,dqn,3,0 1 2 3 4 5 6,0.21971599971948308,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,15,2,heuristic,3,0 1 2 3 4 5 6,0.27067699966210057,7,0,1,-128.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,16,1,dqn,4,0 1 2 3 4 5 6,0.20320600015111268,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,17,2,heuristic,2,0 1 2 3 5 6,0.2833149997059081,6,0,1,-118.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,18,1,dqn,3,0 1 2 3 5 6,0.23063699973135954,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,19,2,heuristic,2,0 1 2 5 6,0.19870300002367003,5,0,1,-144.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,20,1,dqn,5,0 1 5 6,0.20017599990751478,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,21,2,heuristic,1,0 1 5 6,0.18542699990575784,3,0,1,-144.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,22,1,dqn,1,0 1 5 6,0.22950899983698037,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,23,2,heuristic,0,0 1 5 6,0.10498199981157086,2,0,1,-160.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,24,1,dqn,6,0 1 5 6,0.2002399996854365,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,25,2,heuristic,6,0 1 5 6,0.1264550000996678,2,0,1,-150.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,26,1,dqn,6,0 1 5 6,0.28797100003430387,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,27,2,heuristic,6,0 1 5 6,0.10625000004438334,2,0,1,-130.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,28,1,dqn,6,0 1 5 6,0.2231670000583108,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,29,2,heuristic,0,0 1 5,0.11513699973875191,1,0,1,-260.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,30,1,dqn,1,0 1 5,0.22167699989950052,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g077,31,2,heuristic,1,0 1 5,0.007109000307536917,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g078,4,1,heuristic,3,0 1 2 3 4 5 6,0.34950500003105844,7,0,1,50.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g078,5,2,dqn,4,0 1 2 3 4 5 6,0.2293070001542219,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g078,6,1,heuristic,3,0 1 2 3 4 5 6,0.31916000034470926,7,0,1,66.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g078,7,2,dqn,2,0 1 2 3 4 5 6,0.2065110002149595,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g078,8,1,heuristic,3,0 1 2 3 4 5 6,0.38188099961189437,7,0,1,9162.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g078,9,2,dqn,3,0 1 2 3 4 5 6,0.27457500027594506,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g078,10,1,heuristic,2,0 1 2 3 4 5 6,0.32000800001696916,7,0,1,76.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g078,11,2,dqn,2,0 1 2 3 4 5 6,0.29335699991861475,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g078,12,1,heuristic,0,0 1 2 3 4 5 6,0.325090999922395,7,0,1,134.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g078,13,2,dqn,4,0 1 2 3 4 5 6,0.2445770001031633,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g078,14,1,heuristic,0,0 1 2 3 4 5 6,0.4047049997097929,7,0,1,9222.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g078,15,2,dqn,3,0 1 2 3 4 5 6,0.3076910002164368,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g078,16,1,heuristic,0,0 1 2 3 4 5 6,0.009141000191448256,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g079,4,1,dqn,0,0 1 2 3 4 5 6,0.22512800023832824,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g079,5,2,heuristic,3,0 1 2 3 4 5 6,0.36986299983254867,7,0,1,6.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g079,6,1,dqn,4,0 1 2 3 4 5 6,0.24224499975389335,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g079,7,2,heuristic,3,0 1 2 3 4 5 6,0.2661739999894053,7,0,1,12.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g079,8,1,dqn,3,0 1 2 3 4 5 6,0.1944699997693533,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g079,9,2,heuristic,4,0 1 2 3 4 5 6,0.3202570001121785,7,0,1,26.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g079,10,1,dqn,6,0 1 2 3 4 5 6,0.22058100012145587,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g079,11,2,heuristic,2,0 1 2 3 4 5 6,0.27730300007533515,7,0,1,218.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g079,12,1,dqn,3,0 1 2 3 4 5 6,0.24684499976501684,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g079,13,2,heuristic,1,0 1 2 3 4 5 6,0.2803080001285707,7,0,1,9196.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g079,14,1,dqn,1,0 1 2 3 4 5 6,0.22030200034350855,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g079,15,2,heuristic,1,0 1 2 3 4 5 6,0.34202300003016717,7,0,1,9186.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g079,16,1,dqn,0,0 1 2 3 4 5 6,0.2760530001069128,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g079,17,2,heuristic,0,0 1 2 3 4 5 6,0.05970700021862285,1,0,1,96.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g079,18,1,dqn,1,0 1 2 3 4 5 6,0.2791120000438241,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g079,19,2,heuristic,5,0 1 2 3 4 5 6,0.24598600020908634,6,0,1,8996.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g079,20,1,dqn,5,0 1 2 3 4 5 6,0.2797319998535386,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g079,21,2,heuristic,5,0 1 2 3 4 5 6,0.2554259999669739,6,0,1,-24.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g079,22,1,dqn,4,0 1 2 3 4 5 6,0.2160969997930806,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g079,23,2,heuristic,6,0 1 2 3 4 5 6,0.26629600006344845,6,0,1,8884.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g079,24,1,dqn,2,0 1 2 3 4 5 6,0.28887700000268524,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g079,25,2,heuristic,6,0 1 2 3 4 5 6,0.008464000075036893,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g080,4,1,heuristic,3,0 1 2 3 4 5 6,0.26357900014772895,7,0,1,74.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g080,5,2,dqn,3,0 1 2 3 4 5 6,0.22022399980414775,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g080,6,1,heuristic,4,0 1 2 3 4 5 6,0.25935700023183017,7,0,1,38.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g080,7,2,dqn,6,0 1 2 3 4 5 6,0.27729100020223996,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g080,8,1,heuristic,4,0 1 2 3 4 5 6,0.27963999991698074,7,0,1,250.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g080,9,2,dqn,3,0 1 2 3 4 5 6,0.23604899979545735,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g080,10,1,heuristic,4,0 1 2 3 4 5 6,0.3418790001887828,7,0,1,9334.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g080,11,2,dqn,4,0 1 2 3 4 5 6,0.23492700029237312,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g080,12,1,heuristic,1,0 1 2 3 4 5 6,0.3376140002728789,7,0,1,9178.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g080,13,2,dqn,1,0 1 2 3 4 5 6,0.22850000004837057,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g080,14,1,heuristic,5,0 1 2 3 4 5 6,0.3381860001354653,7,0,1,-1072.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g080,15,2,dqn,5,0 1 2 3 4 5 6,0.22539800011145417,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g080,16,1,heuristic,4,0 1 2 3 4 5 6,0.2820380000230216,7,0,1,-5086.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g080,17,2,dqn,3,0 1 2 3 4 5 6,0.25881100009428337,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g080,18,1,heuristic,3,0 1 2 3 4 5 6,0.2718839996305178,7,0,1,-5086.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g080,19,2,dqn,2,0 1 2 4 5 6,0.25817300002017873,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g080,20,1,heuristic,0,0 1 2 4 5 6,0.06150500030344119,1,0,1,-208.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g080,21,2,dqn,1,0 1 2 4 5 6,0.2063520000774588,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g080,22,1,heuristic,4,0 1 2 4 5 6,0.2938829998129222,6,0,1,-10322.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g080,23,2,dqn,1,0 1 2 5 6,0.23237100003825617,0,0,0,,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g081,4,1,dqn,3,0 1 2 3 4 5 6,0.23710599998594262,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g081,5,2,heuristic,3,0 1 2 3 4 5 6,0.32366000004913076,7,0,1,-16.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g081,6,1,dqn,2,0 1 2 3 4 5 6,0.23118599983718013,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g081,7,2,heuristic,3,0 1 2 3 4 5 6,0.3311109999231121,7,0,1,30.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g081,8,1,dqn,3,0 1 2 3 4 5 6,0.23243399982675328,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g081,9,2,heuristic,0,0 1 2 3 4 5 6,0.32790800014481647,7,0,1,72.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g081,10,1,dqn,2,0 1 2 3 4 5 6,0.23768900018694694,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g081,11,2,heuristic,1,0 1 2 3 4 5 6,0.26456500017957296,7,0,1,9036.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g081,12,1,dqn,1,0 1 2 3 4 5 6,0.19946900010836544,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g081,13,2,heuristic,0,0 1 2 3 4 5 6,0.06518500003949157,1,0,1,-120.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g081,14,1,dqn,3,0 1 2 3 4 5 6,0.24470699963785592,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g081,15,2,heuristic,0,0 1 2 4 5 6,0.20242200025677448,5,0,1,18052.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g081,16,1,dqn,0,0 1 2 4 5 6,0.2052599998023652,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g081,17,2,heuristic,1,0 1 2 4 5 6,0.007665000339329708,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g082,4,1,heuristic,4,0 1 2 3 4 5 6,0.32193800007007667,7,0,1,9136.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g082,5,2,dqn,4,0 1 2 3 4 5 6,0.22731800027031568,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g082,6,1,heuristic,3,0 1 2 3 4 5 6,0.2924489999713842,7,0,1,52.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g082,7,2,dqn,6,0 1 2 3 4 5 6,0.22069500028010225,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g082,8,1,heuristic,6,0 1 2 3 4 5 6,0.11240699996051262,1,0,1,152.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g082,9,2,dqn,3,0 1 2 3 4 5 6,0.2339370003028307,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g082,10,1,heuristic,2,0 1 2 3 4 5 6,0.32285299994327943,7,0,1,18336.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g082,11,2,dqn,1,0 1 2 3 4 5 6,0.23721199977444485,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g082,12,1,heuristic,5,0 1 2 3 4 5 6,0.008540000180801144,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g083,4,1,dqn,3,0 1 2 3 4 5 6,0.276718000350229,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g083,5,2,heuristic,6,0 1 2 3 4 5 6,0.26673399997889646,7,0,1,9028.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g083,6,1,dqn,3,0 1 2 3 4 5 6,0.210981000236643,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g083,7,2,heuristic,6,0 1 2 3 4 5 6,0.009282000064558815,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g084,4,1,heuristic,0,0 1 2 3 4 5 6,0.30896499993104953,7,0,1,9098.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g084,5,2,dqn,0,0 1 2 3 4 5 6,0.2305429998159525,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g084,6,1,heuristic,1,0 1 2 3 4 5 6,0.2663660002326651,7,0,1,14.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g084,7,2,dqn,4,0 1 2 3 4 5 6,0.19746299994949368,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g084,8,1,heuristic,3,0 1 2 3 4 5 6,0.33080399998652865,7,0,1,20.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g084,9,2,dqn,3,0 1 2 3 4 5 6,0.23742099983792286,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g084,10,1,heuristic,1,0 1 2 3 4 5 6,0.277613999969617,7,0,1,18.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g084,11,2,dqn,3,0 1 2 3 4 5 6,0.24355499999728636,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g084,12,1,heuristic,1,0 1 2 3 4 5 6,0.33037299999705283,7,0,1,9086.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g084,13,2,dqn,1,0 1 2 3 4 5 6,0.26662900017981883,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g084,14,1,heuristic,3,0 1 2 3 4 5 6,0.2702040001167916,7,0,1,88.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g084,15,2,dqn,1,0 1 2 3 4 5 6,0.2887310001824517,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g084,16,1,heuristic,3,0 2 3 4 5 6,0.2341160002288234,6,0,1,200.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g084,17,2,dqn,3,0 2 3 4 5 6,0.2227949998996337,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g084,18,1,heuristic,4,0 2 4 5 6,0.1975010000023758,5,0,1,194.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g084,19,2,dqn,2,0 2 4 5 6,0.20085400001335074,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g084,20,1,heuristic,2,0 2 4 5 6,0.24847200029398664,5,0,1,9194.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g084,21,2,dqn,6,0 2 4 5 6,0.23137100015446777,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g084,22,1,heuristic,2,0 2 4 5 6,0.008393999905820237,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g085,4,1,dqn,3,0 1 2 3 4 5 6,0.1996089999920514,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g085,5,2,heuristic,3,0 1 2 3 4 5 6,0.3292199999123113,7,0,1,2.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g085,6,1,dqn,2,0 1 2 3 4 5 6,0.232558000334393,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g085,7,2,heuristic,3,0 1 2 3 4 5 6,0.2907590001086646,7,0,1,38.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g085,8,1,dqn,3,0 1 2 3 4 5 6,0.2619609999783279,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g085,9,2,heuristic,2,0 1 2 3 4 5 6,0.32608400033495855,7,0,1,132.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g085,10,1,dqn,5,0 1 2 3 4 5 6,0.23161499984780676,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g085,11,2,heuristic,1,0 1 2 3 4 5 6,0.3206699998372642,7,0,1,212.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g085,12,1,dqn,1,0 1 2 3 4 5 6,0.2763429997685307,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g085,13,2,heuristic,4,0 1 2 3 4 5 6,0.27021999994758517,7,0,1,9208.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g085,14,1,dqn,5,0 1 2 3 4 5 6,0.2579060001153266,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g085,15,2,heuristic,4,0 1 2 3 4 5 6,0.00801800024419208,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g086,4,1,heuristic,3,0 1 2 3 4 5 6,0.2608729996609327,7,0,1,28.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g086,5,2,dqn,3,0 1 2 3 4 5 6,0.29472400001395727,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g086,6,1,heuristic,4,0 1 2 3 4 5 6,0.257681000221055,7,0,1,62.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g086,7,2,dqn,3,0 1 2 3 4 5 6,0.21400900004664436,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g086,8,1,heuristic,4,0 1 2 3 4 5 6,0.2671070001269982,7,0,1,9156.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g086,9,2,dqn,4,0 1 2 3 4 5 6,0.2819800001816475,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g086,10,1,heuristic,1,0 1 2 3 4 5 6,0.29142999983378104,7,0,1,110.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g086,11,2,dqn,3,0 1 2 3 4 5 6,0.27045999968322576,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g086,12,1,heuristic,3,0 1 2 3 4 5 6,0.06460999975388404,1,0,1,100.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g086,13,2,dqn,4,0 1 2 4 5 6,0.3131439998469432,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g086,14,1,heuristic,1,0 1 2 4 5 6,0.3011320000041451,6,0,1,9154.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g086,15,2,dqn,1,0 1 2 4 5 6,0.23778100012350478,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g086,16,1,heuristic,2,0 1 2 4 5 6,0.2995929999087821,6,0,1,9050.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g086,17,2,dqn,1,0 1 2 4 5 6,0.22870300017530099,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g086,18,1,heuristic,2,0 1 2 4 5 6,0.007927999831736088,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g087,4,1,dqn,4,0 1 2 3 4 5 6,0.19692399973791908,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g087,5,2,heuristic,3,0 1 2 3 4 5 6,0.28390999978000764,7,0,1,6.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g087,6,1,dqn,3,0 1 2 3 4 5 6,0.27847699993799324,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g087,7,2,heuristic,4,0 1 2 3 4 5 6,0.31756400039739674,7,0,1,-10.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g087,8,1,dqn,3,0 1 2 3 4 5 6,0.21919400023762137,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g087,9,2,heuristic,2,0 1 2 3 4 5 6,0.38767700016251183,7,0,1,64.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g087,10,1,dqn,4,0 1 2 3 4 5 6,0.2422600000500097,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g087,11,2,heuristic,2,0 1 2 3 4 5 6,0.07263499992404832,1,0,1,64.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g087,12,1,dqn,4,0 1 2 3 4 5 6,0.20515999995041057,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g087,13,2,heuristic,2,0 1 2 3 4 5 6,0.3948260000470327,7,0,1,9174.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g087,14,1,dqn,2,0 1 2 3 4 5 6,0.2458049998494971,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g087,15,2,heuristic,5,0 1 2 3 4 5 6,0.0724349997653917,1,0,1,-162.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g087,16,1,dqn,0,0 1 2 3 4 5 6,0.288247999833402,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g087,17,2,heuristic,3,0 1 2 3 4 5 6,0.3951769999730459,7,0,1,-144.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g087,18,1,dqn,1,0 1 2 3 4 5 6,0.2399230002083641,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g087,19,2,heuristic,2,0 1 2 3 4 5 6,0.29584599997178884,6,0,1,-138.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g087,20,1,dqn,1,0 1 2 3 4 5 6,0.20313999993959442,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g087,21,2,heuristic,1,0 1 2 3 4 5 6,0.06166699995446834,1,0,1,-4948.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g087,22,1,dqn,1,0 1 2 3 4 5 6,0.2743969998846296,0,0,0,,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g088,4,1,heuristic,3,0 1 2 3 4 5 6,0.2714719998948567,7,0,1,34.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g088,5,2,dqn,3,0 1 2 3 4 5 6,0.20849400016231812,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g088,6,1,heuristic,4,0 1 2 3 4 5 6,0.3177779999532504,7,0,1,48.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g088,7,2,dqn,2,0 1 2 3 4 5 6,0.2362899999752699,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g088,8,1,heuristic,2,0 1 2 3 4 5 6,0.2676049998626695,7,0,1,248.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g088,9,2,dqn,3,0 1 2 3 4 5 6,0.23562300020785187,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g088,10,1,heuristic,1,0 1 2 3 4 5 6,0.3368610000507033,7,0,1,9226.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g088,11,2,dqn,1,0 1 2 3 4 5 6,0.24501200005033752,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g088,12,1,heuristic,5,0 1 2 3 4 5 6,0.32462199988003704,7,0,1,9096.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g088,13,2,dqn,5,0 1 2 3 4 5 6,0.2843140000550193,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g088,14,1,heuristic,5,0 1 2 3 4 5 6,0.28544299993882305,7,0,1,76.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g088,15,2,dqn,2,0 1 2 3 4 5 6,0.2352810001866601,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g088,16,1,heuristic,0,0 1 2 3 4 5 6,0.05952099991191062,1,0,1,-26.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g088,17,2,dqn,4,0 1 2 3 4 5 6,0.1982000003408757,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g088,18,1,heuristic,1,0 1 2 3 4 5 6,0.06218900034582475,1,0,1,-2.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g088,19,2,dqn,3,0 1 2 3 4 5 6,0.26580299982015276,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g088,20,1,heuristic,3,0 1 2 3 4 5 6,0.06640600031460053,1,0,1,8.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g088,21,2,dqn,4,0 1 2 4 5 6,0.194953000118403,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g088,22,1,heuristic,4,0 1 2 4 5 6,0.06575499992322875,1,0,1,68.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g088,23,2,dqn,1,0 1 2 4 5 6,0.19536900026650983,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g088,24,1,heuristic,2,0 1 2 4 5 6,0.06540200001836638,1,0,1,-4906.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g088,25,2,dqn,2,0 1 2 4 5 6,0.2718159998948977,0,0,0,,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g089,4,1,dqn,4,0 1 2 3 4 5 6,0.26302700007363455,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g089,5,2,heuristic,3,0 1 2 3 4 5 6,0.31474600018555066,7,0,1,0.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g089,6,1,dqn,4,0 1 2 3 4 5 6,0.23536700018667034,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g089,7,2,heuristic,4,0 1 2 3 4 5 6,0.2851539998118824,7,0,1,0.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g089,8,1,dqn,4,0 1 2 3 4 5 6,0.28229700001247693,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g089,9,2,heuristic,3,0 1 2 3 4 5 6,0.28069299969502026,7,0,1,46.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g089,10,1,dqn,3,0 1 2 3 4 5 6,0.2981890002047294,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g089,11,2,heuristic,3,0 1 2 3 4 5 6,0.24914300001910306,6,0,1,26.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g089,12,1,dqn,2,0 1 2 3 4 5 6,0.21147699999346514,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g089,13,2,heuristic,2,0 1 2 3 4 5 6,0.2420300002086151,6,0,1,9206.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g089,14,1,dqn,5,0 1 2 3 4 5 6,0.276955999652273,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g089,15,2,heuristic,1,0 1 2 3 4 5 6,0.009546000001137145,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g090,4,1,heuristic,3,0 1 2 3 4 5 6,0.26618199990480207,7,0,1,0.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g090,5,2,dqn,4,0 1 2 3 4 5 6,0.20120600038353587,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g090,6,1,heuristic,4,0 1 2 3 4 5 6,0.3287829999862879,7,0,1,10.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g090,7,2,dqn,2,0 1 2 3 4 5 6,0.24059499992290512,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g090,8,1,heuristic,3,0 1 2 3 4 5 6,0.259353999808809,7,0,1,36.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g090,9,2,dqn,3,0 1 2 3 4 5 6,0.23757300004945137,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g090,10,1,heuristic,3,0 1 2 3 4 5 6,0.3278569997746672,7,0,1,116.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g090,11,2,dqn,2,0 1 2 3 4 5 6,0.2324070001122891,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g090,12,1,heuristic,4,0 1 2 3 4 5 6,0.10954700019283337,1,0,1,156.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g090,13,2,dqn,4,0 1 2 3 4 5 6,0.23096599989003153,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g090,14,1,heuristic,2,0 1 2 3 4 5 6,0.34023900025204057,7,0,1,9256.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g090,15,2,dqn,6,0 1 2 3 4 5 6,0.23387100009131245,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g090,16,1,heuristic,1,0 1 2 3 4 5 6,0.008003999937500339,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g091,4,1,dqn,4,0 1 2 3 4 5 6,0.20382999991852557,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g091,5,2,heuristic,3,0 1 2 3 4 5 6,0.26420199992571725,7,0,1,9134.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g091,6,1,dqn,1,0 1 2 3 4 5 6,0.2733619999162329,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g091,7,2,heuristic,2,0 1 2 3 4 5 6,0.008579999757785117,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g092,4,1,heuristic,3,0 1 2 3 4 5 6,0.25456599996687146,7,0,1,9152.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g092,5,2,dqn,3,0 1 2 3 4 5 6,0.21070100001452374,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g092,6,1,heuristic,2,0 1 2 3 4 5 6,0.26531000003160443,7,0,1,86.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g092,7,2,dqn,2,0 1 2 3 4 5 6,0.28085299982194556,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g092,8,1,heuristic,0,0 1 2 3 4 5 6,0.24734499993428471,6,0,1,74.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g092,9,2,dqn,4,0 1 2 3 4 5 6,0.24044400015554857,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g092,10,1,heuristic,4,0 1 2 3 4 5 6,0.30139900036374456,6,0,1,294.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g092,11,2,dqn,2,0 1 2 3 4 5 6,0.2311659995939408,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g092,12,1,heuristic,5,0 1 2 3 4 5 6,0.3028510000149254,6,0,1,9228.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g092,13,2,dqn,5,0 1 2 3 4 5 6,0.23234699983731844,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g092,14,1,heuristic,5,0 1 2 3 4 5 6,0.3063399999518879,6,0,1,198.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g092,15,2,dqn,4,0 1 2 3 4 5 6,0.23306799994315952,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g092,16,1,heuristic,1,0 1 2 3 4 5 6,0.28656399990723,7,0,1,3122.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g092,17,2,dqn,1,0 1 2 3 4 5 6,0.20652900002460228,0,0,0,,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g093,4,1,dqn,3,0 1 2 3 4 5 6,0.2811439999277354,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g093,5,2,heuristic,3,0 1 2 3 4 5 6,0.05987999975332059,1,0,1,-14.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g093,6,1,dqn,2,0 1 2 3 4 5 6,0.20813699984501,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g093,7,2,heuristic,2,0 1 2 3 4 5 6,0.25972399998863693,7,0,1,36.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g093,8,1,dqn,1,0 1 2 3 4 5 6,0.2519240001674916,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g093,9,2,heuristic,1,0 1 2 3 4 5 6,0.008220999916375149,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g094,4,1,heuristic,3,0 1 2 3 4 5 6,0.25618299969210057,7,0,1,16.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g094,5,2,dqn,1,0 1 2 3 4 5 6,0.22244999991016812,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g094,6,1,heuristic,3,0 1 2 3 4 5 6,0.2735809998739569,7,0,1,28.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g094,7,2,dqn,3,0 1 2 3 4 5 6,0.2817540002979513,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g094,8,1,heuristic,1,0 1 2 3 4 5 6,0.2670179997039668,7,0,1,-44.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g094,9,2,dqn,1,0 1 2 3 4 5 6,0.2633300000525196,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g094,10,1,heuristic,3,0 1 2 3 4 5 6,0.2689010002541181,7,0,1,48.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g094,11,2,dqn,2,0 1 2 3 4 5 6,0.2624510002533498,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g094,12,1,heuristic,0,0 1 2 3 4 5 6,0.2363469998272194,6,0,1,126.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g094,13,2,dqn,0,0 1 2 3 4 5 6,0.19350499997017323,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g094,14,1,heuristic,1,0 1 2 3 4 5 6,0.23922500031403615,6,0,1,92.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g094,15,2,dqn,4,0 1 2 3 4 5 6,0.26673399997889646,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g094,16,1,heuristic,5,0 1 2 3 4 5 6,0.05966299977444578,1,0,1,106.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g094,17,2,dqn,5,0 1 2 3 4 5 6,0.19228900009693461,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g094,18,1,heuristic,4,0 1 2 3 4 5 6,0.25131599977612495,6,0,1,272.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g094,19,2,dqn,4,0 1 2 3 4 5 6,0.19124099981127074,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g094,20,1,heuristic,6,0 1 2 3 4 5 6,0.10888399992836639,1,0,1,180.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g094,21,2,dqn,2,0 1 2 3 4 5 6,0.22482800022771698,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g094,22,1,heuristic,2,0 1 2 3 4 5 6,0.008221999905799748,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,4,1,dqn,4,0 1 2 3 4 5 6,0.18801099986376357,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,5,2,heuristic,3,0 1 2 3 4 5 6,0.28522899992822204,7,0,1,28.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,6,1,dqn,3,0 1 2 3 4 5 6,0.29295500007719966,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,7,2,heuristic,4,0 1 2 3 4 5 6,0.26761400022223825,7,0,1,42.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,8,1,dqn,4,0 1 2 3 4 5 6,0.28155600011814386,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,9,2,heuristic,1,0 1 2 3 4 5 6,0.27672700025505037,7,0,1,106.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,10,1,dqn,4,0 1 2 3 4 5 6,0.27604399974734406,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,11,2,heuristic,3,0 1 2 3 4 5 6,0.25922299982994446,6,0,1,112.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,12,1,dqn,4,0 1 2 3 4 5 6,0.20435400028873119,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,13,2,heuristic,4,0 1 2 3 4 5 6,0.0676119998388458,1,0,1,112.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,14,1,dqn,1,0 1 2 3 5 6,0.2808799999911571,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,15,2,heuristic,3,0 1 2 3 5 6,0.20833400003539282,5,0,1,44.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,16,1,dqn,1,0 1 2 3 5 6,0.23214700013340916,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,17,2,heuristic,3,0 1 2 3 5 6,0.20768099966517184,5,0,1,76.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,18,1,dqn,1,0 1 2 5 6,0.1985109997804102,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,19,2,heuristic,1,0 1 2 5 6,0.05926999983785208,1,0,1,176.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,20,1,dqn,0,0 2 5 6,0.23049399987939978,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,21,2,heuristic,0,0 2 5 6,0.1346169997304969,3,0,1,106.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,22,1,dqn,0,0 2 5 6,0.22174700006871717,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,23,2,heuristic,0,0 2 5 6,0.1276339999094489,3,0,1,206.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,24,1,dqn,5,2 5 6,0.28897899983348907,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,25,2,heuristic,5,2 5 6,0.09750799972607638,2,0,1,386.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,26,1,dqn,5,2 5 6,0.25103899997702683,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,27,2,heuristic,6,2 5 6,0.09558900001138682,2,0,1,9230.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,28,1,dqn,6,2 5 6,0.2193960003751272,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,29,2,heuristic,6,2 5 6,0.056538000080763595,1,0,1,210.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,30,1,dqn,5,2 5 6,0.2629799996611837,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,31,2,heuristic,5,2 5 6,0.10650399963196833,2,0,1,230.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,32,1,dqn,5,2 5 6,0.20521299984466168,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,33,2,heuristic,6,2 6,0.06340999971143901,1,0,1,214.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,34,1,dqn,6,2 6,0.20089800000278046,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,35,2,heuristic,6,2 6,0.061484000070777256,1,0,1,204.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,36,1,dqn,2,2,0.2748850001808023,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g095,37,2,heuristic,2,2,0.006571000085386913,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g096,4,1,heuristic,2,0 1 2 3 4 5 6,0.3142760001537681,7,0,1,9096.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g096,5,2,dqn,4,0 1 2 3 4 5 6,0.22213200008991407,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g096,6,1,heuristic,1,0 1 2 3 4 5 6,0.009031999979924876,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g097,4,1,dqn,4,0 1 2 3 4 5 6,0.2047009998022986,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g097,5,2,heuristic,3,0 1 2 3 4 5 6,0.3362759998708498,7,0,1,42.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g097,6,1,dqn,2,0 1 2 3 4 5 6,0.23676299997532624,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g097,7,2,heuristic,1,0 1 2 3 4 5 6,0.08598400017945096,1,0,1,46.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g097,8,1,dqn,5,0 1 2 3 4 5 6,0.23768800019752234,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g097,9,2,heuristic,2,0 1 2 3 4 5 6,0.38518100018336554,7,0,1,18252.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g097,10,1,dqn,5,0 1 2 3 4 5 6,0.2937990002465085,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g097,11,2,heuristic,1,0 1 2 3 4 5 6,0.009272000170312822,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g098,4,1,heuristic,4,0 1 2 3 4 5 6,0.399891999677493,7,0,1,18212.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g098,5,2,dqn,3,0 1 2 3 4 5 6,0.247300999944855,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g098,6,1,heuristic,6,0 1 2 3 4 5 6,0.009782999768503942,0,0,0,10000.0,1
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g099,4,1,dqn,2,0 1 2 3 4 5 6,0.2018279997173522,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g099,5,2,heuristic,4,0 1 2 3 4 5 6,0.057500999901094474,1,0,1,10.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g099,6,1,dqn,3,0 1 2 3 4 5 6,0.19327599966345588,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g099,7,2,heuristic,4,0 1 2 3 4 5 6,0.322969000080775,7,0,1,44.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g099,8,1,dqn,5,0 1 2 3 4 5 6,0.22459799993157503,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g099,9,2,heuristic,4,0 1 2 3 4 5 6,0.27139999974679085,7,0,1,9130.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g099,10,1,dqn,4,0 1 2 3 4 5 6,0.1934729998538387,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g099,11,2,heuristic,2,0 1 2 3 4 5 6,0.3224000001864624,7,0,1,9110.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g099,12,1,dqn,1,0 1 2 3 4 5 6,0.2245549999315699,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g099,13,2,heuristic,2,0 1 2 3 4 5 6,0.29117100029907306,7,0,1,116.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g099,14,1,dqn,2,0 1 2 3 4 5 6,0.27112199995826813,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g099,15,2,heuristic,1,0 1 2 3 4 5 6,0.2718480000112322,7,0,1,9070.0,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g099,16,1,dqn,3,0 1 2 3 4 5 6,0.26835999960894696,0,0,0,,0
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,heuristic_vs_dqn-g099,17,2,heuristic,1,0 1 2 3 4 5 6,0.008452999736618949,0,0,0,10000.0,1

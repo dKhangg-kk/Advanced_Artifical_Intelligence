@@ -1,0 +1,15 @@
+# Y6: Round-Robin cau hinh mac dinh, 6 tac tu = 15 cap.
+# 200 van/cap (muc tieu cua de): 100 khai cuoc khac nhau, moi khai cuoc choi 2 van doi ben.
+# Chi dung checkpoint da dong bang: nn = checkpoints/level5_cnn/final.pt,
+# dqn = checkpoints/level6_dqn/final.pt (xem agent_config).
+mode: default
+games_per_pair: 200
+openings: 100
+seed: 20261118
+max_moves: 42
+agent_config: configs/agents_y6.yaml
+agents: [random, heuristic, alphabeta, mcts, nn, dqn]
+output_dir: results/logs
+tables_dir: results/tables
+figures_dir: results/figures
+notes: "200 games/pair; 100 unique openings played twice with sides swapped; frozen nn and dqn checkpoints; seed differs from the validation seeds 20261102/20261103."

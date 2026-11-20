@@ -7,12 +7,12 @@ Commit theo quy ước của học phần: `TuanXX/DuAn/Noi dung cong viec`.
 
 ## Mốc M1 — Engine đúng luật (ưu tiên số 1)
 
-- [ ] **[L]** `game/constants.py` — đã có hằng số, không cần sửa
-- [ ] **[L]** `game/reference.py` — bản chậm bằng list 2 chiều
-- [ ] **[L]** `game/engine.py` — bitboard 49-bit
-- [ ] **[L]** `tests/test_engine.py` — luật: thả quân, cột đầy, 4 hướng thắng, hòa, undo, clone
-- [ ] **[L]** `tests/test_crosscheck.py` — 1000 chuỗi nước ngẫu nhiên, bitboard == reference
-- [ ] **[D]** `tests/data/positions.csv` — nâng lên ≥ 30 vị trí
+- [x] **[L]** `game/constants.py` — đã có hằng số, không cần sửa
+- [x] **[L]** `game/reference.py` — bản chậm bằng list 2 chiều
+- [x] **[L]** `game/engine.py` — bitboard 49-bit
+- [x] **[L]** `tests/test_engine.py` — luật: thả quân, cột đầy, 4 hướng thắng, hòa, undo, clone
+- [x] **[L]** `tests/test_crosscheck.py` — 1000 chuỗi nước ngẫu nhiên, bitboard == reference
+- [x] **[D]** `tests/data/positions.csv` — nâng lên ≥ 30 vị trí
 
 **Điều kiện xong:** `pytest -q` xanh; `ConnectFour` và `ReferenceGame` cho cùng kết quả trên mọi chuỗi test.
 
@@ -20,55 +20,78 @@ Commit theo quy ước của học phần: `TuanXX/DuAn/Noi dung cong viec`.
 
 - [x] **[L]** `agents/random_agent.py` — cấp 1, có test hành động hợp lệ và seed
 - [x] **[L]** `agents/heuristic.py` — cấp 2, thắng > chặn > an toàn > điểm; có test trên hai engine
-- [x] **[L]** `agents/alphabeta.py` — cấp 3, negamax + cắt tỉa/sắp xếp bật tắt, đếm nút, ngân sách độ sâu/thời gian; có test trên hai engine (K2, chờ review PR)
-- [x] **[L]** `agents/mcts.py` — cấp 4, đủ bốn bước UCT, Budget(simulations/time_s), test hai engine; K3 chờ review PR
+- [x] **[L]** `agents/alphabeta.py` — cấp 3, negamax + cắt tỉa/sắp xếp bật tắt, đếm nút, ngân sách độ sâu/thời gian; có test trên hai engine (K2, PR #61 đã merge)
+- [x] **[L]** `agents/mcts.py` — cấp 4, đủ bốn bước UCT, Budget(simulations/time_s), test hai engine; K3, PR #63 đã merge
 - [x] **[L]** `solver.py` — solver exact dùng làm thước đo, có test trên hai engine
-- [ ] **[L]** `evaluation/metrics.py` — Wilson, bootstrap, p95
-- [ ] **[L]** `evaluation/runlog.py` + `evaluation/match.py` + `evaluation/cli.py` — `run_id`, manifest, chạy trận, ghi CSV ván/nước
-- [ ] **[L]** `play.py` — chơi terminal
+- [x] **[L]** `evaluation/metrics.py` — Wilson, bootstrap có seed, p95
+- [x] **[L]** `evaluation/runlog.py` + `evaluation/match.py` + `evaluation/cli.py` — `run_id`, manifest, chạy trận, ghi CSV ván/nước
+- [x] **[L]** `play.py` — chơi terminal
 
 **Điều kiện xong:** Heuristic và MCTS thắng Random ≥ 95% trên 200 ván; có log CSV thô.
 
 K1: Heuristic thắng Random 198/200 ván (99%), seed khai cuộc/Heuristic = 0,
 Random = 1; 100 khai cuộc, đổi bên theo cặp. Xem lần chạy
 `k1-heuristic-random-20261109T061032Z-s0` trong [nhật ký thực nghiệm](EXPERIMENT_LOG.md).
-K2: đã có code/test Alpha-Beta, chờ review PR; xem [hướng dẫn K2](ALPHABETA.md).
+K2: đã có code/test Alpha-Beta, PR #61 đã merge; xem [hướng dẫn K2](ALPHABETA.md).
 K3: MCTS thắng Random 199/200 ván (99,5%) ở 500 mô phỏng/nước; xem
-[hướng dẫn K3](MCTS.md) và nhật ký thực nghiệm. Chờ review/approve trước khi merge.
+[hướng dẫn K3](MCTS.md) và nhật ký thực nghiệm. PR #63 đã merge.
 
 ## Mốc M3 — Giải đấu và ablation
 
 - [x] **[D]** Pilot: Heuristic–Random, 200 ván, run `k1-heuristic-random-20261109T061032Z-s0`
-- [ ] **[D]** Giải đấu chế độ mặc định: 200 ván × 6 cặp (4 tác tử) = 1.200 ván
+- [ ] **[D]** Giải đấu mặc định cho 4 tác tử cổ điển (Random, Heuristic, Alpha-Beta, MCTS): 200 ván × 6 cặp = 1.200 ván
 - [ ] **[D]** Giải đấu chế độ cùng thời gian mỗi nước
 - [ ] **[D]** Ghi `results/logs/run_manifest.csv`, `games_<run_id>.csv`, `moves_<run_id>.csv`
 - [ ] **[D]** Ghi mục tương ứng trong `docs/EXPERIMENT_LOG.md`
-- [ ] **[L]** Ablation A1: bật/tắt cắt tỉa (xem `configs/ablation_a1_pruning.yaml`)
-- [ ] **[L]** Ablation A2: ngân sách MCTS 100→5000 (xem `configs/ablation_a2_mcts_budget.yaml`)
+- [x] **[L]** Ablation A1: bật/tắt cắt tỉa (xem `configs/ablation_a1_pruning.yaml`)
+- [x] **[L]** Ablation A2: ngân sách MCTS 100→5000 (xem `configs/ablation_a2_mcts_budget.yaml`)
+- [x] **[L]** Ablation A5: Alpha-Beta sâu 2–6; 100 ván/mức trước Heuristic, đo thế cờ ba lần/mức.
+- [x] **[L]** `notebooks/03_search_ablations.ipynb`: kiểm tra log và dựng bảng/hình A1/A2/A5.
 
 **Điều kiện xong:** `results/logs/*.csv` + `results/tables/*.csv` + hình trong `results/figures/`.
 
+Lưu ý trạng thái: giải đấu pilot ngày 13/11 chạy 3 tác tử (Random, Heuristic,
+DQN), 20 ván/cặp, tổng 60 ván; chưa thay thế giải đấu 4 tác tử cổ điển 1.200
+ván. Chưa có log giải đấu timed. A1/A2/A5 đã chạy ngày 15/11/2026; có log thô,
+bảng, hình và mục 4.5. Xem [hướng dẫn thực nghiệm tìm kiếm](SEARCH_ABLATIONS.md).
+Các ablation không thay thế giải đấu đủ tác tử hoặc chế độ cùng thời gian.
+
 ## Mốc M4 — Cấp 5 (NN) và cấp 6 (DQN)
 
-- [ ] **[L]** `agents/networks.py` — định nghĩa kiến trúc CNN Policy và DQN Net
-- [ ] **[L]** `training/gen_data.py` — sinh nhãn bằng Alpha-Beta, chia theo ván
-- [ ] **[L]** `training/train_supervised.py` — huấn luyện CNN policy net
-- [ ] **[L]** `agents/nn_agent.py` — nạp checkpoint, chọn nước hợp lệ (cấp 5)
-- [ ] **[L]** `training/train_dqn.py` — Deep Q-Network, Replay Buffer, Target Network, đối thủ cố định → self-play
-- [ ] **[L]** `agents/dqn.py` — chọn nước đi bằng Q-values trên cột hợp lệ (cấp 6)
-- [ ] **[D]** Ghi `results/logs/train_cnn_<run_id>.csv` và `train_dqn_<run_id>.csv`
+- [x] **[L]** `agents/networks.py` — định nghĩa kiến trúc CNN Policy và DQN Net
+- [x] **[L]** `training/gen_data.py` — sinh nhãn bằng Alpha-Beta, chia theo ván
+- [x] **[L]** `training/train_supervised.py` — huấn luyện CNN policy net
+- [x] **[L]** `agents/nn_agent.py` — nạp checkpoint, chọn nước hợp lệ (cấp 5)
+- [x] **[L]** `training/train_dqn.py` — DQN, Replay Buffer, Target Network, huấn luyện với đối thủ cố định
+- [ ] **[L]** `training/train_dqn.py` — mở rộng huấn luyện sang self-play
+- [x] **[L]** `agents/dqn.py` — chọn nước đi bằng Q-values trên cột hợp lệ (cấp 6)
+- [x] **[D]** Ghi `results/logs/train_cnn_<run_id>.csv` và `train_dqn_<run_id>.csv`
 - [ ] **[D]** Giải đấu đầy đủ 6 tác tử: 15 cặp × 200 ván = 3.000 ván/chế độ
 
 **Điều kiện xong:** có checkpoint riêng cho cấp 5 và cấp 6, có log huấn luyện, có điểm đối kháng.
 
+Lưu ý trạng thái: đã có log huấn luyện CNN (4 run A3) và DQN pilot 200 episode.
+Checkpoint CNN có trong `checkpoints/level5_cnn/`; metadata DQN pilot ghi tên
+`dqn_model.pt` nhưng file trọng số không có trong repository. Giải đấu ngày
+13/11 chỉ chạy 3 tác tử, 20 ván/cặp (60 ván), nên chưa đáp ứng giải đấu đầy đủ
+6 tác tử.
+
 ## Mốc M5 — Demo và báo cáo
 
-- [ ] **[L]** `ui/gui.py` — pygame, chọn tác tử, hiện thời gian mỗi nước
+- [x] **[L]** `ui/gui.py` — pygame, chọn tác tử, hiện thời gian mỗi nước
 - [ ] **[L]** `notebooks/01_tournament_analysis.ipynb` — dựng bảng/hình từ log thô
 - [ ] **[D]** Hoàn thiện `docs/EXPERIMENT_LOG.md` và `results/tables/report_numbers.csv`
 - [ ] **[D]** Báo cáo đủ 5 chương theo cấu trúc bên dưới trong `docs/report/`
 - [ ] **[D]** Slide `docs/slides/`, poster `docs/poster/`
 - [ ] **[D]** Đóng gói ZIP đúng quy định, kiểm tra chạy lại trên máy sạch
+
+Lưu ý trạng thái: GUI đã có màn chọn tác tử và hiển thị thời gian suy nghĩ;
+`python -m connect_four.ui.gui --help` chạy được. Notebook phân tích hiện đọc
+bảng summary, chưa dựng trực tiếp từ log thô. Nhật ký thực nghiệm chưa liệt kê
+đầy đủ các run huấn luyện và giải đấu pilot đã có; báo cáo còn thiếu nhiều mục
+theo danh sách tệp bên dưới. Đã có slide Khang và bản tổng hợp nhóm theo dữ liệu ngày 15/11; slide nhóm
+còn cần các thành viên xác nhận và cập nhật khi đóng băng số liệu. Poster còn
+thiếu sản phẩm hoàn chỉnh; chưa xác nhận gói cuối trên máy sạch.
 
 ## Cấu trúc báo cáo 5 chương
 

@@ -1,0 +1,13 @@
+# Pilot timed: 2 games/pair from one shared opening; each side starts once.
+mode: timed
+games_per_pair: 2
+openings: 1
+seed: 20261119
+max_moves: 42
+time_per_move_s: 0.2
+agent_config: configs/agents_y6.yaml
+agents: [random, heuristic, alphabeta, mcts, nn]
+output_dir: results/logs
+tables_dir: results/tables
+figures_dir: results/figures
+notes: "Timed pilot only: 2 games per pair; not the official 100 games/pair tournament."

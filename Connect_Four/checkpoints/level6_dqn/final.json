@@ -1,0 +1,92 @@
+{
+  "checkpoint_file": "final.pt",
+  "status": "frozen",
+  "frozen_at_utc": "2026-11-18T16:29:49+00:00",
+  "run_id": "a4-default_decay-s0-20261118T155757Z",
+  "ablation_cell": {
+    "experiment": "A4",
+    "config_id": "default_decay",
+    "seed": 0
+  },
+  "selected_episode": 10000,
+  "selection_rule": "Diem moc = trung binh(score vs Random seed 20261102, score vs Heuristic seed 20261103), moi doi thu 100 van, DQN greedy; chon diem cao nhat, bang diem thi chon moc episode nho hon; khong dung van giai dau de chon.",
+  "validation": [
+    {
+      "episode": 1000,
+      "score_vs_random": 0.59,
+      "wdl_vs_random": "59-0-41",
+      "score_vs_heuristic": 0.01,
+      "wdl_vs_heuristic": "1-0-99",
+      "mean_validation_score": 0.3
+    },
+    {
+      "episode": 2500,
+      "score_vs_random": 0.56,
+      "wdl_vs_random": "56-0-44",
+      "score_vs_heuristic": 0.05,
+      "wdl_vs_heuristic": "5-0-95",
+      "mean_validation_score": 0.30500000000000005
+    },
+    {
+      "episode": 5000,
+      "score_vs_random": 0.55,
+      "wdl_vs_random": "55-0-45",
+      "score_vs_heuristic": 0.075,
+      "wdl_vs_heuristic": "7-1-92",
+      "mean_validation_score": 0.3125
+    },
+    {
+      "episode": 10000,
+      "score_vs_random": 0.63,
+      "wdl_vs_random": "63-0-37",
+      "score_vs_heuristic": 0.12,
+      "wdl_vs_heuristic": "12-0-88",
+      "mean_validation_score": 0.375
+    }
+  ],
+  "validation_seeds": {
+    "random": 20261102,
+    "heuristic": 20261103
+  },
+  "validation_games_per_opponent": 100,
+  "source_checkpoint": "checkpoints/level6_dqn/a4/default_decay_s0/dqn_model_ep010000.pt",
+  "source_checkpoint_sha256": "fefada4ff3a1fa943e549170c815ae588bd3493198adf10955684443443b978a",
+  "sha256": "7fd430b21883c7dcb1657b4c34778b435bdcf1d9574a15a2daf1cef57bcd173f",
+  "size_bytes": 1536497,
+  "optimizer_state_included": false,
+  "optimizer_updates_at_checkpoint": 94696,
+  "epsilon_at_checkpoint": 0.05,
+  "training_elapsed_seconds_at_checkpoint": 1563.572,
+  "hyperparameters": {
+    "episodes": 10000,
+    "opponent": "heuristic",
+    "lr": 0.001,
+    "gamma": 0.99,
+    "epsilon_start": 1.0,
+    "epsilon_min": 0.05,
+    "epsilon_decay": 0.9995,
+    "buffer_size": 100000,
+    "batch_size": 64,
+    "target_update_freq": 500,
+    "checkpoint_milestones": [
+      1000,
+      2500,
+      5000,
+      10000
+    ],
+    "out_dir": "checkpoints/level6_dqn/a4/default_decay_s0",
+    "log_dir": "results/logs",
+    "seed": 0,
+    "device": "cpu"
+  },
+  "training_git_commit": "3f4da7378f8c3844cd7ad275adf8880009502f07",
+  "freeze_git_commit": "3f4da7378f8c3844cd7ad275adf8880009502f07",
+  "training_log": "results/logs/train_dqn_a4-default_decay-s0-20261118T155757Z.csv",
+  "ablation_cell_table": "results/logs/ablation_a4_cell_a4-default_decay-s0-20261118T155757Z.csv",
+  "python_version": "3.13.18",
+  "torch_version": "2.15.0+cu132",
+  "device": "cpu",
+  "accelerator": "x86_64",
+  "hardware": "Linux-6.18.44-fc-v595-x86_64-with-glibc2.39",
+  "freeze_host": "Linux-6.18.44-fc-v595-x86_64-with-glibc2.39"
+}
