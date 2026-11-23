@@ -23,6 +23,7 @@ Chay:
 from __future__ import annotations
 
 import argparse
+from pathlib import Path
 import threading
 import time
 from typing import Callable
@@ -34,6 +35,14 @@ from connect_four.game.engine import ConnectFour
 
 HUMAN = "human"
 SYMBOL = {PLAYER_1: "X", PLAYER_2: "O"}
+
+
+def _make_demo_agent(name: str, seed: int) -> Agent:
+    checkpoint_dir = {"nn": "level5_cnn", "dqn": "level6_dqn"}.get(name)
+    if checkpoint_dir is not None:
+        checkpoint = Path(__file__).resolve().parents[3] / "checkpoints" / checkpoint_dir / "final.pt"
+        return make_agent(name, seed=seed, checkpoint=checkpoint)
+    return make_agent(name, seed=seed)
 
 
 def winning_cells(board, player: int) -> list[tuple[int, int]]:
@@ -62,7 +71,7 @@ class GameController:
         seed: int = 0,
     ) -> None:
         self.names = dict(names)
-        self._agent_factory = agent_factory or (lambda name, seed: make_agent(name, seed=seed))
+        self._agent_factory = agent_factory or _make_demo_agent
         self._game_factory = game_factory
         self._seed = seed
         self._lock = threading.Lock()
@@ -70,9 +79,10 @@ class GameController:
 
     # --- khoi tao van moi -------------------------------------------------
     def new_game(self) -> None:
-        self._token = getattr(self, "_token", 0) + 1  # bo qua ket qua cua luong cu
+        with self._lock:
+            self._token = getattr(self, "_token", 0) + 1  # bo qua ket qua cua luong cu
+            self._result: tuple | None = None
         self._thread: threading.Thread | None = None
-        self._result: tuple | None = None
         self.game = self._game_factory()
         self.agents: dict[int, Agent | None] = {PLAYER_1: None, PLAYER_2: None}
         self.last_ms: dict[int, float | None] = {PLAYER_1: None, PLAYER_2: None}
@@ -174,7 +184,8 @@ class GameController:
             except Exception as exc:  # NotImplementedError, loi checkpoint, ...
                 outcome = (token, player, None, 0.0, exc)
             with self._lock:
-                self._result = outcome
+                if token == self._token:
+                    self._result = outcome
 
         self._thread = threading.Thread(target=work, daemon=True)
         self._thread.start()
@@ -359,7 +370,7 @@ class GuiApp:
             self._text(f"Ben {SYMBOL[player]} ({'di truoc' if player == PLAYER_1 else 'di sau'})", (115, y + 14))
             self._button(f"p{player}", self.menu_rects, (420, y, 240, 48), self.choice[player])
         self._button("start", self.menu_rects, (60, 410, 240, 54), "Bat dau (Enter)")
-        self._text("Trong van: R = van moi, M = ve day, Esc = thoat", (60, 500), self.font_small, MUTED)
+        self._text("Trong van: R = van moi, M = ve man hinh cho, Esc = thoat", (60, 500), self.font_small, MUTED)
 
     def _draw_game(self) -> None:
         pg, ctl = self.pg, self.controller
