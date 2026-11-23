@@ -8,3 +8,5 @@ simulations: [100, 500, 1000, 2000, 5000]
 games_per_budget: 100
 seed: 20261104
 output: results/tables/ablation_a2_results.csv
+opening_plies: 4
+# Moi muc dung cung 50 khai cuoc doi ben; RNG moi van = seed + chi so van (0..99).

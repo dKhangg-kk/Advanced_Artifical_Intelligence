@@ -1,0 +1,7 @@
+opponent,opening_plies,games,unique_openings,wins,draws,losses,score,wilson95_low,wilson95_high,distinct_games,mean_plies_per_game,seed,checkpoint
+heuristic,0,100,50,100,0,0,1.000000,0.963005,1.000000,5,25.500000,20261120,checkpoints/level6_dqn/final.pt
+heuristic,2,80,40,29,1,50,0.368750,0.271314,0.478213,80,19.125000,20261120,checkpoints/level6_dqn/final.pt
+heuristic,4,100,50,17,2,81,0.180000,0.117001,0.266675,100,17.900000,20261120,checkpoints/level6_dqn/final.pt
+random,0,100,50,73,0,27,0.730000,0.635677,0.807305,100,22.130000,20261120,checkpoints/level6_dqn/final.pt
+random,2,80,40,56,0,24,0.700000,0.592316,0.789356,80,23.125000,20261120,checkpoints/level6_dqn/final.pt
+random,4,100,50,62,0,38,0.620000,0.522096,0.709026,100,22.760000,20261120,checkpoints/level6_dqn/final.pt

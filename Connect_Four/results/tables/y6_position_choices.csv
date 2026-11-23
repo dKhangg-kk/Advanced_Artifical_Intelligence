@@ -1,0 +1,181 @@
+agent,position_id,situation,double_threat,target_columns,repeats,hits,hit_rate,modal_action,action_counts
+random,empty-board,quiet,False,legal,200,200,1.000000,4,0:32 1:23 2:29 3:20 4:38 5:32 6:26
+random,win-vertical-1,win_now,False,2,200,29,0.145000,4,0:32 1:23 2:29 3:20 4:38 5:32 6:26
+random,win-vertical-2,win_now,False,3,200,20,0.100000,4,0:32 1:23 2:29 3:20 4:38 5:32 6:26
+random,win-vertical-3,win_now,False,3 4,200,58,0.290000,4,0:32 1:23 2:29 3:20 4:38 5:32 6:26
+random,win-vertical-4,win_now,False,6,200,38,0.190000,5,0:34 1:27 2:33 3:26 5:42 6:38
+random,win-horizontal-1,win_now,False,0 4,200,70,0.350000,4,0:32 1:23 2:29 3:20 4:38 5:32 6:26
+random,win-horizontal-2,win_now,False,3,200,20,0.100000,4,0:32 1:23 2:29 3:20 4:38 5:32 6:26
+random,win-horizontal-3,win_now,False,0,200,32,0.160000,4,0:32 1:23 2:29 3:20 4:38 5:32 6:26
+random,win-horizontal-4,win_now,False,1 2,200,52,0.260000,4,0:32 1:23 2:29 3:20 4:38 5:32 6:26
+random,win-diagonal-up-1,win_now,False,2 4,200,67,0.335000,4,0:32 1:23 2:29 3:20 4:38 5:32 6:26
+random,win-diagonal-up-2,win_now,False,2,200,39,0.195000,5,0:45 1:34 2:39 4:33 5:49
+random,win-diagonal-up-3,win_now,False,3,200,26,0.130000,5,0:34 1:27 2:33 3:26 5:42 6:38
+random,win-diagonal-up-4,win_now,False,1 4,200,61,0.305000,4,0:32 1:23 2:29 3:20 4:38 5:32 6:26
+random,win-diagonal-down-1,win_now,False,2 4,200,98,0.490000,1,1:56 2:45 4:53 5:46
+random,win-diagonal-down-2,win_now,False,2,200,33,0.165000,5,0:34 1:27 2:33 3:26 5:42 6:38
+random,win-diagonal-down-3,win_now,False,1,200,23,0.115000,4,0:32 1:23 2:29 3:20 4:38 5:32 6:26
+random,win-diagonal-down-4,win_now,False,2 3,200,101,0.505000,2,2:56 3:45 5:53 6:46
+random,block-vertical-three,block,False,1,200,23,0.115000,4,0:32 1:23 2:29 3:20 4:38 5:32 6:26
+random,block-single-1,block,False,3,200,20,0.100000,4,0:32 1:23 2:29 3:20 4:38 5:32 6:26
+random,block-single-2,block,False,3,200,20,0.100000,4,0:32 1:23 2:29 3:20 4:38 5:32 6:26
+random,block-single-3,block,False,3,200,20,0.100000,4,0:32 1:23 2:29 3:20 4:38 5:32 6:26
+random,block-single-4,block,False,0,200,32,0.160000,4,0:32 1:23 2:29 3:20 4:38 5:32 6:26
+random,double-threat-1,win_now,True,4,200,38,0.190000,4,0:32 1:23 2:29 3:20 4:38 5:32 6:26
+random,double-threat-2,win_now,True,5,200,49,0.245000,5,0:45 1:34 2:39 4:33 5:49
+random,double-threat-3,block,True,3 4,200,58,0.290000,4,0:32 1:23 2:29 3:20 4:38 5:32 6:26
+random,quiet-1,quiet,False,legal,200,200,1.000000,4,0:32 1:23 2:29 3:20 4:38 5:32 6:26
+random,quiet-2,quiet,False,legal,200,200,1.000000,4,0:32 1:23 2:29 3:20 4:38 5:32 6:26
+random,quiet-3,quiet,False,legal,200,200,1.000000,4,0:32 1:23 2:29 3:20 4:38 5:32 6:26
+random,quiet-4,quiet,False,legal,200,200,1.000000,4,0:32 1:23 2:29 3:20 4:38 5:32 6:26
+random,full-column,quiet,False,legal,200,200,1.000000,5,1:34 2:27 3:33 4:26 5:42 6:38
+heuristic,empty-board,quiet,False,legal,20,20,1.000000,3,3:20
+heuristic,win-vertical-1,win_now,False,2,20,20,1.000000,2,2:20
+heuristic,win-vertical-2,win_now,False,3,20,20,1.000000,3,3:20
+heuristic,win-vertical-3,win_now,False,3 4,20,20,1.000000,3,3:10 4:10
+heuristic,win-vertical-4,win_now,False,6,20,20,1.000000,6,6:20
+heuristic,win-horizontal-1,win_now,False,0 4,20,20,1.000000,0,0:10 4:10
+heuristic,win-horizontal-2,win_now,False,3,20,20,1.000000,3,3:20
+heuristic,win-horizontal-3,win_now,False,0,20,20,1.000000,0,0:20
+heuristic,win-horizontal-4,win_now,False,1 2,20,20,1.000000,1,1:10 2:10
+heuristic,win-diagonal-up-1,win_now,False,2 4,20,20,1.000000,2,2:10 4:10
+heuristic,win-diagonal-up-2,win_now,False,2,20,20,1.000000,2,2:20
+heuristic,win-diagonal-up-3,win_now,False,3,20,20,1.000000,3,3:20
+heuristic,win-diagonal-up-4,win_now,False,1 4,20,20,1.000000,1,1:10 4:10
+heuristic,win-diagonal-down-1,win_now,False,2 4,20,20,1.000000,2,2:10 4:10
+heuristic,win-diagonal-down-2,win_now,False,2,20,20,1.000000,2,2:20
+heuristic,win-diagonal-down-3,win_now,False,1,20,20,1.000000,1,1:20
+heuristic,win-diagonal-down-4,win_now,False,2 3,20,20,1.000000,2,2:10 3:10
+heuristic,block-vertical-three,block,False,1,20,20,1.000000,1,1:20
+heuristic,block-single-1,block,False,3,20,20,1.000000,3,3:20
+heuristic,block-single-2,block,False,3,20,20,1.000000,3,3:20
+heuristic,block-single-3,block,False,3,20,20,1.000000,3,3:20
+heuristic,block-single-4,block,False,0,20,20,1.000000,0,0:20
+heuristic,double-threat-1,win_now,True,4,20,20,1.000000,4,4:20
+heuristic,double-threat-2,win_now,True,5,20,20,1.000000,5,5:20
+heuristic,double-threat-3,block,True,3 4,20,0,0.000000,1,1:20
+heuristic,quiet-1,quiet,False,legal,20,20,1.000000,6,6:20
+heuristic,quiet-2,quiet,False,legal,20,20,1.000000,3,3:20
+heuristic,quiet-3,quiet,False,legal,20,20,1.000000,3,3:20
+heuristic,quiet-4,quiet,False,legal,20,20,1.000000,3,3:20
+heuristic,full-column,quiet,False,legal,20,20,1.000000,3,3:20
+alphabeta,empty-board,quiet,False,legal,10,10,1.000000,3,3:10
+alphabeta,win-vertical-1,win_now,False,2,10,0,0.000000,4,4:10
+alphabeta,win-vertical-2,win_now,False,3,10,10,1.000000,3,3:10
+alphabeta,win-vertical-3,win_now,False,3 4,10,10,1.000000,3,3:10
+alphabeta,win-vertical-4,win_now,False,6,10,0,0.000000,2,2:10
+alphabeta,win-horizontal-1,win_now,False,0 4,10,10,1.000000,4,4:10
+alphabeta,win-horizontal-2,win_now,False,3,10,0,0.000000,4,4:10
+alphabeta,win-horizontal-3,win_now,False,0,10,0,0.000000,2,2:10
+alphabeta,win-horizontal-4,win_now,False,1 2,10,0,0.000000,3,3:10
+alphabeta,win-diagonal-up-1,win_now,False,2 4,10,10,1.000000,2,2:10
+alphabeta,win-diagonal-up-2,win_now,False,2,10,10,1.000000,2,2:10
+alphabeta,win-diagonal-up-3,win_now,False,3,10,10,1.000000,3,3:10
+alphabeta,win-diagonal-up-4,win_now,False,1 4,10,10,1.000000,4,4:10
+alphabeta,win-diagonal-down-1,win_now,False,2 4,10,10,1.000000,2,2:10
+alphabeta,win-diagonal-down-2,win_now,False,2,10,10,1.000000,2,2:10
+alphabeta,win-diagonal-down-3,win_now,False,1,10,10,1.000000,1,1:10
+alphabeta,win-diagonal-down-4,win_now,False,2 3,10,10,1.000000,3,3:10
+alphabeta,block-vertical-three,block,False,1,10,10,1.000000,1,1:10
+alphabeta,block-single-1,block,False,3,10,10,1.000000,3,3:10
+alphabeta,block-single-2,block,False,3,10,10,1.000000,3,3:10
+alphabeta,block-single-3,block,False,3,10,10,1.000000,3,3:10
+alphabeta,block-single-4,block,False,0,10,10,1.000000,0,0:10
+alphabeta,double-threat-1,win_now,True,4,10,10,1.000000,4,4:10
+alphabeta,double-threat-2,win_now,True,5,10,10,1.000000,5,5:10
+alphabeta,double-threat-3,block,True,3 4,10,10,1.000000,3,3:10
+alphabeta,quiet-1,quiet,False,legal,10,10,1.000000,4,4:10
+alphabeta,quiet-2,quiet,False,legal,10,10,1.000000,4,4:10
+alphabeta,quiet-3,quiet,False,legal,10,10,1.000000,3,3:10
+alphabeta,quiet-4,quiet,False,legal,10,10,1.000000,3,3:10
+alphabeta,full-column,quiet,False,legal,10,10,1.000000,3,3:10
+mcts,empty-board,quiet,False,legal,20,20,1.000000,3,1:1 3:18 4:1
+mcts,win-vertical-1,win_now,False,2,20,20,1.000000,2,2:20
+mcts,win-vertical-2,win_now,False,3,20,20,1.000000,3,3:20
+mcts,win-vertical-3,win_now,False,3 4,20,20,1.000000,3,3:10 4:10
+mcts,win-vertical-4,win_now,False,6,20,20,1.000000,6,6:20
+mcts,win-horizontal-1,win_now,False,0 4,20,20,1.000000,0,0:11 4:9
+mcts,win-horizontal-2,win_now,False,3,20,20,1.000000,3,3:20
+mcts,win-horizontal-3,win_now,False,0,20,20,1.000000,0,0:20
+mcts,win-horizontal-4,win_now,False,1 2,20,20,1.000000,2,1:10 2:10
+mcts,win-diagonal-up-1,win_now,False,2 4,20,20,1.000000,4,2:9 4:11
+mcts,win-diagonal-up-2,win_now,False,2,20,20,1.000000,2,2:20
+mcts,win-diagonal-up-3,win_now,False,3,20,20,1.000000,3,3:20
+mcts,win-diagonal-up-4,win_now,False,1 4,20,20,1.000000,4,1:6 4:14
+mcts,win-diagonal-down-1,win_now,False,2 4,20,20,1.000000,4,2:8 4:12
+mcts,win-diagonal-down-2,win_now,False,2,20,20,1.000000,2,2:20
+mcts,win-diagonal-down-3,win_now,False,1,20,20,1.000000,1,1:20
+mcts,win-diagonal-down-4,win_now,False,2 3,20,20,1.000000,2,2:10 3:10
+mcts,block-vertical-three,block,False,1,20,20,1.000000,1,1:20
+mcts,block-single-1,block,False,3,20,20,1.000000,3,3:20
+mcts,block-single-2,block,False,3,20,20,1.000000,3,3:20
+mcts,block-single-3,block,False,3,20,20,1.000000,3,3:20
+mcts,block-single-4,block,False,0,20,20,1.000000,0,0:20
+mcts,double-threat-1,win_now,True,4,20,20,1.000000,4,4:20
+mcts,double-threat-2,win_now,True,5,20,20,1.000000,5,5:20
+mcts,double-threat-3,block,True,3 4,20,17,0.850000,4,1:3 3:3 4:14
+mcts,quiet-1,quiet,False,legal,20,20,1.000000,4,2:1 4:15 6:4
+mcts,quiet-2,quiet,False,legal,20,20,1.000000,4,1:3 2:1 3:2 4:11 5:1 6:2
+mcts,quiet-3,quiet,False,legal,20,20,1.000000,3,3:16 4:4
+mcts,quiet-4,quiet,False,legal,20,20,1.000000,3,2:3 3:17
+mcts,full-column,quiet,False,legal,20,20,1.000000,3,3:20
+nn,empty-board,quiet,False,legal,1,1,1.000000,3,3:1
+nn,win-vertical-1,win_now,False,2,1,0,0.000000,4,4:1
+nn,win-vertical-2,win_now,False,3,1,1,1.000000,3,3:1
+nn,win-vertical-3,win_now,False,3 4,1,1,1.000000,4,4:1
+nn,win-vertical-4,win_now,False,6,1,0,0.000000,3,3:1
+nn,win-horizontal-1,win_now,False,0 4,1,1,1.000000,4,4:1
+nn,win-horizontal-2,win_now,False,3,1,0,0.000000,0,0:1
+nn,win-horizontal-3,win_now,False,0,1,1,1.000000,0,0:1
+nn,win-horizontal-4,win_now,False,1 2,1,1,1.000000,2,2:1
+nn,win-diagonal-up-1,win_now,False,2 4,1,1,1.000000,4,4:1
+nn,win-diagonal-up-2,win_now,False,2,1,1,1.000000,2,2:1
+nn,win-diagonal-up-3,win_now,False,3,1,0,0.000000,2,2:1
+nn,win-diagonal-up-4,win_now,False,1 4,1,1,1.000000,1,1:1
+nn,win-diagonal-down-1,win_now,False,2 4,1,1,1.000000,2,2:1
+nn,win-diagonal-down-2,win_now,False,2,1,1,1.000000,2,2:1
+nn,win-diagonal-down-3,win_now,False,1,1,0,0.000000,4,4:1
+nn,win-diagonal-down-4,win_now,False,2 3,1,0,0.000000,6,6:1
+nn,block-vertical-three,block,False,1,1,1,1.000000,1,1:1
+nn,block-single-1,block,False,3,1,1,1.000000,3,3:1
+nn,block-single-2,block,False,3,1,1,1.000000,3,3:1
+nn,block-single-3,block,False,3,1,1,1.000000,3,3:1
+nn,block-single-4,block,False,0,1,0,0.000000,3,3:1
+nn,double-threat-1,win_now,True,4,1,0,0.000000,2,2:1
+nn,double-threat-2,win_now,True,5,1,1,1.000000,5,5:1
+nn,double-threat-3,block,True,3 4,1,1,1.000000,4,4:1
+nn,quiet-1,quiet,False,legal,1,1,1.000000,4,4:1
+nn,quiet-2,quiet,False,legal,1,1,1.000000,1,1:1
+nn,quiet-3,quiet,False,legal,1,1,1.000000,3,3:1
+nn,quiet-4,quiet,False,legal,1,1,1.000000,0,0:1
+nn,full-column,quiet,False,legal,1,1,1.000000,3,3:1
+dqn,empty-board,quiet,False,legal,1,1,1.000000,4,4:1
+dqn,win-vertical-1,win_now,False,2,1,0,0.000000,3,3:1
+dqn,win-vertical-2,win_now,False,3,1,0,0.000000,0,0:1
+dqn,win-vertical-3,win_now,False,3 4,1,0,0.000000,1,1:1
+dqn,win-vertical-4,win_now,False,6,1,0,0.000000,1,1:1
+dqn,win-horizontal-1,win_now,False,0 4,1,1,1.000000,4,4:1
+dqn,win-horizontal-2,win_now,False,3,1,0,0.000000,1,1:1
+dqn,win-horizontal-3,win_now,False,0,1,0,0.000000,6,6:1
+dqn,win-horizontal-4,win_now,False,1 2,1,0,0.000000,6,6:1
+dqn,win-diagonal-up-1,win_now,False,2 4,1,1,1.000000,4,4:1
+dqn,win-diagonal-up-2,win_now,False,2,1,0,0.000000,1,1:1
+dqn,win-diagonal-up-3,win_now,False,3,1,0,0.000000,0,0:1
+dqn,win-diagonal-up-4,win_now,False,1 4,1,0,0.000000,5,5:1
+dqn,win-diagonal-down-1,win_now,False,2 4,1,0,0.000000,5,5:1
+dqn,win-diagonal-down-2,win_now,False,2,1,1,1.000000,2,2:1
+dqn,win-diagonal-down-3,win_now,False,1,1,1,1.000000,1,1:1
+dqn,win-diagonal-down-4,win_now,False,2 3,1,0,0.000000,6,6:1
+dqn,block-vertical-three,block,False,1,1,1,1.000000,1,1:1
+dqn,block-single-1,block,False,3,1,1,1.000000,3,3:1
+dqn,block-single-2,block,False,3,1,1,1.000000,3,3:1
+dqn,block-single-3,block,False,3,1,0,0.000000,0,0:1
+dqn,block-single-4,block,False,0,1,0,0.000000,2,2:1
+dqn,double-threat-1,win_now,True,4,1,0,0.000000,1,1:1
+dqn,double-threat-2,win_now,True,5,1,0,0.000000,0,0:1
+dqn,double-threat-3,block,True,3 4,1,1,1.000000,4,4:1
+dqn,quiet-1,quiet,False,legal,1,1,1.000000,2,2:1
+dqn,quiet-2,quiet,False,legal,1,1,1.000000,4,4:1
+dqn,quiet-3,quiet,False,legal,1,1,1.000000,2,2:1
+dqn,quiet-4,quiet,False,legal,1,1,1.000000,4,4:1
+dqn,full-column,quiet,False,legal,1,1,1.000000,2,2:1

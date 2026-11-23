@@ -138,6 +138,41 @@ class ReplayBuffer:
         """Xoa toan bo transition dang luu."""
         self._memory.clear()
 
+    def state_dict(self) -> dict[str, Any]:
+        """Trang thai day du (transition theo thu tu FIFO + RNG) de tiep tuc huan luyen."""
+        items = list(self._memory)
+        empty_state = np.zeros((0, 2, ROWS, COLS), dtype=np.float32)
+        return {
+            "capacity": self.capacity,
+            "rng_state": self._rng.getstate(),
+            "states": np.stack([t.state for t in items]) if items else empty_state,
+            "actions": np.asarray([t.action for t in items], dtype=np.int64),
+            "rewards": np.asarray([t.reward for t in items], dtype=np.float32),
+            "next_states": np.stack([t.next_state for t in items]) if items else empty_state.copy(),
+            "dones": np.asarray([t.done for t in items], dtype=np.bool_),
+            "next_legal_masks": (
+                np.stack([t.next_legal_mask for t in items]) if items else np.zeros((0, COLS), dtype=np.bool_)
+            ),
+        }
+
+    def load_state_dict(self, state: dict[str, Any]) -> None:
+        """Khoi phuc tu ``state_dict()``; giu nguyen thu tu FIFO va trang thai RNG."""
+        if int(state["capacity"]) != self.capacity:
+            raise ValueError("capacity cua trang thai luu khong khop ReplayBuffer hien tai.")
+        self._memory.clear()
+        for i in range(len(state["actions"])):
+            self._memory.append(
+                DQNTransition(
+                    state=np.asarray(state["states"][i], dtype=np.float32).copy(),
+                    action=int(state["actions"][i]),
+                    reward=float(state["rewards"][i]),
+                    next_state=np.asarray(state["next_states"][i], dtype=np.float32).copy(),
+                    done=bool(state["dones"][i]),
+                    next_legal_mask=np.asarray(state["next_legal_masks"][i], dtype=np.bool_).copy(),
+                )
+            )
+        self._rng.setstate(state["rng_state"])
+
 
 @dataclass
 class EpsilonSchedule:
@@ -202,8 +237,15 @@ def _git_revision() -> str | None:
     return result.stdout.strip() or None
 
 
+SUPPORTED_OPPONENTS = ("random", "heuristic", "selfplay")
+
+
 def _build_opponent(name: str, seed: int) -> Any:
-    """Tao doi thu co seed rieng cho mot episode."""
+    """Tao doi thu co seed rieng cho mot episode.
+
+    ``selfplay`` khong tao o day: doi thu tu choi la ban sao dong bang cua chinh
+    mang dang hoc, do ``SelfPlayOpponentPool`` quan ly trong ``train_dqn``.
+    """
     if name == "random":
         from connect_four.agents.random_agent import RandomAgent
 
@@ -212,7 +254,91 @@ def _build_opponent(name: str, seed: int) -> Any:
         from connect_four.agents.heuristic import HeuristicAgent
 
         return HeuristicAgent(seed=seed)
-    raise ValueError("opponent chi ho tro 'random' hoac 'heuristic'.")
+    raise ValueError("opponent chi ho tro 'random' hoac 'heuristic' (selfplay dung SelfPlayOpponentPool).")
+
+
+class SnapshotOpponent:
+    """Doi thu tu choi: ban sao dong bang cua Q-network, chon nuoc epsilon-greedy.
+
+    Ban sao khong bao gio duoc cap nhat gradient. Nuoc di luon nam trong cac cot
+    hop le (mat na -inf truoc argmax), giong DQNAgent. ``epsilon`` duoc gan lai
+    moi episode de doi thu kham pha cung muc voi tac tu dang hoc.
+    """
+
+    def __init__(
+        self,
+        network: Any,
+        torch: Any,
+        device: Any,
+        rng: np.random.Generator,
+        epsilon: float,
+        snapshot_episode: int,
+    ) -> None:
+        self.network = network
+        self.torch = torch
+        self.device = device
+        self.rng = rng
+        self.epsilon = float(epsilon)
+        self.snapshot_episode = int(snapshot_episode)
+
+    def choose(self, game: Any) -> int:
+        return _select_training_action(
+            game, self.network, self.epsilon, self.rng, self.torch, self.device
+        )
+
+
+class SelfPlayOpponentPool:
+    """Tap doi thu lich su cho self-play (Liu 2025, ch.13; Silver va cs. 2016).
+
+    Moi ``snapshot_every`` episode, trong so hien tai cua mang dang hoc duoc chep
+    thanh mot doi thu dong bang moi; chi giu ``pool_size`` ban gan nhat. Moi
+    episode lay ngau nhien mot doi thu trong tap. Giu nhieu phien ban cu giup giam
+    hien tuong "quen" cach thang cac loi choi cu va lam moi truong it dao dong hon
+    so voi doi dau truc tiep voi mang dang cap nhat.
+    """
+
+    def __init__(
+        self,
+        make_network: Any,
+        torch: Any,
+        device: Any,
+        rng: np.random.Generator,
+        snapshot_every: int = 500,
+        pool_size: int = 5,
+    ) -> None:
+        if isinstance(snapshot_every, bool) or not isinstance(snapshot_every, int) or snapshot_every <= 0:
+            raise ValueError("selfplay_snapshot_every phai la so nguyen duong.")
+        if isinstance(pool_size, bool) or not isinstance(pool_size, int) or pool_size <= 0:
+            raise ValueError("selfplay_pool_size phai la so nguyen duong.")
+        self.make_network = make_network
+        self.torch = torch
+        self.device = device
+        self.rng = rng
+        self.snapshot_every = snapshot_every
+        self.pool_size = pool_size
+        self.snapshots: Deque[tuple[int, Any]] = deque(maxlen=pool_size)
+
+    def add_snapshot(self, q_network: Any, episode: int) -> None:
+        network = self.make_network().to(self.device)
+        network.load_state_dict(q_network.state_dict())
+        network.eval()
+        for parameter in network.parameters():
+            parameter.requires_grad_(False)
+        self.snapshots.append((int(episode), network))
+
+    def maybe_snapshot(self, q_network: Any, episode: int) -> bool:
+        """Them ban sao neu ``episode`` la boi cua ``snapshot_every``."""
+        if episode % self.snapshot_every == 0:
+            self.add_snapshot(q_network, episode)
+            return True
+        return False
+
+    def sample(self, epsilon: float) -> SnapshotOpponent:
+        if not self.snapshots:
+            raise ValueError("Tap doi thu self-play dang rong.")
+        index = int(self.rng.integers(len(self.snapshots)))
+        episode, network = self.snapshots[index]
+        return SnapshotOpponent(network, self.torch, self.device, self.rng, epsilon, episode)
 
 
 def _select_training_action(
@@ -359,13 +485,35 @@ def train_dqn(
     seed: int = 0,
     device: str = "auto",
     run_id: str | None = None,
+    opening_plies: int = 0,
+    selfplay_snapshot_every: int = 500,
+    selfplay_pool_size: int = 5,
+    resume_every: int = 0,
 ) -> Path:
-    """Huan luyen DQN gap Random/Heuristic va tra ve checkpoint cuoi.
+    """Huan luyen DQN gap Random/Heuristic hoac tu choi (self-play), tra ve checkpoint cuoi.
 
     Moi episode doi ben di truoc/sau. Transition cua DQN duoc ghi sau khi doi
     thu da dap lai, de ``next_state`` la ban co o luot DQN tiep theo. Phan thuong
     cuoi van theo goc nhin DQN: thang +1, hoa 0, thua -1; cac buoc chua ket thuc
     nhan 0. Target Network dung mask cot hop le va Huber loss.
+
+    ``opening_plies`` (mac dinh 0 = bat dau tu ban trong, hanh vi goc) cho phep dat truoc
+    mot so nuoc ngau nhien hop le o dau moi episode, de huan luyen tren cung kieu
+    khai cuoc ngau nhien nhu luc validation/giai dau. Cac nuoc dat truoc khong tao
+    transition cho DQN.
+
+    ``opponent="selfplay"``: doi thu la mot ban sao dong bang cua chinh mang dang
+    hoc, lay ngau nhien tu tap ``selfplay_pool_size`` ban gan nhat; ban sao moi
+    duoc chep moi ``selfplay_snapshot_every`` episode (ban dau la trong so khoi
+    tao). Doi thu choi epsilon-greedy voi cung epsilon cua episode. Chi tac tu
+    dang hoc nhan gradient; vong lap, phan thuong va cach chot transition giu
+    nguyen nhu khi gap doi thu co dinh.
+
+    ``resume_every`` > 0: cu moi ``resume_every`` episode luu ``resume_state.pt``
+    (mang, mang muc tieu, optimizer, Replay Buffer, tap self-play, moi trang thai
+    RNG) vao ``out_dir``. Goi lai voi cung tham so va ``run_id`` se tiep tuc tu
+    episode da luu, cat log CSV ve dung episode do; ket qua giong het chay mot
+    mach. Mac dinh 0 = tat (hanh vi cu).
 
     PyTorch chi duoc import khi ham duoc goi. Log moi episode duoc ghi vao
     ``results/logs/train_dqn_<run_id>.csv``. Checkpoint o cac moc duoc kem JSON
@@ -373,8 +521,8 @@ def train_dqn(
     """
     if isinstance(episodes, bool) or not isinstance(episodes, int) or episodes <= 0:
         raise ValueError("episodes phai la so nguyen duong.")
-    if opponent not in {"random", "heuristic"}:
-        raise ValueError("opponent chi ho tro 'random' hoac 'heuristic'.")
+    if opponent not in SUPPORTED_OPPONENTS:
+        raise ValueError("opponent chi ho tro 'random', 'heuristic' hoac 'selfplay'.")
     if not math.isfinite(lr) or lr <= 0:
         raise ValueError("lr phai la so huu han duong.")
     if not math.isfinite(gamma) or not 0.0 <= gamma <= 1.0:
@@ -395,6 +543,10 @@ def train_dqn(
     milestones = tuple(sorted(set(checkpoint_milestones)))
     if any(isinstance(value, bool) or not isinstance(value, int) or value <= 0 for value in milestones):
         raise ValueError("checkpoint_milestones phai gom cac so nguyen duong.")
+    if isinstance(opening_plies, bool) or not isinstance(opening_plies, int) or not 0 <= opening_plies <= 10:
+        raise ValueError("opening_plies phai la so nguyen trong khoang 0..10.")
+    if isinstance(resume_every, bool) or not isinstance(resume_every, int) or resume_every < 0:
+        raise ValueError("resume_every phai la so nguyen khong am.")
     if device != "auto" and device not in {"cpu", "cuda"}:
         raise ValueError("device chi nhan 'auto', 'cpu' hoac 'cuda'.")
     if run_id is None:
@@ -434,6 +586,17 @@ def train_dqn(
     target_network.eval()
     optimizer = torch.optim.Adam(q_network.parameters(), lr=lr)
     replay_buffer = ReplayBuffer(capacity=buffer_size, seed=seed)
+    selfplay_pool: SelfPlayOpponentPool | None = None
+    if opponent == "selfplay":
+        selfplay_pool = SelfPlayOpponentPool(
+            lambda: DQNNet(in_channels=2),
+            torch,
+            torch_device,
+            np.random.default_rng(seed + 1),
+            snapshot_every=selfplay_snapshot_every,
+            pool_size=selfplay_pool_size,
+        )
+        selfplay_pool.add_snapshot(q_network, 0)
 
     out_path = Path(out_dir)
     log_path = Path(log_dir)
@@ -458,9 +621,69 @@ def train_dqn(
         "seed": seed,
         "device": selected_device,
     }
+    if opening_plies:
+        config_snapshot["opening_plies"] = opening_plies
+    if opponent == "selfplay":
+        config_snapshot["selfplay_snapshot_every"] = selfplay_snapshot_every
+        config_snapshot["selfplay_pool_size"] = selfplay_pool_size
 
     update_steps = 0
-    started_all = time.perf_counter()
+    start_episode = 1
+    elapsed_offset = 0.0
+    resume_path = out_path / "resume_state.pt"
+    if resume_every and resume_path.is_file():
+        saved = torch.load(resume_path, map_location=torch_device, weights_only=False)
+        if saved["run_id"] != run_id or saved["config"] != config_snapshot:
+            raise ValueError(
+                f"{resume_path} thuoc run/cau hinh khac; xoa file hoac dung dung run_id va tham so."
+            )
+        q_network.load_state_dict(saved["q_network"])
+        target_network.load_state_dict(saved["target_network"])
+        optimizer.load_state_dict(saved["optimizer"])
+        replay_buffer.load_state_dict(saved["replay_buffer"])
+        schedule.episode = int(saved["schedule_episode"])
+        update_steps = int(saved["update_steps"])
+        start_episode = int(saved["episode"]) + 1
+        elapsed_offset = float(saved["elapsed_seconds"])
+        rng.bit_generator.state = saved["numpy_rng"]
+        random.setstate(saved["python_random"])
+        np.random.set_state(saved["numpy_global"])
+        torch.set_rng_state(saved["torch_rng"])
+        if selfplay_pool is not None:
+            selfplay_pool.snapshots.clear()
+            for snap_episode, snap_state in saved["selfplay_snapshots"]:
+                snap = DQNNet(in_channels=2).to(torch_device)
+                snap.load_state_dict(snap_state)
+                selfplay_pool.add_snapshot(snap, snap_episode)
+            selfplay_pool.rng.bit_generator.state = saved["selfplay_rng"]
+        print(f"Tiep tuc {run_id} tu episode {start_episode} ({resume_path})", flush=True)
+
+    def _save_resume(episode_done: int) -> None:
+        payload = {
+            "run_id": run_id,
+            "config": config_snapshot,
+            "episode": episode_done,
+            "q_network": q_network.state_dict(),
+            "target_network": target_network.state_dict(),
+            "optimizer": optimizer.state_dict(),
+            "replay_buffer": replay_buffer.state_dict(),
+            "schedule_episode": schedule.episode,
+            "update_steps": update_steps,
+            "elapsed_seconds": time.perf_counter() - started_all,
+            "numpy_rng": rng.bit_generator.state,
+            "python_random": random.getstate(),
+            "numpy_global": np.random.get_state(),
+            "torch_rng": torch.get_rng_state(),
+            "selfplay_snapshots": (
+                [(ep, net.state_dict()) for ep, net in selfplay_pool.snapshots] if selfplay_pool else []
+            ),
+            "selfplay_rng": selfplay_pool.rng.bit_generator.state if selfplay_pool else None,
+        }
+        tmp_path = resume_path.with_suffix(".tmp")
+        torch.save(payload, tmp_path)
+        tmp_path.replace(resume_path)
+
+    started_all = time.perf_counter() - elapsed_offset
     columns = [
         "episode",
         "opponent",
@@ -477,16 +700,34 @@ def train_dqn(
         "seed",
         "device",
     ]
+    if selfplay_pool is not None:
+        columns.append("opponent_snapshot_episode")
 
-    with csv_path.open("w", newline="", encoding="utf-8") as csv_file:
+    if start_episode > 1 and csv_path.is_file():
+        # Cat log ve dung episode da luu trong resume_state (bo cac dong chay do sau do).
+        with csv_path.open(newline="", encoding="utf-8") as stream:
+            kept = [row for row in csv.DictReader(stream) if int(row["episode"]) < start_episode]
+        with csv_path.open("w", newline="", encoding="utf-8") as stream:
+            rewrite = csv.DictWriter(stream, fieldnames=columns)
+            rewrite.writeheader()
+            rewrite.writerows(kept)
+    csv_mode = "a" if start_episode > 1 else "w"
+
+    with csv_path.open(csv_mode, newline="", encoding="utf-8") as csv_file:
         writer = csv.DictWriter(csv_file, fieldnames=columns)
-        writer.writeheader()
+        if csv_mode == "w":
+            writer.writeheader()
 
-        for episode in range(1, episodes + 1):
+        for episode in range(start_episode, episodes + 1):
             game = ConnectFour()
+            for _ in range(opening_plies):
+                game.step(int(rng.choice(game.legal_actions())))
             agent_player = PLAYER_1 if episode % 2 == 1 else PLAYER_2
-            opponent_agent = _build_opponent(opponent, seed + episode)
             epsilon_used = schedule.value
+            if selfplay_pool is not None:
+                opponent_agent = selfplay_pool.sample(epsilon_used)
+            else:
+                opponent_agent = _build_opponent(opponent, seed + episode)
             episode_losses: list[float] = []
             dqn_moves = 0
             pending: tuple[np.ndarray, int] | None = None
@@ -558,25 +799,28 @@ def train_dqn(
             result_label = "win" if episode_reward > 0 else "loss" if episode_reward < 0 else "draw"
             elapsed_episode = time.perf_counter() - episode_started
             mean_loss = float(np.mean(episode_losses)) if episode_losses else 0.0
-            writer.writerow(
-                {
-                    "episode": episode,
-                    "opponent": opponent,
-                    "agent_player": agent_player,
-                    "result": result_label,
-                    "reward": episode_reward,
-                    "moves": len(game.moves_played()),
-                    "dqn_moves": dqn_moves,
-                    "epsilon": epsilon_used,
-                    "mean_loss": mean_loss,
-                    "optimizer_updates": update_steps,
-                    "replay_size": len(replay_buffer),
-                    "elapsed_seconds": round(elapsed_episode, 6),
-                    "seed": seed,
-                    "device": selected_device,
-                }
-            )
+            log_row = {
+                "episode": episode,
+                "opponent": opponent,
+                "agent_player": agent_player,
+                "result": result_label,
+                "reward": episode_reward,
+                "moves": len(game.moves_played()),
+                "dqn_moves": dqn_moves,
+                "epsilon": epsilon_used,
+                "mean_loss": mean_loss,
+                "optimizer_updates": update_steps,
+                "replay_size": len(replay_buffer),
+                "elapsed_seconds": round(elapsed_episode, 6),
+                "seed": seed,
+                "device": selected_device,
+            }
+            if selfplay_pool is not None:
+                log_row["opponent_snapshot_episode"] = opponent_agent.snapshot_episode
+            writer.writerow(log_row)
             csv_file.flush()
+            if selfplay_pool is not None:
+                selfplay_pool.maybe_snapshot(q_network, episode)
 
             schedule.step()
             if episode in milestones:
@@ -594,6 +838,8 @@ def train_dqn(
                     update_steps,
                     time.perf_counter() - started_all,
                 )
+            if resume_every and episode % resume_every == 0 and episode < episodes:
+                _save_resume(episode)
 
     elapsed_all = time.perf_counter() - started_all
     _write_checkpoint(
@@ -609,6 +855,8 @@ def train_dqn(
         update_steps,
         elapsed_all,
     )
+    if resume_path.is_file():
+        resume_path.unlink()  # da xong; file trang thai lon (Replay Buffer) khong can giu
     print(
         f"DQN training done: episodes={episodes}, opponent={opponent}, "
         f"updates={update_steps}, log={csv_path}, checkpoint={final_checkpoint}, "
@@ -650,6 +898,10 @@ def train_dqn_from_config(config_path: str | Path) -> Path:
         "seed",
         "device",
         "run_id",
+        "opening_plies",
+        "selfplay_snapshot_every",
+        "selfplay_pool_size",
+        "resume_every",
     }
     unknown = sorted(set(data) - allowed)
     if unknown:

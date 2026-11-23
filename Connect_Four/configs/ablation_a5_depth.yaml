@@ -10,3 +10,6 @@ games_per_depth: 100
 positions: tests/data/positions.csv
 repeat_per_position: 3
 output: results/tables/ablation_a5_results.csv
+seed: 20261104
+opening_plies: 4
+# Moi muc dung cung 50 khai cuoc doi ben; RNG moi van = seed + chi so van (0..99).

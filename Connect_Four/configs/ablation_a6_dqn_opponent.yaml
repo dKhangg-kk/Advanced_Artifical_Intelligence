@@ -1,0 +1,40 @@
+# Thi nghiem A6 (mo rong cho RQ3) - Anh huong cua doi thu huan luyen len DQN cap 6.
+# Chay SAU khi checkpoint DQN giai dau da dong bang (18/11/2026), nen KHONG dung de
+# chon checkpoint giai dau va khong thay doi ket qua muc 4.1-4.3.
+#
+# Ba dieu kien doi thu, cung sieu tham so voi o A4 default_decay:
+#   heuristic : dung lai 3 o A4 default_decay (seed 0, 42, 2026), khong chay lai
+#   random    : doi thu Random co dinh
+#   selfplay  : tu choi voi tap 5 ban sao dong bang gan nhat cua chinh mang,
+#               chep ban sao moi 500 episode (ban dau la trong so khoi tao)
+# Danh gia giong het A4: 4 moc, moi moc 100 van voi Random (seed 20261102) va
+# 100 van voi Heuristic (seed 20261103), DQN greedy, khai cuoc ngau nhien.
+# Them: o moc 10.000, 100 van doi dau truc tiep voi checkpoint dong bang final.pt
+# (seed 20261104, khac seed validation va seed giai dau).
+
+name: ablation_a6_dqn_opponent
+agent: dqn
+milestones: [1000, 2500, 5000, 10000]
+hyperparameters:
+  lr: 0.001
+  gamma: 0.99
+  epsilon_start: 1.0
+  epsilon_min: 0.05
+  epsilon_decay: 0.9995
+  buffer_size: 100000
+  batch_size: 64
+  target_update_freq: 500
+training_opponents:
+  - {name: "random"}
+  - {name: "selfplay", snapshot_every: 500, pool_size: 5}
+reuse_heuristic_from: "A4 default_decay (results/tables/ablation_a4_results.csv)"
+eval_opponents:
+  - random
+  - heuristic
+eval_games_per_milestone: 100
+head_to_head:
+  checkpoint: checkpoints/level6_dqn/final.pt
+  games: 100
+  seed: 20261104
+seeds: [0, 42, 2026]
+output: results/tables/ablation_a6_results.csv

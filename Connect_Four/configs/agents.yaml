@@ -34,5 +34,5 @@ nn:
 
 dqn:
   level: 6
-  checkpoint: checkpoints/level6_dqn/dqn_model.pt
+  checkpoint: checkpoints/level6_dqn/final.pt
   epsilon: 0.0

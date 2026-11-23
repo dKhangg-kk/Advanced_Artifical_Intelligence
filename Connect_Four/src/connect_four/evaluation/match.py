@@ -24,7 +24,7 @@ from connect_four.agents.base import Agent
 from connect_four.evaluation.metrics import mean, p95
 from connect_four.evaluation.runlog import GAME_FIELDS, MOVE_FIELDS, new_run_id, write_csv
 from connect_four.game.base import ConnectFourGame
-from connect_four.game.constants import PLAYER_1, PLAYER_2
+from connect_four.game.constants import COLS, PLAYER_1, PLAYER_2
 from connect_four.game.engine import ConnectFour
 
 
@@ -198,6 +198,17 @@ def generate_openings(
     Chi phu thuoc `seed` (khong phu thuoc cap tac tu), nen moi cap trong giai dau
     dung dung cung mot bo khai cuoc. Khai cuoc khong duoc ket thuc van.
     """
+    if count < 0:
+        raise ValueError("count phai >= 0")
+    if plies < 0:
+        raise ValueError("plies phai >= 0")
+    max_possible = COLS**plies
+    if count > max_possible:
+        raise ValueError(
+            f"Khong the co {count} khai cuoc khac nhau dai {plies} nuoc; "
+            f"toi da {max_possible} chuoi cot"
+        )
+
     rng = random.Random(seed)
     seen: set[tuple[int, ...]] = set()
     openings: list[list[int]] = []

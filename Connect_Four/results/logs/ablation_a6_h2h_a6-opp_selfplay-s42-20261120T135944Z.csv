@@ -1,0 +1,2 @@
+run_id,train_opponent,seed,episode,opponent_checkpoint,games,wins,draws,losses,score,score_ci95_low,score_ci95_high,match_seed
+a6-opp_selfplay-s42-20261120T135944Z,selfplay,42,10000,checkpoints/level6_dqn/final.pt,100,41,0,59,0.41,0.31867157095664655,0.5079874943890338,20261104

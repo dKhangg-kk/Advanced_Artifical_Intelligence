@@ -1,0 +1,25 @@
+agent,situation,positions,attempts,hits,accuracy,wilson95_low,wilson95_high,note
+random,win_now,18,3600,854,0.237222,0.223611,0.251393,n_attempts = positions x repeats; cac lan lap cua cung mot vi tri khong doc lap
+random,block,6,1200,173,0.144167,0.125427,0.165177,n_attempts = positions x repeats; cac lan lap cua cung mot vi tri khong doc lap
+random,double_threat,3,600,145,0.241667,0.209125,0.277495,n_attempts = positions x repeats; cac lan lap cua cung mot vi tri khong doc lap
+random,quiet_legal,6,1200,1200,1.000000,0.996809,1.000000,n_attempts = positions x repeats; cac lan lap cua cung mot vi tri khong doc lap
+heuristic,win_now,18,360,360,1.000000,0.989442,1.000000,n_attempts = positions x repeats; cac lan lap cua cung mot vi tri khong doc lap
+heuristic,block,6,120,100,0.833333,0.756546,0.889441,n_attempts = positions x repeats; cac lan lap cua cung mot vi tri khong doc lap
+heuristic,double_threat,3,60,40,0.666667,0.540566,0.772709,n_attempts = positions x repeats; cac lan lap cua cung mot vi tri khong doc lap
+heuristic,quiet_legal,6,120,120,1.000000,0.968980,1.000000,n_attempts = positions x repeats; cac lan lap cua cung mot vi tri khong doc lap
+alphabeta,win_now,18,180,130,0.722222,0.652665,0.782492,n_attempts = positions x repeats; cac lan lap cua cung mot vi tri khong doc lap
+alphabeta,block,6,60,60,1.000000,0.939826,1.000000,n_attempts = positions x repeats; cac lan lap cua cung mot vi tri khong doc lap
+alphabeta,double_threat,3,30,30,1.000000,0.886483,1.000000,n_attempts = positions x repeats; cac lan lap cua cung mot vi tri khong doc lap
+alphabeta,quiet_legal,6,60,60,1.000000,0.939826,1.000000,n_attempts = positions x repeats; cac lan lap cua cung mot vi tri khong doc lap
+mcts,win_now,18,360,360,1.000000,0.989442,1.000000,n_attempts = positions x repeats; cac lan lap cua cung mot vi tri khong doc lap
+mcts,block,6,120,117,0.975000,0.929069,0.991462,n_attempts = positions x repeats; cac lan lap cua cung mot vi tri khong doc lap
+mcts,double_threat,3,60,57,0.950000,0.862993,0.982851,n_attempts = positions x repeats; cac lan lap cua cung mot vi tri khong doc lap
+mcts,quiet_legal,6,120,120,1.000000,0.968980,1.000000,n_attempts = positions x repeats; cac lan lap cua cung mot vi tri khong doc lap
+nn,win_now,18,18,11,0.611111,0.386187,0.796950,xac dinh: 1 lan/vi tri
+nn,block,6,6,5,0.833333,0.436491,0.969947,xac dinh: 1 lan/vi tri
+nn,double_threat,3,3,2,0.666667,0.207655,0.938510,xac dinh: 1 lan/vi tri
+nn,quiet_legal,6,6,6,1.000000,0.609657,1.000000,xac dinh: 1 lan/vi tri
+dqn,win_now,18,18,4,0.222222,0.090008,0.452150,xac dinh: 1 lan/vi tri
+dqn,block,6,6,4,0.666667,0.299988,0.903231,xac dinh: 1 lan/vi tri
+dqn,double_threat,3,3,1,0.333333,0.061490,0.792345,xac dinh: 1 lan/vi tri
+dqn,quiet_legal,6,6,6,1.000000,0.609657,1.000000,xac dinh: 1 lan/vi tri
