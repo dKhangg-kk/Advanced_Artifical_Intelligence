@@ -20,6 +20,8 @@
   (`checkpoints/level6_dqn/final.pt`, 18/11); giải đấu đủ 6 tác tử đã chạy ở hai chế
   độ (3.000 ván mặc định, 1.500 ván cùng 0,2 giây/nước); A4 và A6 (tự chơi) có log
   thô. Xem [Tái lập cấp 6 và giải đấu](#tái-lập-cấp-6-dqn-và-giải-đấu-phần-của-như-ý).
+- Kết quả huấn luyện CNN/DQN và giải đấu sáu tác tử được cập nhật trong
+  [nhật ký thực nghiệm](docs/EXPERIMENT_LOG.md).
 
 Alpha-Beta K2: xem [cách hoạt động, ngân sách và kiểm thử](docs/ALPHABETA.md).
 
@@ -184,9 +186,8 @@ Dữ liệu và checkpoint lớn cần có hướng dẫn tải hoặc tái tạ
 
 ## Hướng dẫn chạy
 
-**Trạng thái:** đã có engine bitboard và bản tham chiếu, Random, Heuristic,
-Alpha-Beta, MCTS, solver đo và bộ kiểm thử. NN/DQN training, checkpoint và giải
-đấu đầy đủ vẫn chưa hoàn thành; xem [lộ trình](docs/ROADMAP.md).
+**Trạng thái:** đã có sáu tác tử và trọng số đã huấn luyện cho CNN và DQN.
+Xem [kết quả giải đấu](docs/report/04a_ket_qua.md) để đối chiếu số liệu.
 
 Đánh giá K1 không cần CLI giải đấu: chạy `PYTHONPATH=src python scripts/evaluate_k1.py`
 từ thư mục `Connect_Four/`. Cấu hình cố định trong `configs/k1_random_heuristic.json`;
@@ -214,10 +215,26 @@ python -m pip install -e .
 python -m pytest -q
 ```
 
-Nếu chỉ cần engine và test lõi, `requirements.txt` là đủ. PyTorch, Pygame và
-các gói phân tích là phần tùy chọn; cài thêm theo mục
-`[project.optional-dependencies]` trong `pyproject.toml` khi chạy NN/DQN, GUI
-hoặc tổng hợp biểu đồ.
+### Demo DQN và CNN
+
+Sau khi clone, vào thư mục `Connect_Four` và kích hoạt môi trường Python như
+trên. Git chỉ tải mã nguồn và trọng số. Lệnh cài bên dưới thêm Pygame và
+PyTorch vào chính môi trường dùng để chạy game. Nếu đã cài qua
+`requirements.txt` ở trên, môi trường đã có cả hai gói.
+
+```bash
+python -m pip install -e ".[ui,torch]"
+python -m connect_four.ui.gui --a human --b dqn --start
+```
+
+Người chơi đi trước. Bấm vào một cột để thả quân, sau đó DQN tự đi đáp.
+Đổi `--b dqn` thành `--b nn` để chơi với CNN. Giao diện dùng trọng số đã có
+trong repo ở `checkpoints/level6_dqn/final.pt` và
+`checkpoints/level5_cnn/final.pt`, nên không cần huấn luyện lại.
+
+Nếu chỉ chơi với các tác tử cấp 1–4, dùng
+`python -m pip install -e ".[ui]"` để cài giao diện. PyTorch chỉ cần
+cho CNN và DQN.
 
 ### Solver đo chất lượng nước đi
 
