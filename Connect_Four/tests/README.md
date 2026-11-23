@@ -13,12 +13,15 @@ pytest -q
 | `test_logging.py` | `run_id`, manifest, ghi CSV ván/nước, percentile | Da co, dang chay |
 | `test_engine.py` | Luat: tha quan, cot day, thang/hoa, undo, clone | Can viet khi lam Task 1 |
 | `test_crosscheck.py` | Engine bitboard vs `ReferenceGame` tren 1000 chuoi nuoc ngau nhien | Can viet sau khi co ban tham chieu |
+| `test_data_split.py` | Sinh nhãn Alpha-Beta, chia theo ván, lọc trùng và lật gương chỉ ở train | Đã có |
 | `test_positions.py` | 31 vi tri CSV; doi chieu `winning_moves` va `blocking_moves` tren hai engine | Da co, dang chay |
 | `test_agents.py` | Random/Heuristic: nuoc hop le, seed, khong doi game, van ket thuc | Da co, chay tren ca hai engine |
+| `test_train_supervised.py` | CNN: chọn checkpoint theo val loss, log/metadata, test chỉ dùng một lần, giới hạn số ván theo cohort A3, loại cột đầy khi suy luận | Đã có |
+| `test_situations.py` | Phân loại thắng ngay/chặn/trung tâm và accuracy theo tình huống cho ablation A3 (RQ2) | Da co |
 | `test_heuristic.py` | Thang > chan > an toan > diem; hoa diem, ham diem, van hoa, thong ke | Da co, chay tren ca hai engine |
 | `test_alphabeta.py` | Minimax do sau 1–4, bon to hop cat tia/sap xep, thong ke, Budget(depth/time_s), timeout va khong doi game | Da co, chay tren ca hai engine |
 | `test_mcts.py` | Bon buoc UCT, doi goc nhin, Budget(simulations/time_s), seed, thong ke, terminal va khong doi game | Da co, ca hai engine va cay bay doi thu |
-| `test_metrics.py` | Wilson, bootstrap, p95 | Can viet |
+| `test_metrics.py` | Wilson, bootstrap co seed, p95 | Da co |
 
 Nguyen tac:
 - Test phai chay duoc khi **chua cai torch** (tren CI).

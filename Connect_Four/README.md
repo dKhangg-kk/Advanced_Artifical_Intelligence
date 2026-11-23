@@ -323,3 +323,11 @@ Nguồn sách, thư viện, công cụ AI và mã tham khảo phải được tr
 5. Stuart J. Russell và Peter Norvig (2022). *Artificial Intelligence: A Modern Approach*, Fourth Edition, Global Edition. Pearson Education Limited.
 
 Thông tin năm và ấn bản theo các bản sách nhóm đang sử dụng. Các nguồn mã và thư viện cụ thể sẽ được bổ sung khi triển khai.
+
+## Thực nghiệm tìm kiếm A1/A2/A5
+
+Đã có log thực chạy, bảng/hình và notebook cho cắt tỉa/sắp xếp Alpha-Beta,
+ngân sách MCTS và độ sâu tìm kiếm. Xem [hướng dẫn chạy](docs/SEARCH_ABLATIONS.md),
+[notebook](notebooks/03_search_ablations.ipynb) và
+[phân tích kết quả](docs/report/04d_ablation_tim_kiem.md). Các phép thử này
+không thay thế giải đấu đầy đủ hoặc chế độ cùng thời gian mỗi nước.
