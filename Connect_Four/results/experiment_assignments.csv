@@ -61,3 +61,7 @@ a6-opp_selfplay-s2026-20261120T140154Z,Phan Lê Ngọc Như Ý,DQN A6
 a6-opp_random-s42-20261120T143551Z,Phan Lê Ngọc Như Ý,DQN A6
 a6-opp_random-s2026-20261120T143811Z,Phan Lê Ngọc Như Ý,DQN A6
 heuristic-vs-random-20261120T092931Z-s42,Phạm Thái Duy Khang,K1/K3/K4 tìm kiếm
+ablation-a1-20261124T181149Z-s20261104,Phạm Thái Duy Khang,A1 - Cắt tỉa Alpha-Beta
+ablation-a5-20261124T185729Z-s20261104,Phạm Thái Duy Khang,A5 - Độ sâu Alpha-Beta
+alphabeta-vs-mcts-20261124T190359Z-s42,Phạm Thái Duy Khang,K2/K3 - Alpha-Beta vs MCTS - lượt đối chiếu
+alphabeta-vs-mcts-20261124T190429Z-s42,Phạm Thái Duy Khang,K2/K3 - Alpha-Beta vs MCTS - kết quả chính

@@ -287,3 +287,66 @@ Mỗi mục dùng mẫu sau:
 - **Kết quả (gộp 3 seed, mốc 10.000):** tự chơi 0,568 gặp Random, 0,003 gặp Heuristic, 0,418 gặp `final.pt`; đối thủ Random 0,578 / 0,010 / 0,393; đối thủ Heuristic (A4) 0,662 / 0,162. Bảng: `results/tables/ablation_a6_*.csv`; hình: `results/figures/ablation_a6_*.png`; diễn giải: `docs/report/04f_ablation_dqn.md` (A6), `04h_thao_luan.md` (4.7.3, 4.7.6).
 - **Không commit:** các file `.pt` mốc của A6 (đã chặn bởi `.gitignore`, mỗi file ~4,6 MB); chỉ commit JSON metadata.
 
+## ablation-a1-20261124T181149Z-s20261104 — A1: Cắt tỉa Alpha-Beta
+
+- **Ngày:** 25/11/2026, giờ Việt Nam (UTC+7).
+- **Người chạy:** Phạm Thái Duy Khang / 3124720033.
+- **Loại và mục tiêu:** ablation, RQ3. Đo ảnh hưởng của cắt tỉa và sắp xếp nước đi ở độ sâu 4, 5 và 6.
+- **Config và commit:** `configs/ablation_a1_pruning.yaml`, `57991d3`.
+- **Lệnh chạy:** `PYTHONPATH=src python scripts/run_search_ablations.py --experiment a1`.
+- **Seed:** `20261104`.
+- **Môi trường:** CPU ARM, RAM 16 GB, Python 3.13.7, NumPy 2.5.4, PyTorch 2.15.0.
+- **Thời gian chạy:** 01:11:49 → 01:20:53 (9 phút 04 giây).
+- **Trạng thái:** `completed`.
+- **Log thô:** `results/logs/positions_ablation-a1-20261124T181149Z-s20261104.csv`.
+- **Bảng kết quả:** `results/tables/ablation-a1-20261124T181149Z-s20261104.csv`.
+- **Số liệu chính:** Ở `depth=6`, khi chuyển từ tắt cả hai sang bật cả cắt tỉa và sắp xếp, `mean_nodes` giảm từ 58.678 xuống 2.697,1 và `mean_ms` giảm từ 1.418,29 xuống 55,55 ms.
+- **Nhận xét:** Bật cả hai kỹ thuật giảm khoảng 95,4% số nút duyệt trung bình ở độ sâu 6 trên tập thế cờ đo.
+
+## ablation-a5-20261124T185729Z-s20261104 — A5: Độ sâu Alpha-Beta
+
+- **Ngày:** 25/11/2026, giờ Việt Nam (UTC+7).
+- **Người chạy:** Phạm Thái Duy Khang / 3124720033.
+- **Loại và mục tiêu:** ablation, RQ3. Đo tỷ lệ thắng và chi phí tìm kiếm ở độ sâu 2–6 khi gặp Heuristic, 100 ván mỗi độ sâu.
+- **Config và commit:** `configs/ablation_a5_depth.yaml`, `57991d3`.
+- **Lệnh chạy:** `PYTHONPATH=src python scripts/run_search_ablations.py --experiment a5`.
+- **Seed:** `20261104`.
+- **Môi trường:** CPU ARM, RAM 16 GB, Python 3.13.7, NumPy 2.5.4, PyTorch 2.15.0.
+- **Thời gian chạy:** 01:57:29 → 02:00:20 (2 phút 51 giây).
+- **Trạng thái:** `completed`.
+- **Log thô:** `results/logs/positions_ablation-a5-20261124T185729Z-s20261104.csv`. Đường dẫn log ván và log nước đi của cả 5 độ sâu nằm ở các cột `raw_log_path` và `moves_log_path` của các dòng `phase=games` trong bảng kết quả bên dưới.
+- **Bảng kết quả:** `results/tables/ablation-a5-20261124T185729Z-s20261104.csv`.
+- **Số liệu chính:** Theo `phase=games`, `win_rate` ở độ sâu 2–6 lần lượt là 72%, 57%, 79%, 79% và 80%. `mean_ms` ở độ sâu 4 và 6 lần lượt là 9,00 và 100,89 ms mỗi nước.
+- **Nhận xét:** Từ độ sâu 4 lên 6, tỷ lệ thắng tăng 1 điểm phần trăm, trong khi thời gian trung bình mỗi nước tăng khoảng 11,2 lần.
+
+## alphabeta-vs-mcts-20261124T190359Z-s42 — Alpha-Beta vs MCTS, lượt đối chiếu
+
+- **Ngày:** 25/11/2026, giờ Việt Nam (UTC+7).
+- **Người chạy:** Phạm Thái Duy Khang / 3124720033.
+- **Loại và mục tiêu:** tournament, K2/K3. Đối chiếu Alpha-Beta độ sâu 4 với MCTS 500 mô phỏng, 5 khai cuộc và 10 ván đổi bên.
+- **Config và commit:** `configs/agents.yaml`, `57991d3`.
+- **Lệnh chạy:** `PYTHONPATH=src python -m connect_four.evaluation.cli --a alphabeta --b mcts --openings 5 --seed 42 --depth-a 4 --sims-b 500`.
+- **Seed:** `42`.
+- **Môi trường:** CPU ARM, RAM 16 GB, Python 3.13.7, NumPy 2.5.4, PyTorch 2.15.0.
+- **Thời gian chạy:** 02:03:57 → 02:03:59.
+- **Trạng thái:** `completed`.
+- **Log ván:** `results/logs/games_alphabeta-vs-mcts-20261124T190359Z-s42.csv`.
+- **Log nước đi:** `results/logs/moves_alphabeta-vs-mcts-20261124T190359Z-s42.csv`.
+- **Số liệu chính:** Alpha-Beta thắng 6, hòa 1, thua 3. Điểm `score_A` là 0,650, tính từ cột `winner` của log ván.
+- **Nhận xét:** Kết quả thắng–hòa–thua của từng ván trùng với lượt `190429Z` khi đối chiếu theo khai cuộc và bên đi trước.
+
+## alphabeta-vs-mcts-20261124T190429Z-s42 — Alpha-Beta vs MCTS, kết quả chính
+
+- **Ngày:** 25/11/2026, giờ Việt Nam (UTC+7).
+- **Người chạy:** Phạm Thái Duy Khang / 3124720033.
+- **Loại và mục tiêu:** tournament, K2/K3. Đối chiếu Alpha-Beta độ sâu 4 với MCTS 500 mô phỏng, 5 khai cuộc và 10 ván đổi bên.
+- **Config và commit:** `configs/agents.yaml`, `57991d3`.
+- **Lệnh chạy:** `PYTHONPATH=src python -m connect_four.evaluation.cli --a alphabeta --b mcts --openings 5 --seed 42 --depth-a 4 --sims-b 500`.
+- **Seed:** `42`.
+- **Môi trường:** CPU ARM, RAM 16 GB, Python 3.13.7, NumPy 2.5.4, PyTorch 2.15.0.
+- **Thời gian chạy:** 02:04:27 → 02:04:29.
+- **Trạng thái:** `completed`.
+- **Log ván:** `results/logs/games_alphabeta-vs-mcts-20261124T190429Z-s42.csv`.
+- **Log nước đi:** `results/logs/moves_alphabeta-vs-mcts-20261124T190429Z-s42.csv`.
+- **Số liệu chính:** Alpha-Beta thắng 6, hòa 1, thua 3 theo cột `winner` của log ván. Tỷ lệ thắng là 60%, `score_A = (6 + 0,5 × 1) / 10 = 0,650`.
+- **Nhận xét:** Alpha-Beta đạt 6,5/10 điểm theo cấu hình và tập khai cuộc của lượt này. Báo cáo kết quả chính với cỡ mẫu 10 ván.
