@@ -7,6 +7,9 @@ File này là **nhật ký người đọc** cho toàn bộ đồ án. Mỗi l�
 
 > Quy ước chi tiết về schema và cách truy vết số liệu: xem [`docs/LOGGING.md`](LOGGING.md).
 
+> Bảng tổng hợp gửi giảng viên: [`results/experiment_schedule.xlsx`](../results/experiment_schedule.xlsx).
+> File được sinh từ `run_manifest.csv` và `results/experiment_assignments.csv`; giờ trong bảng đã đổi từ UTC sang UTC+7.
+
 ## Cách ghi
 
 Mỗi mục dùng mẫu sau:

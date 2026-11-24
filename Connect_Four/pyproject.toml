@@ -18,7 +18,7 @@ torch = ["torch>=2.2,<3"]
 # Giao dien pygame
 ui = ["pygame>=2.5,<3"]
 # Giai dau + phan tich ket qua
-analysis = ["PyYAML>=6.0,<7", "pandas>=2.1,<3", "matplotlib>=3.8,<4", "psutil>=5.9"]
+analysis = ["PyYAML>=6.0,<7", "pandas>=2.1,<3", "matplotlib>=3.8,<4", "psutil>=5.9", "openpyxl>=3.1,<4"]
 # Phat trien / kiem thu
 dev = ["pytest>=8.0,<9"]
 # Ghep DOCX va tao slide thuyet trinh

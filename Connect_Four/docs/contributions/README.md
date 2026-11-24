@@ -18,3 +18,18 @@ từng thành viên xác nhận; không tự suy ra từ số dòng code hoặc 
    thuyết trình.
 4. Không ghi nhận training, benchmark hoặc checkpoint nếu không có log/chứng
    cứ trong repository.
+
+## Phân công và bằng chứng thực nghiệm
+
+- Bảng phân công 4 thành viên: [`results/experiment_plan.csv`](../../results/experiment_plan.csv).
+- Người chạy từng lần thử nghiệm: [`results/experiment_assignments.csv`](../../results/experiment_assignments.csv).
+  Các dòng `CHƯA XÁC NHẬN` phải do thành viên xác nhận trước khi nộp.
+- File tổng hợp duy nhất gửi giảng viên: [`results/experiment_schedule.xlsx`](../../results/experiment_schedule.xlsx)
+  gồm 3 sheet: `Phan cong`, `Thuc nghiem`, `Minh chung`. Mọi dòng ở sheet
+  `Thuc nghiem` có ngày giờ đầy đủ, đã đổi từ UTC sang giờ Việt Nam (UTC+7).
+- Sinh lại file: `cd Connect_Four && PYTHONPATH=src python scripts/build_experiment_workbook.py`
+  (cần `python -m pip install -e ".[analysis]"` để có `openpyxl`).
+- **Không sửa tay file `.xlsx`** — nguồn sự thật là `results/logs/run_manifest.csv`
+  và hai file CSV nêu trên.
+- Mỗi người làm trên nhánh `exp/<ten>/<task>`, commit log + CSV + nhật ký rồi mở
+  PR. Sau khi PR được merge, chạy lại script và commit file Excel mới.
