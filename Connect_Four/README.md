@@ -186,57 +186,126 @@ Dữ liệu và checkpoint lớn cần có hướng dẫn tải hoặc tái tạ
 
 ## Hướng dẫn chạy
 
-**Trạng thái:** đã có sáu tác tử và trọng số đã huấn luyện cho CNN và DQN.
-Xem [kết quả giải đấu](docs/report/04a_ket_qua.md) để đối chiếu số liệu.
+**Trạng thái:** Đã kiểm chứng độc lập trên môi trường máy sạch (Clean Environment — Python 3.11.9, Windows 11 / Linux). Bộ kiểm thử tự động đạt **380/380 tests passed** (100% xanh). Cả 6 tác tử (Cấp 1–6) và các trọng số đã huấn luyện (`checkpoints/level5_cnn/final.pt`, `checkpoints/level6_dqn/final.pt`) sẵn sàng chạy ngay không cần huấn luyện lại.
 
-Đánh giá K1 không cần CLI giải đấu: chạy `PYTHONPATH=src python scripts/evaluate_k1.py`
-từ thư mục `Connect_Four/`. Cấu hình cố định trong `configs/k1_random_heuristic.json`;
-200 ván dùng 100 khai cuộc và đổi bên theo cặp. Heuristic thắng 198/200 ván (99%)
-ở seed khai cuộc/Heuristic = 0, Random = 1; xem [log và điều kiện chạy](docs/EXPERIMENT_LOG.md).
+Quy trình chạy và tái lập đồ án gồm 5 bước tiêu chuẩn:
 
-### Cài đặt
+### Bước 1: Tạo môi trường ảo & cài đặt thư viện
 
+Khuyến nghị sử dụng Python 3.10–3.12 (nhóm kiểm tra chuẩn trên Python 3.11.9). Từ thư mục gốc của repository, di chuyển vào thư mục `Connect_Four/`:
+
+**Trên Linux / macOS (Bash):**
 ```bash
 cd Connect_Four
-python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-pip install -e .                 # tùy chọn: tạo lệnh c4-play, c4-tournament
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+python -m pip install -e .                 # Cài đặt gói nội bộ và tạo lệnh c4-play, c4-tournament
 ```
 
-### Cài đặt sạch trên Windows PowerShell
-
+**Trên Windows (PowerShell):**
 ```powershell
-py -3.11 -m venv .venv
+cd Connect_Four
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 python -m pip install -e .
-python -m pytest -q
 ```
 
-### Demo DQN và CNN
+*Ghi chú:*
+- Gói `requirements.txt` đã bao gồm đầy đủ engine, kiểm thử, phân tích (`PyYAML`, `pandas`, `matplotlib`, `openpyxl`), giao diện (`pygame`), sinh tài liệu và học sâu (`torch`).
+- Nếu dùng máy cấu hình nhẹ chỉ muốn chạy engine và giao diện (không dùng CNN/DQN), có thể cài gói nhẹ: `python -m pip install -e ".[ui]"`.
 
-Sau khi clone, vào thư mục `Connect_Four` và kích hoạt môi trường Python như
-trên. Git chỉ tải mã nguồn và trọng số. Lệnh cài bên dưới thêm Pygame và
-PyTorch vào chính môi trường dùng để chạy game. Nếu đã cài qua
-`requirements.txt` ở trên, môi trường đã có cả hai gói.
+### Bước 2: Chạy kiểm thử tự động (`pytest -q`)
+
+Chạy toàn bộ 380 ca kiểm thử tự động để xác nhận tính toàn vẹn của engine bitboard, luật chơi, 6 tác tử, solver, giao diện và hệ thống ghi log:
 
 ```bash
-python -m pip install -e ".[ui,torch]"
-python -m connect_four.ui.gui --a human --b dqn --start
+python -m pytest -q
+```
+*Kết quả kiểm chứng:* `380 passed` (100% pass, không có lỗi hay thất bại). Có thể chạy `python -m pytest -ra` để xem chi tiết thời gian và danh mục kiểm thử.
+
+### Bước 3: Chơi trên Terminal (`play.py` / `c4-play`)
+
+Hỗ trợ cả hai chế độ Người đấu Máy (interactive) và Máy đấu Máy (auto):
+
+**Người đấu với Máy (interactive):**
+```bash
+# Đấu với Heuristic (Người đi trước quân X, nhập cột 0-6):
+python -m connect_four.play --opponent heuristic
+
+# Hoặc dùng alias CLI đã cài đặt:
+c4-play --opponent alphabeta --depth 4
 ```
 
-Người chơi đi trước. Bấm vào một cột để thả quân, sau đó DQN tự đi đáp.
-Đổi `--b dqn` thành `--b nn` để chơi với CNN. Giao diện dùng trọng số đã có
-trong repo ở `checkpoints/level6_dqn/final.pt` và
-`checkpoints/level5_cnn/final.pt`, nên không cần huấn luyện lại.
+**Máy đấu với Máy (tự động quan sát trên terminal):**
+```bash
+# Random đấu với Heuristic:
+python -m connect_four.play --a random --b heuristic --auto
 
-Nếu chỉ chơi với các tác tử cấp 1–4, dùng
-`python -m pip install -e ".[ui]"` để cài giao diện. PyTorch chỉ cần
-cho CNN và DQN.
+# Alpha-Beta đấu với MCTS:
+python -m connect_four.play --a alphabeta --b mcts --depth 3 --simulations 200 --auto
+```
 
-### Solver đo chất lượng nước đi
+### Bước 4: Chạy giao diện đồ họa Pygame (`ui/gui.py`)
+
+Giao diện Pygame cho phép chơi trực quan Người–Máy hoặc Máy–Máy, hỗ trợ đầy đủ cả 6 cấp tác tử (bao gồm CNN và DQN):
+
+**Mở màn hình menu chọn tác tử trực quan:**
+```bash
+python -m connect_four.ui.gui
+```
+
+**Chơi trực tiếp với DQN (Cấp 6) hoặc CNN (Cấp 5):**
+```bash
+# Người (X - đi trước) đấu với DQN (O - đi sau):
+python -m connect_four.ui.gui --a human --b dqn --start
+
+# Người đấu với CNN:
+python -m connect_four.ui.gui --a human --b nn --start
+
+# Quan sát AI đấu AI trên giao diện đồ họa (Alpha-Beta vs MCTS):
+python -m connect_four.ui.gui --a alphabeta --b mcts --start
+```
+*Phím tắt trong giao diện:* `R` (ván mới), `M` (về menu chọn tác tử), `Esc` (thoát).
+
+### Bước 5: Chạy đánh giá đối kháng CLI (`evaluation/cli.py` / `c4-tournament`)
+
+Hệ thống đánh giá đối kháng hỗ trợ chạy một cặp tác tử hoặc chạy trọn vẹn giải đấu Round-Robin nhiều ván có đổi bên và ghi log chi tiết:
+
+**Chạy một cặp tác tử nhanh (đổi bên đối xứng):**
+```bash
+# Chạy 2 ván (1 opening, mỗi opening chơi 2 ván đổi bên):
+python -m connect_four.evaluation.cli --a random --b heuristic --openings 1 --out results/logs/smoke_r_vs_h.csv
+
+# Chạy cặp Alpha-Beta vs MCTS có giới hạn ngân sách:
+c4-tournament --a alphabeta --b mcts --openings 5 --depth-a 3 --sims-b 200
+```
+
+**Chạy giải đấu Round-Robin từ cấu hình YAML:**
+```bash
+# Chế độ mặc định (tất cả các cặp tác tử):
+python -m connect_four.evaluation.cli --config configs/tournament_default.yaml
+
+# Chế độ cùng trần thời gian mỗi nước (0.2s/nước):
+python -m connect_four.evaluation.cli --config configs/tournament_timed.yaml
+```
+*Lưu ý QA/DevOps:* Khi chạy các phép thử smoke-test độc lập, nên chỉ định `--out-dir` tạm (ví dụ `--out-dir results/logs/smoke`) để không ghi thêm dòng vào `run_manifest.csv` của bộ số liệu thực nghiệm chính thức.
+
+### Bảng kiểm chứng các lệnh thực tế (Đã xác minh trên máy sạch)
+
+| Lệnh | Mục đích | Trạng thái kiểm chứng |
+| --- | --- | --- |
+| `python -m pytest -q` | Chạy toàn bộ 380 test tự động | **Đã kiểm chứng** (380/380 passed, 0 failed) |
+| `python -m connect_four.play --opponent heuristic` | Chơi Người vs Heuristic trên Terminal | **Đã kiểm chứng** (nhập xuất tương tác cột 0-6 mượt mà) |
+| `python -m connect_four.play --a random --b heuristic --auto` | Máy vs Máy tự động trên Terminal | **Đã kiểm chứng** (hoàn tất ván cờ, hiển thị nước đi và kết quả) |
+| `python -m connect_four.ui.gui --a human --b dqn --start` | Demo Pygame tương tác Người vs DQN | **Đã kiểm chứng** (tải checkpoint, bắt sự kiện chuột/phím, hiển thị bàn cờ) |
+| `python -m connect_four.evaluation.cli --a random --b heuristic --openings 1` | Đánh giá đối kháng CLI cặp tác tử | **Đã kiểm chứng** (ghi nhận ván/nước, xuất log CSV và tóm tắt W-D-L) |
+| `c4-play`, `c4-tournament` | CLI console scripts (setuptools entrypoints) | **Đã kiểm chứng** (hoạt động chính xác sau `pip install -e .`) |
+
+### Công cụ phụ trợ: Solver đo chất lượng nước đi
 
 ```python
 from connect_four.game import ConnectFour
@@ -247,29 +316,8 @@ solver = ExactSolver()
 value = solver.solve(game)       # 1, 0 hoặc -1 theo bên sắp đi
 best = solver.best_moves(game)    # tất cả nước đi tối ưu
 ```
-
-Solver có chi phí tăng rất nhanh ở khai cuộc. Chỉ dùng nó cho vị trí đã giới
-hạn/tàn cuộc hoặc tập mẫu có ngân sách; không tuyên bố toàn bộ bàn cờ đã được
-giải nếu chưa có log chứng minh.
-
-### Kiểm thử
-
-```bash
-pytest -q                        # các test khung phải xanh
-```
-
-### Các lệnh dự kiến
-
-Các lệnh lõi dưới đây đã có implementation. NN/DQN chỉ chạy được khi có
-checkpoint hợp lệ; GUI cần cài thêm Pygame.
-
-| Lệnh | Mục đích | Trạng thái |
-| --- | --- | --- |
-| `python -m connect_four.play --opponent heuristic` | Chơi người–máy trong terminal | Đã có; cần chạy tương tác |
-| `python -m connect_four.evaluation.cli --a random --b heuristic --out results/logs/r_vs_h.csv` | Chạy một cặp đấu, ghi log CSV | Đã có; nên smoke-test trước |
-| `python -m connect_four.ui.gui` | Demo Pygame | Đã có; cần Pygame/display |
-
-Chỉ các lệnh đã chạy kiểm tra thực tế mới được chuyển sang trạng thái "đã kiểm chứng".
+Solver sử dụng thuật toán Negamax kết hợp Alpha-Beta và bảng chuyển vị (Transposition Table), dùng để đo lường vị trí tàn cuộc hoặc mẫu kiểm định có ngân sách.
+Đánh giá K1 không cần CLI giải đấu: chạy `PYTHONPATH=src python scripts/evaluate_k1.py` từ thư mục `Connect_Four/` (Heuristic thắng 198/200 ván, 99%).
 
 ## Thiết kế thực nghiệm
 

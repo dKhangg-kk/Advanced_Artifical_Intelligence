@@ -30,11 +30,52 @@ from typing import Callable
 
 from connect_four.agents import AGENTS, Agent, make_agent
 from connect_four.game.base import ConnectFourGame
-from connect_four.game.constants import COLS, PLAYER_1, PLAYER_2, ROWS, WIN_LENGTH
+from connect_four.game.constants import COLS, PLAYER_1, PLAYER_2, ROWS, WIN_LENGTH, other
 from connect_four.game.engine import ConnectFour
 
 HUMAN = "human"
 SYMBOL = {PLAYER_1: "X", PLAYER_2: "O"}
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+GUI_CHECKPOINTS = {
+    "nn": PROJECT_ROOT / "checkpoints" / "level5_cnn" / "final.pt",
+    "dqn": PROJECT_ROOT / "checkpoints" / "level6_dqn" / "final.pt",
+}
+
+
+def _make_gui_agent(name: str, seed: int) -> Agent:
+    """Create GUI agents with trained weights for the neural policies."""
+    kwargs = {"seed": seed}
+    checkpoint = GUI_CHECKPOINTS.get(name)
+    if checkpoint is not None:
+        if not checkpoint.is_file():
+            raise FileNotFoundError(f"Khong tim thay checkpoint cho tac tu '{name}': {checkpoint}")
+        kwargs["checkpoint"] = checkpoint
+    return make_agent(name, **kwargs)
+
+
+def _guard_neural_move(game: ConnectFourGame, action: int) -> int:
+    """Keep NN/DQN from missing an immediate win or a forced single-column block."""
+    player = game.current_player
+    wins = game.winning_moves(player)
+    if wins:
+        return wins[0]
+
+    opponent = other(player)
+    threats = game.winning_moves(opponent)
+    if len(threats) == 1:
+        return threats[0]
+
+    # If the network move gives the opponent an immediate win, prefer a safe
+    # move when one exists. A double threat can be unavoidable, so keep the
+    # network choice in that case.
+    safe_moves = [
+        candidate
+        for candidate in game.legal_actions()
+        if not game.clone_after(candidate).winning_moves(opponent)
+    ]
+    if safe_moves and action not in safe_moves:
+        return min(safe_moves, key=lambda candidate: (abs(candidate - COLS // 2), candidate))
+    return action
 
 
 def _make_demo_agent(name: str, seed: int) -> Agent:
@@ -180,6 +221,8 @@ class GameController:
             start = time.perf_counter()
             try:
                 col = agent.choose(snapshot)
+                if self.names[player] in {"nn", "dqn"}:
+                    col = _guard_neural_move(snapshot, col)
                 outcome = (token, player, col, (time.perf_counter() - start) * 1000, None)
             except Exception as exc:  # NotImplementedError, loi checkpoint, ...
                 outcome = (token, player, None, 0.0, exc)
@@ -265,7 +308,7 @@ class GuiApp:
                     raise ValueError(f"Tac tu khong hop le: {name!r}. Co san: {self.options}")
                 self.options.append(name)  # factory tuy chinh (dung trong test)
         self.choice = {PLAYER_1: agent_a, PLAYER_2: agent_b}
-        self.agent_factory = agent_factory
+        self.agent_factory = agent_factory or _make_gui_agent
         self.seed = seed
         self.state = "menu"  # "menu" | "game"
         self.controller: GameController | None = None
@@ -344,6 +387,27 @@ class GuiApp:
     def _text(self, text: str, pos, font=None, color=TEXT) -> None:
         self.screen.blit((font or self.font).render(text, True, color), pos)
 
+    def _wrap_text(self, text: str, font, max_width: int, max_lines: int) -> list[str]:
+        """Wrap text to a pixel width so long status messages stay inside the panel."""
+        lines: list[str] = []
+        line = ""
+        for word in text.split():
+            candidate = f"{line} {word}".strip()
+            if line and font.size(candidate)[0] > max_width:
+                lines.append(line)
+                line = word
+            else:
+                line = candidate
+        if line:
+            lines.append(line)
+        if len(lines) > max_lines:
+            lines = lines[:max_lines]
+            last = lines[-1]
+            while last and font.size(last + "...")[0] > max_width:
+                last = last[:-1]
+            lines[-1] = last.rstrip() + "..."
+        return lines
+
     def _button(self, key: str, store: dict, rect, label: str) -> None:
         pg = self.pg
         rect = pg.Rect(rect)
@@ -402,9 +466,13 @@ class GuiApp:
 
         # bang ben phai
         status_color = BAD if ctl.blocked else (GOOD if ctl.game.is_terminal() else TEXT)
-        self._text(ctl.status(), (PANEL_X, 40), self.font, status_color)
+        status_font = self.font_small if ctl.blocked else self.font
+        status_lines = self._wrap_text(ctl.status(), status_font, PANEL_W, max_lines=4)
+        for line_no, line in enumerate(status_lines):
+            self._text(line, (PANEL_X, 40 + line_no * 26), status_font, status_color)
+        panel_shift = max(0, (len(status_lines) - 1) * 26)
         for i, player in enumerate((PLAYER_1, PLAYER_2)):
-            y = 110 + i * 90
+            y = 110 + panel_shift + i * 90
             pg.draw.circle(self.screen, COLORS[player], (PANEL_X + 14, y + 12), 12)
             self._text(ctl.label(player), (PANEL_X + 38, y))
             ms = ctl.last_ms[player]
@@ -413,11 +481,11 @@ class GuiApp:
             else:
                 info = "nuoc gan nhat: " + ("-" if ms is None else f"{ms:.1f} ms")
             self._text(info, (PANEL_X + 38, y + 30), self.font_small, MUTED)
-        self._text(f"So nuoc da di: {len(ctl.game.moves_played())}", (PANEL_X, 300), self.font_small, MUTED)
+        self._text(f"So nuoc da di: {len(ctl.game.moves_played())}", (PANEL_X, 300 + panel_shift), self.font_small, MUTED)
         if ctl.message:
-            self._text(ctl.message, (PANEL_X, 330), self.font_small, BAD)
-        self._button("new", self.game_rects, (PANEL_X, 400, 140, 44), "Van moi")
-        self._button("menu", self.game_rects, (PANEL_X + 150, 400, 140, 44), "Chon lai")
+            self._text(ctl.message, (PANEL_X, 330 + panel_shift), self.font_small, BAD)
+        self._button("new", self.game_rects, (PANEL_X, 400 + panel_shift, 140, 44), "Van moi")
+        self._button("menu", self.game_rects, (PANEL_X + 150, 400 + panel_shift, 140, 44), "Chon lai")
 
     # --- vong lap ---------------------------------------------------------
     def run(self) -> None:
