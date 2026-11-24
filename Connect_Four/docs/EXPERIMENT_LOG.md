@@ -59,6 +59,9 @@ Mỗi mục dùng mẫu sau:
 
 | run_id | Ngày | Loại | Mục tiêu | Trạng thái | Log thô |
 |---|---|---|---|---|---|
+| random-vs-heuristic-20261124T204523Z-s2026 | 2026-11-25 | tournament | Random vs Heuristic, 10 openings | completed | `results/logs/games_random-vs-heuristic-20261124T204523Z-s2026.csv` |
+| alphabeta-vs-random-20261124T204529Z-s2026 | 2026-11-25 | tournament | Alpha-Beta depth 3 vs Random, 5 openings | completed | `results/logs/games_alphabeta-vs-random-20261124T204529Z-s2026.csv` |
+| mcts-vs-random-20261124T204536Z-s2026 | 2026-11-25 | tournament | MCTS 200 simulations vs Random, 5 openings | completed | `results/logs/games_mcts-vs-random-20261124T204536Z-s2026.csv` |
 | k1-heuristic-random-20261109T060914Z-s0 | 2026-11-09 | tournament | K1 Heuristic vs Random (pilot) | completed | `results/logs/games_k1-heuristic-random-20261109T060914Z-s0.csv` |
 | k1-heuristic-random-20261109T061032Z-s0 | 2026-11-09 | tournament | K1 Heuristic vs Random (bản đã commit) | completed | `results/logs/games_k1-heuristic-random-20261109T061032Z-s0.csv` |
 | ablation-a3-20261111T150514Z-s20261105 | 2026-11-11 | ablation | A3 — ảnh hưởng số ván huấn luyện CNN (RQ2) | completed | `results/logs/ablation_a3_ablation-a3-20261111T150514Z-s20261105.csv` |
@@ -66,6 +69,75 @@ Mỗi mục dùng mẫu sau:
 ## Mục chi tiết
 
 <!-- Thêm mục mới lên đầu hoặc cuối, miễn giữ thứ tự thời gian rõ ràng. -->
+
+## random-vs-heuristic-20261124T204523Z-s2026 — Random vs Heuristic
+
+- **Ngày:** 2026-11-25 (UTC+7)
+- **Người chạy:** Bùi Anh Đức
+- **Loại:** tournament
+- **Mục tiêu:** Cross-check Random–Heuristic theo phân công nhóm 26.
+- **Config:** `configs/agents.yaml` (mặc định)
+- **Commit:** `ba1be81`
+- **Lệnh chạy:**
+  ```powershell
+  python -m connect_four.evaluation.cli --a random --b heuristic --openings 10 --seed 2026
+  ```
+- **Seed:** 2026
+- **Môi trường:** Windows 10/11, CPU Intel 6/154; Python 3.11.9, NumPy 2.4.6, PyTorch 2.15.0+cpu (theo `results/logs/run_manifest.csv`).
+- **Thời gian chạy:** 2026-11-25 03:45:23 → 03:45:23 UTC+7 (2026-11-24 20:45:23 → 20:45:23 UTC)
+- **Trạng thái:** completed
+- **Log thô:**
+  - `results/logs/games_random-vs-heuristic-20261124T204523Z-s2026.csv`
+  - `results/logs/moves_random-vs-heuristic-20261124T204523Z-s2026.csv`
+- **Bảng/hình liên quan:** Không tạo bảng/hình riêng.
+- **Số liệu chính:** 20 ván; Random thắng 0, hòa 0, thua 20; score_A = 0.000. Nguồn: log ván và output CLI.
+- **Nhận xét:** Heuristic thắng tuyệt đối 20/20 ván trước Random khi đổi bên đối xứng trên 10 thế khai cuộc.
+
+## alphabeta-vs-random-20261124T204529Z-s2026 — Alpha-Beta depth 3 vs Random
+
+- **Ngày:** 2026-11-25 (UTC+7)
+- **Người chạy:** Bùi Anh Đức
+- **Loại:** tournament
+- **Mục tiêu:** Cross-check Alpha-Beta depth 3 vs Random theo phân công nhóm 26.
+- **Config:** `configs/agents.yaml` (mặc định), depth-a = 3
+- **Commit:** `ba1be81`
+- **Lệnh chạy:**
+  ```powershell
+  python -m connect_four.evaluation.cli --a alphabeta --b random --openings 5 --seed 2026 --depth-a 3
+  ```
+- **Seed:** 2026
+- **Môi trường:** Windows 10/11, CPU Intel 6/154; Python 3.11.9, NumPy 2.4.6, PyTorch 2.15.0+cpu (theo `results/logs/run_manifest.csv`).
+- **Thời gian chạy:** 2026-11-25 03:45:29 → 03:45:29 UTC+7 (2026-11-24 20:45:29 → 20:45:29 UTC)
+- **Trạng thái:** completed
+- **Log thô:**
+  - `results/logs/games_alphabeta-vs-random-20261124T204529Z-s2026.csv`
+  - `results/logs/moves_alphabeta-vs-random-20261124T204529Z-s2026.csv`
+- **Bảng/hình liên quan:** Không tạo bảng/hình riêng.
+- **Số liệu chính:** 10 ván; Alpha-Beta thắng 10, hòa 0, thua 0; score_A = 1.000. Nguồn: log ván và output CLI.
+- **Nhận xét:** Alpha-Beta depth 3 thắng 10/10 ván trước Random, thời gian ra nước đi nhanh chóng và ổn định.
+
+## mcts-vs-random-20261124T204536Z-s2026 — MCTS 200 simulations vs Random
+
+- **Ngày:** 2026-11-25 (UTC+7)
+- **Người chạy:** Bùi Anh Đức
+- **Loại:** tournament
+- **Mục tiêu:** Cross-check MCTS 200 simulations vs Random theo phân công nhóm 26.
+- **Config:** `configs/agents.yaml` (mặc định), sims-a = 200
+- **Commit:** `ba1be81`
+- **Lệnh chạy:**
+  ```powershell
+  python -m connect_four.evaluation.cli --a mcts --b random --openings 5 --seed 2026 --sims-a 200
+  ```
+- **Seed:** 2026
+- **Môi trường:** Windows 10/11, CPU Intel 6/154; Python 3.11.9, NumPy 2.4.6, PyTorch 2.15.0+cpu (theo `results/logs/run_manifest.csv`).
+- **Thời gian chạy:** 2026-11-25 03:45:36 → 03:45:36 UTC+7 (2026-11-24 20:45:36 → 20:45:36 UTC)
+- **Trạng thái:** completed
+- **Log thô:**
+  - `results/logs/games_mcts-vs-random-20261124T204536Z-s2026.csv`
+  - `results/logs/moves_mcts-vs-random-20261124T204536Z-s2026.csv`
+- **Bảng/hình liên quan:** Không tạo bảng/hình riêng.
+- **Số liệu chính:** 10 ván; MCTS thắng 10, hòa 0, thua 0; score_A = 1.000. Nguồn: log ván và output CLI.
+- **Nhận xét:** MCTS với ngân sách 200 simulations thắng 10/10 ván trước Random, ra nước chính xác và không vi phạm luật.
 
 ### Ví dụ minh hoạ — không phải số liệu thật
 

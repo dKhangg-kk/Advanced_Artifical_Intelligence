@@ -65,3 +65,6 @@ ablation-a1-20261124T181149Z-s20261104,Phạm Thái Duy Khang,A1 - Cắt tỉa A
 ablation-a5-20261124T185729Z-s20261104,Phạm Thái Duy Khang,A5 - Độ sâu Alpha-Beta
 alphabeta-vs-mcts-20261124T190359Z-s42,Phạm Thái Duy Khang,K2/K3 - Alpha-Beta vs MCTS - lượt đối chiếu
 alphabeta-vs-mcts-20261124T190429Z-s42,Phạm Thái Duy Khang,K2/K3 - Alpha-Beta vs MCTS - kết quả chính
+random-vs-heuristic-20261124T204523Z-s2026,Bùi Anh Đức,Random–Heuristic; 10 openings; seed 2026
+alphabeta-vs-random-20261124T204529Z-s2026,Bùi Anh Đức,Alpha-Beta depth 3 vs Random; 5 openings; seed 2026
+mcts-vs-random-20261124T204536Z-s2026,Bùi Anh Đức,MCTS 200 simulations vs Random; 5 openings; seed 2026
