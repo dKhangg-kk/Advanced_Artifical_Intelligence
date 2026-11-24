@@ -1,0 +1,198 @@
+run_id,game_id,ply,player,agent,action,legal_actions,time_ms,nodes,simulations,depth_reached,eval_score,is_terminal
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g000,4,1,alphabeta,3,0 1 2 3 4 5 6,8.21429999996326,131,0,3,28.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g000,5,2,random,0,0 1 2 3 4 5 6,0.007899998308857903,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g000,6,1,alphabeta,3,0 1 2 3 4 5 6,8.479100000840845,150,0,3,9112.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g000,7,2,random,3,0 1 2 3 4 5 6,0.008299997716676444,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g000,8,1,alphabeta,5,0 1 2 3 4 5 6,18.65670000188402,288,0,3,40.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g000,9,2,random,0,0 1 2 3 4 5 6,0.009300001693191007,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g000,10,1,alphabeta,6,0 1 2 3 4 5 6,23.75430000029155,338,0,3,10000.0,1
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,4,1,random,0,0 1 2 3 4 5 6,0.007499998901039362,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,5,2,alphabeta,4,0 1 2 3 4 5 6,9.655400001065573,130,0,3,54.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,6,1,random,5,0 1 2 3 4 5 6,0.010299998393747956,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,7,2,alphabeta,2,0 1 2 3 4 5 6,11.088700000982499,152,0,3,4112.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,8,1,random,2,0 1 2 3 4 5 6,0.012399999832268804,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,9,2,alphabeta,3,0 1 2 3 4 5 6,11.230699998122873,160,0,3,4304.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,10,1,random,6,0 1 2 3 4 5 6,0.007300001016119495,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,11,2,alphabeta,3,0 1 2 3 4 5 6,6.199899999046465,104,0,3,9426.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,12,1,random,3,0 1 2 3 4 5 6,0.008099999831756577,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,13,2,alphabeta,4,0 1 2 3 4 5 6,15.400799999042647,202,0,3,18332.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,14,1,random,5,0 1 2 3 4 5 6,0.004800000169780105,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,15,2,alphabeta,5,0 1 2 3 4 5 6,10.64060000135214,187,0,3,18332.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,16,1,random,6,0 1 2 3 4 5 6,0.006199999916134402,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,17,2,alphabeta,6,0 1 2 3 4 5 6,9.085599998797989,173,0,3,27322.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,18,1,random,1,0 1 2 3 4 5 6,0.004800000169780105,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,19,2,alphabeta,3,0 1 2 3 4 5 6,3.6765000004379544,93,0,3,27496.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,20,1,random,3,0 1 2 3 4 5 6,0.006199999916134402,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,21,2,alphabeta,2,0 1 2 3 4 5 6,3.4597999983816408,96,0,3,27570.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,22,1,random,1,0 1 2 3 4 5 6,0.0033999967854470015,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,23,2,alphabeta,1,0 1 2 3 4 5 6,9.59809999767458,165,0,3,36478.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,24,1,random,2,0 1 2 3 4 5 6,0.008800001523923129,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,25,2,alphabeta,3,0 1 2 3 4 5 6,2.1850000011909287,71,0,3,36398.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,26,1,random,5,0 1 2 4 5 6,0.006099999154685065,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,27,2,alphabeta,5,0 1 2 4 5 6,2.1879000014450867,73,0,3,27268.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,28,1,random,1,0 1 2 4 5 6,0.0031999989005271345,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,29,2,alphabeta,1,0 1 2 4 5 6,3.553700000338722,76,0,3,18248.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,30,1,random,2,0 1 2 4 5 6,0.005600002623395994,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,31,2,alphabeta,0,0 1 4 5 6,1.77330000224174,54,0,3,18258.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,32,1,random,4,0 1 4 5 6,0.0036000019463244826,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,33,2,alphabeta,4,0 1 4 5 6,1.2894000028609298,45,0,3,10000.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,34,1,random,0,0 1 5 6,0.0029000002541579306,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g001,35,2,alphabeta,6,0 1 5 6,1.6814000009617303,44,0,3,10000.0,1
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,4,1,alphabeta,3,0 1 2 3 4 5 6,10.482000001502456,144,0,3,34.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,5,2,random,5,0 1 2 3 4 5 6,0.004500001523410901,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,6,1,alphabeta,3,0 1 2 3 4 5 6,5.526500000996748,96,0,3,9114.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,7,2,random,5,0 1 2 3 4 5 6,0.007499998901039362,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,8,1,alphabeta,5,0 1 2 3 4 5 6,6.606200000533136,120,0,3,9156.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,9,2,random,2,0 1 2 3 4 5 6,0.006500002200482413,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,10,1,alphabeta,2,0 1 2 3 4 5 6,5.85529999807477,108,0,3,9172.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,11,2,random,2,0 1 2 3 4 5 6,0.005199999577598646,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,12,1,alphabeta,1,0 1 2 3 4 5 6,6.5961000000243075,127,0,3,9282.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,13,2,random,0,0 1 2 3 4 5 6,0.008600000001024455,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,14,1,alphabeta,1,0 1 2 3 4 5 6,5.24530000257073,106,0,3,9238.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,15,2,random,2,0 1 2 3 4 5 6,0.004399997123982757,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,16,1,alphabeta,1,0 1 2 3 4 5 6,8.813899999950081,146,0,3,9346.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,17,2,random,6,0 1 2 3 4 5 6,0.009900002623908222,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,18,1,alphabeta,4,0 1 2 3 4 5 6,7.912400000350317,136,0,3,18338.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,19,2,random,6,0 1 2 3 4 5 6,0.006099999154685065,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,20,1,alphabeta,6,0 1 2 3 4 5 6,8.45830000253045,183,0,3,18358.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,21,2,random,5,0 1 2 3 4 5 6,0.004899997293250635,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,22,1,alphabeta,0,0 1 2 3 4 5 6,3.226400000130525,92,0,3,27250.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,23,2,random,6,0 1 2 3 4 5 6,0.0024999972083605826,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,24,1,alphabeta,2,0 1 2 3 4 5 6,2.9144000000087544,68,0,3,27352.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,25,2,random,2,0 1 2 3 4 5 6,0.008299997716676444,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,26,1,alphabeta,3,0 1 3 4 5 6,1.4573000007658266,56,0,3,27438.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,27,2,random,4,0 1 3 4 5 6,0.0027000023692380637,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,28,1,alphabeta,4,0 1 3 4 5 6,1.9944000014220364,67,0,3,18474.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,29,2,random,5,0 1 3 4 5 6,0.0026000016077887267,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,30,1,alphabeta,4,0 1 3 4 6,1.1460999994596932,40,0,3,22424.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,31,2,random,1,0 1 3 4 6,0.007899998308857903,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,32,1,alphabeta,4,0 1 3 4 6,1.9818999971903395,40,0,3,18474.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,33,2,random,1,0 1 3 4 6,0.00920000093174167,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g002,34,1,alphabeta,3,0 3 4 6,0.17949999892152846,12,0,3,10000.0,1
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,4,1,random,5,0 1 2 3 4 5 6,0.0041000021155923605,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,5,2,alphabeta,3,0 1 2 3 4 5 6,11.017799999535782,155,0,3,18.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,6,1,random,2,0 1 2 3 4 5 6,0.004599998646881431,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,7,2,alphabeta,1,0 1 2 3 4 5 6,12.8162999972119,179,0,3,38.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,8,1,random,6,0 1 2 3 4 5 6,0.005000001692678779,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,9,2,alphabeta,3,0 1 2 3 4 5 6,13.14020000063465,173,0,3,4170.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,10,1,random,2,0 1 2 3 4 5 6,0.004800000169780105,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,11,2,alphabeta,1,0 1 2 3 4 5 6,6.241499999305233,108,0,3,9140.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,12,1,random,1,0 1 2 3 4 5 6,0.00540000110049732,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,13,2,alphabeta,3,0 1 2 3 4 5 6,4.329800001869444,76,0,3,194.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,14,1,random,3,0 1 2 3 4 5 6,0.004900000931229442,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,15,2,alphabeta,2,0 1 2 3 4 5 6,9.469399999943562,144,0,3,4098.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,16,1,random,3,0 1 2 3 4 5 6,0.005300000339047983,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,17,2,alphabeta,5,0 1 2 3 4 5 6,15.920900001219707,231,0,3,9140.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,18,1,random,3,0 1 2 3 4 5 6,0.009399998816661537,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,19,2,alphabeta,5,0 1 2 4 5 6,8.39560000167694,115,0,3,9254.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,20,1,random,1,0 1 2 4 5 6,0.005999998393235728,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,21,2,alphabeta,6,0 1 2 4 5 6,8.434799998212839,130,0,3,9318.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,22,1,random,4,0 1 2 4 5 6,0.006500002200482413,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,23,2,alphabeta,6,0 1 2 4 5 6,16.217100001085782,162,0,3,18480.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,24,1,random,2,0 1 2 4 5 6,0.005900001269765198,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,25,2,alphabeta,6,0 1 2 4 5 6,6.261200000153622,139,0,3,18466.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,26,1,random,6,0 1 2 4 5 6,0.0034000004234258085,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,27,2,alphabeta,2,0 1 2 4 5,3.60269999873708,83,0,3,18396.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,28,1,random,2,0 1 2 4 5,0.007599999662488699,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,29,2,alphabeta,1,0 1 4 5,1.5382999990833923,48,0,3,18380.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,30,1,random,5,0 4 5,0.0039000005926936865,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g003,31,2,alphabeta,4,0 4 5,0.20700000095530413,17,0,3,10000.0,1
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g004,4,1,alphabeta,3,0 1 2 3 4 5 6,6.062000000383705,94,0,3,58.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g004,5,2,random,6,0 1 2 3 4 5 6,0.005599998985417187,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g004,6,1,alphabeta,3,0 1 2 3 4 5 6,5.964600000879727,88,0,3,164.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g004,7,2,random,0,0 1 2 3 4 5 6,0.006899997970322147,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g004,8,1,alphabeta,4,0 1 2 3 4 5 6,5.310000000463333,109,0,3,4214.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g004,9,2,random,6,0 1 2 3 4 5 6,0.004400000761961564,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g004,10,1,alphabeta,4,0 1 2 3 4 5 6,5.679300000338117,117,0,3,9300.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g004,11,2,random,6,0 1 2 3 4 5 6,0.004400000761961564,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g004,12,1,alphabeta,4,0 1 2 3 4 5 6,5.041100001108134,98,0,3,10000.0,1
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g005,4,1,random,1,0 1 2 3 4 5 6,0.006800000846851617,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g005,5,2,alphabeta,3,0 1 2 3 4 5 6,4.7052000008989125,76,0,3,106.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g005,6,1,random,6,0 1 2 3 4 5 6,0.00790000194683671,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g005,7,2,alphabeta,2,0 1 2 3 4 5 6,7.056000002194196,108,0,3,9176.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g005,8,1,random,6,0 1 2 3 4 5 6,0.00799999907030724,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g005,9,2,alphabeta,2,0 1 2 3 4 5 6,6.272999999055173,110,0,3,9294.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g005,10,1,random,0,0 1 2 3 4 5 6,0.016500001947861165,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g005,11,2,alphabeta,2,0 1 2 3 4 5 6,7.676999997784151,116,0,3,18410.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g005,12,1,random,2,0 1 2 3 4 5 6,0.009499999578110874,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g005,13,2,alphabeta,5,0 1 2 3 4 5 6,9.092800002690637,149,0,3,13230.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g005,14,1,random,3,0 1 2 3 4 5 6,0.007399998139590025,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g005,15,2,alphabeta,3,0 1 2 3 4 5 6,6.523699998069787,124,0,3,10000.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g005,16,1,random,2,0 1 2 3 4 5 6,0.006199999916134402,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g005,17,2,alphabeta,3,0 1 2 3 4 5 6,7.685399999900255,132,0,3,10000.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g005,18,1,random,4,0 1 2 3 4 5 6,0.006100002792663872,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g005,19,2,alphabeta,3,0 1 2 3 4 5 6,7.038499999907799,135,0,3,10000.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g005,20,1,random,0,0 1 2 4 5 6,0.006800000846851617,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g005,21,2,alphabeta,2,0 1 2 4 5 6,5.536799999390496,92,0,3,10000.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g005,22,1,random,4,0 1 4 5 6,0.008200000593205914,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g005,23,2,alphabeta,4,0 1 4 5 6,0.4915000026812777,19,0,3,10000.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g005,24,1,random,6,0 1 5 6,0.006999998731771484,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g005,25,2,alphabeta,1,0 1 5 6,0.6253999999898952,23,0,3,10000.0,1
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,4,1,alphabeta,2,0 1 2 3 4 5 6,6.9524999998975545,106,0,3,42.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,5,2,random,3,0 1 2 3 4 5 6,0.005100002454128116,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,6,1,alphabeta,2,0 1 2 3 4 5 6,7.147500000428408,117,0,3,232.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,7,2,random,4,0 1 2 3 4 5 6,0.006499998562503606,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,8,1,alphabeta,3,0 1 2 3 4 5 6,7.47399999818299,101,0,3,9206.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,9,2,random,0,0 1 2 3 4 5 6,0.006800000846851617,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,10,1,alphabeta,3,0 1 2 3 4 5 6,10.33110000207671,134,0,3,9380.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,11,2,random,6,0 1 2 3 4 5 6,0.012599997717188671,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,12,1,alphabeta,2,0 1 2 3 4 5 6,9.928799998306204,172,0,3,18376.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,13,2,random,1,0 1 2 3 4 5 6,0.005800000508315861,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,14,1,alphabeta,3,0 1 2 3 4 5 6,5.088500001875218,112,0,3,27408.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,15,2,random,2,0 1 2 3 4 5 6,0.005699999746866524,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,16,1,alphabeta,4,0 1 2 3 4 5 6,7.264100000611506,96,0,3,18382.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,17,2,random,4,0 1 2 3 4 5 6,0.008899998647393659,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,18,1,alphabeta,5,0 1 2 3 4 5 6,7.019100001343759,95,0,3,18410.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,19,2,random,0,0 1 2 3 4 5 6,0.007899998308857903,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,20,1,alphabeta,0,0 1 2 3 4 5 6,4.967799999576528,75,0,3,18420.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,21,2,random,0,0 1 2 3 4 5 6,0.007800001185387373,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,22,1,alphabeta,0,0 1 2 3 4 5 6,4.179899999144254,75,0,3,18510.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,23,2,random,6,0 1 2 3 4 5 6,0.009499999578110874,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,24,1,alphabeta,6,0 1 2 3 4 5 6,5.684599997039186,111,0,3,18510.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,25,2,random,5,0 1 2 3 4 5 6,0.006999998731771484,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,26,1,alphabeta,5,0 1 2 3 4 5 6,5.290100001730025,63,0,3,18346.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,27,2,random,4,0 1 2 3 4 5 6,0.007800001185387373,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,28,1,alphabeta,5,0 1 2 3 5 6,3.2155000008060597,64,0,3,18354.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,29,2,random,5,0 1 2 3 5 6,0.005500001861946657,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g006,30,1,alphabeta,3,0 1 2 3 5 6,2.5669999995443504,32,0,3,10000.0,1
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g007,4,1,random,5,0 1 2 3 4 5 6,0.008299997716676444,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g007,5,2,alphabeta,3,0 1 2 3 4 5 6,12.918600001285085,132,0,3,28.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g007,6,1,random,6,0 1 2 3 4 5 6,0.012500000593718141,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g007,7,2,alphabeta,3,0 1 2 3 4 5 6,10.832700001628837,134,0,3,9054.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g007,8,1,random,4,0 1 2 3 4 5 6,0.007800001185387373,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g007,9,2,alphabeta,2,0 1 2 3 4 5 6,8.91599999886239,102,0,3,9142.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g007,10,1,random,3,0 1 2 3 4 5 6,0.009799998224480078,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g007,11,2,alphabeta,1,0 1 2 3 4 5 6,10.468100001162384,125,0,3,10000.0,1
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g008,4,1,alphabeta,5,0 1 2 3 4 5 6,22.764400000596652,168,0,3,106.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g008,5,2,random,0,0 1 2 3 4 5 6,0.00960000033956021,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g008,6,1,alphabeta,3,0 1 2 3 4 5 6,18.807199998263968,182,0,3,4146.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g008,7,2,random,3,0 1 2 3 4 5 6,0.005699999746866524,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g008,8,1,alphabeta,5,0 1 2 3 4 5 6,21.18989999871701,213,0,3,9126.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g008,9,2,random,1,0 1 2 3 4 5 6,0.004900000931229442,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g008,10,1,alphabeta,5,0 1 2 3 4 5 6,8.402399998885812,97,0,3,10000.0,1
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g009,4,1,random,1,0 1 2 3 4 5 6,0.00969999746303074,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g009,5,2,alphabeta,4,0 1 2 3 4 5 6,10.366999998950632,100,0,3,32.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g009,6,1,random,0,0 1 2 3 4 5 6,0.008099999831756577,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g009,7,2,alphabeta,4,0 1 2 3 4 5 6,6.156299998110626,100,0,3,86.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g009,8,1,random,0,0 1 2 3 4 5 6,0.008199996955227107,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g009,9,2,alphabeta,3,0 1 2 3 4 5 6,8.911200002330588,156,0,3,4160.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g009,10,1,random,2,0 1 2 3 4 5 6,0.004899997293250635,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g009,11,2,alphabeta,2,0 1 2 3 4 5 6,6.112099999882048,125,0,3,18300.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g009,12,1,random,4,0 1 2 3 4 5 6,0.005000001692678779,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g009,13,2,alphabeta,2,0 1 2 3 4 5 6,3.534799998305971,90,0,3,18410.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g009,14,1,random,5,0 1 2 3 4 5 6,0.0031000017770566046,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g009,15,2,alphabeta,2,0 1 2 3 4 5 6,6.202000000484986,142,0,3,13420.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g009,16,1,random,6,0 1 2 3 4 5 6,0.0031999989005271345,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g009,17,2,alphabeta,5,0 1 2 3 4 5 6,5.968699999357341,109,0,3,22516.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g009,18,1,random,4,0 1 2 3 4 5 6,0.005300000339047983,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g009,19,2,alphabeta,0,0 1 2 3 4 5 6,6.77939999877708,120,0,3,22584.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g009,20,1,random,5,0 1 2 3 4 5 6,0.00920000093174167,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g009,21,2,alphabeta,0,0 1 2 3 4 5 6,9.136600001511397,138,0,3,22492.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g009,22,1,random,0,0 1 2 3 4 5 6,0.008299997716676444,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g009,23,2,alphabeta,4,0 1 2 3 4 5 6,8.655800000269664,130,0,3,18444.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g009,24,1,random,4,0 1 2 3 4 5 6,0.006500002200482413,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g009,25,2,alphabeta,5,0 1 2 3 5 6,4.756099999212893,87,0,3,18538.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g009,26,1,random,0,0 1 2 3 5 6,0.009499999578110874,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g009,27,2,alphabeta,3,1 2 3 5 6,1.5883000014582649,32,0,3,10000.0,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g009,28,1,random,6,1 2 3 5 6,0.005899997631786391,0,0,0,,0
+alphabeta-vs-random-20261124T204529Z-s2026,alphabeta_vs_random-g009,29,2,alphabeta,3,1 2 3 5 6,0.054600001021754,8,0,3,10000.0,1
