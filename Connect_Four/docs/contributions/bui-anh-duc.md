@@ -12,10 +12,12 @@ test đối chiếu và phần báo cáo kiến trúc tương ứng (mục 3.1�
 | 08/11/2026 | Bổ sung `ReferenceGame`, hoàn thiện engine bitboard, bộ chạy trận và giao diện cơ bản | `0f31c47` | TODO |
 | 08/11/2026 | Bổ sung terminal, test engine/cross-check/match và tài liệu kiến trúc mục 3.1–3.2 | `1e1ca30` | TODO |
 | 12/11/2026 | Hoàn thiện CLI giải đấu: tạo tác tử theo tham số, áp dụng ngân sách depth/simulation/time, chạy cặp đấu đổi bên và lưu log games/moves; bổ sung test MCTS về nước hợp lệ, tính tái lập, ngân sách và không làm đổi bàn cờ | `48a682c` | Chưa ghi nhận |
+| 25/11/2026 | Thực hiện 3 nhiệm vụ thực nghiệm CLI cross-check theo phân công: Random–Heuristic (10 openings, seed 2026), Alpha-Beta depth 3 vs Random (5 openings, seed 2026), MCTS 200 sims vs Random (5 openings, seed 2026); cập nhật manifest, assignments, EXPERIMENT_LOG.md và hoàn tất merge PR #87 | PR #87 / commit `6572c26` | Đức tự điền giờ thực tế |
+| 25/11/2026 | Hoàn thiện hạng mục Đ6 - Kiểm thử tái lập trên môi trường máy sạch: giả lập `%TEMP%\connect4_clean_verify`, chuẩn hóa 5 bước hướng dẫn chạy trong README.md, bổ sung `openpyxl` vào requirements.txt, xác nhận 380/380 tests passed 100% | `docs/contributions/duc.md`, `Connect_Four/README.md`, `requirements.txt` | Đức tự điền giờ thực tế |
 
 ## Kết quả kiểm tra
 
-- `pytest -q`: **42 passed**.
+- `pytest -q`: **380 passed** (toàn bộ test suite đồ án đạt 100% xanh).
 - `random` đấu `random` chạy hoàn tất một ván trong terminal.
 - `ReferenceGame` và `ConnectFour` được kiểm tra chéo trên các chuỗi nước đi ngẫu nhiên.
 - Phần này **không bao gồm** việc hoàn thiện các tác tử Heuristic, Alpha-Beta, MCTS,
