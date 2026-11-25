@@ -65,6 +65,7 @@ Mỗi mục dùng mẫu sau:
 | k1-heuristic-random-20261109T060914Z-s0 | 2026-11-09 | tournament | K1 Heuristic vs Random (pilot) | completed | `results/logs/games_k1-heuristic-random-20261109T060914Z-s0.csv` |
 | k1-heuristic-random-20261109T061032Z-s0 | 2026-11-09 | tournament | K1 Heuristic vs Random (bản đã commit) | completed | `results/logs/games_k1-heuristic-random-20261109T061032Z-s0.csv` |
 | ablation-a3-20261111T150514Z-s20261105 | 2026-11-11 | ablation | A3 — ảnh hưởng số ván huấn luyện CNN (RQ2) | completed | `results/logs/ablation_a3_ablation-a3-20261111T150514Z-s20261105.csv` |
+| dqn-vs-heuristic-20261125T162834Z-s2026 | 2026-11-25 | tournament | DQN `final.pt` vs Heuristic — sanity check | completed | `results/logs/games_dqn-vs-heuristic-20261125T162834Z-s2026.csv` |
 
 ## Mục chi tiết
 
@@ -422,6 +423,56 @@ Mỗi mục dùng mẫu sau:
 - **Log nước đi:** `results/logs/moves_alphabeta-vs-mcts-20261124T190429Z-s42.csv`.
 - **Số liệu chính:** Alpha-Beta thắng 6, hòa 1, thua 3 theo cột `winner` của log ván. Tỷ lệ thắng là 60%, `score_A = (6 + 0,5 × 1) / 10 = 0,650`.
 - **Nhận xét:** Alpha-Beta đạt 6,5/10 điểm theo cấu hình và tập khai cuộc của lượt này. Báo cáo kết quả chính với cỡ mẫu 10 ván.
+
+## dqn-vs-heuristic-20261125T162834Z-s2026 — DQN `final.pt` vs Heuristic (sanity)
+
+- **Ngày:** 25/11/2026 (giờ Việt Nam, UTC+7).
+- **Người chạy:** Phan Lê Ngọc Như Ý / 3124720079.
+- **Loại:** tournament (sanity check).
+- **Mục tiêu:** Kiểm chứng checkpoint DQN cấp 6 `checkpoints/level6_dqn/final.pt` chơi được trong CLI và đối chiếu sơ bộ với Heuristic (nhiệm vụ 9 trong `results/experiment_plan.csv`, mục 4.1–4.3 của báo cáo). **Không** đóng băng lại checkpoint hay thay số liệu A4/A6/Y6.
+- **Config:** `configs/agents.yaml` (hash `352c6c4662634f8e`); `--checkpoint-a checkpoints/level6_dqn/final.pt`.
+- **Commit mã nguồn:** `76da5ef`.
+- **Lệnh chạy:**
+  ```bash
+  cd Connect_Four
+  PYTHONPATH=src .venv/bin/python -m connect_four.evaluation.cli \
+      --a dqn --b heuristic --openings 5 --seed 2026 \
+      --checkpoint-a checkpoints/level6_dqn/final.pt
+  ```
+- **Seed:** 2026 (DQN dùng 2026, Heuristic dùng 2027 theo quy ước CLI).
+- **Môi trường:** Python 3.14.9, NumPy 2.5.4, PyTorch 2.15.0+cu132, CPU x86_64, Linux 7.3.4-300.fc45.x86_64, RAM 27,2 GB; không dùng GPU.
+- **Thời gian chạy (UTC):** 2026-11-25T16:28:33Z → 16:28:34Z (23:28:33 → 23:28:34 UTC+7).
+- **Trạng thái:** `completed`.
+- **Log thô:** `results/logs/games_dqn-vs-heuristic-20261125T162834Z-s2026.csv`, `results/logs/moves_dqn-vs-heuristic-20261125T162834Z-s2026.csv`.
+- **Bảng/hình liên quan:** Không tạo bảng/hình riêng; số liệu đọc trực tiếp từ log ván và log nước.
+- **Số liệu chính:** 10 ván (5 khai cuộc, đổi bên từng cặp); DQN thắng 2, hòa 1, thua 7; `score_A = (2 + 0,5 × 1) / 10 = 0,250`. DQN đi trước 1 thắng/3 thua, đi sau 1 thắng/4 thua. 103 nước DQN hợp lệ, trung vị 0,145 ms, trung bình 7,66 ms (nước đầu 773,4 ms do nạp mô hình); Heuristic 106 nước, trung vị 0,228 ms. Nguồn: cột `winner`, `a_starts` của log ván và `agent`, `time_ms`, `illegal` của log nước.
+- **Nhận xét:** Sanity check đạt về mặt vận hành (mọi nước được engine chấp nhận), nhưng DQN thua Heuristic ở tỷ lệ 70%; kết quả này phù hợp với kết luận A4/A6 rằng `final.pt` chưa đủ mạnh để đấu với Heuristic. Cỡ mẫu 10 ván chỉ để kiểm tra hoạt động, không thay thế ma trận giải đấu 15 cặp ngày 18/11.
+- **Việc tiếp theo:** Nếu cần số liệu đối kháng chính thức, dùng cấu hình giải đấu với openings/seed đủ lớn; giữ nguyên checkpoint đã đóng băng.
+
+## audit-49-old-runs-20261125 — Rà soát 49 lần chạy A4/A6/tournament cũ
+
+- **Ngày:** 25/11/2026 (giờ Việt Nam, UTC+7).
+- **Người chạy:** Phan Lê Ngọc Như Ý / 3124720079.
+- **Loại:** đối chiếu log (không chạy lại thí nghiệm).
+- **Mục tiêu:** Nhiệm vụ 10 trong `results/experiment_plan.csv` — đối chiếu `run_manifest.csv`, `experiment_assignments.csv`, `report_numbers.csv` và nhật ký cho đúng 49 lần chạy cũ: 33 tournament (`tournament-*`), 10 A4 (`a4-*`) và 6 A6 (`a6-*`).
+- **Lệnh chạy:**
+  ```bash
+  cd Connect_Four
+  PYTHONPATH=src .venv/bin/python scripts/audit_old_runs.py
+  ```
+- **Sản phẩm:** `results/tables/audit_old_runs_49.csv` (49 dòng, một dòng cho mỗi run_id), `results/experiment_assignments.csv` (điền 43 dòng chủ sở hữu), mục nhật ký này. Script chỉ đọc bốn nguồn trên; không sửa manifest, checkpoint hay báo cáo.
+- **Kết quả đối chiếu:**
+
+  | Nhóm | Số run | Có trong manifest | Log thô đầy đủ | Có dòng `report_numbers.csv` | Được nhật ký phủ | Chủ sở hữu trước | Sau |
+  |---|---:|---:|---:|---:|---:|---|---|
+  | Tournament | 33 | 33/33 | 33/33 (`games_` + `moves_`) | 33/33 | 33/33 (theo prefix) | 33 `CHƯA XÁC NHẬN` | Phan Lê Ngọc Như Ý |
+  | A4 | 10 | 10/10 | 10/10 (`train_dqn_`) | 10/10 (có dòng nối bằng `;` cho 6 run) | 10/10 (mục 18/11) | 10 `CHƯA XÁC NHẬN` | Phan Lê Ngọc Như Ý |
+  | A6 | 6 | 6/6 | 6/6 (`train_dqn_`) | 6/6 | 6/6 (mục 20/11) | Đã xác nhận | Giữ nguyên |
+
+  Tổng: **49/49 khớp** cả bốn nguồn; không có run_id nào thiếu log hoặc thiếu tham chiếu báo cáo. Nhật ký ghi tournament/A4 theo nhóm (một tiêu đề cho cả giải đấu hoặc cả A4), nên đối chiếu theo prefix thay vì đòi 49 tiêu đề riêng.
+- **Căn cứ gán chủ sở hữu cho 43 dòng trống:** nhật ký Y4 (PR #75, pilot 13/11), Y5 (ablation A4 18/11) và Y6 (giải đấu 18–19/11) trong `docs/contributions/phan-le-ngoc-nhu-y.md`, cùng các commit `f681924`, `2521b36` của cùng tác giả; 6 run A6 đã được xác nhận từ trước nên giữ nguyên. Đây là đối chiếu từ dấu vết có trong repository; theo `docs/contributions/README.md`, thành viên vẫn cần tự xác nhận số giờ/tỷ lệ trước khi nộp.
+- **Quyết định giữ nguyên:** không chạy lại A4/A6, không đổi `checkpoints/level6_dqn/final.pt`, không sửa `report_numbers.csv` hay bảng/hình Y6. Các dòng `CHƯA XÁC NHẬN` còn lại ngoài nhóm 49 (nếu có ở lần chạy khác) không thuộc phạm vi rà soát này.
+- **Nhận xét:** Việc điền 43 dòng chỉ bổ sung thông tin người chạy/phạm vi; thời gian, seed, log và số liệu trong manifest giữ nguyên. File Excel tổng hợp được sinh lại từ ba CSV nguồn sau khi cập nhật.
 
 ## RQ1 — Độ nhạy theo seed của Alpha-Beta và MCTS
 
