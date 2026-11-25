@@ -50,6 +50,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add Connect_Four/results/logs/run_manifest.csv
+          git add Connect_Four/results/logs/games_dqn-vs-heuristic-*.csv
+          git add Connect_Four/results/logs/moves_dqn-vs-heuristic-*.csv
           git add Connect_Four/results/experiment_assignments.csv
           git add Connect_Four/results/experiment_plan.csv
           git add Connect_Four/results/experiment_schedule.xlsx
