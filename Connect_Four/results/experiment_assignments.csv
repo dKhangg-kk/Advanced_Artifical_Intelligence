@@ -8,49 +8,49 @@ k1-heuristic-random-20261109T061032Z-s0,Phạm Thái Duy Khang,K1/K3/K4 tìm ki�
 ablation-a3-20261111T150514Z-s20261105,Bùi Quyền Kiệt,CNN/A3/Metrics
 k3-mcts-random-20261110T181053Z-s0,Phạm Thái Duy Khang,K1/K3/K4 tìm kiếm
 k3-mcts-random-20261110T181313Z-s0,Phạm Thái Duy Khang,K1/K3/K4 tìm kiếm
-tournament-default-20261113T140850Z-s20261113-random-vs-heuristic,CHƯA XÁC NHẬN,
-tournament-default-20261113T140850Z-s20261113-random-vs-dqn,CHƯA XÁC NHẬN,
-tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,CHƯA XÁC NHẬN,
-a4-default_decay-s0-20261118T155757Z,CHƯA XÁC NHẬN,
-a4-default_decay-s42-20261118T155757Z,CHƯA XÁC NHẬN,
-tournament-default-20261118T163224Z-s20261118-random-vs-heuristic,CHƯA XÁC NHẬN,
-tournament-default-20261118T163224Z-s20261118-random-vs-alphabeta,CHƯA XÁC NHẬN,
-tournament-default-20261118T163224Z-s20261118-random-vs-mcts,CHƯA XÁC NHẬN,
-tournament-default-20261118T163224Z-s20261118-random-vs-nn,CHƯA XÁC NHẬN,
-tournament-default-20261118T163224Z-s20261118-random-vs-dqn,CHƯA XÁC NHẬN,
-tournament-default-20261118T163224Z-s20261118-heuristic-vs-alphabeta,CHƯA XÁC NHẬN,
-tournament-default-20261118T163224Z-s20261118-heuristic-vs-mcts,CHƯA XÁC NHẬN,
-tournament-default-20261118T163224Z-s20261118-heuristic-vs-nn,CHƯA XÁC NHẬN,
-tournament-default-20261118T163224Z-s20261118-heuristic-vs-dqn,CHƯA XÁC NHẬN,
-tournament-default-20261118T163224Z-s20261118-alphabeta-vs-mcts,CHƯA XÁC NHẬN,
-tournament-default-20261118T163224Z-s20261118-alphabeta-vs-nn,CHƯA XÁC NHẬN,
-tournament-default-20261118T163224Z-s20261118-alphabeta-vs-dqn,CHƯA XÁC NHẬN,
-tournament-default-20261118T163224Z-s20261118-mcts-vs-nn,CHƯA XÁC NHẬN,
-tournament-default-20261118T163224Z-s20261118-mcts-vs-dqn,CHƯA XÁC NHẬN,
-tournament-default-20261118T163224Z-s20261118-nn-vs-dqn,CHƯA XÁC NHẬN,
-tournament-timed-20261118T164206Z-s20261119-random-vs-heuristic,CHƯA XÁC NHẬN,
-tournament-timed-20261118T164206Z-s20261119-random-vs-alphabeta,CHƯA XÁC NHẬN,
-tournament-timed-20261118T164206Z-s20261119-random-vs-mcts,CHƯA XÁC NHẬN,
-tournament-timed-20261118T164206Z-s20261119-random-vs-nn,CHƯA XÁC NHẬN,
-tournament-timed-20261118T164206Z-s20261119-random-vs-dqn,CHƯA XÁC NHẬN,
-tournament-timed-20261118T164206Z-s20261119-heuristic-vs-alphabeta,CHƯA XÁC NHẬN,
-tournament-timed-20261118T164206Z-s20261119-heuristic-vs-mcts,CHƯA XÁC NHẬN,
-tournament-timed-20261118T164206Z-s20261119-heuristic-vs-nn,CHƯA XÁC NHẬN,
-tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,CHƯA XÁC NHẬN,
-tournament-timed-20261118T164206Z-s20261119-alphabeta-vs-mcts,CHƯA XÁC NHẬN,
-tournament-timed-20261118T164206Z-s20261119-alphabeta-vs-nn,CHƯA XÁC NHẬN,
-tournament-timed-20261118T164206Z-s20261119-alphabeta-vs-dqn,CHƯA XÁC NHẬN,
-tournament-timed-20261118T164206Z-s20261119-mcts-vs-nn,CHƯA XÁC NHẬN,
-tournament-timed-20261118T164206Z-s20261119-mcts-vs-dqn,CHƯA XÁC NHẬN,
-tournament-timed-20261118T164206Z-s20261119-nn-vs-dqn,CHƯA XÁC NHẬN,
-a4-fast_decay-s42-20261118T171251Z,CHƯA XÁC NHẬN,
-a4-fast_decay-s0-20261118T171251Z,CHƯA XÁC NHẬN,
-a4-slow_decay-s0-20261118T174505Z,CHƯA XÁC NHẬN,
-a4-fast_decay-s2026-20261118T174456Z,CHƯA XÁC NHẬN,
-a4-default_decay-s2026-20261118T180315Z,CHƯA XÁC NHẬN,
-a4-slow_decay-s2026-20261118T181447Z,CHƯA XÁC NHẬN,
-a4-slow_decay-s42-20261118T183210Z,CHƯA XÁC NHẬN,
-a4-default_decay_open4-s0-20261118T184141Z,CHƯA XÁC NHẬN,
+tournament-default-20261113T140850Z-s20261113-random-vs-heuristic,Phan Lê Ngọc Như Ý,Y4/Y6 pilot 3 tác tử; PR #75; 20 ván/cặp
+tournament-default-20261113T140850Z-s20261113-random-vs-dqn,Phan Lê Ngọc Như Ý,Y4/Y6 pilot 3 tác tử; PR #75; 20 ván/cặp
+tournament-default-20261113T140850Z-s20261113-heuristic-vs-dqn,Phan Lê Ngọc Như Ý,Y4/Y6 pilot 3 tác tử; PR #75; 20 ván/cặp
+a4-default_decay-s0-20261118T155757Z,Phan Lê Ngọc Như Ý,Y5 ablation A4; 3 decay × 3 seed; 10.000 episode
+a4-default_decay-s42-20261118T155757Z,Phan Lê Ngọc Như Ý,Y5 ablation A4; 3 decay × 3 seed; 10.000 episode
+tournament-default-20261118T163224Z-s20261118-random-vs-heuristic,Phan Lê Ngọc Như Ý,Y6 giải đấu mặc định 6 tác tử; seed 20261118
+tournament-default-20261118T163224Z-s20261118-random-vs-alphabeta,Phan Lê Ngọc Như Ý,Y6 giải đấu mặc định 6 tác tử; seed 20261118
+tournament-default-20261118T163224Z-s20261118-random-vs-mcts,Phan Lê Ngọc Như Ý,Y6 giải đấu mặc định 6 tác tử; seed 20261118
+tournament-default-20261118T163224Z-s20261118-random-vs-nn,Phan Lê Ngọc Như Ý,Y6 giải đấu mặc định 6 tác tử; seed 20261118
+tournament-default-20261118T163224Z-s20261118-random-vs-dqn,Phan Lê Ngọc Như Ý,Y6 giải đấu mặc định 6 tác tử; seed 20261118
+tournament-default-20261118T163224Z-s20261118-heuristic-vs-alphabeta,Phan Lê Ngọc Như Ý,Y6 giải đấu mặc định 6 tác tử; seed 20261118
+tournament-default-20261118T163224Z-s20261118-heuristic-vs-mcts,Phan Lê Ngọc Như Ý,Y6 giải đấu mặc định 6 tác tử; seed 20261118
+tournament-default-20261118T163224Z-s20261118-heuristic-vs-nn,Phan Lê Ngọc Như Ý,Y6 giải đấu mặc định 6 tác tử; seed 20261118
+tournament-default-20261118T163224Z-s20261118-heuristic-vs-dqn,Phan Lê Ngọc Như Ý,Y6 giải đấu mặc định 6 tác tử; seed 20261118
+tournament-default-20261118T163224Z-s20261118-alphabeta-vs-mcts,Phan Lê Ngọc Như Ý,Y6 giải đấu mặc định 6 tác tử; seed 20261118
+tournament-default-20261118T163224Z-s20261118-alphabeta-vs-nn,Phan Lê Ngọc Như Ý,Y6 giải đấu mặc định 6 tác tử; seed 20261118
+tournament-default-20261118T163224Z-s20261118-alphabeta-vs-dqn,Phan Lê Ngọc Như Ý,Y6 giải đấu mặc định 6 tác tử; seed 20261118
+tournament-default-20261118T163224Z-s20261118-mcts-vs-nn,Phan Lê Ngọc Như Ý,Y6 giải đấu mặc định 6 tác tử; seed 20261118
+tournament-default-20261118T163224Z-s20261118-mcts-vs-dqn,Phan Lê Ngọc Như Ý,Y6 giải đấu mặc định 6 tác tử; seed 20261118
+tournament-default-20261118T163224Z-s20261118-nn-vs-dqn,Phan Lê Ngọc Như Ý,Y6 giải đấu mặc định 6 tác tử; seed 20261118
+tournament-timed-20261118T164206Z-s20261119-random-vs-heuristic,Phan Lê Ngọc Như Ý,"Y6 giải đấu cùng thời gian 0,2 s/nước; seed 20261119"
+tournament-timed-20261118T164206Z-s20261119-random-vs-alphabeta,Phan Lê Ngọc Như Ý,"Y6 giải đấu cùng thời gian 0,2 s/nước; seed 20261119"
+tournament-timed-20261118T164206Z-s20261119-random-vs-mcts,Phan Lê Ngọc Như Ý,"Y6 giải đấu cùng thời gian 0,2 s/nước; seed 20261119"
+tournament-timed-20261118T164206Z-s20261119-random-vs-nn,Phan Lê Ngọc Như Ý,"Y6 giải đấu cùng thời gian 0,2 s/nước; seed 20261119"
+tournament-timed-20261118T164206Z-s20261119-random-vs-dqn,Phan Lê Ngọc Như Ý,"Y6 giải đấu cùng thời gian 0,2 s/nước; seed 20261119"
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-alphabeta,Phan Lê Ngọc Như Ý,"Y6 giải đấu cùng thời gian 0,2 s/nước; seed 20261119"
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-mcts,Phan Lê Ngọc Như Ý,"Y6 giải đấu cùng thời gian 0,2 s/nước; seed 20261119"
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-nn,Phan Lê Ngọc Như Ý,"Y6 giải đấu cùng thời gian 0,2 s/nước; seed 20261119"
+tournament-timed-20261118T164206Z-s20261119-heuristic-vs-dqn,Phan Lê Ngọc Như Ý,"Y6 giải đấu cùng thời gian 0,2 s/nước; seed 20261119"
+tournament-timed-20261118T164206Z-s20261119-alphabeta-vs-mcts,Phan Lê Ngọc Như Ý,"Y6 giải đấu cùng thời gian 0,2 s/nước; seed 20261119"
+tournament-timed-20261118T164206Z-s20261119-alphabeta-vs-nn,Phan Lê Ngọc Như Ý,"Y6 giải đấu cùng thời gian 0,2 s/nước; seed 20261119"
+tournament-timed-20261118T164206Z-s20261119-alphabeta-vs-dqn,Phan Lê Ngọc Như Ý,"Y6 giải đấu cùng thời gian 0,2 s/nước; seed 20261119"
+tournament-timed-20261118T164206Z-s20261119-mcts-vs-nn,Phan Lê Ngọc Như Ý,"Y6 giải đấu cùng thời gian 0,2 s/nước; seed 20261119"
+tournament-timed-20261118T164206Z-s20261119-mcts-vs-dqn,Phan Lê Ngọc Như Ý,"Y6 giải đấu cùng thời gian 0,2 s/nước; seed 20261119"
+tournament-timed-20261118T164206Z-s20261119-nn-vs-dqn,Phan Lê Ngọc Như Ý,"Y6 giải đấu cùng thời gian 0,2 s/nước; seed 20261119"
+a4-fast_decay-s42-20261118T171251Z,Phan Lê Ngọc Như Ý,Y5 ablation A4; 3 decay × 3 seed; 10.000 episode
+a4-fast_decay-s0-20261118T171251Z,Phan Lê Ngọc Như Ý,Y5 ablation A4; 3 decay × 3 seed; 10.000 episode
+a4-slow_decay-s0-20261118T174505Z,Phan Lê Ngọc Như Ý,Y5 ablation A4; 3 decay × 3 seed; 10.000 episode
+a4-fast_decay-s2026-20261118T174456Z,Phan Lê Ngọc Như Ý,Y5 ablation A4; 3 decay × 3 seed; 10.000 episode
+a4-default_decay-s2026-20261118T180315Z,Phan Lê Ngọc Như Ý,Y5 ablation A4; 3 decay × 3 seed; 10.000 episode
+a4-slow_decay-s2026-20261118T181447Z,Phan Lê Ngọc Như Ý,Y5 ablation A4; 3 decay × 3 seed; 10.000 episode
+a4-slow_decay-s42-20261118T183210Z,Phan Lê Ngọc Như Ý,Y5 ablation A4; 3 decay × 3 seed; 10.000 episode
+a4-default_decay_open4-s0-20261118T184141Z,Phan Lê Ngọc Như Ý,Y5 A4 ô mở rộng; không dùng chọn checkpoint
 ablation-a1-20261114T172315Z-s20261104,Phạm Thái Duy Khang,K1/K3/K4 tìm kiếm
 ablation-a5-20261114T173556Z-s20261104,Phạm Thái Duy Khang,K1/K3/K4 tìm kiếm
 ablation-a2-20261114T173956Z-s20261104,Phạm Thái Duy Khang,K1/K3/K4 tìm kiếm
@@ -68,3 +68,4 @@ alphabeta-vs-mcts-20261124T190429Z-s42,Phạm Thái Duy Khang,K2/K3 - Alpha-Beta
 random-vs-heuristic-20261124T204523Z-s2026,Bùi Anh Đức,Random–Heuristic; 10 openings; seed 2026
 alphabeta-vs-random-20261124T204529Z-s2026,Bùi Anh Đức,Alpha-Beta depth 3 vs Random; 5 openings; seed 2026
 mcts-vs-random-20261124T204536Z-s2026,Bùi Anh Đức,MCTS 200 simulations vs Random; 5 openings; seed 2026
+dqn-vs-heuristic-20261125T162834Z-s2026,Phan Lê Ngọc Như Ý,DQN final.pt vs Heuristic - sanity; 5 openings; seed 2026
