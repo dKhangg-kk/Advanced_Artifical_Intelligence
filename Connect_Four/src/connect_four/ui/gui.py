@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
+from secrets import randbits
 import threading
 import time
 from typing import Callable
@@ -109,7 +110,7 @@ class GameController:
         names: dict[int, str],
         agent_factory: Callable[..., Agent] | None = None,
         game_factory: Callable[[], ConnectFourGame] = ConnectFour,
-        seed: int = 0,
+        seed: int | None = None,
     ) -> None:
         self.names = dict(names)
         self._agent_factory = agent_factory or _make_demo_agent
@@ -131,12 +132,13 @@ class GameController:
         self.error: str | None = None
         self.message: str = ""
         self.moved = False  # True ngay sau khi mot nuoc duoc ap dung (de GUI dat nhip)
+        game_seed = randbits(63) if self._seed is None else self._seed
         for offset, player in enumerate((PLAYER_1, PLAYER_2)):
             name = self.names[player]
             if name == HUMAN:
                 continue
             try:
-                agent = self._agent_factory(name, seed=self._seed + offset)
+                agent = self._agent_factory(name, seed=game_seed + offset)
                 agent.reset()
                 self.agents[player] = agent
             except Exception as exc:  # tac tu chua cai dat / thieu checkpoint / thieu torch
@@ -288,7 +290,7 @@ class GuiApp:
         agent_a: str = HUMAN,
         agent_b: str = "random",
         agent_factory: Callable[..., Agent] | None = None,
-        seed: int = 0,
+        seed: int | None = None,
     ) -> None:
         import pygame
 
@@ -498,13 +500,16 @@ class GuiApp:
         self.pg.quit()
 
 
-def run_gui(agent_a: str = HUMAN, agent_b: str = "random", start: bool = False) -> None:
+def run_gui(
+    agent_a: str = HUMAN, agent_b: str = "random", start: bool = False,
+    *, seed: int | None = None,
+) -> None:
     """Mo cua so pygame. Goi tu `python -m connect_four.ui.gui`."""
     try:
         import pygame  # noqa: F401
     except ImportError as exc:
         raise SystemExit("Can cai pygame truoc: pip install pygame") from exc
-    app = GuiApp(agent_a, agent_b)
+    app = GuiApp(agent_a, agent_b, seed=seed)
     if start:
         app.start_game()
     app.run()
@@ -515,8 +520,11 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--a", default=HUMAN, help=f"Ben X (di truoc): {HUMAN} hoac {sorted(AGENTS)}")
     p.add_argument("--b", default="random", help="Ben O (di sau)")
     p.add_argument("--start", action="store_true", help="Vao thang van, bo qua man hinh chon")
+    p.add_argument("--seed", type=int, help="Seed co dinh de lap lai van; mac dinh moi van mot seed ngau nhien")
     args = p.parse_args(argv)
-    run_gui(args.a, args.b, args.start)
+    if args.seed is not None and not 0 <= args.seed < 2**63:
+        p.error("--seed phai nam trong khoang 0 den 2^63 - 1")
+    run_gui(args.a, args.b, args.start, seed=args.seed)
     return 0
 
 
