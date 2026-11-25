@@ -1,0 +1,39 @@
+diff --git a/Connect_Four/src/connect_four/agents/alphabeta.py b/Connect_Four/src/connect_four/agents/alphabeta.py
+index 5494dbc..74a82c0 100644
+--- a/Connect_Four/src/connect_four/agents/alphabeta.py
++++ b/Connect_Four/src/connect_four/agents/alphabeta.py
+@@ -20,6 +20,9 @@ from connect_four.agents.heuristic import HeuristicAgent
+ from connect_four.game.base import ConnectFourGame
+ from connect_four.game.constants import CENTER_FIRST, COLS, ROWS
+ 
++WIN_SCORE = 1_000_000
++HEURISTIC_LIMIT = 100_000
++
+ 
+ class AlphaBetaAgent(Agent):
+     """Tim kiem doi khang co cat tia."""
+@@ -72,6 +75,8 @@ class AlphaBetaAgent(Agent):
+                 best_action = action
+                 self.last_stats.extra["eval_score"] = score
+                 self.last_stats.depth_reached = depth
++                if timed and self.use_ordering and action != actions[0]:
++                    actions = [action, *(col for col in actions if col != action)]
+         except TimeoutError:
+             pass
+         finally:
+@@ -108,9 +113,13 @@ class AlphaBetaAgent(Agent):
+                  root_player: int, color: int) -> float:
+         self._check_time()
+         self.last_stats.nodes += 1
+-        if depth <= 0 or game.is_terminal():
++        if game.is_terminal():
++            # It nuoc hon de thang, nhieu nuoc hon neu chac chan thua.
++            return color * game.result(root_player) * (WIN_SCORE - len(game.moves_played()))
++        if depth <= 0:
+             # Heuristic khong doi xung: giu goc nhin goc, chi doi dau bang color.
+-            return color * self._heuristic.score(game, root_player)
++            score = self._heuristic.score(game, root_player)
++            return color * max(-HEURISTIC_LIMIT, min(HEURISTIC_LIMIT, score))
+         legal = game.legal_actions()
+         actions = [c for c in CENTER_FIRST if c in legal] if self.use_ordering else legal
+         best = -float("inf")
