@@ -1,14 +1,13 @@
 # Bảng đối soát đóng góp
 
 Bảng này là nơi tổng hợp để nộp cùng báo cáo. Số giờ và tỷ lệ đóng góp phải do
-từng thành viên xác nhận; không tự suy ra từ số dòng code hoặc thời gian chạy.
-
-| Thành viên | Phần việc đã có dấu vết | Hồ sơ và minh chứng | Số giờ | Tỷ lệ |
-| --- | --- | --- | ---: | ---: |
-| Bùi Anh Đức | Engine bitboard, engine tham chiếu, test/check và tài liệu kiến trúc | [Hồ sơ đóng góp](bui-anh-duc.md) | CẦN ĐIỀN | CẦN ĐIỀN |
-| Phạm Thái Duy Khang | Heuristic, Alpha-Beta, pilot K1 | [Hồ sơ đóng góp](pham-thai-duy-khang.md) | CẦN ĐIỀN | CẦN ĐIỀN |
-| Phan Lê Ngọc Như Ý | DQN Level 6, vòng huấn luyện, Tournament CLI, thực nghiệm và phân tích | [Hồ sơ công việc chi tiết](phan-le-ngoc-nhu-y.md) | CẦN ĐIỀN | CẦN ĐIỀN |
-| Bùi Quyền Kiệt | Metrics/CI, kiểm thử luật, dữ liệu và CNN, ablation, báo cáo | [Hồ sơ đóng góp](kiet.md) | CẦN ĐIỀN | CẦN ĐIỀN |
+từng thành viên xác nhận; không tự suy ra từ số dòng code
+| Thành viên | Phần việc đã có dấu vết | Hồ sơ và minh chứng | Tỷ lệ |
+| --- | --- | --- | ---: |
+| Bùi Anh Đức | Engine bitboard, engine tham chiếu, test/check và tài liệu kiến trúc | [Hồ sơ đóng góp](bui-anh-duc.md) | 25% |
+| Phạm Thái Duy Khang | Heuristic, Alpha-Beta, pilot K1 | [Hồ sơ đóng góp](pham-thai-duy-khang.md) | 25% |
+| Phan Lê Ngọc Như Ý | DQN Level 6, vòng huấn luyện, Tournament CLI, thực nghiệm và phân tích | [Hồ sơ công việc chi tiết](phan-le-ngoc-nhu-y.md) | 25% |
+| Bùi Quyền Kiệt | Metrics/CI, kiểm thử luật, dữ liệu và CNN, ablation, báo cáo | [Hồ sơ đóng góp](kiet.md) | 25% |
 
 ## Quy tắc chốt trước khi nộp
 
