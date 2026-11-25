@@ -112,7 +112,14 @@ def format_vn(value: str) -> str:
     return dt.astimezone(VIETNAM).strftime("%d/%m/%Y %H:%M")
 
 
+
 def classify(run_id: str) -> str:
+    if run_id in {
+        "alphabeta-vs-mcts-20261125T162305Z-s20261119",
+        "alphabeta-vs-mcts-20261125T163120Z-s20261120",
+    }:
+        return "RQ1 – Độ nhạy theo seed"
+
     if "heuristic-vs-random" in run_id:
         return "Giải đấu - K1 đối chiếu"
     for label, matches in TYPE_RULES:

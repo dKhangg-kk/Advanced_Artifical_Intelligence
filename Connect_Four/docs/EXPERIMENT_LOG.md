@@ -473,3 +473,11 @@ Mỗi mục dùng mẫu sau:
 - **Căn cứ gán chủ sở hữu cho 43 dòng trống:** nhật ký Y4 (PR #75, pilot 13/11), Y5 (ablation A4 18/11) và Y6 (giải đấu 18–19/11) trong `docs/contributions/phan-le-ngoc-nhu-y.md`, cùng các commit `f681924`, `2521b36` của cùng tác giả; 6 run A6 đã được xác nhận từ trước nên giữ nguyên. Đây là đối chiếu từ dấu vết có trong repository; theo `docs/contributions/README.md`, thành viên vẫn cần tự xác nhận số giờ/tỷ lệ trước khi nộp.
 - **Quyết định giữ nguyên:** không chạy lại A4/A6, không đổi `checkpoints/level6_dqn/final.pt`, không sửa `report_numbers.csv` hay bảng/hình Y6. Các dòng `CHƯA XÁC NHẬN` còn lại ngoài nhóm 49 (nếu có ở lần chạy khác) không thuộc phạm vi rà soát này.
 - **Nhận xét:** Việc điền 43 dòng chỉ bổ sung thông tin người chạy/phạm vi; thời gian, seed, log và số liệu trong manifest giữ nguyên. File Excel tổng hợp được sinh lại từ ba CSV nguồn sau khi cập nhật.
+
+## RQ1 — Độ nhạy theo seed của Alpha-Beta và MCTS
+
+- Thiết lập: 200 ms/nước, 100 ván/seed, 50 khai cuộc đổi bên.
+- Phiên bản chạy: `57991d3` kèm bản sửa Alpha-Beta cục bộ lưu tại `results/logs/alphabeta-vs-mcts-20261125-local-changes.patch`.
+- Seed `20261119` (`alphabeta-vs-mcts-20261125T162305Z-s20261119`): MCTS thắng 59, hòa 5, thua 36; score 0,615.
+- Seed `20261120` (`alphabeta-vs-mcts-20261125T163120Z-s20261120`): MCTS thắng 61, hòa 5, thua 34; score 0,635.
+- Kết luận: MCTS dẫn trước Alpha-Beta ở cả hai seed đã thử.
