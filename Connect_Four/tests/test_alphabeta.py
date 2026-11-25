@@ -22,8 +22,10 @@ def snapshot(game):
 
 
 def minimax(game, depth, root_player, heuristic):
-    if depth <= 0 or game.is_terminal():
-        return heuristic.score(game, root_player)
+    if game.is_terminal():
+        return game.result(root_player) * (1_000_000 - len(game.moves_played()))
+    if depth <= 0:
+        return min(100_000, max(-100_000, heuristic.score(game, root_player)))
     scores = [minimax(game.clone_after(c), depth - 1, root_player, heuristic)
               for c in game.legal_actions()]
     return max(scores) if game.current_player == root_player else min(scores)
@@ -74,6 +76,20 @@ def test_depth_one_takes_immediate_win(game):
     assert AlphaBetaAgent(depth=1).choose(game) == 0
 
 
+@pytest.mark.parametrize("moves, winning_col, other_col, other_score", [
+    ("6 3 6 3 0 2 4 3 3 6 6 2 3 2 4", 2, 4, 18_672),
+    ("1 4 6 6 6 0 2 0 3 6 3 3 5 3 6 1 0 3 0", 3, 2, 999_978),
+])
+def test_immediate_win_beats_heuristic_and_delayed_win(game, moves, winning_col, other_col, other_score):
+    for move in map(int, moves.split()):
+        game.step(move)
+    root_player = game.current_player
+    assert minimax(game.clone_after(other_col), 4, root_player, HeuristicAgent()) == other_score
+    agent = AlphaBetaAgent(depth=5, use_ordering=False)
+    assert agent.choose(game) == winning_col
+    assert agent.last_stats.extra["eval_score"] == 1_000_000 - len(game.moves_played()) - 1
+
+
 @pytest.mark.parametrize("ordering, expected", [(False, 0), (True, 3)])
 def test_ordering_changes_tie_break_only(game, ordering, expected):
     agent = AlphaBetaAgent(depth=1, use_ordering=ordering)
@@ -111,8 +127,8 @@ def test_leaf_score_uses_current_player(game, terminal):
     agent = AlphaBetaAgent()
     before = snapshot(game)
     for depth in ([0, -1] if not terminal else [0, 4]):
-        assert agent.negamax(game, depth, -float("inf"), float("inf")) == (
-            HeuristicAgent().score(game, game.current_player))
+        expected = minimax(game, depth, game.current_player, HeuristicAgent())
+        assert agent.negamax(game, depth, -float("inf"), float("inf")) == expected
     assert snapshot(game) == before
     if terminal:
         with pytest.raises(ValueError, match="hop le"):
@@ -191,6 +207,23 @@ def test_timed_search_is_not_capped_by_default_depth(game, monkeypatch):
     assert agent.last_stats.depth_reached == 2
     assert agent.last_stats.extra["eval_score"] == 0
     assert snapshot(game) == before
+
+
+@pytest.mark.parametrize("ordering", [False, True])
+def test_timed_search_promotes_last_completed_best_move(game, monkeypatch, ordering):
+    agent = AlphaBetaAgent(budget=Budget(time_s=1), use_ordering=ordering)
+    root_orders = []
+
+    def search_root(game, depth, actions):
+        root_orders.append(actions[:])
+        if depth == 3:
+            raise TimeoutError
+        return 0, 5 if depth == 1 else 4
+
+    monkeypatch.setattr(agent, "_search_root", search_root)
+    assert agent.choose(game) == 4
+    assert agent.last_stats.depth_reached == 2
+    assert [order[0] for order in root_orders] == ([3, 5, 4] if ordering else [0, 0, 0])
 
 
 def test_real_time_budget_returns_promptly(game):
