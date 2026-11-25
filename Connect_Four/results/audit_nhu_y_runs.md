@@ -5,13 +5,13 @@
 
 ## 1. Run DQN cấp 6 đối đầu Heuristic
 
-- run_id: `dqn-vs-heuristic-20261125T163855Z-s2026`.
+- run_id: `dqn-vs-heuristic-20261125T165235Z-s2026`.
 - Lệnh: `python -m connect_four.evaluation.cli --a dqn --b heuristic --openings 5 --seed 2026 --checkpoint-a checkpoints/level6_dqn/final.pt`.
 - Checkpoint: `checkpoints/level6_dqn/final.pt`.
 - Seed: 2026; 5 khai cuộc × 2 lượt đổi bên = 10 ván.
 - Kết quả DQN: **2 thắng – 1 hòa – 7 thua**, score = **0.250**.
-- Log ván: `results/logs/games_dqn-vs-heuristic-20261125T163855Z-s2026.csv`.
-- Log nước đi: `results/logs/moves_dqn-vs-heuristic-20261125T163855Z-s2026.csv`.
+- Log ván: `results/logs/games_dqn-vs-heuristic-20261125T165235Z-s2026.csv`.
+- Log nước đi: `results/logs/moves_dqn-vs-heuristic-20261125T165235Z-s2026.csv`.
 
 ## 2. Kết quả audit 49 run cũ
 
@@ -24,8 +24,8 @@
 
 - Đã gán người thực hiện cho 43/43 dòng CHƯA XÁC NHẬN: 33 tournament và 10 A4.
 - Sáu run A6 đã có tên Như Ý từ trước và được giữ nguyên.
-- Tổng manifest sau run mới: 70; tổng assignments: 70.
-- Dòng assignments theo người thực hiện: {'Phạm Thái Duy Khang': 12, 'Bùi Quyền Kiệt': 5, 'Phan Lê Ngọc Như Ý': 50, 'Bùi Anh Đức': 3}.
+- Tổng manifest sau run mới: 71; tổng assignments: 71.
+- Dòng assignments theo người thực hiện: {'Phạm Thái Duy Khang': 12, 'Bùi Quyền Kiệt': 5, 'Phan Lê Ngọc Như Ý': 51, 'Bùi Anh Đức': 3}.
 - Đối chiếu ID: manifest và assignments khớp một-một; không có ID trùng, thiếu hoặc mồ côi.
 
 ## 3. Đối chiếu report_numbers
@@ -104,4 +104,5 @@ Các run A4 không có run_id riêng trong report_numbers:
 - Run mới có games log, moves log và manifest; số W-D-L được tính trực tiếp từ games log.
 - 49 run cũ trong phạm vi Như Ý đã được kiểm tra file bằng chứng; 43 dòng chưa xác nhận được cập nhật phân công.
 - Không chạy lại A4/A6, không sửa checkpoint đã đóng băng và không tạo số liệu báo cáo thay cho nguồn thiếu.
+- Lần DQN–Heuristic đầu đã hoàn tất nhưng CSV games/moves chưa được staging vào Git; manifest giữ lại lượt đó với trạng thái artifact_missing. Lượt chạy hiện tại có đủ CSV log được commit.
 - File Excel được dựng lại từ manifest, assignments và plan bằng scripts/build_experiment_workbook.py.

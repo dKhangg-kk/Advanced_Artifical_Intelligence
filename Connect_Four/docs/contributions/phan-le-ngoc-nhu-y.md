@@ -10,6 +10,7 @@
 | 13/11/2026 | Chạy kiểm thử toàn dự án và bổ sung log, bảng, hình, notebook phân tích pilot | [PR #75](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/pull/75), run `20261113_140831_508593` | Chưa ghi nhận |
 | Đến 15/11/2026 | Hoàn thiện phần báo cáo giữa kỳ về DQN cấp 6 và thiết kế giải đấu | `docs/report/03d_dqn_giai_dau.md`, [PR #75](https://github.com/dKhangg-kk/Advanced_Artifical_Intelligence/pull/75) | Chưa ghi nhận |
 | 25/11/2026 | Chạy DQN cấp 6 đối đầu Heuristic (5 khai cuộc, 10 ván, seed 2026); rà soát 49 run A4/A6/giải đấu và hoàn thiện phân công | `dqn-vs-heuristic-20261125T163855Z-s2026`; `results/audit_nhu_y_runs.md`; `results/logs/games_dqn-vs-heuristic-20261125T163855Z-s2026.csv` | Chưa ghi nhận |
+| 25/11/2026 | Chạy DQN cấp 6 đối đầu Heuristic (5 khai cuộc, 10 ván, seed 2026); rà soát 49 run A4/A6/giải đấu và hoàn thiện phân công | `dqn-vs-heuristic-20261125T165235Z-s2026`; `results/audit_nhu_y_runs.md`; `results/logs/games_dqn-vs-heuristic-20261125T165235Z-s2026.csv` | Chưa ghi nhận |
 
 
 ## Công cụ hỗ trợ

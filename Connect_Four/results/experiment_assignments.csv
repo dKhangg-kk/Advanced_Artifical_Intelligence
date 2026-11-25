@@ -69,3 +69,4 @@ random-vs-heuristic-20261124T204523Z-s2026,Bùi Anh Đức,Random–Heuristic; 1
 alphabeta-vs-random-20261124T204529Z-s2026,Bùi Anh Đức,Alpha-Beta depth 3 vs Random; 5 openings; seed 2026
 mcts-vs-random-20261124T204536Z-s2026,Bùi Anh Đức,MCTS 200 simulations vs Random; 5 openings; seed 2026
 dqn-vs-heuristic-20261125T163855Z-s2026,Phan Lê Ngọc Như Ý,DQN cấp 6 vs Heuristic - 5 khai cuộc / 10 ván
+dqn-vs-heuristic-20261125T165235Z-s2026,Phan Lê Ngọc Như Ý,DQN cấp 6 vs Heuristic - 5 khai cuộc / 10 ván

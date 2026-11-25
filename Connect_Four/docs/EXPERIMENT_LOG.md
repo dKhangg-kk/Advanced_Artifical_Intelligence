@@ -445,3 +445,25 @@ Mỗi mục dùng mẫu sau:
 - Đối chiếu report_numbers.csv: 43 run có run_id được dẫn trực tiếp; 6 run A4 không có dòng riêng vì metric được tổng hợp ở bảng kết quả A4.
 - Biên bản chi tiết: `results/audit_nhu_y_runs.md`.
 
+## dqn-vs-heuristic-20261125T165235Z-s2026 — DQN cấp 6 đối đầu Heuristic
+
+- **Ngày:** 25/11/2026, giờ Việt Nam (UTC+7).
+- **Người thực hiện:** Phan Lê Ngọc Như Ý / 3124720079.
+- **Loại và mục tiêu:** tournament đối kháng; kiểm chứng checkpoint DQN cấp 6 đã đóng băng khi gặp Heuristic.
+- **Lệnh chạy:** `python -m connect_four.evaluation.cli --a dqn --b heuristic --openings 5 --seed 2026 --checkpoint-a checkpoints/level6_dqn/final.pt`.
+- **Seed:** 2026; 5 khai cuộc, mỗi khai cuộc đổi bên một lần, tổng cộng 10 ván.
+- **Checkpoint:** `checkpoints/level6_dqn/final.pt`.
+- **Trạng thái:** completed.
+- **Kết quả:** DQN W-D-L = 2-1-7; score_A = (W + 0,5 × D) / 10 = 0.250.
+- **Log ván:** `results/logs/games_dqn-vs-heuristic-20261125T165235Z-s2026.csv`.
+- **Log nước đi:** `results/logs/moves_dqn-vs-heuristic-20261125T165235Z-s2026.csv`.
+- **Run manifest:** `dqn-vs-heuristic-20261125T165235Z-s2026`.
+
+## Rà soát phân công 49 run A4/A6/giải đấu — 25/11/2026
+
+- Đối chiếu run_manifest.csv với experiment_assignments.csv: run_id khớp một-một; không có ID trùng, thiếu hoặc mồ côi.
+- Kiểm tra 49 run thuộc phần DQN/giải đấu của Như Ý: 33 tournament, 10 A4 và 6 A6; tất cả có trạng thái completed và file log thô được tham chiếu đều tồn tại.
+- Điền người thực hiện cho 43 dòng trước đó là CHƯA XÁC NHẬN: 33 tournament và 10 A4. Sáu run A6 đã được gán từ trước.
+- Đối chiếu report_numbers.csv: 43 run có run_id được dẫn trực tiếp; 6 run A4 không có dòng riêng vì metric được tổng hợp ở bảng kết quả A4.
+- Biên bản chi tiết: `results/audit_nhu_y_runs.md`.
+
