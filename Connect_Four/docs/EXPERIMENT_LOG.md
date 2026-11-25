@@ -422,3 +422,11 @@ Mỗi mục dùng mẫu sau:
 - **Log nước đi:** `results/logs/moves_alphabeta-vs-mcts-20261124T190429Z-s42.csv`.
 - **Số liệu chính:** Alpha-Beta thắng 6, hòa 1, thua 3 theo cột `winner` của log ván. Tỷ lệ thắng là 60%, `score_A = (6 + 0,5 × 1) / 10 = 0,650`.
 - **Nhận xét:** Alpha-Beta đạt 6,5/10 điểm theo cấu hình và tập khai cuộc của lượt này. Báo cáo kết quả chính với cỡ mẫu 10 ván.
+
+## RQ1 — Độ nhạy theo seed của Alpha-Beta và MCTS
+
+- Thiết lập: 200 ms/nước, 100 ván/seed, 50 khai cuộc đổi bên.
+- Phiên bản chạy: `57991d3` kèm bản sửa Alpha-Beta cục bộ lưu tại `results/logs/alphabeta-vs-mcts-20261125-local-changes.patch`.
+- Seed `20261119` (`alphabeta-vs-mcts-20261125T162305Z-s20261119`): MCTS thắng 59, hòa 5, thua 36; score 0,615.
+- Seed `20261120` (`alphabeta-vs-mcts-20261125T163120Z-s20261120`): MCTS thắng 61, hòa 5, thua 34; score 0,635.
+- Kết luận: MCTS dẫn trước Alpha-Beta ở cả hai seed đã thử.
