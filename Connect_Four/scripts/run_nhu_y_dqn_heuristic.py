@@ -64,20 +64,53 @@ def matches_assigned_command(row: dict[str, str]) -> bool:
 
 
 def ensure_experiment() -> dict[str, str]:
-    existing = [row for row in read_csv(MANIFEST) if matches_assigned_command(row)]
+    manifest = read_csv(MANIFEST)
+    existing = [row for row in manifest if matches_assigned_command(row)]
+    reusable = []
+    for row in existing:
+        games = note_path(row.get("notes", ""), "games_log")
+        moves = note_path(row.get("notes", ""), "moves_log")
+        if games is not None and moves is not None and games.is_file() and moves.is_file():
+            reusable.append(row)
+    if reusable:
+        selected = max(reusable, key=lambda row: row.get("started_at", ""))
+        print("Dùng lại run đã có đủ CSV log:", selected["run_id"])
+        return selected
+
+    # A previous workflow ran the match but forgot to stage the raw CSV logs.
+    # Keep its manifest record, label the evidence gap, and create a complete rerun.
     if existing:
-        if len(existing) != 1:
-            raise RuntimeError("Có nhiều hơn một run đã hoàn tất cùng cấu hình DQN–Heuristic.")
-        print("Dùng lại run đã hoàn tất:", existing[0]["run_id"])
-        return existing[0]
+        for row in existing:
+            row["status"] = "artifact_missing"
+            row["notes"] = (
+                row.get("notes", "")
+                + "; raw_logs_not_committed_in_previous_workflow_attempt"
+            ).strip("; ")
+        write_csv(MANIFEST, manifest, list(manifest[0].keys()))
+        print(
+            "Đánh dấu run trước thiếu raw CSV và chạy lại để lưu đủ bằng chứng:",
+            ", ".join(row["run_id"] for row in existing),
+            flush=True,
+        )
 
     env = os.environ.copy()
     env["PYTHONPATH"] = str(ROOT / "src") + os.pathsep + env.get("PYTHONPATH", "")
     print("Chạy thí nghiệm:", " ".join(COMMAND), flush=True)
     subprocess.run(COMMAND, cwd=ROOT, env=env, check=True)
-    completed = [row for row in read_csv(MANIFEST) if matches_assigned_command(row)]
+    manifest_after = read_csv(MANIFEST)
+    completed = []
+    for row in manifest_after:
+        if not matches_assigned_command(row):
+            continue
+        games = note_path(row.get("notes", ""), "games_log")
+        moves = note_path(row.get("notes", ""), "moves_log")
+        if games is not None and moves is not None and games.is_file() and moves.is_file():
+            completed.append(row)
     if len(completed) != 1:
-        raise RuntimeError(f"Không xác định được duy nhất run mới: {len(completed)}")
+        raise RuntimeError(
+            "Không xác định được duy nhất một run mới có đủ CSV log: "
+            + str(len(completed))
+        )
     return completed[0]
 
 
@@ -289,6 +322,7 @@ def write_audit(
         "- Run mới có games log, moves log và manifest; số W-D-L được tính trực tiếp từ games log.",
         "- 49 run cũ trong phạm vi Như Ý đã được kiểm tra file bằng chứng; 43 dòng chưa xác nhận được cập nhật phân công.",
         "- Không chạy lại A4/A6, không sửa checkpoint đã đóng băng và không tạo số liệu báo cáo thay cho nguồn thiếu.",
+        "- Lần DQN–Heuristic đầu đã hoàn tất nhưng CSV games/moves chưa được staging vào Git; manifest giữ lại lượt đó với trạng thái artifact_missing. Lượt chạy hiện tại có đủ CSV log được commit.",
         "- File Excel được dựng lại từ manifest, assignments và plan bằng scripts/build_experiment_workbook.py.", "",
     ])
     AUDIT_REPORT.write_text("\n".join(lines), encoding="utf-8")
