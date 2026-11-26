@@ -253,9 +253,10 @@ Nguồn: `results/tables/ablation_a3_results.csv`; log từng epoch tại
 
 ## 3.4.5. Hạn chế của thiết kế hiện tại
 
-- **Một seed cho mỗi cấu hình:** mô hình chính dùng seed 0, ablation dùng seed
-  20261105. Chưa có khoảng tin cậy, nên các chênh lệch nhỏ giữa các mức chưa
-  thể coi là khác biệt có ý nghĩa thống kê.
+- **Mô hình chính chỉ có một seed (0):** A3 đã được lặp thêm với seed
+  20261106/20261107 (xem mục 4.5.5), nhưng đường cong của mô hình chính ở mục
+  3.4 vẫn chỉ có seed 0, nên chênh lệch nhỏ giữa các epoch của nó chưa có khoảng
+  tin cậy riêng.
 - **Một kiến trúc, ít tinh chỉnh siêu tham số:** báo cáo chỉ khảo sát ảnh hưởng
   của lượng dữ liệu, chưa khảo sát độ rộng mạng, learning rate, batch size hay
   số epoch.

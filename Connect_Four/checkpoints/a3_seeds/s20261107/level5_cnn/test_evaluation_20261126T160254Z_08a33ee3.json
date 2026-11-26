@@ -1,0 +1,23 @@
+{
+  "evaluated_at": "2026-11-26T16:04:29.034711+00:00",
+  "metrics": {
+    "block_n": 568.0,
+    "block_situation_accuracy": 0.6320422535211268,
+    "block_top1_accuracy": 0.6866197183098591,
+    "center_control_n": 3090.0,
+    "center_control_situation_accuracy": 0.32362459546925565,
+    "center_control_top1_accuracy": 0.44983818770226536,
+    "legal_action_rate": 1.0,
+    "other_n": 1033.0,
+    "other_situation_accuracy": 0.5043562439496612,
+    "other_top1_accuracy": 0.5043562439496612,
+    "test_examples": 5012.0,
+    "test_loss": 1.290661774534087,
+    "top1_accuracy": 0.5035913806863528,
+    "win_now_n": 321.0,
+    "win_now_situation_accuracy": 0.5109034267912772,
+    "win_now_top1_accuracy": 0.6947040498442367
+  },
+  "run_id": "20261126T160254Z_08a33ee3",
+  "status": "completed"
+}

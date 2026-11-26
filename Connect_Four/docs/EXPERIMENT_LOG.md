@@ -68,6 +68,10 @@ Mỗi mục dùng mẫu sau:
 | dqn-vs-heuristic-20261125T162834Z-s2026 | 2026-11-25 | tournament | DQN `final.pt` vs Heuristic — sanity check | completed | `results/logs/games_dqn-vs-heuristic-20261125T162834Z-s2026.csv` |
 | ablation-a3-20261125T161203Z-s20261105 | 2026-11-25 | ablation | A3 — lặp lại để kiểm chứng tái lập (RQ2) | completed | `results/logs/ablation_a3_ablation-a3-20261125T161203Z-s20261105.csv` |
 | nn-vs-random-20261125T161543Z-s2026 | 2026-11-25 | tournament | CNN(`final.pt`) vs Random — sanity check | completed | `results/logs/games_nn-vs-random-20261125T161543Z-s2026.csv` |
+| ablation-a3-20261126T155229Z-s20261106 | 2026-11-26 | ablation | A3 — seed 20261106, ước lượng CI (RQ2) | completed | `results/logs/ablation_a3_ablation-a3-20261126T155229Z-s20261106.csv` |
+| ablation-a3-20261126T160159Z-s20261107 | 2026-11-26 | ablation | A3 — seed 20261107, ước lượng CI (RQ2) | completed | `results/logs/ablation_a3_ablation-a3-20261126T160159Z-s20261107.csv` |
+| nn-vs-alphabeta-20261126T161238Z-s20261105 | 2026-11-26 | tournament | A3 CNN g1332 vs Alpha-Beta depth 5 — win rate | completed | `results/logs/games_nn-vs-alphabeta-20261126T161238Z-s20261105.csv` |
+| nn-vs-mcts-20261126T161300Z-s20261105 | 2026-11-26 | tournament | A3 CNN g1332 vs MCTS 1000 sims — win rate | completed | `results/logs/games_nn-vs-mcts-20261126T161300Z-s20261105.csv` |
 
 ## Mục chi tiết
 
@@ -550,3 +554,47 @@ Mỗi mục dùng mẫu sau:
 - **Số liệu chính:** 10 ván (5 khai cuộc, đổi bên từng cặp); CNN thắng 9, hòa 0, thua 1; `score_A = (9 + 0,5 × 0) / 10 = 0,900`. CNN đi trước thắng 5/5, đi sau thắng 4/5; thua ở ván `nn_vs_random-g007` (khai cuộc 3, CNN đi sau). Thời gian ra nước của CNN: trung vị 0,25 ms, trung bình 10,94 ms (bị kéo bởi nước đầu tiên 790,5 ms do khởi tạo mô hình), 74 nước hợp lệ. Nguồn: cột `winner`, `a_starts`, `opening_id` của log ván và cột `time_ms`, `action` của log nước.
 - **Nhận xét:** Sanity check đạt: CNN thắng Random ở tỷ lệ cao và mọi nước đi đều được engine chấp nhận. Chỗ thua duy nhất cho thấy đây không phải kết quả hoàn hảo và cỡ mẫu 10 ván chỉ đủ để kiểm tra hoạt động, không đủ để kết luận sức mạnh cạnh tranh hay so sánh với Heuristic/Alpha-Beta.
 - **Việc tiếp theo:** Nếu cần số liệu đối kháng chính thức, chạy thêm openings/seed và đối đầu với Heuristic/Alpha-Beta theo cấu hình giải đấu.
+
+## audit-frozen-cnn-20261126 — Đối chiếu mục 4.4/4.5 với bộ đóng băng 19/11
+
+- **Ngày:** 26/11/2026 (giờ Việt Nam, UTC+7).
+- **Người chạy:** Bùi Quyền Kiệt / 3124720036.
+- **Mục tiêu:** Hoàn thành Checklist trước khi merge của Issue #41 (xem `docs/report/04b_cnn_duong_cong.md`, `docs/report/04e_ablation_cnn.md`).
+- **Mốc đối chiếu:** commit `2521b36` (19/11/2026 22:57 UTC+7), bản `report_numbers.csv` được Issue #41 gọi là bộ số đóng băng 19/11 22:00.
+- **Lệnh:** `PYTHONPATH=src .venv/bin/python scripts/verify_frozen_cnn_numbers.py`.
+- **Kết quả:** 651/651 dòng thuộc mục 4.4/4.5 của bản đóng băng giữ nguyên giá trị và nguồn; 13/13 log/bảng/metadata nguồn và 3/3 hình (`cnn_main_learning_curve.png`, `ablation_a3_learning_curves.png`, `ablation_a3_accuracy.png`) khớp byte-for-byte. Các dòng A6 thêm sau 19/11 không làm thay đổi bộ cũ.
+- **Quyết định:** không cập nhật `report_numbers.csv` cho phần đóng băng; script trên được giữ lại để chạy lại. `pytest -q` xanh sau các thay đổi.
+
+## ablation-a3-20261126T155229Z-s20261106 — A3 seed 20261106
+
+- **Ngày:** 26/11/2026 (UTC+7).
+- **Người chạy:** Bùi Quyền Kiệt / 3124720036.
+- **Loại và mục tiêu:** ablation, RQ2. Thêm seed thứ hai để ước lượng khoảng tin cậy cho mục 4.5.
+- **Config:** `configs/ablation_a3_cnn_data_s20261106.yaml`. Chỉ đổi `seed`, `out_dir` (`checkpoints/a3_seeds/s20261106`) và đường ra so với bản gốc; mọi siêu tham số/cohort/split giữ nguyên.
+- **Thời gian chạy (UTC):** 15:52:29 → 16:01:58 (9 phút 29 giây cho bốn mức).
+- **Trạng thái:** completed.
+- **Log thô:** `results/logs/ablation_a3_ablation-a3-20261126T155229Z-s20261106.csv`, bốn `results/logs/train_cnn_<run_id>.csv`; bảng `results/tables/ablation_a3_results_s20261106.csv`; hình `results/figures/ablation_a3_accuracy_s20261106.png`.
+- **Số liệu chính (test, top-1 / thắng ngay / chặn ở 250 → 1.332 ván):** 45,47% → 57,64%; 40,50% → 66,36%; 54,58% → 77,82%. Không ghi đè checkpoint hay bảng của lần 11/11.
+
+## ablation-a3-20261126T160159Z-s20261107 — A3 seed 20261107
+
+- **Ngày:** 26/11/2026 (UTC+7).
+- **Người chạy:** Bùi Quyền Kiệt / 3124720036.
+- **Loại và mục tiêu:** ablation, RQ2. Thêm seed thứ ba; cùng thiết kế với seed 20261106.
+- **Config:** `configs/ablation_a3_cnn_data_s20261107.yaml`, `out_dir=checkpoints/a3_seeds/s20261107`.
+- **Thời gian chạy (UTC):** 16:01:59 → 16:11:23 (9 phút 24 giây cho bốn mức).
+- **Trạng thái:** completed.
+- **Log thô:** `results/logs/ablation_a3_ablation-a3-20261126T160159Z-s20261107.csv`, bốn `results/logs/train_cnn_<run_id>.csv`; bảng `results/tables/ablation_a3_results_s20261107.csv`; hình `results/figures/ablation_a3_accuracy_s20261107.png`.
+- **Số liệu chính (test, top-1 / thắng ngay / chặn ở 250 → 1.332 ván):** 47,81% → 57,22%; 48,60% → 60,12%; 58,10% → 74,47%.
+- **Tổng hợp ba seed:** `results/tables/ablation_a3_multiseed_summary.csv`, sinh lại bằng `PYTHONPATH=src python scripts/build_a3_followup_numbers.py`. Khoảng tin cậy dùng phân phối t với 2 bậc tự do (3 seed); ví dụ mức tăng top-1 250 → 1.332 ván là 10,49 điểm phần trăm, CI 95% [6,84; 14,15].
+
+## nn-vs-alphabeta-20261126T161238Z-s20261105 và nn-vs-mcts-20261126T161300Z-s20261105 — win rate A3
+
+- **Ngày:** 26/11/2026 (UTC+7).
+- **Người chạy:** Bùi Quyền Kiệt / 3124720036.
+- **Loại và mục tiêu:** tournament, bổ sung phần "chưa đo sức mạnh đối kháng" của mục 4.5. Checkpoint CNN huấn luyện trên 1.332 ván của A3 (`checkpoints/level5_cnn/a3_g1332.pt`) gặp Alpha-Beta depth 5 và MCTS 1.000 mô phỏng/nước — cùng cấu hình giải đấu mặc định trong `configs/agents.yaml`.
+- **Lệnh chạy:** `PYTHONPATH=src .venv/bin/python -m connect_four.evaluation.cli --a nn --b alphabeta --openings 50 --seed 20261105 --depth-b 5 --checkpoint-a checkpoints/level5_cnn/a3_g1332.pt` (và `--b mcts --sims-b 1000` cho cặp thứ hai).
+- **Thời gian chạy (UTC):** 16:12:01 → 16:12:38 và 16:12:39 → 16:13:00; 100 ván/đối thủ, 50 khai cuộc đổi bên.
+- **Log thô:** `results/logs/games_nn-vs-alphabeta-20261126T161238Z-s20261105.csv`, `results/logs/moves_nn-vs-alphabeta-20261126T161238Z-s20261105.csv`, `results/logs/games_nn-vs-mcts-20261126T161300Z-s20261105.csv`, `results/logs/moves_nn-vs-mcts-20261126T161300Z-s20261105.csv`.
+- **Số liệu chính:** Alpha-Beta: CNN thắng 20, hòa 2, thua 78; `score_A=0,210`, Wilson 95% [0,142; 0,300]. MCTS: CNN thắng 16, hòa 3, thua 81; `score_A=0,175`, Wilson 95% [0,113; 0,261]. Bảng tổng hợp: `results/tables/cnn_a3_head_to_head.csv`.
+- **Nhận xét:** CNN A3 thua rõ cả hai tác tử tìm kiếm ở cấu hình giải đấu; top-1 cao trên tập nhãn Alpha-Beta depth 4 không đồng nghĩa với sức mạnh thi đấu. Cỡ mẫu 100 ván/đối thủ đủ để kết luận chiều chiến thắng nhưng không đủ để so sánh tinh vi giữa hai đối thủ.

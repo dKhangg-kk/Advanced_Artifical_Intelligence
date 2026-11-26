@@ -1,0 +1,3 @@
+opponent,checkpoint_a,settings,games,wins,draws,losses,score_a,wilson95_low,wilson95_high,games_log,run_id
+alphabeta,checkpoints/level5_cnn/a3_g1332.pt,alphabeta depth=5,100,20,2,78,0.2100,0.1417,0.2998,results/logs/games_nn-vs-alphabeta-20261126T161238Z-s20261105.csv,nn-vs-alphabeta-20261126T161238Z-s20261105
+mcts,checkpoints/level5_cnn/a3_g1332.pt,mcts simulations=1000,100,16,3,81,0.1750,0.1130,0.2611,results/logs/games_nn-vs-mcts-20261126T161300Z-s20261105.csv,nn-vs-mcts-20261126T161300Z-s20261105
