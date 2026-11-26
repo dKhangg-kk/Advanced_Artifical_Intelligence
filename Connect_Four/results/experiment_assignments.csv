@@ -71,3 +71,9 @@ mcts-vs-random-20261124T204536Z-s2026,Bùi Anh Đức,MCTS 200 simulations vs Ra
 dqn-vs-heuristic-20261125T162834Z-s2026,Phan Lê Ngọc Như Ý,DQN final.pt vs Heuristic - sanity; 5 openings; seed 2026
 alphabeta-vs-mcts-20261125T162305Z-s20261119,Phạm Thái Duy Khang,Độ nhạy theo seed - Alpha-Beta vs MCTS
 alphabeta-vs-mcts-20261125T163120Z-s20261120,Phạm Thái Duy Khang,Độ nhạy theo seed - Alpha-Beta vs MCTS
+20261125T161205Z_ddec5d67,Bùi Quyền Kiệt,A3 lặp lại - CNN 250 ván train
+20261125T161230Z_d4d0edbb,Bùi Quyền Kiệt,A3 lặp lại - CNN 500 ván train
+20261125T161310Z_d950bb3e,Bùi Quyền Kiệt,A3 lặp lại - CNN 1000 ván train
+20261125T161418Z_2f39f11b,Bùi Quyền Kiệt,A3 lặp lại - CNN 1332 ván train
+ablation-a3-20261125T161203Z-s20261105,Bùi Quyền Kiệt,A3 lặp lại - kiểm chứng tái lập RQ2
+nn-vs-random-20261125T161543Z-s2026,Bùi Quyền Kiệt,CNN baseline vs Random - sanity; 5 openings; seed 2026

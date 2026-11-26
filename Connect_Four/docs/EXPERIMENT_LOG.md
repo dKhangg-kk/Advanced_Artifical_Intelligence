@@ -66,6 +66,8 @@ Mỗi mục dùng mẫu sau:
 | k1-heuristic-random-20261109T061032Z-s0 | 2026-11-09 | tournament | K1 Heuristic vs Random (bản đã commit) | completed | `results/logs/games_k1-heuristic-random-20261109T061032Z-s0.csv` |
 | ablation-a3-20261111T150514Z-s20261105 | 2026-11-11 | ablation | A3 — ảnh hưởng số ván huấn luyện CNN (RQ2) | completed | `results/logs/ablation_a3_ablation-a3-20261111T150514Z-s20261105.csv` |
 | dqn-vs-heuristic-20261125T162834Z-s2026 | 2026-11-25 | tournament | DQN `final.pt` vs Heuristic — sanity check | completed | `results/logs/games_dqn-vs-heuristic-20261125T162834Z-s2026.csv` |
+| ablation-a3-20261125T161203Z-s20261105 | 2026-11-25 | ablation | A3 — lặp lại để kiểm chứng tái lập (RQ2) | completed | `results/logs/ablation_a3_ablation-a3-20261125T161203Z-s20261105.csv` |
+| nn-vs-random-20261125T161543Z-s2026 | 2026-11-25 | tournament | CNN(`final.pt`) vs Random — sanity check | completed | `results/logs/games_nn-vs-random-20261125T161543Z-s2026.csv` |
 
 ## Mục chi tiết
 
@@ -481,3 +483,70 @@ Mỗi mục dùng mẫu sau:
 - Seed `20261119` (`alphabeta-vs-mcts-20261125T162305Z-s20261119`): MCTS thắng 59, hòa 5, thua 36; score 0,615.
 - Seed `20261120` (`alphabeta-vs-mcts-20261125T163120Z-s20261120`): MCTS thắng 61, hòa 5, thua 34; score 0,635.
 - Kết luận: MCTS dẫn trước Alpha-Beta ở cả hai seed đã thử.
+
+## ablation-a3-20261125T161203Z-s20261105 — A3: lặp lại kiểm chứng tái lập
+
+- **Ngày:** 25/11/2026 (UTC+7).
+- **Người chạy:** Bùi Quyền Kiệt / 3124720036.
+- **Loại:** ablation.
+- **Mục tiêu:** Lặp lại ablation A3 theo `results/experiment_plan.csv` (nhiệm vụ 7) để kiểm tra số liệu RQ2 có tái lập được không; **không** thay thế kết quả ngày 11/11 vốn đã được báo cáo trích dẫn.
+- **Config:** `configs/ablation_a3_cnn_data_repeat.yaml` (hash `712847fe1e8f3d2e`). Bản sao của `configs/ablation_a3_cnn_data.yaml`, chỉ đổi `table_output`/`figure_output` để giữ nguyên bảng và hình của lần chạy cũ; mọi siêu tham số, cohort, split và seed giữ nguyên.
+- **Commit:** `76da5ef` (mã nguồn và config đã commit trước khi chạy).
+- **Lệnh chạy:**
+  ```bash
+  cd Connect_Four
+  PYTHONPATH=src .venv/bin/python scripts/run_ablation_a3.py \
+      --config configs/ablation_a3_cnn_data_repeat.yaml
+  ```
+- **Seed:** 20261105 cho chia dữ liệu và huấn luyện, giữ như lần 11/11.
+- **Thiết kế:** Bốn mức 250 / 500 / 1.000 / 1.332 ván train (tối đa sau dedupe), validation 254 ván và test 264 ván cố định; 20 epoch, batch 64, lr 0,001, chọn checkpoint theo validation loss thấp nhất, test đọc một lần cho mỗi mức.
+- **Môi trường:** Python 3.14.9, NumPy 2.5.4, PyTorch 2.15.0+cu132, CPU x86_64, Linux 7.3.4-300.fc45.x86_64, RAM 27,2 GB; không dùng GPU. Máy này trước đó có bản cài Python 3.14 bị hỏng symlink `.venv/bin/python`; đã sửa symlink về bản 3.14.9 có sẵn trên máy trước khi chạy (thay đổi ngoài Git).
+- **Thời gian chạy (UTC):** 2026-11-25T16:12:03Z → 16:15:30Z (23:12:03 → 23:15:30 UTC+7, 3 phút 27 giây).
+- **Trạng thái:** completed.
+- **Log thô:**
+  - `results/logs/ablation_a3_ablation-a3-20261125T161203Z-s20261105.csv`
+  - `results/logs/train_cnn_20261125T161205Z_ddec5d67.csv` (250 ván)
+  - `results/logs/train_cnn_20261125T161230Z_d4d0edbb.csv` (500 ván)
+  - `results/logs/train_cnn_20261125T161310Z_d950bb3e.csv` (1.000 ván)
+  - `results/logs/train_cnn_20261125T161418Z_2f39f11b.csv` (1.332 ván)
+  - `checkpoints/level5_cnn/test_evaluation_<run_id>.json` cho bốn run huấn luyện
+- **Bảng/hình liên quan:** `results/tables/ablation_a3_results_repeat.csv`, `results/figures/ablation_a3_accuracy_repeat.png`. Bảng/hình gốc `ablation_a3_results.csv` và `ablation_a3_accuracy.png` của lần 11/11 không bị ghi đè.
+- **Số liệu chính** (test A3: 5.012 mẫu, giữ nguyên như lần cũ):
+
+  | Ván train | Run huấn luyện | Epoch tốt nhất | Val loss | Test loss | Top-1 | Thắng ngay (tactical) | Chặn (tactical) | Trung tâm (top-1) |
+  |---:|---|---:|---:|---:|---:|---:|---:|---:|
+  | 250 | `20261125T161205Z_ddec5d67` | 3 | 1,3832 | 1,3959 | 47,19% | 42,37% | 52,99% | 41,55% |
+  | 500 | `20261125T161230Z_d4d0edbb` | 7 | 1,2830 | 1,3088 | 51,74% | 60,44% | 71,30% | 46,44% |
+  | 1.000 | `20261125T161310Z_d950bb3e` | 5 | 1,1637 | 1,1589 | 55,35% | 58,57% | 73,59% | 50,87% |
+  | 1.332 | `20261125T161418Z_2f39f11b` | 5 | 1,1150 | 1,1106 | 57,08% | 59,81% | 77,64% | 52,65% |
+
+  Nguồn: `results/tables/ablation_a3_results_repeat.csv`, các cột `best_epoch`, `best_val_loss`, `test_loss`, `top1_accuracy`, `win_now_situation_accuracy`, `block_situation_accuracy`, `center_control_top1_accuracy`.
+- **Nhận xét:** Mọi chỉ số huấn luyện và đánh giá (loss, epoch chọn, top-1, độ chính xác theo tình huống, số mẫu) **bằng chính xác** lần chạy `ablation-a3-20261111T150514Z-s20261105` ở cả bốn mức; chỉ thời gian huấn luyện khác (22,9 / 38,3 / 65,5 / 71,2 giây so với 18,5 / 34,5 / 53,2 / 66,7 giây). Điều này xác nhận pipeline tái lập được với seed cố định trên CPU. Đây vẫn là **một** seed, nên chưa tạo khoảng tin cậy mới.
+- **Việc tiếp theo:** Chạy thêm seed/bộ chia khác nếu cần CI; đo win rate đối kháng trước Alpha-Beta (nằm ngoài phạm vi Issue #22).
+
+## nn-vs-random-20261125T161543Z-s2026 — CNN `final.pt` vs Random (sanity)
+
+- **Ngày:** 25/11/2026 (UTC+7).
+- **Người chạy:** Bùi Quyền Kiệt / 3124720036.
+- **Loại:** tournament (sanity check).
+- **Mục tiêu:** Kiểm chứng cơ bản rằng checkpoint CNN cấp 5 `checkpoints/level5_cnn/final.pt` chơi được trong CLI và thắng tác tử Random (mục 4.4–4.5, nhiệm vụ 8 trong `results/experiment_plan.csv`).
+- **Config:** `configs/agents.yaml` (hash `352c6c4662634f8e`); `--checkpoint-a checkpoints/level5_cnn/final.pt`.
+- **Commit:** `76da5ef`.
+- **Lệnh chạy:**
+  ```bash
+  cd Connect_Four
+  PYTHONPATH=src .venv/bin/python -m connect_four.evaluation.cli \
+      --a nn --b random --openings 5 --seed 2026 \
+      --checkpoint-a checkpoints/level5_cnn/final.pt
+  ```
+- **Seed:** 2026 (NN dùng 2026, Random dùng 2027 theo quy ước CLI).
+- **Môi trường:** Python 3.14.9, NumPy 2.5.4, PyTorch 2.15.0+cu132, CPU x86_64, Linux 7.3.4-300.fc45.x86_64, RAM 27,2 GB; không dùng GPU.
+- **Thời gian chạy (UTC):** 2026-11-25T16:15:42Z → 16:15:43Z (23:15:42 → 23:15:43 UTC+7).
+- **Trạng thái:** completed.
+- **Log thô:**
+  - `results/logs/games_nn-vs-random-20261125T161543Z-s2026.csv`
+  - `results/logs/moves_nn-vs-random-20261125T161543Z-s2026.csv`
+- **Bảng/hình liên quan:** Không tạo bảng/hình riêng; số liệu trích trực tiếp từ log ván và log nước.
+- **Số liệu chính:** 10 ván (5 khai cuộc, đổi bên từng cặp); CNN thắng 9, hòa 0, thua 1; `score_A = (9 + 0,5 × 0) / 10 = 0,900`. CNN đi trước thắng 5/5, đi sau thắng 4/5; thua ở ván `nn_vs_random-g007` (khai cuộc 3, CNN đi sau). Thời gian ra nước của CNN: trung vị 0,25 ms, trung bình 10,94 ms (bị kéo bởi nước đầu tiên 790,5 ms do khởi tạo mô hình), 74 nước hợp lệ. Nguồn: cột `winner`, `a_starts`, `opening_id` của log ván và cột `time_ms`, `action` của log nước.
+- **Nhận xét:** Sanity check đạt: CNN thắng Random ở tỷ lệ cao và mọi nước đi đều được engine chấp nhận. Chỗ thua duy nhất cho thấy đây không phải kết quả hoàn hảo và cỡ mẫu 10 ván chỉ đủ để kiểm tra hoạt động, không đủ để kết luận sức mạnh cạnh tranh hay so sánh với Heuristic/Alpha-Beta.
+- **Việc tiếp theo:** Nếu cần số liệu đối kháng chính thức, chạy thêm openings/seed và đối đầu với Heuristic/Alpha-Beta theo cấu hình giải đấu.
