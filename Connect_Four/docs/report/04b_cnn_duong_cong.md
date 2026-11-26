@@ -1,10 +1,11 @@
 # 4.4. Đường cong học của CNN
 
-> **Trạng thái số liệu (bản nháp).** Mục này dùng bộ log huấn luyện ngày
-> 11/11/2026. Theo Issue #41, số liệu cuối phải lấy từ bộ đóng băng
-> 19/11/2026 22:00; trước khi merge cần đối chiếu lại và cập nhật
-> `results/tables/report_numbers.csv` nếu bộ đóng băng thay đổi. Mọi số dưới
-> đây đã được kiểm tra với log và metadata hiện có, không có số ước lượng.
+> **Trạng thái số liệu.** Mục này dùng bộ log huấn luyện ngày 11/11/2026 và đã
+> được đối chiếu với bộ đóng băng 19/11/2026 22:00 (commit `2521b36`) bằng
+> `scripts/verify_frozen_cnn_numbers.py`: các dòng 4.4, log nguồn và hình
+> `cnn_main_learning_curve.png` khớp, nên `report_numbers.csv` không đổi ở phần
+> này. Mọi số dưới đây đã được kiểm tra với log và metadata, không có số ước
+> lượng.
 
 Mục này đọc đường cong học của mạng CNN Policy ở cấp 5: loss và accuracy trên
 tập train so với validation qua từng epoch. Đường cong trả lời hai câu hỏi:
@@ -162,17 +163,19 @@ chí là validation loss.
 
 ### Giới hạn
 
-- **Một seed cho mỗi cấu hình:** mô hình chính dùng seed 0, A3 dùng seed
-  20261105. Chưa có khoảng tin cậy, nên không thể nói chênh lệch nhỏ giữa các
-  epoch hoặc các mức dữ liệu là khác biệt có ý nghĩa thống kê.
+- **Đường cong chỉ có một seed:** mô hình chính dùng seed 0; A3 đã có thêm seed
+  20261106/20261107 với khoảng tin cậy ở mục 4.5.5, nhưng các đường cong trong
+  mục này vẫn đến từ một lần huấn luyện nên chênh lệch nhỏ giữa các epoch chưa
+  có ý nghĩa thống kê.
 - **Một cách chia dữ liệu:** validation/test cố định giúp so sánh công bằng
   giữa các mức, nhưng kết quả có thể phụ thuộc cách chia.
 - **Chỉ 20 epoch:** đường cong có thể khác nếu huấn luyện lâu hơn hoặc dùng
   regularization mạnh hơn.
 - **Chỉ CPU, một kiến trúc:** chưa khảo sát độ rộng mạng, dropout, weight decay,
   learning rate schedule hay batch size.
-- **Số liệu chưa đóng băng:** bản nháp dùng log ngày 11/11/2026; cần đối chiếu
-  lại với bộ đóng băng 19/11/2026 22:00 trước khi merge.
+- **Bộ đóng băng đã đối chiếu:** log ngày 11/11/2026 và các dòng 4.4 khớp commit
+  `2521b36` (19/11/2026 22:57); script kiểm tra nằm ở
+  `scripts/verify_frozen_cnn_numbers.py`.
 
 ## 4.4.5. Kết luận mục
 

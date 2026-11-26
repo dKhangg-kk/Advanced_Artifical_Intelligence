@@ -1,10 +1,12 @@
 # 4.5. Ablation A3 — ảnh hưởng của kích thước dữ liệu huấn luyện
 
-> **Trạng thái số liệu (bản nháp).** Mục này dùng bảng
-> `results/tables/ablation_a3_results.csv` và các log ngày 11/11/2026. Theo
-> Issue #41, số liệu cuối phải lấy từ bộ đóng băng 19/11/2026 22:00; trước khi
-> merge cần đối chiếu lại và cập nhật `results/tables/report_numbers.csv` nếu
-> bộ đóng băng thay đổi.
+> **Trạng thái số liệu.** Bảng chính vẫn là
+> `results/tables/ablation_a3_results.csv` (seed 20261105, log 11/11/2026) và
+> đã được đối chiếu với bộ đóng băng 19/11/2026 22:00 (commit `2521b36`): 651
+> dòng `report_numbers.csv`, 13 nguồn log/bảng/metadata và 3 hình đều khớp.
+> Phần bổ sung ở mục 4.5.5 dùng thêm hai seed 20261106/20261107 và hai lần đo
+> win rate ngày 26/11/2026; các dòng mới được ghi vào `report_numbers.csv` với
+> section `4.5 multiseed` và `4.5 cnn-a3`, không làm đổi bộ đóng băng.
 
 Ablation A3 trả lời trực tiếp RQ2 ở khía cạnh dữ liệu: **khi tăng số ván huấn
 luyện, CNN Policy cải thiện top-1 và độ chính xác theo tình huống chiến thuật
@@ -156,42 +158,101 @@ Với `block`, nhãn và tập nước chặn gần như trùng nhau; ở mức 
 top-1 và block tactical cùng bằng 77,64%. Với `other`, không có luật chiến thuật
 đặc biệt nên top-1 và situation accuracy trùng nhau (50,44% → 54,79%).
 
-## 4.5.5. Giới hạn
+## 4.5.5. Kiểm chứng nhiều seed và win rate đối kháng
 
-- **Một seed:** toàn bộ A3 dùng seed 20261105. Chưa có khoảng tin cậy hay lặp
-  seed, nên chênh lệch nhỏ (ví dụ 1,74 điểm phần trăm top-1 ở bước cuối) chưa
-  thể coi là khác biệt có ý nghĩa thống kê.
+### Ba seed cho thấy xu hướng nào bền vững?
+
+Ngoài seed gốc 20261105, A3 được chạy lại với seed 20261106 và 20261107 bằng
+các config `configs/ablation_a3_cnn_data_s2026110{6,7}.yaml`. Mọi siêu tham số,
+cohort, split và bốn mức dữ liệu giữ nguyên; chỉ thay seed khởi tạo/xáo trộn và
+đường ra. Bảng gốc của lần 11/11 và checkpoint `checkpoints/level5_cnn/a3_g*.pt`
+không bị ghi đè.
+
+| Ván train | Top-1 (3 seed) | Thắng ngay (tactical) | Chặn (tactical) | Test loss |
+| ---: | ---: | ---: | ---: | ---: |
+| 250 | 46,82% [43,82; 49,83] | 43,82% [33,29; 54,36] | 55,22% [48,73; 61,71] | 1,3985 [1,3294; 1,4675] |
+| 500 | 50,40% [47,13; 53,67] | 54,72% [42,29; 67,16] | 66,43% [55,77; 77,09] | 1,3050 [1,2730; 1,3371] |
+| 1.000 | 56,26% [54,00; 58,51] | 61,68% [52,56; 70,81] | 76,29% [69,51; 83,07] | 1,1670 [1,1152; 1,2189] |
+| 1.332 | 57,32% [56,59; 58,04] | 62,10% [52,93; 71,27] | 76,64% [71,97; 81,32] | 1,1176 [1,0875; 1,1477] |
+
+Nguồn: `results/tables/ablation_a3_multiseed_summary.csv`. Giá trị là trung bình
+và khoảng tin cậy 95% theo phân phối t với 2 bậc tự do (ba seed); chi tiết từng
+seed nằm ở cột `seed_values`. Nhận xét:
+
+- Top-1 và test loss cải thiện rõ ràng từ 250 lên 500 ván, rồi chậm dần; chiều
+  của xu hướng ở bảng 4.5.2 được giữ ở cả ba seed.
+- Mức tăng 250 → 1.332 ván về top-1 là **+10,49 điểm phần trăm, CI 95%
+  [6,84; 14,15]**; về chặn là **+21,42 [10,42; 32,42]**; về test loss là
+  **−0,2809 [−0,3763; −0,1855]**.
+- Với thắng ngay, mức tăng là +18,28 điểm phần trăm nhưng CI 95% [0,39; 36,16]
+  chỉ vừa không chứa 0. Vì vậy kết luận "thắng ngay cải thiện" yếu hơn ba chỉ
+  số còn lại; sự không đơn điệu ở mức 500/1.000 ván là dao động seed, không nên
+  diễn giải là một bước tiến/thụt có ý nghĩa.
+
+### CNN có thắng được tác tử tìm kiếm không?
+
+Để trả lời phần "chưa đo sức mạnh đối kháng", checkpoint A3 tốt nhất
+(`checkpoints/level5_cnn/a3_g1332.pt`) được cho đấu 100 ván/đối thủ (50 khai
+cuộc, đổi bên) với Alpha-Beta depth 5 và MCTS 1.000 mô phỏng/nước — cùng thiết
+lập mặc định của giải đấu trong `configs/agents.yaml`.
+
+| Đối thủ | W–D–L của CNN | `score_A` | Wilson 95% |
+| --- | ---: | ---: | ---: |
+| Alpha-Beta depth 5 | 20–2–78 | 0,210 | [0,142; 0,300] |
+| MCTS 1.000 mô phỏng | 16–3–81 | 0,175 | [0,113; 0,261] |
+
+Nguồn: `results/tables/cnn_a3_head_to_head.csv`; log thô
+`results/logs/games_nn-vs-{alphabeta,mcts}-20261126T1612*.csv`. CNN thua rõ cả
+hai đối thủ: top-1 57% trên tập nhãn Alpha-Beta depth 4 **không** đồng nghĩa với
+việc mô hình mạnh hơn tìm kiếm. Kết quả này chỉnh lại cách đọc mục 4.5.4: các
+chỉ số accuracy đo độ bắt chước chuyên gia sinh nhãn, không đo tỷ lệ thắng.
+
+## 4.5.6. Giới hạn
+
+- **Ba seed, vẫn ít:** phần bổ sung dùng seed 20261105/06/07. Khoảng tin cậy
+  theo t với 2 bậc tự do rất rộng, nhất là với `win_now`; bước cuối chỉ tăng
+  1,74 điểm phần trăm top-1 trên seed gốc nên chưa thể khẳng định khác biệt ở
+  bước đó.
 - **Một cách chia dữ liệu:** validation/test cố định giúp so sánh công bằng
   nhưng kết quả có thể phụ thuộc split.
 - **Test nhỏ:** 5.012 mẫu đến từ 264 ván; một số tình huống chỉ có 321 hoặc 568
   vị trí, nên tỷ lệ phần trăm dao động đáng kể khi đổi tập test.
 - **Trần dữ liệu 1.332 ván:** không thể khảo sát mức lớn hơn nếu giữ quy trình
   chia và khử trùng lặp hiện tại.
-- **Chưa đo sức mạnh đối kháng:** A3 chỉ đo loss, top-1 và accuracy theo tình
-  huống. Chưa có win rate trước Alpha-Beta/MCTS, nên không thể kết luận mô hình
-  mạnh hơn tác tử tìm kiếm.
+- **Win rate chỉ ở cấu hình giải đấu mặc định:** 100 ván/đối thủ ở depth 5 và
+  1.000 mô phỏng cho thấy CNN yếu hơn Alpha-Beta/MCTS (mục 4.5.5). Chưa khảo
+  sát các mức ngân sách khác hay đối thủ Heuristic bằng checkpoint A3.
 - **Nhãn phụ thuộc Alpha-Beta độ sâu 4:** mô hình bị giới hạn bởi chuyên gia
   sinh nhãn; top-1 cao không chứng minh mô hình vượt chuyên gia.
 - **Chỉ CPU, một kiến trúc:** chưa khảo sát độ rộng mạng, regularization hay
   learning rate schedule.
-- **Số liệu chưa đóng băng:** cần đối chiếu lại với bộ đóng băng 19/11/2026
-  22:00 trước khi merge.
+- **Bộ đóng băng đã đối chiếu:** script `scripts/verify_frozen_cnn_numbers.py`
+  xác nhận 651 dòng, 13 nguồn và 3 hình khớp commit `2521b36` (19/11/2026
+  22:57). Các dòng mới của 26/11 nằm ở section riêng, không thay bộ cũ.
 
-## 4.5.6. Kết luận mục
+## 4.5.7. Kết luận mục
 
 Ablation A3 cho thấy tăng dữ liệu huấn luyện cải thiện rõ rệt chất lượng CNN
-Policy: top-1 tăng 9,90 điểm phần trăm, chặn tăng 24,65, thắng ngay tăng 17,45
-và test loss giảm 0,28533 khi đi từ 250 lên 1.332 ván. Phần lớn lợi ích đến từ
-bước 250 → 500; các bước sau có lợi ích biên giảm dần, riêng tình huống chặn
-vẫn tiếp tục cải thiện. Tuy nhiên, thắng ngay không đơn điệu và toàn bộ thí
-nghiệm chỉ chạy một seed, nên kết luận cần được kiểm chứng thêm bằng lặp seed
-và đánh giá đối kháng ở giai đoạn giải đấu.
+Policy: trên seed gốc, top-1 tăng 9,90 điểm phần trăm, chặn tăng 24,65, thắng
+ngay tăng 17,45 và test loss giảm 0,28533 khi đi từ 250 lên 1.332 ván. Ba seed
+xác nhận chiều của xu hướng (mục 4.5.5): mức tăng top-1 trung bình 10,49 điểm
+[6,84; 14,15], chặn 21,42 [10,42; 32,42] và test loss −0,2809 [−0,3763;
+−0,1855]; riêng thắng ngay có CI sát 0 nên kết luận yếu hơn. Phần lớn lợi ích
+đến từ bước 250 → 500. Tuy nhiên, đối đầu trực tiếp cho thấy checkpoint A3
+thua Alpha-Beta và MCTS (score 0,210 và 0,175), nên accuracy cao không được
+hiểu là CNN đã vượt tác tử tìm kiếm.
 
 ## Checklist trước khi merge
 
-- [ ] Đối chiếu lại toàn bộ số trong mục 4.4 và 4.5 với bộ số đóng băng
-      19/11/2026 22:00.
-- [ ] Cập nhật `results/tables/report_numbers.csv` nếu bộ đóng băng thay đổi.
-- [ ] Xác nhận `cnn_main_learning_curve.png`, `ablation_a3_learning_curves.png`
-      và `ablation_a3_accuracy.png` khớp log đóng băng.
-- [ ] Chạy `pytest -q` xanh sau mọi thay đổi mã nguồn.
+- [x] Đối chiếu lại toàn bộ số trong mục 4.4 và 4.5 với bộ số đóng băng
+      19/11/2026 22:00 — `PYTHONPATH=src .venv/bin/python
+      scripts/verify_frozen_cnn_numbers.py`: 651/651 dòng, 13/13 nguồn khớp
+      commit `2521b36` (xem mục `audit-frozen-cnn-20261126` trong nhật ký).
+- [x] Cập nhật `results/tables/report_numbers.csv` nếu bộ đóng băng thay đổi —
+      bộ đóng băng không đổi; 107 dòng mới của 26/11 được thêm ở section
+      `4.5 multiseed` và `4.5 cnn-a3`, sinh lại bằng
+      `scripts/build_a3_followup_numbers.py`.
+- [x] Xác nhận `cnn_main_learning_curve.png`, `ablation_a3_learning_curves.png`
+      và `ablation_a3_accuracy.png` khớp log đóng băng — 3/3 khớp byte-for-byte
+      với commit `2521b36`.
+- [x] Chạy `pytest -q` xanh sau mọi thay đổi mã nguồn — `PYTHONPATH=src .venv/bin/python -m pytest -q` (exit 0).

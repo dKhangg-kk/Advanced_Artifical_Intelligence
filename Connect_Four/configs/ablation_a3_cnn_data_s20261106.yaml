@@ -1,0 +1,18 @@
+# Ablation A3 — seed bo sung 20261106 (RQ2, kiem chung Nhieu seed).
+# Giu nguyen toan bo sieu tham so va cohort cua configs/ablation_a3_cnn_data.yaml.
+# Chi doi seed va duong ra de khong ghi de ket qua/checpoint cua cac lan truoc.
+
+name: ablation_a3_cnn_data_s20261106
+agent: nn
+cohort: a3
+data_dir: data/generated/splits
+dataset_sizes_games: [250, 500, 1000, 1332]
+epochs: 20
+batch_size: 64
+lr: 0.001
+split_ratio: [0.70, 0.15, 0.15]
+out_dir: checkpoints/a3_seeds/s20261106
+log_dir: results/logs
+table_output: results/tables/ablation_a3_results_s20261106.csv
+figure_output: results/figures/ablation_a3_accuracy_s20261106.png
+seed: 20261106

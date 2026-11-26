@@ -71,3 +71,21 @@ mcts-vs-random-20261124T204536Z-s2026,Bùi Anh Đức,MCTS 200 simulations vs Ra
 dqn-vs-heuristic-20261125T162834Z-s2026,Phan Lê Ngọc Như Ý,DQN final.pt vs Heuristic - sanity; 5 openings; seed 2026
 alphabeta-vs-mcts-20261125T162305Z-s20261119,Phạm Thái Duy Khang,Độ nhạy theo seed - Alpha-Beta vs MCTS
 alphabeta-vs-mcts-20261125T163120Z-s20261120,Phạm Thái Duy Khang,Độ nhạy theo seed - Alpha-Beta vs MCTS
+20261125T161205Z_ddec5d67,Bùi Quyền Kiệt,A3 lặp lại - CNN 250 ván train
+20261125T161230Z_d4d0edbb,Bùi Quyền Kiệt,A3 lặp lại - CNN 500 ván train
+20261125T161310Z_d950bb3e,Bùi Quyền Kiệt,A3 lặp lại - CNN 1000 ván train
+20261125T161418Z_2f39f11b,Bùi Quyền Kiệt,A3 lặp lại - CNN 1332 ván train
+ablation-a3-20261125T161203Z-s20261105,Bùi Quyền Kiệt,A3 lặp lại - kiểm chứng tái lập RQ2
+nn-vs-random-20261125T161543Z-s2026,Bùi Quyền Kiệt,CNN baseline vs Random - sanity; 5 openings; seed 2026
+20261126T155232Z_565e505d,Bùi Quyền Kiệt,A3 seed 20261106 - CNN train 250
+20261126T155328Z_dfeaf101,Bùi Quyền Kiệt,A3 seed 20261106 - CNN train 500
+20261126T155504Z_04d50190,Bùi Quyền Kiệt,A3 seed 20261106 - CNN train 1000
+20261126T155805Z_d20ac416,Bùi Quyền Kiệt,A3 seed 20261106 - CNN train 1332
+ablation-a3-20261126T155229Z-s20261106,Bùi Quyền Kiệt,A3 seed 20261106 - kiểm chứng nhiều seed
+20261126T160201Z_e7990b18,Bùi Quyền Kiệt,A3 seed 20261107 - CNN train 250
+20261126T160254Z_08a33ee3,Bùi Quyền Kiệt,A3 seed 20261107 - CNN train 500
+20261126T160430Z_440465c5,Bùi Quyền Kiệt,A3 seed 20261107 - CNN train 1000
+20261126T160733Z_76b4e0fb,Bùi Quyền Kiệt,A3 seed 20261107 - CNN train 1332
+ablation-a3-20261126T160159Z-s20261107,Bùi Quyền Kiệt,A3 seed 20261107 - kiểm chứng nhiều seed
+nn-vs-alphabeta-20261126T161238Z-s20261105,Bùi Quyền Kiệt,A3 g1332 vs Alpha-Beta depth 5 - win rate
+nn-vs-mcts-20261126T161300Z-s20261105,Bùi Quyền Kiệt,A3 g1332 vs MCTS 1000 sims - win rate

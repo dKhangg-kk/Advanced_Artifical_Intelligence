@@ -1,0 +1,20 @@
+# Ablation A3 — lần lặp kiểm chứng ngày 25/11/2026 (RQ2).
+# Giu nguyen toan bo sieu tham so va cohort cua configs/ablation_a3_cnn_data.yaml.
+# Chi doi duong bang/hinh de khong ghi de bang va hinh cua lan chay 11/11/2026
+# (ablation-a3-20261111T150514Z-s20261105) dang duoc bao cáo va report_numbers trích dan.
+
+name: ablation_a3_cnn_data_repeat
+agent: nn
+cohort: a3
+data_dir: data/generated/splits
+dataset_sizes_games: [250, 500, 1000, 1332]
+epochs: 20
+batch_size: 64
+lr: 0.001
+split_ratio: [0.70, 0.15, 0.15]
+out_dir: checkpoints
+log_dir: results/logs
+table_output: results/tables/ablation_a3_results_repeat.csv
+figure_output: results/figures/ablation_a3_accuracy_repeat.png
+seed: 20261105
+output: results/tables/ablation_a3_results_repeat.csv
