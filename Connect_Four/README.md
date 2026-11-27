@@ -418,6 +418,23 @@ dưới đây đo trên máy 2 nhân CPU của nhóm.
 | Một cặp nhanh | `python -m connect_four.evaluation.cli --a alphabeta --b mcts --openings 5` | 10 ván, đổi bên |
 | Bảng, hình, số liệu báo cáo | `PYTHONPATH=src python scripts/summarize_tournament.py --prefix tournament-default-20261118T163224Z-s20261118 --label default` (tương tự `--label timed`), rồi `scripts/build_report_numbers_y.py`, `scripts/render_report_tables_y.py docs/report/04*.md` | `results/tables/y6_*`, `report_numbers.csv`, bảng trong Markdown |
 | Báo cáo Word + PDF | `sh docs/report/build.sh` (cần pandoc và LibreOffice) | `docs/report/dist/BaoCao_CuoiKy_Nhom26.docx` và `.pdf` |
+## Video Demo Hệ thống (Connect Four AI — Nhóm 26
+
+Video demo (`Connect_Four/video demo`, thời lượng **02:05**) minh họa quá trình vận hành toàn diện hệ thống **Connect Four AI** từ giao diện dòng lệnh (CLI), chạy giải đấu đánh giá tự động giữa các tác tử (benchmark/tournament), đến giao diện đồ họa tương tác trực quan bằng Pygame.
+
+### Nội dung & Mốc thời gian trong video
+
+| Mốc thời gian | Phân đoạn demo | Chi tiết thực hiện & Lệnh tương ứng |
+| :--- | :--- | :--- |
+| **00:00 – 00:54** | **1. Chơi tương tác trên Terminal (CLI)** | Chạy chế độ người đấu với tác tử học tăng cường **DQN** sử dụng checkpoint đã đóng băng (`dqn_final.pt`). Người chơi nhập cột `0–6`, hệ thống cập nhật bàn cờ ASCII và xác định thắng cuộc:<br>`python -m connect_four.play --opponent dqn --checkpoint checkpoints/level6_dqn/dqn_final.pt` |
+| **00:55 – 01:23** | **2. Đánh giá tự động qua CLI (Evaluation)** | Chạy thực nghiệm đối đầu 100 ván (`--openings 100`, `--seed 20261120`) giữa **Heuristic** và **DQN**, tự động xuất kết quả từng ván và từng nước đi ra thư mục `results/logs/` (`games_*.csv`, `moves_*.csv`):<br>`python -m connect_four.evaluation.cli --a heuristic --b dqn --openings 100 --seed 20261120 --b-checkpoint checkpoints/level6_dqn/dqn_final.pt --out results/logs` |
+| **01:24 – 02:05** | **3. Giao diện đồ họa Pygame (GUI)** | Khởi chạy `src/connect_four/ui/gui.py`, cấu hình trực tiếp tác tử cho **Bên X (đi trước)** và **Bên O (đi sau)** (chọn giữa `human`, `random`, `alphabeta`, `nn`, `dqn`). Minh họa 2 ván đối đầu trực tiếp giữa **Alpha-Beta (X)** và **DQN (O)**, hiển thị lượt đi, thời gian suy nghĩ từng nước (ms), số nước đã đi, thông báo thắng cuộc và chức năng **Ván mới** / **Chọn lại**. |
+
+### Tái lập nhanh các bước trong demo
+
+1. Di chuyển vào thư mục đồ án và kích hoạt môi trường ảo:
+   ```bash
+   cd Connect_Four
 
 Seed: validation chọn checkpoint 20261102 (Random) / 20261103 (Heuristic); đấu trực tiếp
 trong A6 20261104; giải đấu 20261118 (mặc định) / 20261119 (cùng thời gian). Không seed nào
